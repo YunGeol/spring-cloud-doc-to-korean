@@ -1,10 +1,8 @@
-<div id="header">
 
-# Spring Cloud
+Spring Cloud
+=============
 
-<div id="toc" class="toc2">
-
-<div id="toctitle">목차</div>
+# 목차
 
 *   [Features](http://projects.spring.io/spring-cloud/spring-cloud.html#_features)
 *   [클라우드 네이티브 애플리케이션](http://projects.spring.io/spring-cloud/spring-cloud.html#_cloud_native_applications)
