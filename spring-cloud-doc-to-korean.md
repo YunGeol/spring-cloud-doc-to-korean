@@ -3306,7 +3306,7 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 
 
-![HystrixGraph](./md-images/HystrixGraph.png)
+![HystrixGraph](./spring-cloud-doc-images/HystrixGraph.png)
 
 그림 1\. 마이크로 서비스 그래프
 
@@ -3320,7 +3320,7 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 
 
-![HystrixFallback](./md-images/HystrixFallback.png)
+![HystrixFallback](./spring-cloud-doc-images/HystrixFallback.png)
 
 그림 2\. Hystrix 폴백으로 계단식 오류 방지
 
@@ -3487,7 +3487,7 @@ Hystrix의 주요 이점 중 하나는 각 HystrixCommand에 대해 수집하는
 
 
 
-![Hystrix](./md-images/Hystrix.png)
+![Hystrix](./spring-cloud-doc-images/Hystrix.png)
 
 그림 3\. Hystrix 대시 보드
 
@@ -6456,7 +6456,7 @@ application.yml
 
 
 
-![Google 번역](./md-images/translate_24dp.png)
+![Google 번역](./spring-cloud-doc-images/translate_24dp.png)
 
 
 
