@@ -6,7 +6,7 @@
 
 <div id="toctitle">목차</div>
 
-*   [Feature](http://projects.spring.io/spring-cloud/spring-cloud.html#_features)
+*   [Features](http://projects.spring.io/spring-cloud/spring-cloud.html#_features)
 *   [클라우드 네이티브 애플리케이션](http://projects.spring.io/spring-cloud/spring-cloud.html#_cloud_native_applications)
     *   [Spring Cloud Context : 애플리케이션 컨텍스트 서비스](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_context_application_context_services)
         *   [부트 스트랩 응용 프로그램 컨텍스트](http://projects.spring.io/spring-cloud/spring-cloud.html#_the_bootstrap_application_context)
