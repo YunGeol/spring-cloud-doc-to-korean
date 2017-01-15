@@ -819,7 +819,7 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 <div class="imageblock">
 
-![HystrixGraph](./spring-cloud-netfilx_files/HystrixGraph.png)
+![HystrixGraph](./spring-cloud-netflix-doc-images/HystrixGraph.png)
 
 그림 1\. 마이크로 서비스 그래프
 
@@ -833,7 +833,7 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 <div class="imageblock">
 
-![HystrixFallback](./spring-cloud-netfilx_files/HystrixFallback.png)
+![HystrixFallback](./spring-cloud-netflix-doc-images/HystrixFallback.png)
 
 그림 2\. Hystrix 폴백으로 계단식 오류 방지
 
@@ -1002,7 +1002,7 @@ Hystrix의 주요 이점 중 하나는 각 HystrixCommand에 대해 수집하는
 
 <div class="imageblock">
 
-![Hystrix](./spring-cloud-netfilx_files/Hystrix.png)
+![Hystrix](./spring-cloud-netflix-doc-images/Hystrix.png)
 
 그림 3\. Hystrix 대시 보드
 
@@ -3809,7 +3809,7 @@ Spectator 용어에서 미터는 명명 된, 입력 된 및 태그가있는 구�
 
 <div class="imageblock">
 
-![RequestLatency](./spring-cloud-netfilx_files/RequestLatency.png)
+![RequestLatency](./spring-cloud-netflix-doc-images/RequestLatency.png)
 
 그림 4\. 요청 대기 시간
 
@@ -4147,7 +4147,7 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 <div>
 
-<div class="logo">![Google 번역](./spring-cloud-netfilx_files/translate_24dp.png)
+<div class="logo">![Google 번역](./spring-cloud-netflix-doc-images/translate_24dp.png)
 
 
 
