@@ -2,6 +2,9 @@
 Spring Cloud
 =============
 
+# 원본
+http://projects.spring.io/spring-cloud/spring-cloud.html
+
 # 목차
 
 *   [Features](http://projects.spring.io/spring-cloud/spring-cloud.html#_features)
@@ -41,7 +44,7 @@ Spring Cloud
         *   [구성 클라이언트 재시도](http://projects.spring.io/spring-cloud/spring-cloud.html#config-client-retry)
         *   [원격 구성 리소스 찾기](http://projects.spring.io/spring-cloud/spring-cloud.html#_locating_remote_configuration_resources)
         *   [보안](http://projects.spring.io/spring-cloud/spring-cloud.html#_security_2)
-*   [봄 구름 넷플 릭스](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_netflix)
+*   [Spring Cloud 넷플 릭스](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_netflix)
     *   [서비스 발견 : 유레카 클라이언트](http://projects.spring.io/spring-cloud/spring-cloud.html#_service_discovery_eureka_clients)
         *   [유레카 등록](http://projects.spring.io/spring-cloud/spring-cloud.html#_registering_with_eureka)
         *   [상태 페이지 및 상태 표시기](http://projects.spring.io/spring-cloud/spring-cloud.html#_status_page_and_health_indicator)
@@ -115,13 +118,9 @@ Spring Cloud
 
 
 
-<div id="content">
 
-<div id="preamble">
-
-
-
-
+# Spring Cloud
+-----
 
 Spring Cloud는 개발자가 분산 시스템 (예 : 구성 관리, 서비스 발견, 회로 차단기, 지능형 라우팅, 마이크로 프록시, 제어 버스, 일회성 토큰, 글로벌 잠금, 리더십 선거, 분산 등)에서 공통 패턴을 신속하게 구축 할 수있는 도구를 제공합니다. 세션, 클러스터 상태). 분산 시스템을 조정하면 보일러 플레이트 패턴이 생기고 Spring Cloud 개발자는 이러한 패턴을 구현하는 서비스와 애플리케이션을 신속하게 구현할 수 있습니다. 개발자의 자체 랩톱, 베어 메탈 (bare metal) 데이터 센터 및 Cloud Foundry와 같은 관리 플랫폼을 포함한 모든 분산 환경에서 잘 작동합니다.
 
@@ -133,7 +132,7 @@ Spring Cloud는 개발자가 분산 시스템 (예 : 구성 관리, 서비스 �
 
 
 
-## 풍모
+## Features
 
 
 
@@ -143,7 +142,7 @@ Spring Cloud는 전형적인 유스 케이스에 대해 좋은 아웃 오브 박
 
 
 
-<div class="ulist">
+
 
 *   분산 / 버전 관리 된 구성
 
@@ -171,7 +170,7 @@ Spring Cloud는 전형적인 유스 케이스에 대해 좋은 아웃 오브 박
 
 # 클라우드 네이티브 애플리케이션
 
-<div class="openblock partintro">
+
 
 
 
@@ -193,7 +192,7 @@ Spring Cloud는 전형적인 유스 케이스에 대해 좋은 아웃 오브 박
 
 
 
-<div class="ulist">
+
 
 *   [Java 6 JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html)
 
@@ -209,27 +208,24 @@ JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 �
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
 
-<td class="icon">
+
+
+
+
+
 
 노트
 
-</td>
 
-<td class="content">Spring Cloud는 비 제한적 Apache 2.0 라이센스에 따라 출시되었습니다. 문서의이 섹션에 기여하고 싶거나 오류가 발견되면 {githubmaster} / docs / src / main / asciidoc [github]에서 프로젝트의 소스 코드와 이슈 트래커를 찾으십시오.</td>
 
-</tr>
+Spring Cloud는 비 제한적 Apache 2.0 라이센스에 따라 출시되었습니다. 문서의이 섹션에 기여하고 싶거나 오류가 발견되면 {githubmaster} / docs / src / main / asciidoc [github]에서 프로젝트의 소스 코드와 이슈 트래커를 찾으십시오.
 
-</tbody>
 
-</table>
+
 
 
 
@@ -306,7 +302,7 @@ bootstrap.yml
 
 
 
-<div class="ulist">
+
 
 *   (선택 사양)가 "부트 스트랩" `CompositePropertySource`어떤 경우 높은 우선 순위로 나타납니다 `PropertySourceLocators`부트 스트랩 컨텍스트에서 찾을 수 있습니다, 그들은 비어 있지 않은 특성을 갖는다. 한 예로 Spring Cloud Config Server의 특성이있다. 참조 [아래](http://projects.spring.io/spring-cloud/spring-cloud.html#customizing-bootstrap-property-sources) 이 속성 소스의 내용을 사용자 정의하는 방법에 대한 지침.
 
@@ -356,27 +352,27 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
 
-<td class="icon">
+
+
+
+
+
 
 경고
 
-</td>
 
-<td class="content">사용자를 추가 할 때주의해야합니다 `BootstrapConfiguration`추가 클래스가 아니라는 것을 `@ComponentScanned`그들이 필요되지 않을 수 있습니다 귀하의 "주"응용 프로그램 컨텍스트에 실수로. 이미이 적용되지 않습니다 부팅 구성 클래스에 대한 별도의 패키지 이름을 사용 `@ComponentScan`또는 `@SpringBootApplication` 주석 구성 클래스.</td>
 
-</tr>
+사용자를 추가 할 때주의해야합니다 `BootstrapConfiguration`추가 클래스가 아니라는 것을 `@ComponentScanned`그들이 필요되지 않을 수 있습니다 귀하의 "주"응용 프로그램 컨텍스트에 실수로. 이미이 적용되지 않습니다 부팅 구성 클래스에 대한 별도의 패키지 이름을 사용 `@ComponentScan`또는 `@SpringBootApplication` 주석 구성 클래스.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -463,7 +459,7 @@ bootstrap.yml
 
 
 
-<div class="ulist">
+
 
 *   모든 다시 결합 `@ConfigurationProperties`맥락에서 콩을
 
@@ -507,27 +503,27 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
 
-<td class="icon">
+
+
+
+
+
 
 노트
 
-</td>
 
-<td class="content">`@RefreshScope`온 (기술적으로) 작동 `@Configuration` 클래스,하지만 놀라운 동작이 발생할 수 있습니다 : 그것은 않습니다 예를 들어 **하지** 모든 것을 의미 `@Beans`클래스에 정의 자체입니다 `@RefreshScope`. 특히, 새로 고침이 시작될 때 자체를하지 않는 한 그들에 의존 할 수 그 콩에 따라 달라 아무것도, 업데이트되고 `@RefreshScope`있는이 새로 고침에 재건되고 종속성이 시점에서 그들은 다시 될 것입니다, 재 주입 ( 새로 고친에서 초기화 `@Configuration`).</td>
 
-</tr>
+`@RefreshScope`온 (기술적으로) 작동 `@Configuration` 클래스,하지만 놀라운 동작이 발생할 수 있습니다 : 그것은 않습니다 예를 들어 **하지** 모든 것을 의미 `@Beans`클래스에 정의 자체입니다 `@RefreshScope`. 특히, 새로 고침이 시작될 때 자체를하지 않는 한 그들에 의존 할 수 그 콩에 따라 달라 아무것도, 업데이트되고 `@RefreshScope`있는이 새로 고침에 재건되고 종속성이 시점에서 그들은 다시 될 것입니다, 재 주입 ( 새로 고친에서 초기화 `@Configuration`).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -549,7 +545,7 @@ bootstrap.yml
 
 
 
-<div class="ulist">
+
 
 *   [Java 6 JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html)
 
@@ -577,7 +573,7 @@ JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 �
 
 
 
-<div class="ulist">
+
 
 *   POST는 다음의 제품에 `/env`를 업데이트 `Environment`하고 바인딩 `@ConfigurationProperties`과 수준을 기록
 
@@ -715,7 +711,7 @@ application.yml
 
 # 스프링 클라우드 구성
 
-<div class="openblock partintro">
+
 
 Spring Cloud Config는 분산 시스템에서 외부화 된 구성에 대한 서버 및 클라이언트 측 지원을 제공합니다. 구성 서버를 사용하면 모든 환경에서 응용 프로그램의 외부 속성을 중앙에서 관리 할 수 ​​있습니다. 동일 봄에 클라이언트 및 서버지도의 개념 `Environment`과 `PropertySource`추상화, 그들은 봄 응용 프로그램과 잘 맞는, 그러나 어떤 응용 프로그램이 모든 언어에서 실행에 사용할 수 있도록. 응용 프로그램이 개발 파이프 라인을 통해 개발자에서 테스트 및 프로덕션 환경으로 이동하면 해당 환경 간의 구성을 관리 할 수 ​​있으며 응용 프로그램이 마이그레이션 할 때 실행하는 데 필요한 모든 기능을 갖추고 있는지 확인할 수 있습니다. 서버 저장 장치 백엔드의 기본 구현은 git을 사용하므로 구성 환경의 레이블링 된 버전을 쉽게 지원할뿐만 아니라 컨텐츠 관리를위한 다양한 툴링에 액세스 할 수 있습니다. 대체 구현을 추가하고 Spring 구성으로 플러그인을 쉽게 삽입 할 수 있습니다.
 
@@ -959,27 +955,27 @@ public class Application {
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">속성 소스 이름의 URL은 config 서버 URL이 아닌 git 저장소입니다.</td>
 
-</tr>
+<td class="content">속성 소스 이름의 URL은 config 서버 URL이 아닌 git 저장소입니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1044,43 +1040,43 @@ application.properties
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">그것은 예를 들어 드라이브 접두사, 절대 경우 Windows에서 당신은 "/"파일 URL에 추가해야합니다 `[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`.</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">그것은 예를 들어 드라이브 접두사, 절대 경우 Windows에서 당신은 "/"파일 URL에 추가해야합니다 `[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`.
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
+
+
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
+
 
 <td class="content">
 
@@ -1106,37 +1102,37 @@ $ git commit -m "application.properties 추가"</pre>
 
 
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
+
+
+
+
+
+
+
 
 <td class="icon">
 
 경고
 
-</td>
 
-<td class="content">git 저장소에 로컬 파일 시스템을 사용하는 것은 테스트 용입니다. 프로덕션 환경에서 서버를 사용하여 구성 저장소를 호스트하십시오.</td>
 
-</tr>
+<td class="content">git 저장소에 로컬 파일 시스템을 사용하는 것은 테스트 용입니다. 프로덕션 환경에서 서버를 사용하여 구성 저장소를 호스트하십시오.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1150,7 +1146,7 @@ $ git commit -m "application.properties 추가"</pre>
 
 
 
-<div class="ulist">
+
 
 *   `{application}` 클라이언트 쪽에서 "spring.application.name"에 매핑됩니다.
 
@@ -1200,7 +1196,7 @@ bootstrap.yml
 
 
 
-<div class="sect3">
+
 
 #### 힘내 백엔드
 
@@ -1216,7 +1212,7 @@ bootstrap.yml
 
 
 
-<div class="sect4">
+
 
 ##### Git URI의 자리 표시 자
 
@@ -1249,7 +1245,7 @@ bootstrap.yml
 
 
 
-<div class="sect4">
+
 
 ##### 패턴 일치 및 다중 저장소
 
@@ -1288,27 +1284,27 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">위의 "간단한"예제에서 사용 된 "한 줄짜리"단축키는 설정할 유일한 속성이 URI 인 경우에만 사용할 수 있습니다. 다른 것을 설정해야하는 경우 (자격 증명, 패턴 등) 전체 양식을 사용해야합니다.</td>
 
-</tr>
+<td class="content">위의 "간단한"예제에서 사용 된 "한 줄짜리"단축키는 설정할 유일한 속성이 URI 인 경우에만 사용할 수 있습니다. 다른 것을 설정해야하는 경우 (자격 증명, 패턴 등) 전체 양식을 사용해야합니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1344,27 +1340,27 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">봄 클라우드에서 끝나지 않는 프로파일을 포함하는 패턴을 추측 할 것이다 `*`당신이 실제로이 패턴으로 시작하는 프로파일의 목록을 일치시킬 것을 의미한다 (그래서 `*/staging`에 대한 바로 가기입니다 `["*/staging", "*/staging,*"]`). 이는 "개발"프로파일에서 로컬로 애플리케이션을 실행해야하지만, 예를 들어 "클라우드"프로파일을 원격으로 실행해야하는 경우에 일반적입니다.</td>
 
-</tr>
+<td class="content">봄 클라우드에서 끝나지 않는 프로파일을 포함하는 패턴을 추측 할 것이다 `*`당신이 실제로이 패턴으로 시작하는 프로파일의 목록을 일치시킬 것을 의미한다 (그래서 `*/staging`에 대한 바로 가기입니다 `["*/staging", "*/staging,*"]`). 이는 "개발"프로파일에서 로컬로 애플리케이션을 실행해야하지만, 예를 들어 "클라우드"프로파일을 원격으로 실행해야하는 경우에 일반적입니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1468,7 +1464,7 @@ bootstrap.yml
 
 
 
-<div class="sect3">
+
 
 #### 파일 시스템 백엔드
 
@@ -1478,75 +1474,75 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">사용하는 것을 잊지 `file:`파일 자원에 대한 접두사 (접두사없이 기본값은 일반적으로 클래스 경로입니다). 그냥 봄 부팅 구성으로 당신은 포함 할 수 있습니다 `${}`스타일의 환경 자리를하지만, Windows의 절대 경로 추가 "/", 예를 들어 필요로 기억`[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">사용하는 것을 잊지 `file:`파일 자원에 대한 접두사 (접두사없이 기본값은 일반적으로 클래스 경로입니다). 그냥 봄 부팅 구성으로 당신은 포함 할 수 있습니다 `${}`스타일의 환경 자리를하지만, Windows의 절대 경로 추가 "/", 예를 들어 필요로 기억`[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`
 
 
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
+
+
+
+
+
+
 
 <td class="icon">
 
 경고
 
-</td>
 
-<td class="content">의 초기 값은 `searchLocations`로컬 스프링 부트 프로그램 (그래서 동일하다 `[classpath:/, classpath:/config, file:./, file:./config]`). 이 노출되지 않고 `application.properties`, 서버에 존재하는 임의의 프로퍼티 소스 클라이언트로 전송되기 전에 제거되어 있기 때문에 모든 클라이언트는 서버로부터.</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">의 초기 값은 `searchLocations`로컬 스프링 부트 프로그램 (그래서 동일하다 `[classpath:/, classpath:/config, file:./, file:./config]`). 이 노출되지 않고 `application.properties`, 서버에 존재하는 임의의 프로퍼티 소스 클라이언트로 전송되기 전에 제거되어 있기 때문에 모든 클라이언트는 서버로부터.
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
+
+
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">파일 시스템 백엔드는 신속하게 시작하고 테스트하기에 좋습니다. 프로덕션 환경에서 사용하려면 파일 시스템이 안정적이어야하며 모든 구성 서버 인스턴스에서 공유해야합니다.</td>
 
-</tr>
+<td class="content">파일 시스템 백엔드는 신속하게 시작하고 테스트하기에 좋습니다. 프로덕션 환경에서 사용하려면 파일 시스템이 안정적이어야하며 모든 구성 서버 인스턴스에서 공유해야합니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1564,7 +1560,7 @@ bootstrap.yml
 
 
 
-<div class="sect3">
+
 
 #### 모든 응용 프로그램과 구성 공유
 
@@ -1580,33 +1576,33 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">"네이티브"프로파일 (로컬 파일 시스템 백엔드)을 사용하면 서버 자체 구성의 일부가 아닌 명시 적 검색 위치를 사용하는 것이 좋습니다. 그렇지 않으면 `application*` 그들은 서버의 일부이기 때문에 기본 검색 위치에 자원이 제거됩니다.</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">"네이티브"프로파일 (로컬 파일 시스템 백엔드)을 사용하면 서버 자체 구성의 일부가 아닌 명시 적 검색 위치를 사용하는 것이 좋습니다. 그렇지 않으면 `application*` 그들은 서버의 일부이기 때문에 기본 검색 위치에 자원이 제거됩니다.
 
 
 
 
 
-<div class="sect3">
+
+
+
+
+
+
+
 
 #### 속성 재정의
 
@@ -1637,27 +1633,27 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">은 "$"또는 "은 {"는, 예를 들어 탈출 ( "\") 백 슬래시를 사용하여 "$ {}"이스케이프 (클라이언트에 해결) 할 수있다 정상, 봄 환경 자리 `\${app.foo:bar}`앱하지 않는 한에 "바"를 해결합니다 자체 "app.foo"를 제공합니다. YAML에서 백 슬래시 자체를 이스케이프 할 필요는 없지만 서버에서 오버라이드를 구성 할 때는 속성 파일에서 이스케이프해야합니다.</td>
 
-</tr>
+<td class="content">은 "$"또는 "은 {"는, 예를 들어 탈출 ( "\") 백 슬래시를 사용하여 "$ {}"이스케이프 (클라이언트에 해결) 할 수있다 정상, 봄 환경 자리 `\${app.foo:bar}`앱하지 않는 한에 "바"를 해결합니다 자체 "app.foo"를 제공합니다. YAML에서 백 슬래시 자체를 이스케이프 할 필요는 없지만 서버에서 오버라이드를 구성 할 때는 속성 파일에서 이스케이프해야합니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1737,27 +1733,27 @@ HTTP 기본 보안 구성 기본 봄 부팅을 사용하려면, 그냥 (예를 �
 
 ### 암호화 및 암호 해독
 
-<div class="admonitionblock important">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 중대한
 
-</td>
 
-<td class="content">**전제 조건 :** 당신이 당신의 JVM에 설치된 전체 강도 JCE를 필요로하는 암호화 및 복호화 기능 (기본값이 아닙니다)를 사용합니다. Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).</td>
 
-</tr>
+<td class="content">**전제 조건 :** 당신이 당신의 JVM에 설치된 전체 강도 JCE를 필요로하는 암호화 및 복호화 기능 (기본값이 아닙니다)를 사용합니다. Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1847,27 +1843,27 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">당신은 컬과 같이 테스트하는 경우, 사용 `--data-urlencode`(대신 `-d`명시 적)을 설정하거나 `Content-Type: text/plain`확인 컬 특수 문자가있는 경우 정확하게 데이터를 인코딩하기 위해 ( '+'는 특히 까다 롭다).</td>
 
-</tr>
+<td class="content">당신은 컬과 같이 테스트하는 경우, 사용 `--data-urlencode`(대신 `-d`명시 적)을 설정하거나 `Content-Type: text/plain`확인 컬 특수 문자가있는 경우 정확하게 데이터를 인코딩하기 위해 ( '+'는 특히 까다 롭다).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -1883,33 +1879,33 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">당신은 또한을 제공해야이 세분화 된 방법으로 암호화 제어하는 `@Bean`타입의 `TextEncryptorLocator`이름과 프로필마다 다른 암호 화기를 만듭니다. 기본적으로 제공되는 암호화는이 작업을 수행하지 않으므로 모든 암호화가 동일한 키를 사용합니다.</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">당신은 또한을 제공해야이 세분화 된 방법으로 암호화 제어하는 `@Bean`타입의 `TextEncryptorLocator`이름과 프로필마다 다른 암호 화기를 만듭니다. 기본적으로 제공되는 암호화는이 작업을 수행하지 않으므로 모든 암호화가 동일한 키를 사용합니다.
 
 
 
 
 
-`spring`(설치 봄 구름 CLI 확장자) 명령 행 클라이언트는, 예를 암호화하고 해독하는 데 사용할 수 있습니다
+
+
+
+
+
+
+`spring`(설치 Spring Cloud CLI 확장자) 명령 행 클라이언트는, 예를 암호화하고 해독하는 데 사용할 수 있습니다
 
 
 
@@ -1973,7 +1969,7 @@ key 인수의 (a에도 불구하고 필수 `--`접두사).
 
 
 
-<div class="ulist">
+
 
 *   `location`(A `Resource`위치)
 
@@ -2069,27 +2065,27 @@ locator는 "testkey"라는 이름의 키를 찾을 것입니다. 비밀도를 �
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">`{name:value}`접두사도에 게시 일반 텍스트 추가 할 수 있습니다 `/encrypt`당신은 구성 서버가 암호 해독뿐만 아니라 모든 암호화를 처리 할 수 있도록하려는 경우, 엔드 포인트.</td>
 
-</tr>
+<td class="content">`{name:value}`접두사도에 게시 일반 텍스트 추가 할 수 있습니다 `/encrypt`당신은 구성 서버가 암호 해독뿐만 아니라 모든 암호화를 처리 할 수 있도록하려는 경우, 엔드 포인트.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -2209,27 +2205,27 @@ nginx.conf</pre>
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">단지 환경 구성에 대한 소스 파일처럼 "프로필"은 파일 이름을 확인하는 데 사용됩니다, 그래서 당신은 프로필 - 특정 파일을 원하는 경우 다음 `/*/development/*/logback.xml`라는 파일에 의해 해결 될 것 `logback-development.xml`(에 우선 `logback.xml`).</td>
 
-</tr>
+<td class="content">단지 환경 구성에 대한 소스 파일처럼 "프로필"은 파일 이름을 확인하는 데 사용됩니다, 그래서 당신은 프로필 - 특정 파일을 원하는 경우 다음 `/*/development/*/logback.xml`라는 파일에 의해 해결 될 것 `logback-development.xml`(에 우선 `logback.xml`).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -2249,27 +2245,27 @@ nginx.conf</pre>
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">그것은 분명하지만 부트 스트랩 플래그를 사용하는 경우 설정 서버 이름 및 저장소 URI가 구성되어 있어야합니다 있음을 알아 두셔야합니다 `bootstrap.yml`.</td>
 
-</tr>
+<td class="content">그것은 분명하지만 부트 스트랩 플래그를 사용하는 경우 설정 서버 이름 및 저장소 URI가 구성되어 있어야합니다 있음을 알아 두셔야합니다 `bootstrap.yml`.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -2313,51 +2309,51 @@ nginx.conf</pre>
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">는 `RefreshRemoteApplicationEvent`가있는 경우에만 송신 될 것이다 `spring-cloud-bus`는 config 서버에 상기 클라이언트 어플리케이션이 활성화된다.</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">는 `RefreshRemoteApplicationEvent`가있는 경우에만 송신 될 것이다 `spring-cloud-bus`는 config 서버에 상기 클라이언트 어플리케이션이 활성화된다.
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
+
+
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">기본 설정은 또한 로컬 자식 저장소에서 파일 시스템 변경을 감지합니다 (이 경우 webhook은 사용되지 않지만 설정 파일을 편집하자마자 새로 고침이 브로드 캐스트됩니다).</td>
 
-</tr>
+<td class="content">기본 설정은 또한 로컬 자식 저장소에서 파일 시스템 변경을 감지합니다 (이 경우 webhook은 사용되지 않지만 설정 파일을 편집하자마자 새로 고침이 브로드 캐스트됩니다).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -2459,27 +2455,27 @@ bootstrap.yml
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">재시도 전체를 제어 할 수있는 추가 `@Bean`유형의 `RetryOperationsInterceptor`ID가 "configServerRetryInterceptor"로. 봄 시도는이 `RetryInterceptorBuilder`일을 만들 쉽게 만드는.</td>
 
-</tr>
+<td class="content">재시도 전체를 제어 할 수있는 추가 `@Bean`유형의 `RetryOperationsInterceptor`ID가 "configServerRetryInterceptor"로. 봄 시도는이 `RetryInterceptorBuilder`일을 만들 쉽게 만드는.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -2495,7 +2491,7 @@ bootstrap.yml
 
 
 
-<div class="ulist">
+
 
 *   "name"= `${spring.application.name}`
 
@@ -2600,9 +2596,9 @@ bootstrap.yml
 
 
 
-# 봄 구름 넷플 릭스
+# Spring Cloud 넷플 릭스
 
-<div class="openblock partintro">
+
 
 이 프로젝트는 자동 환경 설정과 스프링 환경 및 기타 스프링 프로그래밍 모델 관용구에 대한 바인딩을 통해 스프링 부트 애플리케이션을위한 Netflix OSS 통합을 제공합니다. 몇 가지 간단한 주석을 사용하면 애플리케이션 내부의 공통 패턴을 신속하게 활성화 및 구성하고 전투 테스트를 거친 Netflix 구성 요소로 대규모 분산 시스템을 구축 할 수 있습니다. 제공되는 패턴에는 서비스 발견 (Eureka), 회로 차단기 (Hystrix), 지능형 라우팅 (Zuul) 및 클라이언트 측로드 균형 조정 (리본)이 포함됩니다.
 
@@ -2748,7 +2744,7 @@ application.yml
 
 
 
-앱이 HTTPS를 통해 연락을 원하는 경우에 당신은 두 개의 플래그를 설정할 수 있습니다 `EurekaInstanceConfig`, _즉_ `eureka.instance.[nonSecurePortEnabled,securePortEnabled]=[false,true]` 각각. 이렇게하면 Eureka가 보안 통신에 대한 명시적인 선호를 보여주는 인스턴스 정보를 게시하게됩니다. 봄 구름은 `DiscoveryClient`항상 반환 `[https://…​](https://%E2%80%A6%E2%80%8B/);`이 방식으로 구성 서비스에 대한 URI를하고, 유레카 (기본) 인스턴스 정보는 안전한 상태 점검 URL이있을 것이다.
+앱이 HTTPS를 통해 연락을 원하는 경우에 당신은 두 개의 플래그를 설정할 수 있습니다 `EurekaInstanceConfig`, _즉_ `eureka.instance.[nonSecurePortEnabled,securePortEnabled]=[false,true]` 각각. 이렇게하면 Eureka가 보안 통신에 대한 명시적인 선호를 보여주는 인스턴스 정보를 게시하게됩니다. Spring Cloud은 `DiscoveryClient`항상 반환 `[https://…​](https://%E2%80%A6%E2%80%8B/);`이 방식으로 구성 서비스에 대한 URI를하고, 유레카 (기본) 인스턴스 정보는 안전한 상태 점검 URL이있을 것이다.
 
 
 
@@ -2780,27 +2776,27 @@ application.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">앱이 프록시 뒤에 있고 SSL 종료가 프록시에있는 경우 (예 : Cloud Foundry 또는 다른 플랫폼에서 서비스로 실행하는 경우) 프록시 "전달 된"헤더를 가로 채고 처리해야합니다. 응용 프로그램. 'X-Forwarded - \ *'헤더를 명시 적으로 설정하면 Spring Boot 애플리케이션의 임베디드 Tomcat 컨테이너가 자동으로이 기능을 수행한다. 틀린 표시는 앱이 자체적으로 렌더링 한 링크가 잘못된 것입니다 (잘못된 호스트, 포트 또는 프로토콜).</td>
 
-</tr>
+<td class="content">앱이 프록시 뒤에 있고 SSL 종료가 프록시에있는 경우 (예 : Cloud Foundry 또는 다른 플랫폼에서 서비스로 실행하는 경우) 프록시 "전달 된"헤더를 가로 채고 처리해야합니다. 응용 프로그램. 'X-Forwarded - \ *'헤더를 명시 적으로 설정하면 Spring Boot 애플리케이션의 임베디드 Tomcat 컨테이너가 자동으로이 기능을 수행한다. 틀린 표시는 앱이 자체적으로 렌더링 한 링크가 잘못된 것입니다 (잘못된 호스트, 포트 또는 프로토콜).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -2849,7 +2845,7 @@ Eureka 메타 데이터가 어떻게 작동하는지 이해하는 데 약간의 
 
 
 
-<div class="sect3">
+
 
 #### Cloudfoundry에서 유레카 사용하기
 
@@ -2882,7 +2878,7 @@ Cloudfoundry 인스턴스에서 보안 규칙을 설정하는 방법에 따라 �
 
 
 
-<div class="sect3">
+
 
 #### AWS에서 Eureka 사용
 
@@ -2911,7 +2907,7 @@ Cloudfoundry 인스턴스에서 보안 규칙을 설정하는 방법에 따라 �
 
 
 
-<div class="sect3">
+
 
 #### 유레카 인스턴스 ID 변경
 
@@ -2957,7 +2953,7 @@ application.yml
 
 
 
-당신이 응용 프로그램을 일단 `@EnableDiscoveryClient`(또는 `@EnableEurekaClient`) 당신은에서 서비스 인스턴스를 검색하는 데 사용할 수 있습니다 [유레카 서버](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-eureka-server) . 이를위한 한 가지 방법은 기본을 사용하는 것이다 `com.netflix.discovery.EurekaClient`(봄 구름 반대로 `DiscoveryClient`), 예를 들면
+당신이 응용 프로그램을 일단 `@EnableDiscoveryClient`(또는 `@EnableEurekaClient`) 당신은에서 서비스 인스턴스를 검색하는 데 사용할 수 있습니다 [유레카 서버](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-eureka-server) . 이를위한 한 가지 방법은 기본을 사용하는 것이다 `com.netflix.discovery.EurekaClient`(Spring Cloud 반대로 `DiscoveryClient`), 예를 들면
 
 
 
@@ -2977,19 +2973,19 @@ public String serviceUrl () {
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
+
 
 <td class="content">
 
@@ -2999,13 +2995,13 @@ public String serviceUrl () {
 
 
 
-</td>
 
-</tr>
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -3106,19 +3102,19 @@ public String serviceUrl () {
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
+
 
 <td class="content">
 
@@ -3152,13 +3148,13 @@ build.gradle
 
 
 
-</td>
 
-</tr>
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -3654,7 +3650,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-리본의 중심 개념은 명명 된 클라이언트의 개념입니다. (예를 사용하여 각 부하 분산 장치는 필요에 따라 원격 서버에 접속하기 위해 함께 작동 구성 요소의 앙상블의 일부, 그리고 앙상블은 응용 프로그램 개발자로주는 이름을 가진 `@FeignClient` 주석). 봄 구름은 같은 새로운 앙상블 작성 `ApplicationContext`하여 명명 된 각 클라이언트에 대한 수요를 `RibbonClientConfiguration`. 이것은 (다른 것들 중에서)를 포함 `ILoadBalancer`하는 `RestClient`, 및 `ServerListFilter`.
+리본의 중심 개념은 명명 된 클라이언트의 개념입니다. (예를 사용하여 각 부하 분산 장치는 필요에 따라 원격 서버에 접속하기 위해 함께 작동 구성 요소의 앙상블의 일부, 그리고 앙상블은 응용 프로그램 개발자로주는 이름을 가진 `@FeignClient` 주석). Spring Cloud은 같은 새로운 앙상블 작성 `ApplicationContext`하여 명명 된 각 클라이언트에 대한 수요를 `RibbonClientConfiguration`. 이것은 (다른 것들 중에서)를 포함 `ILoadBalancer`하는 `RestClient`, 및 `ServerListFilter`.
 
 
 
@@ -3670,7 +3666,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-봄 구름은 또한 당신 (의 위에 추가 구성을 선언하여 클라이언트의 모든 권한 걸릴 수 있습니다 `RibbonClientConfiguration`사용) `@RibbonClient`. 예:
+Spring Cloud은 또한 당신 (의 위에 추가 구성을 선언하여 클라이언트의 모든 권한 걸릴 수 있습니다 `RibbonClientConfiguration`사용) `@RibbonClient`. 예:
 
 
 
@@ -3693,27 +3689,27 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 경고
 
-</td>
 
-<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모두에 의해 공유됩니다, 기본 응용 프로그램 컨텍스트를 `@RibbonClients`. 당신이 사용하는 경우 `@ComponentScan`(또는 `@SpringBootApplication`당신이 포함되지 않도록하기위한 조치를 취할 필요) (예를 들어 별도의 겹치지 않는 패키지에 넣어, 또는 명시 적으로 검사 할 패키지를 지정 `@ComponentScan`).</td>
 
-</tr>
+<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모두에 의해 공유됩니다, 기본 응용 프로그램 컨텍스트를 `@RibbonClients`. 당신이 사용하는 경우 `@ComponentScan`(또는 `@SpringBootApplication`당신이 포함되지 않도록하기위한 조치를 취할 필요) (예를 들어 별도의 겹치지 않는 패키지에 넣어, 또는 명시 적으로 검사 할 패키지를 지정 `@ComponentScan`).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -3723,7 +3719,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-<div class="ulist">
+
 
 *   `IClientConfig` ribbonClientConfig : `DefaultClientConfigImpl`
 
@@ -3876,7 +3872,7 @@ application.yml
 
 
 
-[꾀병은](https://github.com/Netflix/feign) 선언적 웹 서비스 클라이언트이다. 따라서 웹 서비스 클라이언트를 쉽게 작성할 수 있습니다. Feign을 사용하려면 인터페이스를 만들고 주석을 달아 라. Feign 주석과 JAX-RS 주석을 포함하는 플러그 가능한 주석 지원 기능을 제공합니다. Feign은 또한 플러그 형 인코더와 디코더를 지원합니다. 봄 구름 스프링 MVC 주석과 같은 사용에 대한 지원을 추가 `HttpMessageConverters`봄 웹에서 기본적으로 사용합니다. Spring Cloud는 Ribbon과 Eureka를 통합하여 Feign을 사용할 때로드 밸런싱 된 HTTP 클라이언트를 제공합니다.
+[꾀병은](https://github.com/Netflix/feign) 선언적 웹 서비스 클라이언트이다. 따라서 웹 서비스 클라이언트를 쉽게 작성할 수 있습니다. Feign을 사용하려면 인터페이스를 만들고 주석을 달아 라. Feign 주석과 JAX-RS 주석을 포함하는 플러그 가능한 주석 지원 기능을 제공합니다. Feign은 또한 플러그 형 인코더와 디코더를 지원합니다. Spring Cloud 스프링 MVC 주석과 같은 사용에 대한 지원을 추가 `HttpMessageConverters`봄 웹에서 기본적으로 사용합니다. Spring Cloud는 Ribbon과 Eureka를 통합하여 Feign을 사용할 때로드 밸런싱 된 HTTP 클라이언트를 제공합니다.
 
 
 
@@ -3944,7 +3940,7 @@ StoreClient.java
 
 
 
-Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 개념입니다. 각 꾀병 클라이언트는 필요에 따라 원격 서버에 접속하기 위해 함께 작동 구성 요소의 앙상블의 일부이며, 앙상블 당신이 사용하는 응용 프로그램 개발자로 제공 이름이 `@FeignClient`주석을. 봄 구름은 같은 새로운 앙상블 작성 `ApplicationContext`하여 명명 된 각 클라이언트에 대한 수요를 `FeignClientsConfiguration`. 이것은 (다른 것들 중에서)를 포함 `feign.Decoder`하는 `feign.Encoder`, 및 `feign.Contract`.
+Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 개념입니다. 각 꾀병 클라이언트는 필요에 따라 원격 서버에 접속하기 위해 함께 작동 구성 요소의 앙상블의 일부이며, 앙상블 당신이 사용하는 응용 프로그램 개발자로 제공 이름이 `@FeignClient`주석을. Spring Cloud은 같은 새로운 앙상블 작성 `ApplicationContext`하여 명명 된 각 클라이언트에 대한 수요를 `FeignClientsConfiguration`. 이것은 (다른 것들 중에서)를 포함 `feign.Decoder`하는 `feign.Encoder`, 및 `feign.Contract`.
 
 
 
@@ -3973,75 +3969,75 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 경고
 
-</td>
 
-<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모든 사용됩니다, 기본 응용 프로그램 컨텍스트를 `@FeignClient`. 당신이 사용하는 경우 `@ComponentScan`(또는 `@SpringBootApplication`당신이 포함되지 않도록하기위한 조치를 취할 필요) (예를 들어 별도의 겹치지 않는 패키지에 넣어, 또는 명시 적으로 검사 할 패키지를 지정 `@ComponentScan`).</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모든 사용됩니다, 기본 응용 프로그램 컨텍스트를 `@FeignClient`. 당신이 사용하는 경우 `@ComponentScan`(또는 `@SpringBootApplication`당신이 포함되지 않도록하기위한 조치를 취할 필요) (예를 들어 별도의 겹치지 않는 패키지에 넣어, 또는 명시 적으로 검사 할 패키지를 지정 `@ComponentScan`).
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
+
+
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">`serviceId`속성은 이제 찬성되지 않습니다 `name`속성.</td>
 
-</tr>
-
-</tbody>
-
-</table>
+<td class="content">`serviceId`속성은 이제 찬성되지 않습니다 `name`속성.
 
 
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
+
+
+
+
+
+
 
 <td class="icon">
 
 경고
 
-</td>
 
-<td class="content">이전에는 사용 `url`속성은 필요하지 않은 `name`속성을. 사용하는 것이 `name`지금 필요합니다.</td>
 
-</tr>
+<td class="content">이전에는 사용 `url`속성은 필요하지 않은 `name`속성을. 사용하는 것이 `name`지금 필요합니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -4070,7 +4066,7 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<div class="ulist">
+
 
 *   `Decoder`feignDecoder : `ResponseEntityDecoder`(래핑 `SpringDecoder`)
 
@@ -4090,7 +4086,7 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<div class="ulist">
+
 
 *   `Logger.Level`
 
@@ -4217,27 +4213,27 @@ Hystrix는 회로가 열려 있거나 오류가있을 때 실행되는 기본 �
 
 
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 경고
 
-</td>
 
-<td class="content">Feign의 대체 기능 구현과 Hystrix 대체 버전의 작동 방식에는 제한이 있습니다. 폴백은 현재 반환 방법에 대해 지원되지 않습니다 `com.netflix.hystrix.HystrixCommand`및 `rx.Observable`.</td>
 
-</tr>
+<td class="content">Feign의 대체 기능 구현과 Hystrix 대체 버전의 작동 방식에는 제한이 있습니다. 폴백은 현재 반환 방법에 대해 지원되지 않습니다 `com.netflix.hystrix.HystrixCommand`및 `rx.Observable`.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -4378,7 +4374,7 @@ application.yml
 
 
 
-<div class="ulist">
+
 
 *   `NONE`아니, 로깅 ( **DEFAULT** ).
 
@@ -4478,7 +4474,7 @@ Archaius는 고유 한 구성 파일 세트 및로드 우선 순위를 가지고
 
 
 
-<div class="ulist">
+
 
 *   입증
 
@@ -4808,27 +4804,27 @@ application.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">무시 된 패턴은 완전히 무시되지 않고 프록시에 의해 처리되지 않습니다 (따라서 효과적으로 로컬로 전달됩니다).</td>
 
-</tr>
+<td class="content">무시 된 패턴은 완전히 무시되지 않고 프록시에 의해 처리되지 않습니다 (따라서 효과적으로 로컬로 전달됩니다).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -5167,7 +5163,7 @@ Netflix Servo 또는 Spectator로 기록한 위에 설명 된 루트 끝점의 �
 
 
 
-<div class="olist arabic">
+
 
 1.  HTTP 메소드
 
@@ -5189,11 +5185,11 @@ Netflix Servo 또는 Spectator로 기록한 위에 설명 된 루트 끝점의 �
 
 
 
-스프링 AOP가 활성화되어있는 경우 `org.aspectj:aspectjweaver`런타임 클래스 경로에 존재하는, 봄 구름도로 만든 모든 클라이언트 호출에 대한 통계를 수집합니다 `RestTemplate`. 의 이름을 가진 서보 타이머 `restclient`태그 각 MVC 요청에 대해 기록 될 것입니다 :
+스프링 AOP가 활성화되어있는 경우 `org.aspectj:aspectjweaver`런타임 클래스 경로에 존재하는, Spring Cloud도로 만든 모든 클라이언트 호출에 대한 통계를 수집합니다 `RestTemplate`. 의 이름을 가진 서보 타이머 `restclient`태그 각 MVC 요청에 대해 기록 될 것입니다 :
 
 
 
-<div class="olist arabic">
+
 
 1.  HTTP 메소드
 
@@ -5238,11 +5234,11 @@ Spectator 용어에서 미터는 명명 된, 입력 된 및 태그가있는 구�
 
 
 
-봄 구름 관객 통합은 주사 구성 `com.netflix.spectator.api.Registry`당신을 위해 인스턴스를. 구체적으로는 구성 `ServoRegistry`REST 통계의 수집 및 하나의 서보 API에서 아틀라스 백엔드에 대한 메트릭의 수출을 통합하기 위해 인스턴스를. 실제로,이 코드가 서보 모니터와 구경꾼 미터 모두 봄 부팅 액추에이터에 의해 훔쳐됩니다의 혼합물을 사용할 수 있다는 것을 의미 `MetricReader`인스턴스와 모두 아틀라스 백엔드로 배송됩니다.
+Spring Cloud 관객 통합은 주사 구성 `com.netflix.spectator.api.Registry`당신을 위해 인스턴스를. 구체적으로는 구성 `ServoRegistry`REST 통계의 수집 및 하나의 서보 API에서 아틀라스 백엔드에 대한 메트릭의 수출을 통합하기 위해 인스턴스를. 실제로,이 코드가 서보 모니터와 구경꾼 미터 모두 봄 부팅 액추에이터에 의해 훔쳐됩니다의 혼합물을 사용할 수 있다는 것을 의미 `MetricReader`인스턴스와 모두 아틀라스 백엔드로 배송됩니다.
 
 
 
-<div class="sect3">
+
 
 #### 관중 카운터
 
@@ -5273,7 +5269,7 @@ Spectator 용어에서 미터는 명명 된, 입력 된 및 태그가있는 구�
 
 
 
-<div class="sect3">
+
 
 #### 관중 타이머
 
@@ -5324,7 +5320,7 @@ image :: RequestLatency.png []
 
 
 
-<div class="sect3">
+
 
 #### 스펙 테이터 게이지
 
@@ -5356,7 +5352,7 @@ image :: RequestLatency.png []
 
 
 
-<div class="sect3">
+
 
 #### 관람객 분포 요약
 
@@ -5386,27 +5382,27 @@ image :: RequestLatency.png []
 
 ### 통계 수집 : 서보
 
-<div class="admonitionblock warning">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 경고
 
-</td>
 
-<td class="content">코드가 Java 8에서 컴파일 된 경우, 관측자로 Servo 대신 Spectator를 사용하면 장기간에 걸쳐 Servo를 완전히 대체 할 예정입니다.</td>
 
-</tr>
+<td class="content">코드가 Java 8에서 컴파일 된 경우, 관측자로 Servo 대신 Spectator를 사용하면 장기간에 걸쳐 Servo를 완전히 대체 할 예정입니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -5422,7 +5418,7 @@ Servo 구문에서 모니터는 명명 된 유형 지정 및 태그가 지정된
 
 
 
-<div class="sect3">
+
 
 #### 서보 모니터 만들기
 
@@ -5478,7 +5474,7 @@ Atlas는 운영 정보를 캡처합니다. 비즈니스 인텔리전스는 추�
 
 
 
-<div class="sect3">
+
 
 #### 글로벌 태그
 
@@ -5510,7 +5506,7 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-<div class="sect3">
+
 
 #### Atlas 사용
 
@@ -5531,27 +5527,27 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">r3.2xlarge (61GB RAM)에서 실행되는 Atlas 독립형 노드는 주어진 6 시간 동안 분당 약 2 백만 개의 메트릭을 처리 할 수 ​​있습니다.</td>
 
-</tr>
+<td class="content">r3.2xlarge (61GB RAM)에서 실행되는 Atlas 독립형 노드는 주어진 6 시간 동안 분당 약 2 백만 개의 메트릭을 처리 할 수 ​​있습니다.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -5571,27 +5567,27 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-<div class="admonitionblock tip">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 팁
 
-</td>
 
-<td class="content">서비스에 대해 여러 요청을 실행 한 후 브라우저에 다음 URL을 붙여 넣어 요청의 대기 시간에 대한 몇 가지 기본적인 정보를 수집 할 수 있습니다. `[http://ATLAS/api/v1/graph?q=name,rest,:eq,:avg](http://atlas/api/v1/graph?q=name,rest,:eq,:avg)`</td>
 
-</tr>
+<td class="content">서비스에 대해 여러 요청을 실행 한 후 브라우저에 다음 URL을 붙여 넣어 요청의 대기 시간에 대한 몇 가지 기본적인 정보를 수집 할 수 있습니다. `[http://ATLAS/api/v1/graph?q=name,rest,:eq,:avg](http://atlas/api/v1/graph?q=name,rest,:eq,:avg)`
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -5617,7 +5613,7 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 # 스프링 클라우드 버스
 
-<div class="openblock partintro">
+
 
 
 
@@ -5645,7 +5641,7 @@ Spring Cloud Bus는 분산 시스템의 노드를 간단한 메시지 브로커�
 
 
 
-스프링 클라우드 버스는 클래스 패스에서 자체를 감지하면 스프링 부트 자동 구성을 추가하여 작동합니다. 당신이 버스를 활성화 할 필요가 추가하는 것입니다 `spring-cloud-starter-bus-amqp`귀하의 의존성 관리와 봄 구름은 나머지 처리합니다. 확인 RabbitMQ를 사용할 수 있는지 확인하고 제공하도록 구성된 `ConnectionFactory`: 당신은 아무것도 할 필요가 없습니다 로컬 호스트에서 실행하지만, 브로커 자격 증명을 정의하는 봄 클라우드 커넥터, 또는 봄 부팅 규칙을 사용하여 원격으로 실행하는 경우 예를 들어,
+스프링 클라우드 버스는 클래스 패스에서 자체를 감지하면 스프링 부트 자동 구성을 추가하여 작동합니다. 당신이 버스를 활성화 할 필요가 추가하는 것입니다 `spring-cloud-starter-bus-amqp`귀하의 의존성 관리와 Spring Cloud은 나머지 처리합니다. 확인 RabbitMQ를 사용할 수 있는지 확인하고 제공하도록 구성된 `ConnectionFactory`: 당신은 아무것도 할 필요가 없습니다 로컬 호스트에서 실행하지만, 브로커 자격 증명을 정의하는 봄 클라우드 커넥터, 또는 봄 부팅 규칙을 사용하여 원격으로 실행하는 경우 예를 들어,
 
 
 
@@ -5809,27 +5805,27 @@ application.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">모든 버스 응용 프로그램은 acks를 추적 할 수 있지만 때때로 데이터에 대해 더 복잡한 쿼리를 수행 할 수있는 중앙 서비스에서이 작업을 수행하는 것이 유용합니다. 또는 특수화 된 추적 서비스로 전달하십시오.</td>
 
-</tr>
+<td class="content">모든 버스 응용 프로그램은 acks를 추적 할 수 있지만 때때로 데이터에 대해 더 복잡한 쿼리를 수행 할 수있는 중앙 서비스에서이 작업을 수행하는 것이 유용합니다. 또는 특수화 된 추적 서비스로 전달하십시오.
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -5839,13 +5835,13 @@ application.yml
 
 # 스프링 부트 클라우드 CLI
 
-<div class="openblock partintro">
 
 
 
 
 
-봄 부팅 CLI가 제공하는 [봄 부트](http://projects.spring.io/spring-boot) 에 대한 명령 줄 기능을 [봄 구름](https://github.com/spring-cloud) . 당신은 봄 클라우드 구성 요소 응용 프로그램을 실행하는 데 (예를 그루비 스크립트를 작성할 수 있습니다 `@EnableEurekaServer`). 또한 암호화 및 복호화와 같은 작업을 수행하여 비밀 구성 값으로 Spring Cloud Config 클라이언트를 지원할 수 있습니다.
+
+봄 부팅 CLI가 제공하는 [봄 부트](http://projects.spring.io/spring-boot) 에 대한 명령 줄 기능을 [Spring Cloud](https://github.com/spring-cloud) . 당신은 봄 클라우드 구성 요소 응용 프로그램을 실행하는 데 (예를 그루비 스크립트를 작성할 수 있습니다 `@EnableEurekaServer`). 또한 암호화 및 복호화와 같은 작업을 수행하여 비밀 구성 값으로 Spring Cloud Config 클라이언트를 지원할 수 있습니다.
 
 
 
@@ -5871,7 +5867,7 @@ application.yml
 
 
 
-<div class="literalblock">
+
 
 
 
@@ -5916,27 +5912,27 @@ Spring Cloud 플러그인을 설치한다.
 
 
 
-<div class="admonitionblock important">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 중대한
 
-</td>
 
-<td class="content">**전제 조건 :** 당신이 당신의 JVM에 설치된 전체 강도 JCE를 필요로하는 암호화 및 복호화 기능 (기본값이 아닙니다)를 사용합니다. Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).</td>
 
-</tr>
+<td class="content">**전제 조건 :** 당신이 당신의 JVM에 설치된 전체 강도 JCE를 필요로하는 암호화 및 복호화 기능 (기본값이 아닙니다)를 사용합니다. Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -5952,7 +5948,7 @@ Spring Cloud 플러그인을 설치한다.
 
 
 
-봄 클라우드 CLI는 같은과 봄 구름 선언적 기능의 대부분에 대한 지원이 `@Enable*`주석의 클래스를. 예를 들어, 다음은 유레카 서버입니다.
+봄 클라우드 CLI는 같은과 Spring Cloud 선언적 기능의 대부분에 대한 지원이 `@Enable*`주석의 클래스를. 예를 들어, 다음은 유레카 서버입니다.
 
 
 
@@ -6060,7 +6056,7 @@ AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...</pre>
 
 # 스프링 클라우드 보안
 
-<div class="openblock partintro">
+
 
 
 
@@ -6196,27 +6192,27 @@ application.yml
 
 
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
+
+
+
+
 
 <td class="icon">
 
 노트
 
-</td>
 
-<td class="content">위의 예는 모두 Groovy 스크립트입니다. 자바 (또는 그루비)에서 동일한 코드를 작성하려는 경우에는 (예를 들어 볼 수있는 클래스 패스에 봄 보안 OAuth2를 추가 할 필요가 [여기에 샘플](https://github.com/spring-cloud-samples/sso) ).</td>
 
-</tr>
+<td class="content">위의 예는 모두 Groovy 스크립트입니다. 자바 (또는 그루비)에서 동일한 코드를 작성하려는 경우에는 (예를 들어 볼 수있는 클래스 패스에 봄 보안 OAuth2를 추가 할 필요가 [여기에 샘플](https://github.com/spring-cloud-samples/sso) ).
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -6292,27 +6288,27 @@ application.yml
 
 ### 단일 사인온
 
-<div class="admonitionblock note">
 
-<table>
 
-<tbody>
 
-<tr>
 
-<td class="icon">
+
+
+
+
+
 
 노트
 
-</td>
 
-<td class="content">OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 이전되었습니다. 당신은에서 문서를 찾을 수 있습니다 [봄 부팅 사용자 설명서를](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) .</td>
 
-</tr>
+OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 이전되었습니다. 당신은에서 문서를 찾을 수 있습니다 [봄 부팅 사용자 설명서를](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) .
 
-</tbody>
 
-</table>
+
+
+
+
 
 
 
@@ -6328,13 +6324,13 @@ application.yml
 
 
 
-<div class="sect3">
+
 
 #### 클라이언트 토큰 릴레이
 
 
 
-앱이있는 경우 [봄 구름 Zuul](http://cloud.spring.io/spring-cloud.html#netflix-zuul-reverse-proxy) (사용 포함 된 역방향 프록시를 `@EnableZuulProxy`) 다음은 프록시 된 서비스 하류 OAuth2를 액세스 토큰을 전달하도록 요청할 수 있습니다. 따라서 위의 SSO 앱은 다음과 같이 간단하게 향상시킬 수 있습니다.
+앱이있는 경우 [Spring Cloud Zuul](http://cloud.spring.io/spring-cloud.html#netflix-zuul-reverse-proxy) (사용 포함 된 역방향 프록시를 `@EnableZuulProxy`) 다음은 프록시 된 서비스 하류 OAuth2를 액세스 토큰을 전달하도록 요청할 수 있습니다. 따라서 위의 SSO 앱은 다음과 같이 간단하게 향상시킬 수 있습니다.
 
 
 
@@ -6369,13 +6365,13 @@ app.groovy
 
 
 
-<div class="sect3">
+
 
 #### 리소스 서버 토큰 릴레이
 
 
 
-앱이있는 경우 `@EnableOAuth2Resource`또한 클라이언트 (즉, 그것은을 가지고있다 `spring.oauth2.client.clientId`그것을 사용하지 않는 경우에도), 다음 `OAuth2RestOperations`그 제공된다 `@Autowired` (이로 선언 봄 구름에 의해 사용자 `@Primary`도) 앞으로 토큰을 것입니다. 당신은 토큰을 전달하지 않으려는 (당신이 아니라 당신에게 토큰을 보낸 클라이언트보다, 자신의 역할을 할 수 있으므로 즉, 올바른 선택입니다) 당신은 당신의 자신을 만들 필요가있는 경우 `OAuth2RestOperations`대신 기본 autowiring에 하나. 다음은 autowired 나머지 템플릿 ( "foo.com"은 주변 서버와 동일한 토큰을 허용하는 리소스 서버)의 사용을 보여주는 기본 예제입니다.
+앱이있는 경우 `@EnableOAuth2Resource`또한 클라이언트 (즉, 그것은을 가지고있다 `spring.oauth2.client.clientId`그것을 사용하지 않는 경우에도), 다음 `OAuth2RestOperations`그 제공된다 `@Autowired` (이로 선언 Spring Cloud에 의해 사용자 `@Primary`도) 앞으로 토큰을 것입니다. 당신은 토큰을 전달하지 않으려는 (당신이 아니라 당신에게 토큰을 보낸 클라이언트보다, 자신의 역할을 할 수 있으므로 즉, 올바른 선택입니다) 당신은 당신의 자신을 만들 필요가있는 경우 `OAuth2RestOperations`대신 기본 autowiring에 하나. 다음은 autowired 나머지 템플릿 ( "foo.com"은 주변 서버와 동일한 토큰을 허용하는 리소스 서버)의 사용을 보여주는 기본 예제입니다.
 
 
 
@@ -6454,43 +6450,31 @@ application.yml
 
 
 
-<div id="footer">
 
-<div id="footer-text">최종 업데이트 : 2016-01-26 10:56:04 UTC
-
+최종 업데이트 : 2016-01-26 10:56:04 UTC
 
 
-<script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
 
-<div id="goog-gt-tt" class="goog-tooltip skiptranslate" dir="ltr" style="visibility: hidden; left: 376px; top: 1708px; display: none;">
 
-<div style="padding: 8px;">
-
-<div>
-
-<div class="logo">![Google 번역](./md-images/translate_24dp.png)
+![Google 번역](./md-images/translate_24dp.png)
 
 
 
 
 
-<div class="top" style="padding: 8px; float: left; width: 100%;">
+
 
 # 원본 텍스트
 
 
 
-<div class="middle" style="padding: 8px;">
-
-<div class="original-text">Spring Boot has an opinionated view of how to build an application with Spring: for instance it has conventional locations for common configuration file, and endpoints for common management and monitoring tasks.
 
 
+Spring Boot has an opinionated view of how to build an application with Spring: for instance it has conventional locations for common configuration file, and endpoints for common management and monitoring tasks.
 
-<div class="bottom" style="padding: 8px;">
 
-<div class="activity-links"><span class="activity-link">번역 제안하기</span><span class="activity-link"></span>
 
-<div class="started-activity-container">
+
 
 * * *
 
