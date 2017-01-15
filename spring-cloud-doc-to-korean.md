@@ -3310,7 +3310,7 @@ Eureka 서버에는 백엔드 저장소가 없지만 레지스트리의 서비�
 
 <div class="imageblock">
 
-<div class="content">![HystrixGraph](./bbb_files/HystrixGraph.png)</div>
+<div class="content">![HystrixGraph](./md-images/HystrixGraph.png)</div>
 
 <div class="title">그림 1\. 마이크로 서비스 그래프</div>
 
@@ -3324,7 +3324,7 @@ Eureka 서버에는 백엔드 저장소가 없지만 레지스트리의 서비�
 
 <div class="imageblock">
 
-<div class="content">![HystrixFallback](./bbb_files/HystrixFallback.png)</div>
+<div class="content">![HystrixFallback](./md-images/HystrixFallback.png)</div>
 
 <div class="title">그림 2\. Hystrix 폴백으로 계단식 오류 방지</div>
 
@@ -3491,7 +3491,7 @@ Hystrix의 주요 이점 중 하나는 각 HystrixCommand에 대해 수집하는
 
 <div class="imageblock">
 
-<div class="content">![Hystrix](./bbb_files/Hystrix.png)</div>
+<div class="content">![Hystrix](./md-images/Hystrix.png)</div>
 
 <div class="title">그림 3\. Hystrix 대시 보드</div>
 
@@ -6468,7 +6468,7 @@ OAuth2 토큰을 사용하여 API 리소스를 보호하고 싶습니까? 다음
 
 <div>
 
-<div class="logo">![Google 번역](./bbb_files/translate_24dp.png)</div>
+<div class="logo">![Google 번역](./md-images/translate_24dp.png)</div>
 
 </div>
 
