@@ -21,23 +21,12 @@ http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
 유레카는 Netflix 서비스 검색 서버 및 클라이언트입니다.서버는 등록 된 서비스에 대한 상태를 다른 서버로 복제하여 각 서버가 고 가용성으로 구성 및 배치 할 수 있습니다.
 
 
-
-
 ### 유레카 클라이언트를 포함시키는 방법
 
-
-
-프로젝트에서 유레카 클라이언트를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-eureka`.참고 항목[봄 클라우드 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 봄 클라우드 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
-
-
-
-
-
+프로젝트에서 유레카 클라이언트를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-eureka`.참고 항목[Spring Cloud 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 Spring Cloud 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
 
 
 ### 유레카 등록
-
-
 
 클라이언트가 유레카에 등록하면 호스트 및 포트, 상태 표시기 URL, 홈 페이지 등과 같은 메타 데이터를 제공합니다. 유레카는 서비스에 속한 각 인스턴스에서 하트 비트 메시지를받습니다.하트 비트가 구성 가능한 시간표에 실패하면 보통 인스턴스는 레지스트리에서 제거됩니다.
 
@@ -374,13 +363,13 @@ Cloudfoundry 인스턴스에서 보안 규칙을 설정하는 방법에 따라 �
 
 
 
-바닐라 넷플 릭스 유레카 인스턴스는 호스트 이름과 동일한 ID로 등록됩니다 (예 : 호스트 당 하나의 서비스 만).봄 클라우드 유레카는 다음과 같다 재치있는 기본을 제공합니다`${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}}`.예를 들어`myhost:myappname:8080`.
+바닐라 넷플 릭스 유레카 인스턴스는 호스트 이름과 동일한 ID로 등록됩니다 (예 : 호스트 당 하나의 서비스 만).Spring Cloud 유레카는 다음과 같다 재치있는 기본을 제공합니다`${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}}`.예를 들어`myhost:myappname:8080`.
 
 
 
 
 
-봄 클라우드를 사용하여 당신의 고유 식별자를 제공하여이를 대체 할 수 있습니다`eureka.instance.instanceId`.예 :
+Spring Cloud를 사용하여 당신의 고유 식별자를 제공하여이를 대체 할 수 있습니다`eureka.instance.instanceId`.예 :
 
 
 
@@ -467,7 +456,7 @@ public String serviceUrl () {InstanceInfo 인스턴스 = discoveryClient.getNext
 
 
 
-넌 넷플릭스 원재료를 사용하지 않은`EurekaClient`보통 일종의 래퍼 뒤에 사용하는 것이 더 편리하다.봄 클라우드에 대한 지원이[척하기](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html#spring-cloud-feign)(A REST 클라이언트 빌더)도[스프링`RestTemplate`](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html#spring-cloud-ribbon)대신 실제 URL의 논리적 인 유레카 서비스 식별자 (VIP를) 사용합니다.당신은 간단하게 설정할 수있는 물리적 서버의 고정 목록 리본을 구성하려면`<client>.ribbon.listOfServers`물리적 주소 (또는 호스트 이름)의 쉼표로 구분 된 목록에`<client>`클라이언트의 ID입니다.
+넌 넷플릭스 원재료를 사용하지 않은`EurekaClient`보통 일종의 래퍼 뒤에 사용하는 것이 더 편리하다.Spring Cloud에 대한 지원이[척하기](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html#spring-cloud-feign)(A REST 클라이언트 빌더)도[스프링`RestTemplate`](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html#spring-cloud-ribbon)대신 실제 URL의 논리적 인 유레카 서비스 식별자 (VIP를) 사용합니다.당신은 간단하게 설정할 수있는 물리적 서버의 고정 목록 리본을 구성하려면`<client>.ribbon.listOfServers`물리적 주소 (또는 호스트 이름)의 쉼표로 구분 된 목록에`<client>`클라이언트의 ID입니다.
 
 
 
@@ -576,7 +565,7 @@ Eureka 클라이언트를 여러 영역에 배치 한 경우 다른 영역에서
 
 
 
-프로젝트에서 유레카 서버를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-eureka-server`.참고 항목[봄 클라우드 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 봄 클라우드 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
+프로젝트에서 유레카 서버를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-eureka-server`.참고 항목[Spring Cloud 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 Spring Cloud 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
 
 
 
@@ -834,7 +823,7 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 
 
-프로젝트에 Hystrix을 포함하려면 그룹 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-hystrix`.참고 항목[봄 클라우드 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 봄 클라우드 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
+프로젝트에 Hystrix을 포함하려면 그룹 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-hystrix`.참고 항목[Spring Cloud 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 Spring Cloud 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
 
 
 
@@ -997,7 +986,7 @@ Hystrix의 주요 이점 중 하나는 각 HystrixCommand에 대해 수집하는
 
 
 
-프로젝트에서 Hystrix 대시 보드를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-hystrix-dashboard`.참고 항목[봄 클라우드 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 봄 클라우드 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
+프로젝트에서 Hystrix 대시 보드를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-hystrix-dashboard`.참고 항목[Spring Cloud 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 Spring Cloud 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
 
 
 
@@ -1109,7 +1098,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-봄 클라우드가 제공하는`spring-cloud-starter-turbine`당신은 터빈 서버를 실행 얻기 위해 필요한 모든 종속성을 갖는다.그냥 봄 부팅 응용 프로그램을 작성하고 그것을 주석`@EnableTurbine`.
+Spring Cloud가 제공하는`spring-cloud-starter-turbine`당신은 터빈 서버를 실행 얻기 위해 필요한 모든 종속성을 갖는다.그냥 봄 부팅 응용 프로그램을 작성하고 그것을 주석`@EnableTurbine`.
 
 
 
@@ -1145,7 +1134,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-일부 환경 (예 : PaaS 설정)에서는 모든 분산 Hystrix 명령에서 메트릭을 가져 오는 클래식 터빈 모델이 작동하지 않습니다.이 경우 Hystrix가 Turbine에 메트릭을 푸시하도록 할 수 있으며 Spring Cloud는 메시징으로이를 지원합니다.클라이언트에서 수행 할 필요가에 종속성을 추가입니다`spring-cloud-netflix-hystrix-stream`및`spring-cloud-starter-stream-*`당신의 선택의 (브로커에 대한 자세한 내용은 봄 클라우드 스트림 설명서를 참조하는 방법과 클라이언트 자격 증명을 구성하는,하지만 로컬 브로커 상자 밖으로 작동합니다 ).
+일부 환경 (예 : PaaS 설정)에서는 모든 분산 Hystrix 명령에서 메트릭을 가져 오는 클래식 터빈 모델이 작동하지 않습니다.이 경우 Hystrix가 Turbine에 메트릭을 푸시하도록 할 수 있으며 Spring Cloud는 메시징으로이를 지원합니다.클라이언트에서 수행 할 필요가에 종속성을 추가입니다`spring-cloud-netflix-hystrix-stream`및`spring-cloud-starter-stream-*`당신의 선택의 (브로커에 대한 자세한 내용은 Spring Cloud 스트림 설명서를 참조하는 방법과 클라이언트 자격 증명을 구성하는,하지만 로컬 브로커 상자 밖으로 작동합니다 ).
 
 
 
@@ -1163,7 +1152,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-봄 클라우드가 제공하는`spring-cloud-starter-turbine-stream`단지 예를 들어, 당신의 선택의 스트림 바인더를 추가 - 당신은 터빈 스트림 서버를 실행 얻기 위해 필요한 모든 종속성을 갖는다`spring-cloud-starter-stream-rabbit`.Netty 기반이기 때문에 Java 8이 필요합니다.
+Spring Cloud가 제공하는`spring-cloud-starter-turbine-stream`단지 예를 들어, 당신의 선택의 스트림 바인더를 추가 - 당신은 터빈 스트림 서버를 실행 얻기 위해 필요한 모든 종속성을 갖는다`spring-cloud-starter-stream-rabbit`.Netty 기반이기 때문에 Java 8이 필요합니다.
 
 
 
@@ -1197,7 +1186,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-프로젝트에 리본을 포함하려면 그룹 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-ribbon`.참고 항목[봄 클라우드 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 봄 클라우드 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
+프로젝트에 리본을 포함하려면 그룹 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-ribbon`.참고 항목[Spring Cloud 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 Spring Cloud 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
 
 
 
@@ -1264,7 +1253,7 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
-봄 클라우드 넷플릭스는 리본 기본적으로 (다음 콩을 제공`BeanType`beanName에을 :`ClassName`)
+Spring Cloud 넷플릭스는 리본 기본적으로 (다음 콩을 제공`BeanType`beanName에을 :`ClassName`)
 
 
 
@@ -1561,7 +1550,7 @@ application.yml
 
 
 
-프로젝트에 척하기를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-feign`.참고 항목[봄 클라우드 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 봄 클라우드 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
+프로젝트에 척하기를 포함하는 그룹과 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-feign`.참고 항목[Spring Cloud 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 Spring Cloud 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
 
 
 
@@ -1637,7 +1626,7 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-봄 클라우드는 (의 위에 추가 구성 선언함으로써 꾀병 클라이언트의 전체 제어 할 수 있습니다`FeignClientsConfiguration`) 사용하여`@FeignClient`.예:
+Spring Cloud는 (의 위에 추가 구성 선언함으로써 꾀병 클라이언트의 전체 제어 할 수 있습니다`FeignClientsConfiguration`) 사용하여`@FeignClient`.예:
 
 
 
@@ -1753,7 +1742,7 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-봄 클라우드 넷플릭스는 꾀병을 위해 기본적으로 다음 콩 제공 (`BeanType`beanName에을 :`ClassName`)
+Spring Cloud 넷플릭스는 꾀병을 위해 기본적으로 다음 콩 제공 (`BeanType`beanName에을 :`ClassName`)
 
 
 
@@ -1781,7 +1770,7 @@ OkHttpClient 및 ApacheHttpClient는 고객이 설정하여 사용할 수있는 
 
 
 
-봄 클라우드 넷플릭스는_하지 않습니다_꾀병 기본적으로 다음 콩을 제공하지만 여전히 꾀병 클라이언트를 만들 수있는 응용 프로그램 컨텍스트에서 이러한 종류의 콩을 검색 :
+Spring Cloud 넷플릭스는_하지 않습니다_꾀병 기본적으로 다음 콩을 제공하지만 여전히 꾀병 클라이언트를 만들 수있는 응용 프로그램 컨텍스트에서 이러한 종류의 콩을 검색 :
 
 
 
@@ -1946,7 +1935,7 @@ application.yml
 
 
 
-<td class="content">위의 예에서`FeignClientsConfiguration.class`봄 클라우드 넷플릭스가 제공하는 기본 구성입니다.
+<td class="content">위의 예에서`FeignClientsConfiguration.class`Spring Cloud 넷플릭스가 제공하는 기본 구성입니다.
 
 
 
@@ -2456,7 +2445,7 @@ Zuul의 규칙 엔진을 사용하면 규칙과 필터를 Java 및 Groovy에 대
 
 
 
-프로젝트에 Zuul을 포함하려면 그룹 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-zuul`.참고 항목[봄 클라우드 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 봄 클라우드 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
+프로젝트에 Zuul을 포함하려면 그룹 스타터 사용`org.springframework.cloud`및 이슈 ID를`spring-cloud-starter-zuul`.참고 항목[Spring Cloud 프로젝트 페이지](http://projects.spring.io/spring-cloud/)현재 Spring Cloud 출시 기차와 빌드 시스템 설정에 대한 자세한 내용을.
 
 
 
@@ -3161,7 +3150,7 @@ application.yml
 
 
 
-봄 클라우드에 대한 Zuul이 다수 포함되어`ZuulFilter`모두 프록시 서버 모드에서 기본적으로 활성화 콩.참조[zuul 필터 패키지를](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/zuul/filters)사용할 수 있습니다 가능한 필터에 대해.당신이 하나를 사용하지 않으려면, 간단하게 설정`zuul.<SimpleClassName>.<filterType>.disable=true`.관례 적으로, 패키지는 후`filters`Zuul 필터 유형입니다.예를 들어 사용하지 않도록 설정하는`org.springframework.cloud.netflix.zuul.filters.post.SendResponseFilter`설정`zuul.SendResponseFilter.post.disable=true`.
+Spring Cloud에 대한 Zuul이 다수 포함되어`ZuulFilter`모두 프록시 서버 모드에서 기본적으로 활성화 콩.참조[zuul 필터 패키지를](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/zuul/filters)사용할 수 있습니다 가능한 필터에 대해.당신이 하나를 사용하지 않으려면, 간단하게 설정`zuul.<SimpleClassName>.<filterType>.disable=true`.관례 적으로, 패키지는 후`filters`Zuul 필터 유형입니다.예를 들어 사용하지 않도록 설정하는`org.springframework.cloud.netflix.zuul.filters.post.SendResponseFilter`설정`zuul.SendResponseFilter.post.disable=true`.
 
 
 
@@ -3255,7 +3244,7 @@ Zuul에 주어진 경로에 대한 회로가 트립되면 당신은 타입의 �
 
 
 
-Eureka, Ribbon 및 Config Server를 활용하고자하는 jvm이 아닌 언어를 사용합니까?봄 클라우드 넷플릭스 사이드카가 영감을받은[넷플릭스 프라나](https://github.com/Netflix/Prana).여기에는 주어진 서비스에 대한 모든 인스턴스 (예 : 호스트 및 포트)를 가져 오는 간단한 http API가 포함되어 있습니다.Eureka에서 경로 항목을 가져온 Zuul 프록시를 통해 서비스 호출을 프록시 할 수도 있습니다.Spring Cloud Config Server는 호스트 조회 또는 Zuul 프록시를 통해 직접 액세스 할 수 있습니다.비 jvm 앱은 헬스 체크를 구현하여 앱이 위 또는 아래로 움직이는 경우 사이드카가 eureka에보고 할 수 있도록해야합니다.
+Eureka, Ribbon 및 Config Server를 활용하고자하는 jvm이 아닌 언어를 사용합니까?Spring Cloud 넷플릭스 사이드카가 영감을받은[넷플릭스 프라나](https://github.com/Netflix/Prana).여기에는 주어진 서비스에 대한 모든 인스턴스 (예 : 호스트 및 포트)를 가져 오는 간단한 http API가 포함되어 있습니다.Eureka에서 경로 항목을 가져온 Zuul 프록시를 통해 서비스 호출을 프록시 할 수도 있습니다.Spring Cloud Config Server는 호스트 조회 또는 Zuul 프록시를 통해 직접 액세스 할 수 있습니다.비 jvm 앱은 헬스 체크를 구현하여 앱이 위 또는 아래로 움직이는 경우 사이드카가 eureka에보고 할 수 있도록해야합니다.
 
 
 
@@ -3399,7 +3388,7 @@ Zuul 프록시 자동으로 유레카에 공지 된 각 서비스에 대한 경�
 
 
 
-봄 클라우드 넷플릭스는 포함[RxJava을](https://github.com/ReactiveX/RxJava).
+Spring Cloud 넷플릭스는 포함[RxJava을](https://github.com/ReactiveX/RxJava).
 
 
 
@@ -3415,7 +3404,7 @@ Zuul 프록시 자동으로 유레카에 공지 된 각 서비스에 대한 경�
 
 
 
-봄 클라우드 넷플릭스는 반환에 대한 지원 제공`rx.Single`스프링 MVC 컨트롤러에서 개체를.또한 사용 지원`rx.Observable`을위한 객체[서버 전송 이벤트 (SSE)를](https://en.wikipedia.org/wiki/Server-sent_events).내부 API를 이미 (참조 RxJava를 사용하여 구축하는 경우 이것은 매우 편리 할 수 있습니다[척하기 Hystrix 지원](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html#spring-cloud-feign-hystrix)예를 들어).
+Spring Cloud 넷플릭스는 반환에 대한 지원 제공`rx.Single`스프링 MVC 컨트롤러에서 개체를.또한 사용 지원`rx.Observable`을위한 객체[서버 전송 이벤트 (SSE)를](https://en.wikipedia.org/wiki/Server-sent_events).내부 API를 이미 (참조 RxJava를 사용하여 구축하는 경우 이것은 매우 편리 할 수 있습니다[척하기 Hystrix 지원](http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html#spring-cloud-feign-hystrix)예를 들어).
 
 
 
@@ -3631,7 +3620,7 @@ Netflix Servo 또는 Spectator로 기록한 위에 설명 된 루트 끝점의 �
 
 
 
-추가 종속성 또는 구성하지 않고, 봄 클라우드 기반 서비스는 서보 자동 구성됩니다`MonitorRegistry`모든 스프링 MVC 요청에 대한 통계 수집을 시작.기본적으로, 이름 서보 타이머`rest`태그 MVC 각 요청에 대해 기록한다 :
+추가 종속성 또는 구성하지 않고, Spring Cloud 기반 서비스는 서보 자동 구성됩니다`MonitorRegistry`모든 스프링 MVC 요청에 대한 통계 수집을 시작.기본적으로, 이름 서보 타이머`rest`태그 MVC 각 요청에 대해 기록한다 :
 
 
 
@@ -3786,7 +3775,7 @@ Spectator 용어에서 미터는 명명 된, 입력 된 및 태그가있는 구�
 
 
 
-타이머는 일부 이벤트가 얼마나 오래 걸리는지 측정하는 데 사용됩니다.봄 클라우드는 자동으로 조건부 스프링 MVC 요청과에 대한 타이머 기록`RestTemplate`후 대기 시간 등의 요청 관련 통계에 대한 대시 보드를 만들 수 있습니다 요청을 :
+타이머는 일부 이벤트가 얼마나 오래 걸리는지 측정하는 데 사용됩니다.Spring Cloud는 자동으로 조건부 스프링 MVC 요청과에 대한 타이머 기록`RestTemplate`후 대기 시간 등의 요청 관련 통계에 대한 대시 보드를 만들 수 있습니다 요청을 :
 
 
 
@@ -3925,7 +3914,7 @@ Servo 구문에서 모니터는 명명 된 유형 지정 및 태그가 지정된
 
 
 
-봄 클라우드 통합은 주사 구성`com.netflix.servo.MonitorRegistry`당신을 위해 인스턴스를.적절한 만든 후에`Monitor`서보의 유형을, 데이터를 기록하는 과정은 관객에 전적으로 유사하다.
+Spring Cloud 통합은 주사 구성`com.netflix.servo.MonitorRegistry`당신을 위해 인스턴스를.적절한 만든 후에`Monitor`서보의 유형을, 데이터를 기록하는 과정은 관객에 전적으로 유사하다.
 
 
 
@@ -3935,7 +3924,7 @@ Servo 구문에서 모니터는 명명 된 유형 지정 및 태그가 지정된
 
 
 
-당신은 서보 사용하는 경우`MonitorRegistry`(특히, 인스턴스 봄 클라우드에서 제공하는 인스턴스`DefaultMonitorRegistry`), 서보 검색 편의 클래스를 제공[카운터](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamiccounter)및[타이머를](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamictimer).이러한 편리한 클래스는 하나가되도록`Monitor`이름과 태그의 고유 한 각 조합에 등록됩니다.
+당신은 서보 사용하는 경우`MonitorRegistry`(특히, 인스턴스 Spring Cloud에서 제공하는 인스턴스`DefaultMonitorRegistry`), 서보 검색 편의 클래스를 제공[카운터](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamiccounter)및[타이머를](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamictimer).이러한 편리한 클래스는 하나가되도록`Monitor`이름과 태그의 고유 한 각 조합에 등록됩니다.
 
 
 
@@ -3981,7 +3970,7 @@ Atlas는 운영 정보를 캡처합니다.비즈니스 인텔리전스는 추세
 
 
 
-봄 클라우드가 제공하는`spring-cloud-starter-atlas`당신이 필요로하는 모든 종속성을 갖는다.그런 다음 귀하의 봄 부팅 응용 프로그램을 주석`@EnableAtlas`과와 실행 아틀라스 서버의 위치를 제공하는`netflix.atlas.uri`속성입니다.
+Spring Cloud가 제공하는`spring-cloud-starter-atlas`당신이 필요로하는 모든 종속성을 갖는다.그런 다음 귀하의 봄 부팅 응용 프로그램을 주석`@EnableAtlas`과와 실행 아틀라스 서버의 위치를 제공하는`netflix.atlas.uri`속성입니다.
 
 
 
