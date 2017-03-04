@@ -9331,18 +9331,11 @@ Spring Cloud Stream 애플리케이션이 Spring Cloud Data Flow를 통해 배�
 
 #### 파티셔닝을위한 출력 바인딩 구성
 
-
-
 An output binding is configured to send partitioned data by setting one and only one of its `partitionKeyExpression` or `partitionKeyExtractorClass` properties, as well as its `partitionCount` property. For example, the following is a valid and typical configuration:
 
 
-
-
-
-
-
-```spring.cloud.stream.bindings.output.producer.partitionKeyExpression=payload.id
-spring.cloud.stream.bindings.output.producer.partitionCount=5```
+    spring.cloud.stream.bindings.output.producer.partitionKeyExpression=payload.id
+    spring.cloud.stream.bindings.output.producer.partitionCount=5
 
 
 
