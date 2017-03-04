@@ -14011,159 +14011,18 @@ Launcher CLI를 사용하여 Eureka, Config Server 등의 공통 서비스를 �
 
 지원되는 배치의 요약 :
 
+| Service          | Name              | Address                                                                                                                           | Description                                                                                                                                                                                                         |
+|------------------|-------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| eureka           | Eureka Server     | http://localhost:8761                                                | Eureka server for service registration and discovery. All the other services show up in its catalog by default.                                                                                                     |
+| configserver     | Config Server     | http://localhost:8888                                                | Spring Cloud Config Server running in the “native” profile and serving configuration from the local directory ./launcher                                                                                            |
+| h2               | H2 Database       | http://localhost:9095 (console), jdbc:h2:tcp://localhost:9096/{data} | Relation database service. Use a file path for `{data}` (e.g. `./target/test`) when you connect. Remember that you can add `;MODE=MYSQL` or `;MODE=POSTGRESQL` to connect with compatibility to other server types. |
+| kafka            | Kafka Broker      | http://localhost:9091 (actuator endpoints), localhost:9092           |                                                                                                                                                                                                                     |
+| hystrixdashboard | Hystrix Dashboard | http://localhost:7979                                                | Any Spring Cloud app that declares Hystrix circuit breakers publishes metrics on `/hystrix.stream`. Type that address into the dashboard to visualize all the metrics,                                              |
+| dataflow         | Dataflow Server   | http://localhost:9393                                                | Spring Cloud Dataflow server with UI at /admin-ui. Connect the Dataflow shell to target at root path.                                                                                                               |
+| zipkin           | Zipkin Server     | http://localhost:9411                                                | Zipkin Server with UI for visualizing traces. Stores span data in memory and accepts them via HTTP POST of JSON data.                                                                                               |
 
 
-<table class="tableblock frame-all grid-all spread"><colgroup><col style="width: 25%;"> <col style="width: 25%;"> <col style="width: 25%;"> <col style="width: 25%;"></colgroup>
 
-<thead>
-
-
-
-<th>서비스</td>
-
-<th>이름</td>
-
-<th>주소</td>
-
-<th>기술</td>
-
-
-
-</thead>
-
-
-
-
-
-<td>
-
-유레카
-
-<td>
-
-유레카 서버
-
-<td>
-
-[http : // localhost : 8761](http://localhost:8761/)
-
-<td>
-
-서비스 등록 및 검색을위한 유레카 서버. 다른 모든 서비스는 기본적으로 카탈로그에 표시됩니다.
-
-
-
-
-
-<td>
-
-구성 서버
-
-<td>
-
-구성 서버
-
-<td>
-
-[http : // localhost : 8888](http://localhost:8888/)
-
-<td>
-
-"기본"프로파일로 실행되고 로컬 디렉토리 ./launcher에서 구성을 제공하는 Spring Cloud 구성 서버
-
-
-
-
-
-<td>
-
-h2
-
-<td>
-
-H2 데이터베이스
-
-<td>
-
-[http : // localhost : 9095](http://localhost:9095/) (console), jdbc : h2 : tcp : // localhost : 9096 / {data}
-
-<td>
-
-관계 데이터베이스 서비스. 연결시 파일 경로를 사용하십시오 `{data}`(예 `./target/test`:). 추가 `;MODE=MYSQL`하거나 `;MODE=POSTGRESQL`다른 서버 유형과의 호환성으로 연결할 수 있습니다 .
-
-
-
-
-
-<td>
-
-카프카
-
-<td>
-
-카프카 브로커
-
-<td>
-
-[http : // localhost : 9091](http://localhost:9091/) (액츄에이터 끝점), localhost : 9092
-
-
-
-
-
-<td>
-
-hystrix 대시 보드
-
-<td>
-
-Hystrix 대시 보드
-
-<td>
-
-[http : // localhost : 7979](http://localhost:7979/)
-
-<td>
-
-Hystrix 회로 차단기를 선언하는 모든 Spring Cloud 앱은 메트릭을 게시 `/hystrix.stream`합니다. 이 주소를 대시 보드에 입력하여 모든 측정 항목을 시각화하고,
-
-
-
-
-
-<td>
-
-데이터 흐름
-
-<td>
-
-데이터 흐름 서버
-
-<td>
-
-[http : // localhost : 9393](http://localhost:9393/)
-
-<td>
-
-/ admin-ui에 UI가있는 Spring Cloud Dataflow 서버. 데이터 흐름 쉘을 루트 경로에서 대상에 연결하십시오.
-
-
-
-
-
-<td>
-
-지퍼 킨
-
-<td>
-
-Zipkin 서버
-
-<td>
-
-[http : // localhost : 9411](http://localhost:9411/)
-
-<td>
 
 추적을 시각화하기위한 UI가있는 Zipkin Server. 상점은 데이터를 메모리에 저장하고 JSON 데이터의 HTTP POST를 통해이를 수용합니다.
 
@@ -15164,7 +15023,7 @@ Etcd 기반 선거는 속성을 사용하여 명시 적으로 비활성화 할 �
 
 
 
-<table class="tableblock frame-all grid-all spread"><colgroup><col style="width: 33%;"> <col style="width: 33%;"> <col style="width: 33%;"></colgroup>
+<table    ><colgroup><col style="width: 33%;"> <col style="width: 33%;"> <col style="width: 33%;"></colgroup>
 
 <thead>
 
