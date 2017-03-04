@@ -1,128 +1,258 @@
-
-Spring Cloud
-=============
-
-# 원본
-http://projects.spring.io/spring-cloud/spring-cloud.html
-
-# 목차
-
-*   [Features](http://projects.spring.io/spring-cloud/spring-cloud.html#_features)
-*   [클라우드 네이티브 애플리케이션](http://projects.spring.io/spring-cloud/spring-cloud.html#_cloud_native_applications)
-    *   [Spring Cloud Context : 애플리케이션 컨텍스트 서비스](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_context_application_context_services)
-        *   [부트 스트랩 응용 프로그램 컨텍스트](http://projects.spring.io/spring-cloud/spring-cloud.html#_the_bootstrap_application_context)
-        *   [응용 프로그램 컨텍스트 계층 구조](http://projects.spring.io/spring-cloud/spring-cloud.html#_application_context_hierarchies)
-        *   [부트 스트랩 속성 위치 변경](http://projects.spring.io/spring-cloud/spring-cloud.html#customizing-bootstrap-properties)
-        *   [부트 스트랩 구성 사용자 정의](http://projects.spring.io/spring-cloud/spring-cloud.html#_customizing_the_bootstrap_configuration)
-        *   [부트 스트랩 속성 소스 사용자 정의](http://projects.spring.io/spring-cloud/spring-cloud.html#customizing-bootstrap-property-sources)
-        *   [환경 변화](http://projects.spring.io/spring-cloud/spring-cloud.html#_environment_changes)
-        *   [새로 고침 범위](http://projects.spring.io/spring-cloud/spring-cloud.html#_refresh_scope)
-        *   [암호화 및 암호 해독](http://projects.spring.io/spring-cloud/spring-cloud.html#_encryption_and_decryption)
-        *   [종점](http://projects.spring.io/spring-cloud/spring-cloud.html#_endpoints)
-    *   [Spring Cloud Commons : 공통 추상화](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_commons_common_abstractions)
-        *   [로드 밸런서 클라이언트로서의 Spring RestTemplate](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_resttemplate_as_a_load_balancer_client)
-        *   [여러 개의 RestTemplate 객체](http://projects.spring.io/spring-cloud/spring-cloud.html#_multiple_resttemplate_objects)
-        *   [네트워크 인터페이스 무시](http://projects.spring.io/spring-cloud/spring-cloud.html#ignore-network-interfaces)
-*   [스프링 클라우드 구성](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_config)
-    *   [빠른 시작](http://projects.spring.io/spring-cloud/spring-cloud.html#_quick_start)
-        *   [클라이언트 측 사용](http://projects.spring.io/spring-cloud/spring-cloud.html#_client_side_usage)
-    *   [Spring Cloud 구성 서버](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_config_server)
-        *   [환경 저장소](http://projects.spring.io/spring-cloud/spring-cloud.html#_environment_repository)
-        *   [건강 지표](http://projects.spring.io/spring-cloud/spring-cloud.html#_health_indicator)
-        *   [보안](http://projects.spring.io/spring-cloud/spring-cloud.html#_security)
-        *   [암호화 및 암호 해독](http://projects.spring.io/spring-cloud/spring-cloud.html#_encryption_and_decryption_2)
-        *   [키 관리](http://projects.spring.io/spring-cloud/spring-cloud.html#_key_management)
-        *   [테스트 용 키 저장소 만들기](http://projects.spring.io/spring-cloud/spring-cloud.html#_creating_a_key_store_for_testing)
-        *   [여러 키 및 키 회전 사용](http://projects.spring.io/spring-cloud/spring-cloud.html#_using_multiple_keys_and_key_rotation)
-    *   [일반 텍스트 검색](http://projects.spring.io/spring-cloud/spring-cloud.html#_serving_plain_text)
-    *   [구성 서버 포함](http://projects.spring.io/spring-cloud/spring-cloud.html#_embedding_the_config_server)
-    *   [푸시 알림 및 스프링 클라우드 버스](http://projects.spring.io/spring-cloud/spring-cloud.html#_push_notifications_and_spring_cloud_bus)
-    *   [Spring Cloud 구성 클라이언트](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_config_client)
-        *   [첫 번째 부트 스트랩 구성](http://projects.spring.io/spring-cloud/spring-cloud.html#config-first-bootstrap)
-        *   [유레카 퍼스트 부트 스트랩](http://projects.spring.io/spring-cloud/spring-cloud.html#eureka-first-bootstrap)
-        *   [구성 클라이언트 실패 빠른](http://projects.spring.io/spring-cloud/spring-cloud.html#config-client-fail-fast)
-        *   [구성 클라이언트 재시도](http://projects.spring.io/spring-cloud/spring-cloud.html#config-client-retry)
-        *   [원격 구성 리소스 찾기](http://projects.spring.io/spring-cloud/spring-cloud.html#_locating_remote_configuration_resources)
-        *   [보안](http://projects.spring.io/spring-cloud/spring-cloud.html#_security_2)
-*   [Spring Cloud 넷플 릭스](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_netflix)
-    *   [서비스 발견 : 유레카 클라이언트](http://projects.spring.io/spring-cloud/spring-cloud.html#_service_discovery_eureka_clients)
-        *   [유레카 등록](http://projects.spring.io/spring-cloud/spring-cloud.html#_registering_with_eureka)
-        *   [상태 페이지 및 상태 표시기](http://projects.spring.io/spring-cloud/spring-cloud.html#_status_page_and_health_indicator)
-        *   [보안 응용 프로그램 등록](http://projects.spring.io/spring-cloud/spring-cloud.html#_registering_a_secure_application)
-        *   [유레카 건강 검사](http://projects.spring.io/spring-cloud/spring-cloud.html#_eureka_s_health_checks)
-        *   [인스턴스 및 클라이언트에 대한 유레카 메타 데이터](http://projects.spring.io/spring-cloud/spring-cloud.html#_eureka_metadata_for_instances_and_clients)
-        *   [EurekaClient 사용](http://projects.spring.io/spring-cloud/spring-cloud.html#_using_the_eurekaclient)
-        *   [기본 Netflix EurekaClient의 대안](http://projects.spring.io/spring-cloud/spring-cloud.html#_alternatives_to_the_native_netflix_eurekaclient)
-        *   [서비스 등록이 너무 느린 이유는 무엇입니까?](http://projects.spring.io/spring-cloud/spring-cloud.html#_why_is_it_so_slow_to_register_a_service)
-    *   [서비스 발견 : 유레카 서버](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-eureka-server)
-        *   [고 가용성, 영역 및 영역](http://projects.spring.io/spring-cloud/spring-cloud.html#_high_availability_zones_and_regions)
-        *   [독립 실행 형 모드](http://projects.spring.io/spring-cloud/spring-cloud.html#_standalone_mode)
-        *   [또래 인식](http://projects.spring.io/spring-cloud/spring-cloud.html#_peer_awareness)
-        *   [IP 주소 선호](http://projects.spring.io/spring-cloud/spring-cloud.html#_prefer_ip_address)
-    *   [회로 차단기 : Hystrix 클라이언트](http://projects.spring.io/spring-cloud/spring-cloud.html#_circuit_breaker_hystrix_clients)
-        *   [보안 컨텍스트 전파 또는 스프링 스코프 사용](http://projects.spring.io/spring-cloud/spring-cloud.html#_propagating_the_security_context_or_using_spring_scopes)
-        *   [건강 지표](http://projects.spring.io/spring-cloud/spring-cloud.html#_health_indicator_2)
-        *   [Hystrix 메트릭스 스트림](http://projects.spring.io/spring-cloud/spring-cloud.html#_hystrix_metrics_stream)
-    *   [회로 차단기 : Hystrix 대시 보드](http://projects.spring.io/spring-cloud/spring-cloud.html#_circuit_breaker_hystrix_dashboard)
-        *   [터빈](http://projects.spring.io/spring-cloud/spring-cloud.html#_turbine)
-        *   [터빈 AMQP](http://projects.spring.io/spring-cloud/spring-cloud.html#_turbine_amqp)
-    *   [AMQP ConnectionFactory 사용자 정의](http://projects.spring.io/spring-cloud/spring-cloud.html#_customizing_the_amqp_connectionfactory)
-    *   [클라이언트 측로드 밸런서 : 리본](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon)
-        *   [리본 클라이언트 사용자 정의](http://projects.spring.io/spring-cloud/spring-cloud.html#_customizing_the_ribbon_client)
-        *   [유레카와 함께 리본 사용하기](http://projects.spring.io/spring-cloud/spring-cloud.html#_using_ribbon_with_eureka)
-        *   [예 : 유레카가없는 리본 사용법](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon-without-eureka)
-        *   [예 : 리본에서 유레카 사용을 비활성화합니다.](http://projects.spring.io/spring-cloud/spring-cloud.html#_example_disable_eureka_use_in_ribbon)
-        *   [리본 API를 직접 사용](http://projects.spring.io/spring-cloud/spring-cloud.html#_using_the_ribbon_api_directly)
-    *   [선언적 REST 클라이언트 : Feign](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign)
-        *   [기본 값 재정의](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-overriding-defaults)
-        *   [Hystrix 지원 지원](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-hystrix)
-        *   [Hystrix Fallbacks를 기쁘게합니다.](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-hystrix-fallback)
-        *   [기꺼이 상속 지원](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign-inheritance)
-        *   [희망 요청 / 응답 압축](http://projects.spring.io/spring-cloud/spring-cloud.html#_feign_request_response_compression)
-        *   [벌채 로깅](http://projects.spring.io/spring-cloud/spring-cloud.html#_feign_logging)
-    *   [외부 구성 : Archaius](http://projects.spring.io/spring-cloud/spring-cloud.html#_external_configuration_archaius)
-    *   [라우터 및 필터 : Zuul](http://projects.spring.io/spring-cloud/spring-cloud.html#_router_and_filter_zuul)
-        *   [임베디드 Zuul 역방향 프록시](http://projects.spring.io/spring-cloud/spring-cloud.html#netflix-zuul-reverse-proxy)
-        *   [교살 패턴과 로컬 전달](http://projects.spring.io/spring-cloud/spring-cloud.html#_strangulation_patterns_and_local_forwards)
-        *   [Zuul을 통한 파일 업로드](http://projects.spring.io/spring-cloud/spring-cloud.html#_uploading_files_through_zuul)
-        *   [Plain Embedded Zuul](http://projects.spring.io/spring-cloud/spring-cloud.html#_plain_embedded_zuul)
-        *   [주울 필터 사용 안 함](http://projects.spring.io/spring-cloud/spring-cloud.html#_disable_zuul_filters)
-        *   [사이드카로 다국어 지원](http://projects.spring.io/spring-cloud/spring-cloud.html#_polyglot_support_with_sidecar)
-    *   [통계 : 관중, 서보 및지도](http://projects.spring.io/spring-cloud/spring-cloud.html#_metrics_spectator_servo_and_atlas)
-        *   [차원 대 계층 적 메트릭 비교](http://projects.spring.io/spring-cloud/spring-cloud.html#_dimensional_vs_hierarchical_metrics)
-        *   [기본 메트릭 컬렉션](http://projects.spring.io/spring-cloud/spring-cloud.html#_default_metrics_collection)
-        *   [통계 수집 : 관중](http://projects.spring.io/spring-cloud/spring-cloud.html#_metrics_collection_spectator)
-        *   [통계 수집 : 서보](http://projects.spring.io/spring-cloud/spring-cloud.html#_metrics_collection_servo)
-        *   [메트릭 백엔드 : Atlas](http://projects.spring.io/spring-cloud/spring-cloud.html#_metrics_backend_atlas)
-*   [스프링 클라우드 버스](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_bus)
-    *   [빠른 시작](http://projects.spring.io/spring-cloud/spring-cloud.html#_quick_start_2)
-    *   [인스턴스 주소 지정](http://projects.spring.io/spring-cloud/spring-cloud.html#_addressing_an_instance)
-    *   [서비스의 모든 인스턴스 주소 지정](http://projects.spring.io/spring-cloud/spring-cloud.html#_addressing_all_instances_of_a_service)
-    *   [응용 프로그램 컨텍스트 ID는 고유해야합니다.](http://projects.spring.io/spring-cloud/spring-cloud.html#_application_context_id_must_be_unique)
-    *   [메시지 브로커 사용자 정의](http://projects.spring.io/spring-cloud/spring-cloud.html#_customizing_the_message_broker)
-    *   [추적 버스 이벤트](http://projects.spring.io/spring-cloud/spring-cloud.html#_tracing_bus_events)
-*   [스프링 부트 클라우드 CLI](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_boot_cloud_cli)
-    *   [설치](http://projects.spring.io/spring-cloud/spring-cloud.html#_installation)
-    *   [Groovy 스크립트 작성 및 응용 프로그램 실행](http://projects.spring.io/spring-cloud/spring-cloud.html#_writing_groovy_scripts_and_running_applications)
-    *   [암호화 및 암호 해독](http://projects.spring.io/spring-cloud/spring-cloud.html#_encryption_and_decryption_3)
-*   [스프링 클라우드 보안](http://projects.spring.io/spring-cloud/spring-cloud.html#_spring_cloud_security)
-    *   [빠른 시작](http://projects.spring.io/spring-cloud/spring-cloud.html#_quickstart)
-        *   [OAuth2 싱글 사인온](http://projects.spring.io/spring-cloud/spring-cloud.html#_oauth2_single_sign_on)
-        *   [OAuth2 보호 된 리소스](http://projects.spring.io/spring-cloud/spring-cloud.html#_oauth2_protected_resource)
-    *   [상세 정보](http://projects.spring.io/spring-cloud/spring-cloud.html#_more_detail)
-        *   [단일 사인온](http://projects.spring.io/spring-cloud/spring-cloud.html#_single_sign_on)
-        *   [토큰 중계](http://projects.spring.io/spring-cloud/spring-cloud.html#_token_relay)
-    *   [Zuul 프록시의 인증 다운 스트림 구성](http://projects.spring.io/spring-cloud/spring-cloud.html#_configuring_authentication_downstream_of_a_zuul_proxy)
-
-
-
-
-
-
 # Spring Cloud
------
 
-Spring Cloud는 개발자가 분산 시스템 (예 : 구성 관리, 서비스 발견, 회로 차단기, 지능형 라우팅, 마이크로 프록시, 제어 버스, 일회성 토큰, 글로벌 잠금, 리더십 선거, 분산 등)에서 공통 패턴을 신속하게 구축 할 수있는 도구를 제공합니다. 세션, 클러스터 상태). 분산 시스템을 조정하면 보일러 플레이트 패턴이 생기고 Spring Cloud 개발자는 이러한 패턴을 구현하는 서비스와 애플리케이션을 신속하게 구현할 수 있습니다. 개발자의 자체 랩톱, 베어 메탈 (bare metal) 데이터 센터 및 Cloud Foundry와 같은 관리 플랫폼을 포함한 모든 분산 환경에서 잘 작동합니다.
+*   [Features](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_features)
+*   [Cloud Native Applications](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_cloud_native_applications)
+    *   [Spring Cloud Context: Application Context Services](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_context_application_context_services)
+        *   [The Bootstrap Application Context](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_the_bootstrap_application_context)
+        *   [Application Context Hierarchies](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_application_context_hierarchies)
+        *   [Changing the Location of Bootstrap Properties](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#customizing-bootstrap-properties)
+        *   [Overriding the Values of Remote Properties](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#overriding-bootstrap-properties)
+        *   [Customizing the Bootstrap Configuration](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_customizing_the_bootstrap_configuration)
+        *   [Customizing the Bootstrap Property Sources](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#customizing-bootstrap-property-sources)
+        *   [Environment Changes](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_environment_changes)
+        *   [Refresh Scope](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_refresh_scope)
+        *   [Encryption and Decryption](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_encryption_and_decryption)
+        *   [Endpoints](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_endpoints)
+    *   [Spring Cloud Commons: Common Abstractions](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_commons_common_abstractions)
+        *   [@EnableDiscoveryClient](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#__enablediscoveryclient)
+        *   [ServiceRegistry](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_serviceregistry)
+        *   [Spring RestTemplate as a Load Balancer Client](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_resttemplate_as_a_load_balancer_client)
+        *   [Multiple RestTemplate objects](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_multiple_resttemplate_objects)
+        *   [Ignore Network Interfaces](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#ignore-network-interfaces)
+*   [Spring Cloud Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_config)
+    *   [Quick Start](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_quick_start)
+        *   [Client Side Usage](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_client_side_usage)
+    *   [Spring Cloud Config Server](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_config_server)
+        *   [Environment Repository](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_environment_repository)
+        *   [Health Indicator](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_health_indicator)
+        *   [Security](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_security)
+        *   [Encryption and Decryption](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_encryption_and_decryption_2)
+        *   [Key Management](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_key_management)
+        *   [Creating a Key Store for Testing](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_creating_a_key_store_for_testing)
+        *   [Using Multiple Keys and Key Rotation](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_using_multiple_keys_and_key_rotation)
+        *   [Serving Encrypted Properties](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_serving_encrypted_properties)
+    *   [Serving Alternative Formats](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_serving_alternative_formats)
+    *   [Serving Plain Text](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_serving_plain_text)
+    *   [Embedding the Config Server](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_embedding_the_config_server)
+    *   [Push Notifications and Spring Cloud Bus](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_push_notifications_and_spring_cloud_bus)
+    *   [Spring Cloud Config Client](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_config_client)
+        *   [Config First Bootstrap](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#config-first-bootstrap)
+        *   [Discovery First Bootstrap](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#discovery-first-bootstrap)
+        *   [Config Client Fail Fast](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#config-client-fail-fast)
+        *   [Config Client Retry](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#config-client-retry)
+        *   [Locating Remote Configuration Resources](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_locating_remote_configuration_resources)
+        *   [Security](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_security_2)
+*   [Spring Cloud Netflix](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_netflix)
+    *   [Service Discovery: Eureka Clients](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_service_discovery_eureka_clients)
+        *   [Registering with Eureka](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_registering_with_eureka)
+        *   [Authenticating with the Eureka Server](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_authenticating_with_the_eureka_server)
+        *   [Status Page and Health Indicator](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_status_page_and_health_indicator)
+        *   [Registering a Secure Application](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_registering_a_secure_application)
+        *   [Eureka’s Health Checks](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_eureka_s_health_checks)
+        *   [Eureka Metadata for Instances and Clients](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_eureka_metadata_for_instances_and_clients)
+        *   [Using the EurekaClient](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_using_the_eurekaclient)
+        *   [Alternatives to the native Netflix EurekaClient](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_alternatives_to_the_native_netflix_eurekaclient)
+        *   [Why is it so Slow to Register a Service?](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_why_is_it_so_slow_to_register_a_service)
+    *   [Service Discovery: Eureka Server](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-eureka-server)
+        *   [High Availability, Zones and Regions](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_high_availability_zones_and_regions)
+        *   [Standalone Mode](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_standalone_mode)
+        *   [Peer Awareness](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_peer_awareness)
+        *   [Prefer IP Address](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_prefer_ip_address)
+    *   [Circuit Breaker: Hystrix Clients](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_circuit_breaker_hystrix_clients)
+        *   [Propagating the Security Context or using Spring Scopes](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_propagating_the_security_context_or_using_spring_scopes)
+        *   [Health Indicator](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_health_indicator_2)
+        *   [Hystrix Metrics Stream](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_hystrix_metrics_stream)
+    *   [Circuit Breaker: Hystrix Dashboard](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_circuit_breaker_hystrix_dashboard)
+        *   [Turbine](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_turbine)
+        *   [Turbine Stream](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_turbine_stream)
+    *   [Client Side Load Balancer: Ribbon](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-ribbon)
+        *   [Customizing the Ribbon Client](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_customizing_the_ribbon_client)
+        *   [Using Ribbon with Eureka](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_using_ribbon_with_eureka)
+        *   [Example: How to Use Ribbon Without Eureka](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-ribbon-without-eureka)
+        *   [Example: Disable Eureka use in Ribbon](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_example_disable_eureka_use_in_ribbon)
+        *   [Using the Ribbon API Directly](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_using_the_ribbon_api_directly)
+    *   [Declarative REST Client: Feign](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-feign)
+        *   [Overriding Feign Defaults](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-feign-overriding-defaults)
+        *   [Feign Hystrix Support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-feign-hystrix)
+        *   [Feign Hystrix Fallbacks](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-feign-hystrix-fallback)
+        *   [Feign Inheritance Support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-feign-inheritance)
+        *   [Feign request/response compression](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_feign_request_response_compression)
+        *   [Feign logging](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_feign_logging)
+    *   [External Configuration: Archaius](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_external_configuration_archaius)
+    *   [Router and Filter: Zuul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_router_and_filter_zuul)
+        *   [Embedded Zuul Reverse Proxy](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#netflix-zuul-reverse-proxy)
+        *   [Cookies and Sensitive Headers](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_cookies_and_sensitive_headers)
+        *   [The Routes Endpoint](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_the_routes_endpoint)
+        *   [Strangulation Patterns and Local Forwards](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_strangulation_patterns_and_local_forwards)
+        *   [Uploading Files through Zuul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_uploading_files_through_zuul)
+        *   [Plain Embedded Zuul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_plain_embedded_zuul)
+        *   [Disable Zuul Filters](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_disable_zuul_filters)
+        *   [Polyglot support with Sidecar](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_polyglot_support_with_sidecar)
+    *   [RxJava with Spring MVC](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#netflix-rxjava-springmvc)
+    *   [Metrics: Spectator, Servo, and Atlas](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#netflix-metrics)
+        *   [Dimensional vs. Hierarchical Metrics](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_dimensional_vs_hierarchical_metrics)
+        *   [Default Metrics Collection](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_default_metrics_collection)
+        *   [Metrics Collection: Spectator](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#netflix-metrics-spectator)
+        *   [Metrics Collection: Servo](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#netflix-metrics-servo)
+        *   [Metrics Backend: Atlas](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#netflix-metrics-atlas)
+*   [Spring Cloud Stream](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_stream)
+    *   [Introducing Spring Cloud Stream](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_introducing_spring_cloud_stream)
+    *   [Main Concepts](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_main_concepts)
+        *   [Application Model](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_application_model)
+        *   [The Binder Abstraction](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_the_binder_abstraction)
+        *   [Persistent Publish-Subscribe Support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_persistent_publish_subscribe_support)
+        *   [Consumer Groups](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#consumer-groups)
+        *   [Partitioning Support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#partitioning)
+    *   [Programming Model](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_programming_model)
+        *   [Declaring and Binding Channels](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_declaring_and_binding_channels)
+    *   [Binders](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_binders)
+        *   [Producers and Consumers](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_producers_and_consumers)
+        *   [Binder SPI](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_binder_spi)
+        *   [Binder Detection](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_binder_detection)
+        *   [Multiple Binders on the Classpath](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#multiple-binders)
+        *   [Connecting to Multiple Systems](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#multiple-systems)
+        *   [Binder configuration properties](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_binder_configuration_properties)
+        *   [Implementation strategies](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_implementation_strategies)
+    *   [Configuration Options](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_configuration_options)
+        *   [Spring Cloud Stream Properties](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_stream_properties)
+        *   [Binding Properties](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#binding-properties)
+    *   [Binder-Specific Configuration](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#binder-specific-configuration)
+        *   [Rabbit-Specific Settings](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_rabbit_specific_settings)
+        *   [Kafka-Specific Settings](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_kafka_specific_settings)
+    *   [Content Type and Transformation](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#contenttypemanagement)
+        *   [MIME types](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#mime-types)
+        *   [MIME types and Java types](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#mime-types-and-java-types)
+        *   [`@StreamListener` and Message Conversion](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#__code_streamlistener_code_and_message_conversion)
+    *   [Inter-Application Communication](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_inter_application_communication)
+        *   [Connecting Multiple Application Instances](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_connecting_multiple_application_instances)
+        *   [Instance Index and Instance Count](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_instance_index_and_instance_count)
+        *   [Partitioning](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_partitioning)
+    *   [Testing](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_testing)
+    *   [Health Indicator](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_health_indicator_3)
+    *   [Samples](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_samples)
+    *   [Getting Started](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_getting_started)
+*   [Spring Cloud Bus](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_bus)
+    *   [Quick Start](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_quick_start_2)
+    *   [Addressing an Instance](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_addressing_an_instance)
+    *   [Addressing all instances of a service](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_addressing_all_instances_of_a_service)
+    *   [Application Context ID must be unique](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_application_context_id_must_be_unique)
+    *   [Customizing the Message Broker](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_customizing_the_message_broker)
+    *   [Tracing Bus Events](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_tracing_bus_events)
+    *   [Broadcasting Your Own Events](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_broadcasting_your_own_events)
+*   [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_sleuth)
+    *   [Terminology](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_terminology)
+    *   [Purpose](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_purpose)
+    *   [Adding to the project](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_adding_to_the_project)
+    *   [Additional resources](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_additional_resources)
+    *   [Features](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_features_2)
+    *   [Sampling](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_sampling)
+    *   [Instrumentation](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_instrumentation)
+    *   [Span lifecycle](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_span_lifecycle)
+        *   [Creating and closing spans](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#creating-and-closing-spans)
+        *   [Continuing spans](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#continuing-spans)
+        *   [Creating spans with an explicit parent](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#creating-spans-with-explicit-parent)
+    *   [Naming spans](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_naming_spans)
+        *   [@SpanName annotation](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#__spanname_annotation)
+        *   [toString() method](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_tostring_method)
+    *   [Customizations](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_customizations)
+        *   [Spring Integration](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_integration)
+        *   [HTTP](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_http)
+        *   [Example](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_example)
+        *   [Custom SA tag in Zipkin](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_custom_sa_tag_in_zipkin)
+        *   [Custom service name](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_custom_service_name)
+    *   [Span Data as Messages](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_span_data_as_messages)
+        *   [Zipkin Consumer](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_zipkin_consumer)
+        *   [Custom Consumer](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_custom_consumer)
+    *   [Metrics](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_metrics)
+    *   [Integrations](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_integrations)
+        *   [Runnable and Callable](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_runnable_and_callable)
+        *   [Hystrix](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_hystrix)
+        *   [RxJava](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_rxjava)
+        *   [HTTP integration](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_http_integration)
+        *   [HTTP client integration](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_http_client_integration)
+        *   [Feign](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_feign)
+        *   [Asynchronous communication](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_asynchronous_communication)
+        *   [Messaging](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_messaging)
+        *   [Zuul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_zuul)
+    *   [Running examples](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_running_examples)
+*   [Spring Cloud Consul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_consul)
+    *   [Install Consul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-install)
+    *   [Consul Agent](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-agent)
+    *   [Service Discovery with Consul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-discovery)
+        *   [Registering with Consul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_registering_with_consul)
+        *   [HTTP Health Check](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_http_health_check)
+        *   [Using the DiscoveryClient](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_using_the_discoveryclient)
+    *   [Distributed Configuration with Consul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-config)
+        *   [How to activate](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_how_to_activate)
+        *   [Customizing](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_customizing)
+    *   [YAML or Properties with Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-config-format)
+    *   [git2consul with Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-config-git2consul)
+    *   [Fail Fast](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-failfast)
+    *   [Consul Retry](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-retry)
+    *   [Spring Cloud Bus with Consul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-bus)
+    *   [Circuit Breaker with Hystrix](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-hystrix)
+    *   [Hystrix metrics aggregation with Turbine and Consul](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-turbine)
+*   [Spring Cloud Zookeeper](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_zookeeper)
+    *   [Install Zookeeper](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-install)
+    *   [Service Discovery with Zookeeper](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-discovery)
+        *   [How to activate](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_how_to_activate_2)
+        *   [Registering with Zookeeper](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_registering_with_zookeeper)
+        *   [Using the DiscoveryClient](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_using_the_discoveryclient_2)
+    *   [Zookeeper Dependencies](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-dependencies)
+        *   [Using the Zookeeper Dependencies](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_using_the_zookeeper_dependencies)
+        *   [How to activate Zookeeper Dependencies](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_how_to_activate_zookeeper_dependencies)
+        *   [Setting up Zookeeper Dependencies](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_setting_up_zookeeper_dependencies)
+        *   [Configuring Spring Cloud Zookeeper Dependencies](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_configuring_spring_cloud_zookeeper_dependencies)
+    *   [Spring Cloud Zookeeper Dependency Watcher](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-dependency-watcher)
+        *   [How to activate](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_how_to_activate_3)
+        *   [Registering a listener](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_registering_a_listener)
+        *   [Presence Checker](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_presence_checker)
+    *   [Distributed Configuration with Zookeeper](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-config)
+        *   [How to activate](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_how_to_activate_4)
+        *   [Customizing](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_customizing_2)
+*   [Spring Boot Cloud CLI](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_boot_cloud_cli)
+    *   [Installation](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_installation)
+    *   [Running Spring Cloud Services in Development](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_running_spring_cloud_services_in_development)
+        *   [Adding Additional Applications](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_adding_additional_applications)
+    *   [Writing Groovy Scripts and Running Applications](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_writing_groovy_scripts_and_running_applications)
+    *   [Encryption and Decryption](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_encryption_and_decryption_3)
+*   [Spring Cloud Security](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_security)
+    *   [Quickstart](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_quickstart)
+        *   [OAuth2 Single Sign On](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_oauth2_single_sign_on)
+        *   [OAuth2 Protected Resource](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_oauth2_protected_resource)
+    *   [More Detail](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_more_detail)
+        *   [Single Sign On](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_single_sign_on)
+        *   [Token Relay](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_token_relay)
+    *   [Configuring Authentication Downstream of a Zuul Proxy](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_configuring_authentication_downstream_of_a_zuul_proxy)
+*   [Spring Cloud for Cloud Foundry](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_for_cloud_foundry)
+    *   [Discovery](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_discovery)
+    *   [Single Sign On](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_single_sign_on_2)
+*   [Spring Cloud Cluster](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_spring_cloud_cluster)
+    *   [Leader Election](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_leader_election)
+        *   [Zookeeper](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-cluster-leaderelection-zookeeper)
+        *   [Hazelcast](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-cluster-leaderelection-hazelcast)
+        *   [Etcd](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-cluster-leaderelection-etcd)
+*   [Appendix: Compendium of Configuration Properties](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_appendix_compendium_of_configuration_properties)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit breakers, intelligent routing, micro-proxy, control bus, one-time tokens, global locks, leadership election, distributed sessions, cluster state). Coordination of distributed systems leads to boiler plate patterns, and using Spring Cloud developers can quickly stand up services and applications that implement those patterns. They will work well in any distributed environment, including the developer’s own laptop, bare metal data centres, and managed platforms such as Cloud Foundry.
+
+
+
+
+
+Version: Brixton.BUILD-SNAPSHOT
 
 
 
@@ -138,37 +268,29 @@ Spring Cloud는 개발자가 분산 시스템 (예 : 구성 관리, 서비스 �
 
 
 
-Spring Cloud는 전형적인 유스 케이스에 대해 좋은 아웃 오브 박스 경험을 제공하고 다른 사람들을 포괄하는 확장 성 메커니즘에 중점을 둡니다.
+Spring Cloud focuses on providing good out of box experience for typical use cases and extensibility mechanism to cover others.
 
 
 
 
 
-*   분산 / 버전 관리 된 구성
+*   Distributed/versioned configuration
 
-*   서비스 등록 및 검색
+*   Service registration and discovery
 
-*   라우팅
+*   Routing
 
-*   서비스 대 서비스 호출
+*   Service-to-service calls
 
-*   로드 균형 조정
+*   Load balancing
 
-*   회로 차단기
+*   Circuit Breakers
 
-*   전역 잠금
+*   Global locks
 
-*   지도력 선거 및 클러스터 상태
+*   Leadership election and cluster state
 
-*   분산 메시징
-
-
-
-
-
-
-
-# 클라우드 네이티브 애플리케이션
+*   Distributed messaging
 
 
 
@@ -176,19 +298,27 @@ Spring Cloud는 전형적인 유스 케이스에 대해 좋은 아웃 오브 박
 
 
 
-[클라우드 네이티브](https://pivotal.io/platform-as-a-service/migrating-to-cloud-native-application-architectures-ebook) 연속 배달과 가치 중심의 개발 분야에서 모범 사례를 쉽게 채택을 장려 응용 프로그램 개발의 스타일입니다. 관련 분야는 건물입니다 [12 인자 앱](http://12factor.net/) 개발 사례가 선언적 프로그래밍과 관리 및 모니터링을 사용하여 예를 들어, 배달 및 운영 목적에 부합되는합니다. 스프링 클라우드는 여러 가지 특정 방식으로 이러한 스타일의 개발을 용이하게하며 출발점은 분산 시스템의 모든 구성 요소가 필요할 때 쉽게 액세스 할 수 있거나 필요로하는 기능 집합입니다.
+# Cloud Native Applications
 
 
 
 
 
-이러한 기능의 대부분은에 의해 보호됩니다 [봄 부트](http://projects.spring.io/spring-boot) 우리가 봄 클라우드에 구축. Spring Cloud에서는 두 가지 라이브러리 인 Spring Cloud Context와 Spring Cloud Commons를 제공합니다. 봄 클라우드 컨텍스트 유틸리티 및 특별 서비스에 대한 제공 `ApplicationContext`스프링 클라우드 응용 프로그램 (부트 스트랩 상황, 암호화, 범위 및 환경 엔드 포인트를 새로 고침). Spring Cloud Commons는 다른 Spring Cloud 구현 (예 : Spring Cloud Netflix 대 Spring Cloud Consul)에서 사용되는 추상화 및 공통 클래스 세트입니다.
+
+
+[Cloud Native](https://pivotal.io/platform-as-a-service/migrating-to-cloud-native-application-architectures-ebook) is a style of application development that encourages easy adoption of best practices in the areas of continuous delivery and value-driven development. A related discipline is that of building [12-factor Apps](http://12factor.net/) in which development practices are aligned with delivery and operations goals, for instance by using declarative programming and management and monitoring. Spring Cloud facilitates these styles of development in a number of specific ways and the starting point is a set of features that all components in a distributed system either need or need easy access to when required.
 
 
 
 
 
-"잘못된 키 크기"로 인해 예외가 발생하고 Sun의 JDK를 사용하는 경우 JCE (Java Cryptography Extension) 무제한 강도 관할 정책 파일을 설치해야합니다. 자세한 내용은 다음 링크를 참조하십시오.
+Many of those features are covered by [Spring Boot](http://projects.spring.io/spring-boot), which we build on in Spring Cloud. Some more are delivered by Spring Cloud as two libraries: Spring Cloud Context and Spring Cloud Commons. Spring Cloud Context provides utilities and special services for the `ApplicationContext` of a Spring Cloud application (bootstrap context, encryption, refresh scope and environment endpoints). Spring Cloud Commons is a set of abstractions and common classes used in different Spring Cloud implementations (eg. Spring Cloud Netflix vs. Spring Cloud Consul).
+
+
+
+
+
+If you are getting an exception due to "Illegal key size" and you are using Sun’s JDK, you need to install the Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files. See the following links for more information:
 
 
 
@@ -204,7 +334,7 @@ Spring Cloud는 전형적인 유스 케이스에 대해 좋은 아웃 오브 박
 
 
 
-JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 파일을 추출하십시오.
+Extract files into JDK/jre/lib/security folder (whichever version of JRE/JDK x64/x86 you are using).
 
 
 
@@ -218,12 +348,11 @@ JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 �
 
 
 
-노트
 
 
 
-Spring Cloud는 비 제한적 Apache 2.0 라이센스에 따라 출시되었습니다. 문서의이 섹션에 기여하고 싶거나 오류가 발견되면 {githubmaster} / docs / src / main / asciidoc [github]에서 프로젝트의 소스 코드와 이슈 트래커를 찾으십시오.
 
+<td class="content">Spring Cloud is released under the non-restrictive Apache 2.0 license. If you would like to contribute to this section of the documentation or if you find an error, please find the source code and issue trackers in the project at [github](https://github.com/spring-cloud/spring-cloud-commons/tree/master/docs/src/main/asciidoc).
 
 
 
@@ -235,125 +364,124 @@ Spring Cloud는 비 제한적 Apache 2.0 라이센스에 따라 출시되었습�
 
 
 
-## Spring Cloud Context : 애플리케이션 컨텍스트 서비스
 
 
 
 
+## Spring Cloud Context: Application Context Services
 
-Spring Boot는 일반적인 구성 파일을위한 전통적인 위치와 일반적인 관리 및 모니터링 작업을위한 끝점을 가지고있는 Spring을 사용하여 응용 프로그램을 빌드하는 방법에 대한 의견이 많습니다. Spring Cloud는이를 기반으로 시스템의 모든 구성 요소가 사용하거나 필요로하는 기능을 추가합니다.
 
 
 
 
+Spring Boot has an opinionated view of how to build an application with Spring: for instance it has conventional locations for common configuration file, and endpoints for common management and monitoring tasks. Spring Cloud builds on top of that and adds a few features that probably all components in a system would use or occasionally need.
 
-### 부트 스트랩 응용 프로그램 컨텍스트
 
 
 
-Spring Cloud 애플리케이션은 메인 애플리케이션의 상위 컨텍스트 인 "부트 스트랩"컨텍스트를 작성하여 작동합니다. 외부에서 가져온 구성 파일은 외부 소스의 구성 등록 정보로드 및 로컬 외부 구성 파일의 등록 정보 해독을 담당합니다. 두 컨텍스트가 공유 `Environment` 하는 모든 Spring 애플리케이션을위한 외부 속성의 소스입니다. 부트 스트랩 특성은 우선 순위가 높으므로 추가되어 로컬 구성으로 대체 될 수 없습니다.
 
+### The Bootstrap Application Context
 
 
 
+A Spring Cloud application operates by creating a "bootstrap" context, which is a parent context for the main application. Out of the box it is responsible for loading configuration properties from the external sources, and also decrypting properties in the local external configuration files. The two contexts share an `Environment` which is the source of external properties for any Spring application. Bootstrap properties are added with high precedence, so they cannot be overridden by local configuration, by default.
 
-부트 스트랩 상황은 그렇게하는 대신, 주요 애플리케이션 컨텍스트보다 외부 구성을 찾기위한 다른 규칙을 사용 `application.yml`(또는 `.properties`) 사용 `bootstrap.yml`, 부트 스트랩 및 주요 상황에 대한 외부 구성을 유지하는 것은 잘 구분합니다. 예:
 
 
 
 
+The bootstrap context uses a different convention for locating external configuration than the main application context, so instead of `application.yml` (or `.properties`) you use `bootstrap.yml`, keeping the external configuration for bootstrap and main context nicely separate. Example:
 
-bootstrap.yml
 
 
 
-<pre>봄:
-  신청:
-    이름 : foo
-  구름:
-    config :
-      uri : $ {SPRING_CONFIG_URI : http : // localhost : 8888}</pre>
 
 
 
 
 
+<pre>spring:
+  application:
+    name: foo
+  cloud:
+    config:
+      uri: ${SPRING_CONFIG_URI:http://localhost:8888}</pre>
 
 
-설정하는 것이 좋습니다 `spring.application.name`(에서 `bootstrap.yml`또는 `application.yml`응용 프로그램이 서버에서 모든 응용 프로그램 별 구성을 필요로하는 경우).
 
 
 
 
 
-당신은 설정하여 완전히 부트 스트랩 프로세스를 비활성화 할 수 있습니다 `spring.cloud.bootstrap.enabled=false`(시스템 등록 정보에서 예를 들면).
+It is a good idea to set the `spring.application.name` (in `bootstrap.yml` or `application.yml`) if your application needs any application-specific configuration from the server.
 
 
 
 
 
+You can disable the bootstrap process completely by setting `spring.cloud.bootstrap.enabled=false` (e.g. in System properties).
 
 
-### 응용 프로그램 컨텍스트 계층 구조
 
 
 
-당신이에서 응용 프로그램 컨텍스트를 빌드하는 경우 `SpringApplication`또는 `SpringApplicationBuilder`, 다음 부트 스트랩 컨텍스트는 해당 컨텍스트에 대한 부모로 추가됩니다. 하위 컨텍스트가 부모로부터 속성 소스와 프로파일을 상속받는 것은 Spring의 기능이므로 "기본"응용 프로그램 컨텍스트에는 Spring Cloud Config없이 동일한 컨텍스트를 작성하는 것과 비교하여 추가 속성 소스가 포함됩니다. 추가 속성 소스는 다음과 같습니다.
 
 
+### Application Context Hierarchies
 
 
 
-*   (선택 사양)가 "부트 스트랩" `CompositePropertySource`어떤 경우 높은 우선 순위로 나타납니다 `PropertySourceLocators`부트 스트랩 컨텍스트에서 찾을 수 있습니다, 그들은 비어 있지 않은 특성을 갖는다. 한 예로 Spring Cloud Config Server의 특성이있다. 참조 [아래](http://projects.spring.io/spring-cloud/spring-cloud.html#customizing-bootstrap-property-sources) 이 속성 소스의 내용을 사용자 정의하는 방법에 대한 지침.
+If you build an application context from `SpringApplication` or `SpringApplicationBuilder`, then the Bootstrap context is added as a parent to that context. It is a feature of Spring that child contexts inherit property sources and profiles from their parent, so the "main" application context will contain additional property sources, compared to building the same context without Spring Cloud Config. The additional property sources are:
 
-*   "applicationConfig : [classpath : bootstrap.yml]"(스프링 프로파일이 활성화 된 경우 친구). 만약 가지고 있다면 `bootstrap.yml`(또는 특성) 다음, 이러한 특성은 부트 스트랩 컨텍스트를 구성하는 데 사용되며, 그 부모가 설정되어있을 때 그들은 자식 콘텍스트에 첨가하자. 그들은보다 낮은 우선 순위가 `application.yml`(또는 속성)과 봄 부팅 응용 프로그램을 만드는 과정의 정상적인 부분으로 아이에 추가 된 다른 재산 소스를. 참조 [아래에](http://projects.spring.io/spring-cloud/spring-cloud.html#customizing-bootstrap-properties) 이러한 속성 소스의 내용을 사용자 정의하는 방법에 대한 지침.
 
 
 
 
+*   "bootstrap": an optional `CompositePropertySource` appears with high priority if any `PropertySourceLocators` are found in the Bootstrap context, and they have non-empty properties. An example would be properties from the Spring Cloud Config Server. See [below](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#customizing-bootstrap-property-sources) for instructions on how to customize the contents of this property source.
 
-때문에 "부트 스트랩"항목을 우선하지만, 이들로부터 데이터를 포함하지 않는다는 것을 유의 속성 소스의 순서의 규칙 `bootstrap.yml`이 매우 낮은 우선 순위를 갖는, 그러나 기본값을 설정하는데 사용될 수있다.
+*   "applicationConfig: [classpath:bootstrap.yml]" (and friends if Spring profiles are active). If you have a `bootstrap.yml` (or properties) then those properties are used to configure the Bootstrap context, and then they get added to the child context when its parent is set. They have lower precedence than the `application.yml` (or properties) and any other property sources that are added to the child as a normal part of the process of creating a Spring Boot application. See [below](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#customizing-bootstrap-properties) for instructions on how to customize the contents of these property sources.
 
 
 
 
 
-당신은 단순히 어떤의 부모 컨텍스트 설정하여 상황에 맞는 계층 구조를 확장 할 수 있습니다 `ApplicationContext`, 또는 함께 자신의 인터페이스를 사용하여 생성을, 예를 들면 `SpringApplicationBuilder`편리한 메소드 ( `parent()`, `child()`과 `sibling()`). 부트 스트랩 컨텍스트는 직접 만든 상위 선조의 부모가됩니다. 계층 구조의 모든 컨텍스트는 부울에서 자손으로 부주의하게 값을 승격시키는 것을 피하기 위해 자체 "부트 스트랩"속성 소스 (비어 있음)를 갖습니다. 계층 구조의 모든 상황은 (원칙적으로) 다른 가질 수 `spring.application.name`구성 서버가있는 경우, 따라서 다른 원격 속성 소스를. 일반 Spring 애플리케이션 컨텍스트 동작 규칙은 속성 확인에 적용됩니다. 하위 컨텍스트의 속성은 부모의 속성, 이름 및 속성 소스 이름을 우선합니다 (자식이 부모와 같은 이름을 가진 속성 소스를 가지면 부모는 자녀에게 포함되어 있지 않습니다).
+Because of the ordering rules of property sources the "bootstrap" entries take precedence, but note that these do not contain any data from `bootstrap.yml`, which has very low precedence, but can be used to set defaults.
 
 
 
 
 
-(가) 있습니다 `SpringApplicationBuilder`당신이를 공유 할 수 있습니다 `Environment`전체 계층 사이,하지만 그 기본이 아니다. 따라서 특히 형제 상황은 부모와 공통된 사항을 공유 할지라도 동일한 프로필 또는 속성 소스를 가질 필요가 없습니다.
+You can extend the context hierarchy by simply setting the parent context of any `ApplicationContext` you create, e.g. using its own interface, or with the `SpringApplicationBuilder` convenience methods (`parent()`, `child()` and `sibling()`). The bootstrap context will be the parent of the most senior ancestor that you create yourself. Every context in the hierarchy will have its own "bootstrap" property source (possibly empty) to avoid promoting values inadvertently from parents down to their descendants. Every context in the hierarchy can also (in principle) have a different `spring.application.name` and hence a different remote property source if there is a Config Server. Normal Spring application context behaviour rules apply to property resolution: properties from a child context override those in the parent, by name and also by property source name (if the child has a property source with the same name as the parent, the one from the parent is not included in the child).
 
 
 
 
 
+Note that the `SpringApplicationBuilder` allows you to share an `Environment` amongst the whole hierarchy, but that is not the default. Thus, sibling contexts in particular do not need to have the same profiles or property sources, even though they will share common things with their parent.
 
 
-### 부트 스트랩 속성 위치 변경
 
 
 
-`bootstrap.yml`(또는 `.properties`) 위치를 사용하여 지정할 수 있습니다 `spring.cloud.bootstrap.name`(기본 "부트 스트랩") 또는 `spring.cloud.bootstrap.location`시스템 등록 정보에서 예 (기본 빈을). 이러한 속성은 같이 행동 `spring.config.*` 들이 부트 스트랩을 설정하는 데 사용되는 사실, 같은 이름을 가진 변종 `ApplicationContext`는 이들 속성을 설정하여 `Environment`. (에서 활성 프로파일이있는 경우 `spring.profiles.active`또는를 통해 `Environment`해당 프로파일의 특성 그냥 일반 봄 부팅 응용 프로그램, 예에서처럼,뿐만 아니라로드됩니다 당신이 구축하고있는 상황에서 API) `bootstrap-development.properties`는 "개발"프로필은.
 
 
+### Changing the Location of Bootstrap Properties
 
 
 
+The `bootstrap.yml` (or `.properties`) location can be specified using `spring.cloud.bootstrap.name` (default "bootstrap") or `spring.cloud.bootstrap.location` (default empty), e.g. in System properties. Those properties behave like the `spring.config.*` variants with the same name, in fact they are used to set up the bootstrap `ApplicationContext` by setting those properties in its `Environment`. If there is an active profile (from `spring.profiles.active` or through the `Environment` API in the context you are building) then properties in that profile will be loaded as well, just like in a regular Spring Boot app, e.g. from `bootstrap-development.properties` for a "development" profile.
 
 
-### 부트 스트랩 구성 사용자 정의
 
 
 
-부트 스트랩 컨텍스트는 당신이 항목을 추가하여 원하는 무엇이든 할 수 있도록 훈련 할 수있다 `/META-INF/spring.factories`키 아래를 `org.springframework.cloud.bootstrap.BootstrapConfiguration`. 이 봄의 쉼표로 구분 된 목록입니다 `@Configuration`컨텍스트를 만드는 데 사용되는 클래스. 당신이에서 autowiring을위한 주요 애플리케이션 컨텍스트에 사용할 수있게하려면 모든 빈은 여기에 작성하고, 또한위한 특별한 계약이 될 수있는 `@Beans`유형의 `ApplicationContextInitializer`. 클래스가 표시 될 수 `@Order` 는 시동 순서를 제어하려는 경우 (기본 순서는 "마지막")입니다.
 
 
+### Overriding the Values of Remote Properties
 
 
 
+The property sources that are added to you application by the bootstrap context are often "remote" (e.g. from a Config Server), and by default they cannot be overridden locally, except on the command line. If you want to allow your applications to override the remote properties with their own System properties or config files, the remote property source has to grant it permission by setting `spring.cloud.config.allowOverride=true` (it doesn’t work to set this locally). Once that flag is set there are some finer grained settings to control the location of the remote properties in relation to System properties and the application’s local configuration: `spring.cloud.config.overrideNone=true` to override with any local property source, and `spring.cloud.config.overrideSystemProperties=false` if only System properties and env vars should override the remote settings, but not the local config files.
 
 
 
@@ -361,12 +489,12 @@ bootstrap.yml
 
 
 
+### Customizing the Bootstrap Configuration
 
-경고
 
 
+The bootstrap context can be trained to do anything you like by adding entries to `/META-INF/spring.factories` under the key `org.springframework.cloud.bootstrap.BootstrapConfiguration`. This is a comma-separated list of Spring `@Configuration` classes which will be used to create the context. Any beans that you want to be available to the main application context for autowiring can be created here, and also there is a special contract for `@Beans` of type `ApplicationContextInitializer`. Classes can be marked with an `@Order` if you want to control the startup sequence (the default order is "last").
 
-사용자를 추가 할 때주의해야합니다 `BootstrapConfiguration`추가 클래스가 아니라는 것을 `@ComponentScanned`그들이 필요되지 않을 수 있습니다 귀하의 "주"응용 프로그램 컨텍스트에 실수로. 이미이 적용되지 않습니다 부팅 구성 클래스에 대한 별도의 패키지 이름을 사용 `@ComponentScan`또는 `@SpringBootApplication` 주석 구성 클래스.
 
 
 
@@ -378,25 +506,42 @@ bootstrap.yml
 
 
 
-부트 스트랩 프로세스는 메인에 이니셜을 주입하여 종료 `SpringApplication`(그것은 독립 실행 형 응용 프로그램으로 실행 또는 응용 프로그램 서버에 배포되어 있는지 여부, 즉 정상적인 봄 부팅 시동 순서) 예. 먼저 부트 스트랩 컨텍스트 검색된 클래스로부터 생성 `spring.factories`하고 모든 `@Beans`형태의 `ApplicationContextInitializer`기본에 첨가 `SpringApplication`가 시작되기 전에.
 
 
 
 
 
+<td class="content">Be careful when adding custom `BootstrapConfiguration` that the classes you add are not `@ComponentScanned` by mistake into your "main" application context, where they might not be needed. Use a separate package name for boot configuration classes that is not already covered by your `@ComponentScan` or `@SpringBootApplication` annotated configuration classes.
 
 
-### 부트 스트랩 속성 소스 사용자 정의
 
 
 
-부트 스트랩 프로세스에 의해 추가 된 외부 구성의 기본 속성 소스는 구성 서버,하지만 당신은 종류의 콩을 추가하여 추가 소스를 추가 할 수 있습니다 `PropertySourceLocator`부트 스트랩 컨텍스트 (비아 `spring.factories`). 이 기능을 사용하여 다른 서버 또는 데이터베이스와 같은 추가 속성을 삽입 할 수 있습니다.
 
 
 
 
 
-예를 들어, 다음과 같은 사소한 사용자 정의 위치 지정자를 고려하십시오.
+
+The bootstrap process ends by injecting initializers into the main `SpringApplication` instance (i.e. the normal Spring Boot startup sequence, whether it is running as a standalone app or deployed in an application server). First a bootstrap context is created from the classes found in `spring.factories` and then all `@Beans` of type `ApplicationContextInitializer` are added to the main `SpringApplication` before it is started.
+
+
+
+
+
+
+
+### Customizing the Bootstrap Property Sources
+
+
+
+The default property source for external configuration added by the bootstrap process is the Config Server, but you can add additional sources by adding beans of type `PropertySourceLocator` to the bootstrap context (via `spring.factories`). You could use this to insert additional properties from a different server, or from a database, for instance.
+
+
+
+
+
+As an example, consider the following trivial custom locator:
 
 
 
@@ -421,13 +566,13 @@ bootstrap.yml
 
 
 
-`Environment`전달되는이의 하나입니다 `ApplicationContext`우리가 추가 속성 소스를 공급하는 일, 즉 생성되는 약. 이 특정 속성 소스의 위치를들을 사용할 수 있도록 이미, 정상 봄 부트가 제공하는 속성 소스가됩니다 `Environment`합니다 (에 키잉에 의해 예를 `spring.application.name`기본 구성 서버 속성 소스 로케이터 에서처럼).
+The `Environment` that is passed in is the one for the `ApplicationContext` about to be created, i.e. the one that we are supplying additional property sources for. It will already have its normal Spring Boot-provided property sources, so you can use those to locate a property source specific to this `Environment` (e.g. by keying it on the `spring.application.name`, as is done in the default Config Server property source locator).
 
 
 
 
 
-당신이이 클래스와 항아리를 만들 경우 다음 추가 `META-INF/spring.factories`함유 :
+If you create a jar with this class in it and then add a `META-INF/spring.factories` containing:
 
 
 
@@ -435,7 +580,7 @@ bootstrap.yml
 
 
 
-<pre>org.springframework.cloud.bootstrap.BootstrapConfiguration = sample.custom.CustomPropertySourceLocator</pre>
+<pre>org.springframework.cloud.bootstrap.BootstrapConfiguration=sample.custom.CustomPropertySourceLocator</pre>
 
 
 
@@ -443,7 +588,7 @@ bootstrap.yml
 
 
 
-다음 "customProperty은" `PropertySource`그 클래스 패스에 그 항아리를 포함하는 모든 응용 프로그램에 표시됩니다.
+then the "customProperty" `PropertySource` will show up in any application that includes that jar on its classpath.
 
 
 
@@ -451,31 +596,31 @@ bootstrap.yml
 
 
 
-### 환경 변화
+### Environment Changes
 
 
 
-어플리케이션이 청취 할 `EnvironmentChangedEvent`및 (추가 표준 몇 가지 방법의 변화에 반응하여 `ApplicationListeners`첨가 할 수있다 `@Beans`일반적인 방법은 사용자에 의해). 이 때 `EnvironmentChangedEvent`관찰이 변경된 키 값의 목록이되며, 응용 프로그램에 사람들을 사용합니다 :
+The application will listen for an `EnvironmentChangeEvent` and react to the change in a couple of standard ways (additional `ApplicationListeners` can be added as `@Beans` by the user in the normal way). When an `EnvironmentChangeEvent` is observed it will have a list of key values that have changed, and the application will use those to:
 
 
 
 
 
-*   모든 다시 결합 `@ConfigurationProperties`맥락에서 콩을
+*   Re-bind any `@ConfigurationProperties` beans in the context
 
-*   모든 속성에 대한 로거 수준 설정 `logging.level.*`
+*   Set the logger levels for any properties in `logging.level.*`
 
 
 
 
 
-는 config 클라이언트는 변화에 대한 기본 조사로하지 않습니다 `Environment`, 그리고 (당신이 그것을 설정할 수 있지만, 일반적으로 우리는 변화를 검출하는 방법을 권하고 싶지 않다 `@Scheduled`주석). 그런 다음 축소 아웃 클라이언트 응용 프로그램이있는 경우는 방송을하는 것이 좋습니다 `EnvironmentChangedEvent`(예를 사용하여 그들에게 변화에 대한 폴링을하는 대신 모든 인스턴스에 [봄 클라우드 버스](https://github.com/spring-cloud/spring-cloud-bus) ).
+Note that the Config Client does not by default poll for changes in the `Environment`, and generally we would not recommend that approach for detecting changes (although you could set it up with a `@Scheduled` annotation). If you have a scaled-out client application then it is better to broadcast the `EnvironmentChangeEvent` to all the instances instead of having them polling for changes (e.g. using the [Spring Cloud Bus](https://github.com/spring-cloud/spring-cloud-bus)).
 
 
 
 
 
-는 `EnvironmentChangedEvent`만큼 당신이 실제로 변경을 할 수있는, 새로 고침 사용 사례의 큰 클래스를 포함 `Environment` 하고 이벤트를 (그 API를 공개하고 핵심 봄의 일부)에 게시합니다. 당신은 변경에 바인딩 확인할 수 있습니다 `@ConfigurationProperties`방문하여 콩 `/configprops` 엔드 포인트 (정상 봄 부팅 액추에이터 기능). 예를 들어이 `DataSource`그 한 수 `maxPoolSize`런타임에 변경 (기본 `DataSource`봄 부팅에 의해 만들어진이입니다 `@ConfigurationProperties`콩)와 동적으로 용량을 증가. 다시 결합 `@ConfigurationProperties`하면 새로 고침보다 효율적으로 관리가 필요 사용 사례의 또 다른 큰 클래스를 포함하지 않으며, 당신은 변화를 필요로하는 곳에 전체에 걸쳐 원자 수 `ApplicationContext`. 우리가 그 문제를 해결합니다 `@RefreshScope`.
+The `EnvironmentChangeEvent` covers a large class of refresh use cases, as long as you can actually make a change to the `Environment` and publish the event (those APIs are public and part of core Spring). You can verify the changes are bound to `@ConfigurationProperties` beans by visiting the `/configprops` endpoint (normal Spring Boot Actuator feature). For instance a `DataSource` can have its `maxPoolSize` changed at runtime (the default `DataSource` created by Spring Boot is an `@ConfigurationProperties` bean) and grow capacity dynamically. Re-binding `@ConfigurationProperties` does not cover another large class of use cases, where you need more control over the refresh, and where you need a change to be atomic over the whole `ApplicationContext`. To address those concerns we have `@RefreshScope`.
 
 
 
@@ -483,23 +628,23 @@ bootstrap.yml
 
 
 
-### 새로 고침 범위
+### Refresh Scope
 
 
 
-봄 `@Bean`으로 표시된 `@RefreshScope`구성 변경이있는 경우 특별한 치료를 받게됩니다. 이는 초기화 될 때만 구성을 주입시키는 상태 보존빈의 문제점을 해결합니다. 예를 들어이 경우 `DataSource`데이터베이스 URL을 통해 변경 열려있는 연결을 가지고 `Environment`, 우리는 아마 그 연결의 소유자들이 무슨 일을 완료 할 수 있어야합니다. 그런 다음 누군가 다음에 풀에서 연결을 빌리면 새 URL로 연결됩니다.
+A Spring `@Bean` that is marked as `@RefreshScope` will get special treatment when there is a configuration change. This addresses the problem of stateful beans that only get their configuration injected when they are initialized. For instance if a `DataSource` has open connections when the database URL is changed via the `Environment`, we probably want the holders of those connections to be able to complete what they are doing. Then the next time someone borrows a connection from the pool he gets one with the new URL.
 
 
 
 
 
-새로 고침 범위 Bean은 사용시 (즉, 메서드가 호출 될 때) 초기화되는 지연 프록시이며 범위는 초기화 된 값의 캐시로 작동합니다. 빈이 다음 메소드 호출시 다시 초기화되도록하려면 캐시 항목을 무효화하면됩니다.
+Refresh scope beans are lazy proxies that initialize when they are used (i.e. when a method is called), and the scope acts as a cache of initialized values. To force a bean to re-initialize on the next method call you just need to invalidate its cache entry.
 
 
 
 
 
-는 `RefreshScope`문맥에 콩이며 공개 방법이 `refreshAll()`대상 캐시를 삭제하여 범위에있는 모든 콩을 새로 고칠 수 있습니다. 도 있습니다 `refresh(String)`이름하여 개별 빈을 새로 고칠 수있는 방법은. 이 기능은 노출되어있다 `/refresh`(HTTP 또는 JMX를 통해) 엔드 포인트.
+The `RefreshScope` is a bean in the context and it has a public method `refreshAll()` to refresh all beans in the scope by clearing the target cache. There is also a `refresh(String)` method to refresh an individual bean by name. This functionality is exposed in the `/refresh` endpoint (over HTTP or JMX).
 
 
 
@@ -513,12 +658,11 @@ bootstrap.yml
 
 
 
-노트
 
 
 
-`@RefreshScope`온 (기술적으로) 작동 `@Configuration` 클래스,하지만 놀라운 동작이 발생할 수 있습니다 : 그것은 않습니다 예를 들어 **하지** 모든 것을 의미 `@Beans`클래스에 정의 자체입니다 `@RefreshScope`. 특히, 새로 고침이 시작될 때 자체를하지 않는 한 그들에 의존 할 수 그 콩에 따라 달라 아무것도, 업데이트되고 `@RefreshScope`있는이 새로 고침에 재건되고 종속성이 시점에서 그들은 다시 될 것입니다, 재 주입 ( 새로 고친에서 초기화 `@Configuration`).
 
+<td class="content">`@RefreshScope` works (technically) on an `@Configuration` class, but it might lead to surprising behaviour: e.g. it does **not** mean that all the `@Beans` defined in that class are themselves `@RefreshScope`. Specifically, anything that depends on those beans cannot rely on them being updated when a refresh is initiated, unless it is itself in `@RefreshScope` (in which it will be rebuilt on a refresh and its dependencies re-injected, at which point they will be re-initialized from the refreshed `@Configuration`).
 
 
 
@@ -531,17 +675,18 @@ bootstrap.yml
 
 
 
-### 암호화 및 암호 해독
 
+### Encryption and Decryption
 
 
-구성 클라이언트는이 `Environment`로컬 속성 값을 해독하기위한 사전 프로세서를. 이것은 서버 구성과 동일한 룰을 따르며, 비아 같은 외부 구성을 갖는다 `encrypt.*`. 따라서 당신은 형태로 암호화 된 값을 사용할 수 있습니다 `{cipher}*`주 응용 프로그램 컨텍스트를 취득하기 전에 다음 암호가 해독됩니다 유효한 키가있는만큼하고 `Environment`. 클라이언트에서 암호화 기능을 사용하려면 Classpath에 Spring Security RSA (Maven이 "org.springframework.security : spring-security-rsa"를 조정)를 포함시켜야하며 JVM에서 강력한 JCE 확장 기능이 필요합니다.
 
+Spring Cloud has an `Environment` pre-processor for decrypting property values locally. It follows the same rules as the Config Server, and has the same external configuration via `encrypt.*`. Thus you can use encrypted values in the form `{cipher}*` and as long as there is a valid key then they will be decrypted before the main application context gets the `Environment`. To use the encryption features in an application you need to include Spring Security RSA in your classpath (Maven co-ordinates "org.springframework.security:spring-security-rsa") and you also need the full strength JCE extensions in your JVM.
 
 
 
 
-"잘못된 키 크기"로 인해 예외가 발생하고 Sun의 JDK를 사용하는 경우 JCE (Java Cryptography Extension) 무제한 강도 관할 정책 파일을 설치해야합니다. 자세한 내용은 다음 링크를 참조하십시오.
+
+If you are getting an exception due to "Illegal key size" and you are using Sun’s JDK, you need to install the Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files. See the following links for more information:
 
 
 
@@ -557,7 +702,7 @@ bootstrap.yml
 
 
 
-JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 파일을 추출하십시오.
+Extract files into JDK/jre/lib/security folder (whichever version of JRE/JDK x64/x86 you are using).
 
 
 
@@ -565,27 +710,23 @@ JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 �
 
 
 
-### 종점
+### Endpoints
 
 
 
-스프링 부트 액츄에이터 애플리케이션에는 몇 가지 추가 관리 엔드 포인트가 있습니다.
-
-
-
-
-
-*   POST는 다음의 제품에 `/env`를 업데이트 `Environment`하고 바인딩 `@ConfigurationProperties`과 수준을 기록
-
-*   `/refresh`에 대한 부트 스트랩 컨텍스트를 다시로드하고 상쾌한 `@RefreshScope`콩
-
-*   `/restart`을 폐쇄 `ApplicationContext`하고 다시 시작합니다 (기본적으로 비활성화)
-
-*   `/pause`및 `/resume`호출을위한 `Lifecycle`방법 ( `stop()`및 `start()`온 `ApplicationContext`)
+For a Spring Boot Actuator application there are some additional management endpoints:
 
 
 
 
+
+*   POST to `/env` to update the `Environment` and rebind `@ConfigurationProperties` and log levels
+
+*   `/refresh` for re-loading the boot strap context and refreshing the `@RefreshScope` beans
+
+*   `/restart` for closing the `ApplicationContext` and restarting it (disabled by default)
+
+*   `/pause` and `/resume` for calling the `Lifecycle` methods (`stop()` and `start()` on the `ApplicationContext`)
 
 
 
@@ -593,29 +734,109 @@ JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 �
 
 
 
-## Spring Cloud Commons : 공통 추상화
+
+
+
+
+## Spring Cloud Commons: Common Abstractions
 
 
 
 
 
-서비스 발견,로드 밸런싱 및 회로 차단기와 같은 패턴은 모든 Spring Cloud 클라이언트가 구현과 독립적 (예 : Eureka 또는 Consul을 통한 검색) 할 수있는 공통적 인 추상화 계층에 적합합니다.
+Patterns such as service discovery, load balancing and circuit breakers lend themselves to a common abstraction layer that can be consumed by all Spring Cloud clients, independent of the implementation (e.g. discovery via Eureka or Consul).
 
 
 
 
 
-### 로드 밸런서 클라이언트로서의 Spring RestTemplate
+### @EnableDiscoveryClient
 
 
 
-당신은 자동 구성된 통해 간접적으로 리본을 사용할 수 있습니다 `RestTemplate` RestTemplate 클래스 경로에와 때 `LoadBalancerClient`) bean이 정의된다 :
+Commons provides the `@EnableDiscoveryClient` annotation. This looks for implementations of the `DiscoveryClient` interface via `META-INF/spring.factories`. Implementations of Discovery Client will add a configuration class to `spring.factories` under the `org.springframework.cloud.client.discovery.EnableDiscoveryClient` key. Examples of `DiscoveryClient` implementations: are [Spring Cloud Netflix Eureka](http://cloud.spring.io/spring-cloud-netflix/), [Spring Cloud Consul Discovery](http://cloud.spring.io/spring-cloud-consul/) and [Spring Cloud Zookeeper Discovery](http://cloud.spring.io/spring-cloud-zookeeper/).
+
+
+
+
+
+By default, implementations of `DiscoveryClient` will auto-register the local Spring Boot server with the remote discovery server. This can be disabled by setting `autoRegister=false` in `@EnableDiscoveryClient`.
 
 
 
 
 
 
+
+### ServiceRegistry
+
+
+
+Commons now provides a `ServiceRegistry` interface which provides methods like `register(Registration)` and `deregister(Registration)` which allow you to provide custom registered services. `Registration` is a marker interface.
+
+
+
+
+
+#### Service Registry Actuator Endpoint
+
+
+
+A `/service-registry` actuator endpoint is provided by Commons. This endpoint relys on a `Registration` bean in the Spring Application Context. Calling `/service-registry/instance-status` via a GET will return the status of the `Registration`. A POST to the same endpoint with a `String` body will change the status of the current `Registration` to the new value. Please see the documentation of the `ServiceRegistry` implementation you are using for the allowed values for updating the status and the values retured for the status.
+
+
+
+
+
+
+
+
+
+### Spring RestTemplate as a Load Balancer Client
+
+
+
+`RestTemplate` can be automatically configured to use ribbon. To create a load balanced `RestTemplate` create a `RestTemplate` `@Bean` and use the `@LoadBalanced` qualifier.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">A `RestTemplate` bean is no longer created via auto configuration. It must be created by individual applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Configuration
+    public class MyConfiguration {
+
+        @LoadBalanced
+        @Bean
+        RestTemplate restTemplate() {
+            return new RestTemplate();
+        }
+    }
 
     public class MyClass {
         @Autowired
@@ -633,7 +854,17 @@ JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 �
 
 
 
-URI는 가상 호스트 이름 (예 : 호스트 이름이 아닌 서비스 이름)을 사용해야합니다. 리본 클라이언트는 전체 실제 주소를 만드는 데 사용됩니다. 참조 [RibbonAutoConfiguration을](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/ribbon/RibbonAutoConfiguration.java) 이 방법에 대한 자세한 내용은 `RestTemplate`설정되어 있습니다.
+The URI needs to use a virtual host name (ie. service name, not a host name). The Ribbon client is used to create a full physical address. See [RibbonAutoConfiguration](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/ribbon/RibbonAutoConfiguration.java) for details of how the `RestTemplate` is set up.
+
+
+
+
+
+#### Retrying Failed Requests
+
+
+
+A load balanced `RestTemplate` can be configured to retry failed requests. By default this logic is disabled, you can enable it by setting `spring.cloud.loadbalancer.retry.enabled=true`. The load balanced `RestTemplate` will honor some of the Ribbon configuration values related to retrying failed requests. The properties you can use are `client.ribbon.MaxAutoRetries`, `client.ribbon.MaxAutoRetriesNextServer`, and `client.ribbon.OkToRetryOnAllOperations`. See the [Ribbon documentation](https://github.com/Netflix/ribbon/wiki/Getting-Started#the-properties-file-sample-clientproperties) for a description of what there properties do.
 
 
 
@@ -641,17 +872,83 @@ URI는 가상 호스트 이름 (예 : 호스트 이름이 아닌 서비스 이�
 
 
 
-### 여러 개의 RestTemplate 객체
-
-
-
-당신이 원하는 경우 `RestTemplate`부하 분산되지 않도록를하는 생성 `RestTemplate` 빈을 정상으로 주입. 균형 하중에 액세스하려면 `RestTemplate use the provided `@LoadBalanced` `Qualifier`:
 
 
 
 
 
 
+
+
+
+
+<td class="content">`client` in the above examples should be replaced with your Ribbon client’s name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Multiple RestTemplate objects
+
+
+
+If you want a `RestTemplate` that is not load balanced, create a `RestTemplate` bean and inject it as normal. To access the load balanced `RestTemplate use the `@LoadBalanced` qualifier when you create your `@Bean`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Notice the `@Primary` annotation on the plain `RestTemplate` declaration in the example below, to disambiguate the unqualified `@Autowired` injection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Configuration
+    public class MyConfiguration {
+
+        @LoadBalanced
+        @Bean
+        RestTemplate loadBalanced() {
+            return new RestTemplate();
+        }
+
+        @Primary
+        @Bean
+        RestTemplate restTemplate() {
+            return new RestTemplate();
+        }
+    }
 
     public class MyClass {
         @Autowired
@@ -678,26 +975,17 @@ URI는 가상 호스트 이름 (예 : 호스트 이름이 아닌 서비스 이�
 
 
 
-### 네트워크 인터페이스 무시
-
-
-
-때로는 특정 명명 된 네트워크 인터페이스를 무시하여 서비스 검색 등록 (예 : Docker 컨테이너에서 실행)에서 제외 할 수있는 경우가 있습니다. 원하는 네트워크 인터페이스가 무시되도록하는 정규식 목록을 설정할 수 있습니다. 다음 구성은 "docker0"인터페이스와 "veth"로 시작하는 모든 인터페이스를 무시합니다.
 
 
 
 
 
-application.yml
 
 
 
-<pre>봄:
-  구름:
-    inetutils :
-      ignoredInterfaces :
-        - 도커 0
-        - 베스. *</pre>
+
+
+<td class="content">If you see errors like `java.lang.IllegalArgumentException: Can not set org.springframework.web.client.RestTemplate field com.my.app.Foo.restTemplate to com.sun.proxy.$Proxy89` try injecting `RestOperations` instead or setting `spring.aop.proxyTargetClass=true`.
 
 
 
@@ -709,23 +997,100 @@ application.yml
 
 
 
-# 스프링 클라우드 구성
+
+
+### Ignore Network Interfaces
 
 
 
-Spring Cloud Config는 분산 시스템에서 외부화 된 구성에 대한 서버 및 클라이언트 측 지원을 제공합니다. 구성 서버를 사용하면 모든 환경에서 응용 프로그램의 외부 속성을 중앙에서 관리 할 수 ​​있습니다. 동일 봄에 클라이언트 및 서버지도의 개념 `Environment`과 `PropertySource`추상화, 그들은 봄 응용 프로그램과 잘 맞는, 그러나 어떤 응용 프로그램이 모든 언어에서 실행에 사용할 수 있도록. 응용 프로그램이 개발 파이프 라인을 통해 개발자에서 테스트 및 프로덕션 환경으로 이동하면 해당 환경 간의 구성을 관리 할 수 ​​있으며 응용 프로그램이 마이그레이션 할 때 실행하는 데 필요한 모든 기능을 갖추고 있는지 확인할 수 있습니다. 서버 저장 장치 백엔드의 기본 구현은 git을 사용하므로 구성 환경의 레이블링 된 버전을 쉽게 지원할뿐만 아니라 컨텐츠 관리를위한 다양한 툴링에 액세스 할 수 있습니다. 대체 구현을 추가하고 Spring 구성으로 플러그인을 쉽게 삽입 할 수 있습니다.
-
-
-
-
-
-## 빠른 시작
+Sometimes it is useful to ignore certain named network interfaces so they can be excluded from Service Discovery registration (eg. running in a Docker container). A list of regular expressions can be set that will cause the desired network interfaces to be ignored. The following configuration will ignore the "docker0" interface and all interfaces that start with "veth".
 
 
 
 
 
-서버를 시작하십시오.
+
+
+
+
+<pre>spring:
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*</pre>
+
+
+
+
+
+
+
+You can also force to use only specified network addresses using list of regular expressions:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    inetutils:
+      preferredNetworks:
+        - 192.168
+        - 10.0</pre>
+
+
+
+
+
+
+
+You can also force to use only site local addresses. See [Inet4Address.html.isSiteLocalAddress()](https://docs.oracle.com/javase/8/docs/api/java/net/Inet4Address.html#isSiteLocalAddress--) for more details what is site local address.
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    inetutils:
+      useOnlySiteLocalInterfaces: true</pre>
+
+
+
+
+
+
+
+
+
+
+
+# Spring Cloud Config
+
+
+
+
+
+
+
+
+
+## Quick Start
+
+
+
+
+
+Start the server:
 
 
 
@@ -734,7 +1099,7 @@ Spring Cloud Config는 분산 시스템에서 외부화 된 구성에 대한 서
 
 
 <pre>$ cd spring-cloud-config-server
-$ mvn spring-boot : 실행</pre>
+$ ../mvnw spring-boot:run</pre>
 
 
 
@@ -742,7 +1107,7 @@ $ mvn spring-boot : 실행</pre>
 
 
 
-당신은 당신이 (메인 클래스가 선호하는 대신 경우 IDE에서 실행할 수 있도록 서버는 봄 부팅 응용 프로그램입니다 `ConfigServerApplication`). 그런 다음 클라이언트를 사용해보십시오.
+The server is a Spring Boot application so you can run it from your IDE instead if you prefer (the main class is `ConfigServerApplication`). Then try out a client:
 
 
 
@@ -750,10 +1115,10 @@ $ mvn spring-boot : 실행</pre>
 
 
 
-<pre>$ curl localhost : 8888 / foo / development
-{ "name": "development", "label": "master", "propertySources": [
-  { "name": "https://github.com/scratches/config-repo/foo-development.properties", "source": { "bar": "spam"}}
-  { "name": "https://github.com/scratches/config-repo/foo.properties", "source": { "foo": "bar"}}
+<pre>$ curl localhost:8888/foo/development
+{"name":"development","label":"master","propertySources":[
+  {"name":"https://github.com/scratches/config-repo/foo-development.properties","source":{"bar":"spam"}},
+  {"name":"https://github.com/scratches/config-repo/foo.properties","source":{"foo":"bar"}}
 ]}</pre>
 
 
@@ -762,13 +1127,13 @@ $ mvn spring-boot : 실행</pre>
 
 
 
-속성 소스의 위치에 대한 기본 전략 (에 자식 저장소를 복제하는 것입니다 `spring.cloud.config.server.git.uri`)와 미니를 초기화하는 데 사용 `SpringApplication`. 미니 응용 프로그램의 `Environment`속성 소스를 열거하고 JSON 엔드 포인트를 통해 게시하는 데 사용됩니다.
+The default strategy for locating property sources is to clone a git repository (at `spring.cloud.config.server.git.uri`) and use it to initialize a mini `SpringApplication`. The mini-application’s `Environment` is used to enumerate property sources and publish them via a JSON endpoint.
 
 
 
 
 
-HTTP 서비스에는 다음과 같은 형식의 자원이 있습니다.
+The HTTP service has resources in the form:
 
 
 
@@ -776,7 +1141,7 @@ HTTP 서비스에는 다음과 같은 형식의 자원이 있습니다.
 
 
 
-<pre>/ {application} / {profile} [/ {label}]
+<pre>/{application}/{profile}[/{label}]
 /{application}-{profile}.yml
 /{label}/{application}-{profile}.yml
 /{application}-{profile}.properties
@@ -788,19 +1153,13 @@ HTTP 서비스에는 다음과 같은 형식의 자원이 있습니다.
 
 
 
-은 "응용 프로그램"으로 주입되는 곳 `spring.config.name`에서 `SpringApplication`(즉, 일반 봄 부팅 응용 프로그램에서 "응용 프로그램"일반적으로 어떤), "프로필"활성 프로필 (또는 쉼표로 구분 된 속성 목록) 및 "레이블"하는 선택적 git 레이블 (기본값은 "master"입니다.)
+where the "application" is injected as the `spring.config.name` in the `SpringApplication` (i.e. what is normally "application" in a regular Spring Boot app), "profile" is an active profile (or comma-separated list of properties), and "label" is an optional git label (defaults to "master".)
 
 
 
 
 
-값의 출처 ( "표준"서식의 "propertySources"에 반영됨)가 여러 출처를 가지고 있더라도 YAML 및 속성 양식은 단일 맵으로 병합됩니다.
-
-
-
-
-
-Spring Cloud Config Server는 git 저장소 (제공되어야 함)에서 원격 클라이언트에 대한 구성을 가져옵니다.
+Spring Cloud Config Server pulls configuration for remote clients from a git repository (which must be provided):
 
 
 
@@ -821,24 +1180,24 @@ Spring Cloud Config Server는 git 저장소 (제공되어야 함)에서 원격 �
 
 
 
-### 클라이언트 측 사용
+### Client Side Usage
 
 
 
-이러한 기능을 응용 프로그램에서 사용하려면 spring-cloud-config-client (예 : config-client 또는 샘플 응용 프로그램의 테스트 사례 참조)에 따라 달라지는 Spring Boot 응용 프로그램으로 빌드하면됩니다. 종속성을 추가하는 가장 편리한 방법은 봄 부팅 스타터를 통해입니다 `org.springframework.cloud:spring-cloud-starter-config`. 부모 치어와 BOM (도 있습니다 `spring-cloud-starter-parent`메이븐 사용자와 Gradle을 그리고 봄 CLI 사용자를위한 파일 봄 IO 버전 관리 속성에 대한)입니다. Maven 구성 예 :
+To use these features in an application, just build it as a Spring Boot application that depends on spring-cloud-config-client (e.g. see the test cases for the config-client, or the sample app). The most convenient way to add the dependency is via a Spring Boot starter `org.springframework.cloud:spring-cloud-starter-config`. There is also a parent pom and BOM (`spring-cloud-starter-parent`) for Maven users and a Spring IO version management properties file for Gradle and Spring CLI users. Example Maven configuration:
 
 
 
 
 
-pom.xml
+
 
 
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.3.RELEASE</version>
+        <version>1.3.5.RELEASE</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
@@ -846,8 +1205,8 @@ pom.xml
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-parent</artifactId>
-                <version>1.0.1.RELEASE</version>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Brixton.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -883,7 +1242,7 @@ pom.xml
 
 
 
-그런 다음이 간단한 HTTP 서버와 같은 표준 스프링 부트 응용 프로그램을 만들 수 있습니다.
+Then you can create a standard Spring Boot application, like this simple HTTP server:
 
 
 
@@ -895,13 +1254,13 @@ pom.xml
 @RestController
 public class Application {
 
-    @RequestMapping ( "/")
-    public String home () {
+    @RequestMapping("/")
+    public String home() {
         return "Hello World!";
     }
 
-    공공 정적 무효 메인 (문자열 [] args) {
-        SpringApplication.run (Application.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
     }
 
 }</pre>
@@ -912,7 +1271,7 @@ public class Application {
 
 
 
-실행될 때 포트 8888의 기본 로컬 구성 서버에서 외부 구성을 선택합니다 (실행중인 경우). 다음을 사용하여 구성 서버의 위치를 변경할 수 있습니다 시작 동작을 수정하려면 `bootstrap.properties`(좋아 `application.properties`하지만 애플리케이션 컨텍스트의 부트 스트랩 단계에), 예를 들어,
+When it runs it will pick up the external configuration from the default local config server on port 8888 if it is running. To modify the startup behaviour you can change the location of the config server using `bootstrap.properties` (like `application.properties` but for the bootstrap phase of an application context), e.g.
 
 
 
@@ -920,7 +1279,7 @@ public class Application {
 
 
 
-<pre>spring.cloud.config.uri : http://myconfigserver.com</pre>
+<pre>spring.cloud.config.uri: http://myconfigserver.com</pre>
 
 
 
@@ -928,7 +1287,7 @@ public class Application {
 
 
 
-부트 스트랩 속성은에 표시됩니다 `/env`예를 들어 우선 순위가 높은 속성 소스,로 엔드 포인트
+The bootstrap properties will show up in the `/env` endpoint as a high-priority property source, e.g.
 
 
 
@@ -936,12 +1295,12 @@ public class Application {
 
 
 
-<pre>$ curl localhost : 8080 / env
+<pre>$ curl localhost:8080/env
 {
-  "프로필": [],
-  "configService : https : //github.com/spring-cloud-samples/config-repo/bar.properties": { "foo": "bar"},
-  "servletContextInitParams": {},
-  "systemProperties": {...},
+  "profiles":[],
+  "configService:https://github.com/spring-cloud-samples/config-repo/bar.properties":{"foo":"bar"},
+  "servletContextInitParams":{},
+  "systemProperties":{...},
   ...
 }</pre>
 
@@ -951,25 +1310,7 @@ public class Application {
 
 
 
-( "configService : <원격 저장소의 URL / <파일 이름>"이라는 속성 소스에는 "bar"값을 갖는 속성 "foo"가 포함되어 있으며 가장 우선 순위가 높음).
-
-
-
-
-
-
-
-
-
-
-
-<td class="icon">
-
-노트
-
-
-
-<td class="content">속성 소스 이름의 URL은 config 서버 URL이 아닌 git 저장소입니다.
+(a property source called "configService:<URL of remote repository>/<file name>" contains the property "foo" with value "bar" and is highest priority).
 
 
 
@@ -987,19 +1328,37 @@ public class Application {
 
 
 
-## Spring Cloud 구성 서버
+<td class="content">the URL in the property source name is the git repository not the config server URL.
 
 
 
 
 
-서버는 외부 구성 (이름 - 값 쌍 또는 이와 동등한 YAML 내용)을위한 HTTP, 자원 기반 API를 제공합니다. 서버는 사용하여 봄 부팅 응용 프로그램에 쉽게 퍼갈 수 있습니다 `@EnableConfigServer`주석을. 그래서이 응용 프로그램은 설정 서버입니다 :
 
 
 
 
 
-ConfigServer.java
+
+
+
+
+
+
+
+## Spring Cloud Config Server
+
+
+
+
+
+The Server provides an HTTP, resource-based API for external configuration (name-value pairs, or equivalent YAML content). The server is easily embeddable in a Spring Boot application using the `@EnableConfigServer` annotation. So this app is a config server:
+
+
+
+
+
+
 
 
 
@@ -1017,13 +1376,13 @@ ConfigServer.java
 
 
 
-모든 Spring Boot 어플리케이션과 마찬가지로 기본적으로 포트 8080에서 실행되지만 다양한 방법으로 기존 포트 8888로 전환 할 수 있습니다. 또한, 기본 구성 저장소를 설정하여 그것을 시작으로, 이는 가장 쉬운은 `spring.config.name=configserver`(A 존재 `configserver.yml`는 config 서버 항아리). 또 다른 자신의 사용하는 것 `application.properties`, 예를
+Like all Spring Boot apps it runs on port 8080 by default, but you can switch it to the conventional port 8888 in various ways. The easiest, which also sets a default configuration repository, is by launching it with `spring.config.name=configserver` (there is a `configserver.yml` in the Config Server jar). Another is to use your own `application.properties`, e.g.
 
 
 
 
 
-application.properties
+
 
 
 
@@ -1036,25 +1395,7 @@ application.properties
 
 
 
-어디 `${user.home}/config-repo`YAML 및 특성 파일이 포함 된 자식 저장소입니다.
-
-
-
-
-
-
-
-
-
-
-
-<td class="icon">
-
-노트
-
-
-
-<td class="content">그것은 예를 들어 드라이브 접두사, 절대 경우 Windows에서 당신은 "/"파일 URL에 추가해야합니다 `[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`.
+where `${user.home}/config-repo` is a git repository containing YAML and properties files.
 
 
 
@@ -1072,17 +1413,7 @@ application.properties
 
 
 
-<td class="icon">
-
-팁
-
-
-
-<td class="content">
-
-
-
-위의 예에서 git 저장소를 만드는 방법은 다음과 같습니다.
+<td class="content">in Windows you need an extra "/" in the file URL if it is absolute with a drive prefix, e.g. `[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`.
 
 
 
@@ -1090,13 +1421,41 @@ application.properties
 
 
 
-<pre>$ cd $ HOME
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here’s a recipe for creating the git repository in the example above:
+
+
+
+
+
+
+
+<pre>$ cd $HOME
 $ mkdir config-repo
 $ cd config-repo
-$ git init.
-$ echo info.foo : bar> application.properties
-$ git add -A.
-$ git commit -m "application.properties 추가"</pre>
+$ git init .
+$ echo info.foo: bar > application.properties
+$ git add -A .
+$ git commit -m "Add application.properties"</pre>
 
 
 
@@ -1120,15 +1479,13 @@ $ git commit -m "application.properties 추가"</pre>
 
 
 
-<td class="icon">
-
-경고
 
 
 
-<td class="content">git 저장소에 로컬 파일 시스템을 사용하는 것은 테스트 용입니다. 프로덕션 환경에서 서버를 사용하여 구성 저장소를 호스트하십시오.
 
 
+
+<td class="content">using the local filesystem for your git repository is intended for testing only. Use a server to host your configuration repositories in production.
 
 
 
@@ -1138,39 +1495,65 @@ $ git commit -m "application.properties 추가"</pre>
 
 
 
-### 환경 저장소
-
-
-
-구성 서버의 구성 데이터를 어디에 저장 하시겠습니까? 이 동작을 지배하는 전략은이다 `EnvironmentRepository`, 제공 `Environment`목적. 이 `Environment`봄에서 도메인의 단순 복사본입니다 `Environment`(을 포함한 `propertySources`주요 기능으로). `Environment`자원은 세 가지 변수에 의해 매개 변수화된다 :
 
 
 
 
 
-*   `{application}` 클라이언트 쪽에서 "spring.application.name"에 매핑됩니다.
-
-*   `{profile}`클라이언트의 "spring.active.profiles"에 매핑됩니다 (쉼표로 구분 된 목록). 및
-
-*   `{label}` 이 파일은 "버전 관리"된 설정 파일의 레이블을 지정하는 서버 측 기능입니다.
 
 
 
 
 
-저장소 구현은 일반적으로 단지와 같은 "spring.config.name"에서 봄 부팅 응용 프로그램 로딩 구성 파일처럼 작동 `{application}`매개 변수와 동일 "spring.profiles.active" `{profiles}`매개 변수입니다. 활성 프로파일이 기본 설정보다 우선하고, 다중 프로파일이있는 경우 마지막의 (a에 항목을 추가하는 등 승리 : 프로필의 우선 순위 규칙은 일반 부트 응용 프로그램에서와 동일하다 `Map`).
+
+
+
+
+<td class="content">the initial clone of your configuration repository will be quick and efficient if you only keep text files in it. If you start to store binary files, especially large ones, you may experience delays on the first request for configuration and/or out of memory errors in the server.
 
 
 
 
 
-예 : 클라이언트 응용 프로그램에이 부트 스트랩 구성이 있습니다.
 
 
 
 
 
-bootstrap.yml
+
+### Environment Repository
+
+
+
+Where do you want to store the configuration data for the Config Server? The strategy that governs this behaviour is the `EnvironmentRepository`, serving `Environment` objects. This `Environment` is a shallow copy of the domain from the Spring `Environment` (including `propertySources` as the main feature). The `Environment` resources are parametrized by three variables:
+
+
+
+
+
+*   `{application}` maps to "spring.application.name" on the client side;
+
+*   `{profile}` maps to "spring.profiles.active" on the client (comma separated list); and
+
+*   `{label}` which is a server side feature labelling a "versioned" set of config files.
+
+
+
+
+
+Repository implementations generally behave just like a Spring Boot application loading configuration files from a "spring.config.name" equal to the `{application}` parameter, and "spring.profiles.active" equal to the `{profiles}` parameter. Precedence rules for profiles are also the same as in a regular Boot application: active profiles take precedence over defaults, and if there are multiple profiles the last one wins (like adding entries to a `Map`).
+
+
+
+
+
+Example: a client application has this bootstrap configuration:
+
+
+
+
+
+
 
 
 
@@ -1186,39 +1569,39 @@ bootstrap.yml
 
 
 
-(보통 Spring Boot 응용 프로그램과 마찬가지로이 등록 정보는 환경 변수 또는 명령 행 인수로 설정 될 수도 있습니다).
+(as usual with a Spring Boot application, these properties could also be set as environment variables or command line arguments).
 
 
 
 
 
-저장소는 파일 기반의 경우, 서버는 만듭니다 `Environment`에서 `application.yml`(모든 클라이언트간에 공유)를, 그리고 `foo.yml`(와 `foo.yml`우선 순위를 복용). YAML 파일에 스프링 프로파일을 가리키는 문서가있는 경우, 프로파일은 나열된 프로파일 순서대로 더 높은 우선 순위로 적용되며, 프로파일 특정 YAML (또는 특성) 파일이있는 경우 YAML 파일보다 높은 우선 순위로 적용됩니다 기본값. 높은 precendence는로 변환 `PropertySource`이전에 나열된 `Environment`. (이것들은 독립 실행 형 Spring Boot 응용 프로그램과 동일한 규칙입니다.)
+If the repository is file-based, the server will create an `Environment` from `application.yml` (shared between all clients), and `foo.yml` (with `foo.yml` taking precedence). If the YAML files have documents inside them that point to Spring profiles, those are applied with higher precedence (in order of the profiles listed), and if there are profile-specific YAML (or properties) files these are also applied with higher precedence than the defaults. Higher precedence translates to a `PropertySource` listed earlier in the `Environment`. (These are the same rules as apply in a standalone Spring Boot application.)
 
 
 
 
 
-#### 힘내 백엔드
+#### Git Backend
 
 
 
-의 기본 구현은 `EnvironmentRepository`감사 변경도 업그레이드 및 물리적 환경 및 관리를위한 매우 편리한 망할 놈의 백엔드를 사용합니다. 당신이 구성 서버의 "spring.cloud.config.server.git.uri"구성 속성을 설정할 수 있습니다 저장소 (예에서의 위치를 변경하려면 `application.yml`). 당신이 그것을 설정하면 `file:`접두사 그렇지 않은 경우는 중요하지 않습니다 (당신이 서버없이 쉽고 빠르게 시작할 수 있도록 로컬 저장소에서 작업해야하지만,이 경우 서버는 복제하지 않고 로컬 저장소에서 직접 운영 Config Server가 "원격"저장소를 변경하지 않기 때문에 노출되지 않습니다. 구성 서버를 확장하여 가용성을 높이려면 서버의 모든 인스턴스가 동일한 저장소를 가리 키도록해야하므로 공유 파일 시스템 만 작동합니다. 심지어이 경우에 그것을 사용하는 것이 좋다 `ssh:`서버가 복제 및 캐시로 로컬 작업 복사본을 사용할 수 있도록, 공유 파일 시스템 저장소에 대한 프로토콜.
-
-
-
-
-
-이 저장소 구현은 매핑 `{label}`힘내 라벨 (아이디, 브랜치 이름이나 태그를 커밋)에 HTTP 자원의 매개 변수를. git 브랜치 나 태그 이름에 슬래시 ( "/")가 있으면 HTTP URL의 레이블을 (다른 URL 경로와 모호하지 않게) 특수 문자열 "(_)"로 지정해야합니다. curl과 같은 명령 행 클라이언트를 사용하는 경우 URL의 대괄호에주의하십시오 (예 : 따옴표 ''가있는 쉘에서 이스케이프 처리).
+The default implementation of `EnvironmentRepository` uses a Git backend, which is very convenient for managing upgrades and physical environments, and also for auditing changes. To change the location of the repository you can set the "spring.cloud.config.server.git.uri" configuration property in the Config Server (e.g. in `application.yml`). If you set it with a `file:` prefix it should work from a local repository so you can get started quickly and easily without a server, but in that case the server operates directly on the local repository without cloning it (it doesn’t matter if it’s not bare because the Config Server never makes changes to the "remote" repository). To scale the Config Server up and make it highly available, you would need to have all instances of the server pointing to the same repository, so only a shared file system would work. Even in that case it is better to use the `ssh:` protocol for a shared filesystem repository, so that the server can clone it and use a local working copy as a cache.
 
 
 
 
 
-##### Git URI의 자리 표시 자
+This repository implementation maps the `{label}` parameter of the HTTP resource to a git label (commit id, branch name or tag). If the git branch or tag name contains a slash ("/") then the label in the HTTP URL should be specified with the special string "(_)" instead (to avoid ambiguity with other URL paths). Be careful with the brackets in the URL if you are using a command line client like curl (e.g. escape them from the shell with quotes '').
 
 
 
-봄 클라우드 구성 서버는 대한 자리 표시와 자식 저장소의 URL 지원 `{application}`과 `{profile}`(그리고 `{label}`당신이 그것을 필요로하지만 라벨이 어쨌든 자식 레이블로 적용되는 것을 기억 경우). 따라서 (예를 들어) 다음을 사용하여 "애플리케이션 당 하나의 저장소"정책을 쉽게 지원할 수 있습니다.
+
+
+##### Placeholders in Git URI
+
+
+
+Spring Cloud Config Server supports a git repository URL with placeholders for the `{application}` and `{profile}` (and `{label}` if you need it, but remember that the label is applied as a git label anyway). So you can easily support a "one repo per application" policy using (for example):
 
 
 
@@ -1239,7 +1622,7 @@ bootstrap.yml
 
 
 
-또는 "하나의 repo 프로필 당"정책은 유사한 패턴 만에를 사용 `{profile}`.
+or a "one repo per profile" policy using a similar pattern but with `{profile}`.
 
 
 
@@ -1247,11 +1630,11 @@ bootstrap.yml
 
 
 
-##### 패턴 일치 및 다중 저장소
+##### Pattern Matching and Multiple Repositories
 
 
 
-또한 응용 프로그램 및 프로필 이름에 패턴 일치가있는보다 복잡한 요구 사항에 대한 지원이 있습니다. 패턴 형식의 쉼표로 구분 된 목록입니다 `{application}/{profile}`(와일드 카드로 시작하는 패턴이 인용 될 필요가있다) 와일드 카드 이름. 예:
+There is also support for more complex requirements with pattern matching on the application and profile name. The pattern format is a comma-separated list of `{application}/{profile}` names with wildcards (where a pattern beginning with a wildcard may need to be quoted). Example:
 
 
 
@@ -1280,7 +1663,7 @@ bootstrap.yml
 
 
 
-경우 `{application}/{profile}`의 패턴과 일치하지 않습니다, 그것은 "spring.cloud.config.server.git.uri"에 정의 된 기본 URI를 사용합니다. 상기 예에서, "간단한"저장소에 패턴이다 `simple/*`(그것은 단지 모든 프로파일에서 "단순"라는 하나의 애플리케이션 일치 IE). "로컬"저장소 (모든 프로필에서 "로컬"로 시작하는 모든 응용 프로그램 이름과 일치하는 `/*`접미사 프로필 정규 표현을하지 않는 패턴에 자동으로 추가됩니다).
+If `{application}/{profile}` does not match any of the patterns, it will use the default uri defined under "spring.cloud.config.server.git.uri". In the above example, for the "simple" repository, the pattern is `simple/*` (i.e. it only matches one application named "simple" in all profiles). The "local" repository matches all application names beginning with "local" in all profiles (the `/*` suffix is added automatically to any pattern that doesn’t have a profile matcher).
 
 
 
@@ -1292,15 +1675,13 @@ bootstrap.yml
 
 
 
-<td class="icon">
-
-노트
 
 
 
-<td class="content">위의 "간단한"예제에서 사용 된 "한 줄짜리"단축키는 설정할 유일한 속성이 URI 인 경우에만 사용할 수 있습니다. 다른 것을 설정해야하는 경우 (자격 증명, 패턴 등) 전체 양식을 사용해야합니다.
 
 
+
+<td class="content">the "one-liner" short cut used in the "simple" example above can only be used if the only property to be set is the URI. If you need to set anything else (credentials, pattern, etc.) you need to use the full form.
 
 
 
@@ -1310,7 +1691,9 @@ bootstrap.yml
 
 
 
-`pattern`당신은 YAML 배열을 사용할 수 있도록 REPO의 속성은 실제로 배열 (또는 `[0]`, `[1]`등 특성 파일의 접미사)는 여러 패턴에 결합 할 수 있습니다. 프로필이 여러 개인 앱을 실행하려면이 작업이 필요할 수 있습니다. 예:
+
+
+The `pattern` property in the repo is actually an array, so you can use a YAML array (or `[0]`, `[1]`, etc. suffixes in properties files) to bind to multiple patterns. You may need to do this if you are going to run apps with multiple profiles. Example:
 
 
 
@@ -1348,15 +1731,13 @@ bootstrap.yml
 
 
 
-<td class="icon">
-
-노트
 
 
 
-<td class="content">봄 클라우드에서 끝나지 않는 프로파일을 포함하는 패턴을 추측 할 것이다 `*`당신이 실제로이 패턴으로 시작하는 프로파일의 목록을 일치시킬 것을 의미한다 (그래서 `*/staging`에 대한 바로 가기입니다 `["*/staging", "*/staging,*"]`). 이는 "개발"프로파일에서 로컬로 애플리케이션을 실행해야하지만, 예를 들어 "클라우드"프로파일을 원격으로 실행해야하는 경우에 일반적입니다.
 
 
+
+<td class="content">Spring Cloud will guess that a pattern containing a profile that doesn’t end in `*` implies that you actually want to match a list of profiles starting with this pattern (so `*/staging` is a shortcut for `["*/staging", "*/staging,*"]`). This is common where you need to run apps in the "development" profile locally but also the "cloud" profile remotely, for instance.
 
 
 
@@ -1366,7 +1747,9 @@ bootstrap.yml
 
 
 
-모든 저장소는 선택적으로 지정할 수 있습니다 해당 디렉토리를 검색 설정 하위 디렉토리에있는 파일 및 패턴을 저장할 수 있습니다 `searchPaths`. 예를 들어 최상위 레벨에서 :
+
+
+Every repository can also optionally store config files in sub-directories, and patterns to search for those directories can be specified as `searchPaths`. For example at the top level:
 
 
 
@@ -1388,13 +1771,13 @@ bootstrap.yml
 
 
 
-이 예제에서 서버는 최상위 레벨과 "foo /"하위 디렉토리 및 "bar"로 시작하는 이름의 하위 디렉토리에서 구성 파일을 검색합니다.
+In this example the server searches for config files in the top level and in the "foo/" sub-directory and also any sub-directory whose name begins with "bar".
 
 
 
 
 
-기본적으로 서버는 구성이 처음 요청 될 때 원격 저장소를 복제합니다. 시작할 때 저장소를 복제하도록 서버를 구성 할 수 있습니다. 예를 들어 최상위 레벨에서 :
+By default the server clones remote repositories when configuration is first requested. The server can be configured to clone the repositories at startup. For example at the top level:
 
 
 
@@ -1427,13 +1810,13 @@ bootstrap.yml
 
 
 
-이 예제에서 서버는 시작시 임의의 요청을 수락하기 전에 팀 -a의 config-repo를 복제합니다. 다른 모든 리포지토리는 리포지토리의 구성이 요청 될 때까지 복제되지 않습니다.
+In this example the server clones team-a’s config-repo on startup before it accepts any requests. All other repositories will not be cloned until configuration from the repository is requested.
 
 
 
 
 
-원격 저장소에서 HTTP 기본 인증을 사용하려면 "username"과 "password"속성을 URL에 별도로 추가하십시오 (예 :
+To use HTTP basic authentication on the remote repository add the "username" and "password" properties separately (not in the URL), e.g.
 
 
 
@@ -1456,7 +1839,7 @@ bootstrap.yml
 
 
 
-당신이 HTTPS 및 사용자 자격 증명을 사용하지 않는 경우 기본 디렉토리에 키 (저장하면, SSH는 상자 밖으로 작동합니다 `~/.ssh`SSH를 위치, 예를 들면 "로)와 URI 점을 [git@github.com](mailto:git@github.com) / cloud- 구성 : 구성 ". 저장소는 JGit을 사용하여 액세스하므로 해당 문서를 찾을 수 있어야합니다. HTTPS 프록시 설정이 설정 될 수 `~/.git/config`또는 시스템 특성 (통해 다른 JVM 공정과 동일한 방법으로 `-Dhttps.proxyHost`하고 `-Dhttps.proxyPort`).
+If you don’t use HTTPS and user credentials, SSH should also work out of the box when you store keys in the default directories (`~/.ssh`) and the uri points to an SSH location, e.g. "[git@github.com](mailto:git@github.com):configuration/cloud-configuration". The repository is accessed using JGit, so any documentation you find on that should be applicable. HTTPS proxy settings can be set in `~/.git/config` or in the same way as for any other JVM process via system properties (`-Dhttps.proxyHost` and `-Dhttps.proxyPort`).
 
 
 
@@ -1466,35 +1849,33 @@ bootstrap.yml
 
 
 
-#### 파일 시스템 백엔드
 
 
 
-설정 서버에는 Git을 사용하지 않는 "네이티브"프로필이 있지만 로컬 클래스 경로 또는 파일 시스템 ( "spring.cloud.config.server"로 가리키는 모든 정적 URL)에서 구성 파일을로드합니다 .native.searchLocations "). 기본 프로필을 사용하려면 "spring.profiles.active = native"를 사용하여 구성 서버를 시작하십시오.
 
 
 
 
 
+<td class="content">If you don’t know where your `~/.git` directory is us `git config --global` to manipulate the settings (e.g. `git config --global http.sslVerify false`).
 
 
 
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">사용하는 것을 잊지 `file:`파일 자원에 대한 접두사 (접두사없이 기본값은 일반적으로 클래스 경로입니다). 그냥 봄 부팅 구성으로 당신은 포함 할 수 있습니다 `${}`스타일의 환경 자리를하지만, Windows의 절대 경로 추가 "/", 예를 들어 필요로 기억`[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`
 
 
 
+##### Placeholders in Git Search Paths
 
 
 
+Spring Cloud Config Server also supports a search path with placeholders for the `{application}` and `{profile}` (and `{label}` if you need it). Example:
 
 
 
@@ -1502,17 +1883,22 @@ bootstrap.yml
 
 
 
+    spring:
+      cloud:
+        config:
+          server:
+            git:
+              uri: https://github.com/spring-cloud-samples/config-repo
+              searchPaths: '{application}'
 
 
 
 
-<td class="icon">
 
-경고
 
 
+searches the repository for files in the same name as the directory (as well as the top level). Wildcards are also valid in a search path with placeholders (any matching directory is included in the search).
 
-<td class="content">의 초기 값은 `searchLocations`로컬 스프링 부트 프로그램 (그래서 동일하다 `[classpath:/, classpath:/config, file:./, file:./config]`). 이 노출되지 않고 `application.properties`, 서버에 존재하는 임의의 프로퍼티 소스 클라이언트로 전송되기 전에 제거되어 있기 때문에 모든 클라이언트는 서버로부터.
 
 
 
@@ -1521,6 +1907,7 @@ bootstrap.yml
 
 
 
+#### Version Control Backend Filesystem Use
 
 
 
@@ -1530,15 +1917,13 @@ bootstrap.yml
 
 
 
-<td class="icon">
 
-팁
 
 
 
-<td class="content">파일 시스템 백엔드는 신속하게 시작하고 테스트하기에 좋습니다. 프로덕션 환경에서 사용하려면 파일 시스템이 안정적이어야하며 모든 구성 서버 인스턴스에서 공유해야합니다.
 
 
+<td class="content">With VCS based backends (git, svn) files are checked out or cloned to the local filesystem. By default they are put in the system temporary directory with a prefix of `config-repo-`. On linux, for example it could be `/tmp/config-repo-<randomid>`. Some operating systems [routinely clean out](https://serverfault.com/questions/377348/when-does-tmp-get-cleared/377349#377349) temporary directories. This can lead to unexpected behaviour such as missing properties. To avoid this problem, change the directory Config Server uses, by setting `spring.cloud.config.server.git.basedir` or `spring.cloud.config.server.svn.basedir` to a directory that does not reside in the system temp structure.
 
 
 
@@ -1548,35 +1933,33 @@ bootstrap.yml
 
 
 
-검색 위치에 대한 자리 표시자를 포함 할 수 있습니다 `{application}`, `{profile}`하고 `{label}`. 이 방법으로 경로의 디렉토리를 분리하고 자신에게 맞는 전략 (예 : 응용 프로그램 별 하위 디렉토리 또는 프로필 당 하위 디렉토리)을 선택할 수 있습니다.
 
 
 
 
+#### File System Backend
 
-당신이 검색 위치에 자리 표시자를 사용하지 않는 경우,이 저장소는 추가 `{label}`속성 파일이 각 검색 위치에서로드되도록, 검색 경로에 접미사로 HTTP 자원의 매개 변수 **및** 레이블과 동일한 이름의 하위 디렉토리 ( 레이블이 지정된 속성은 Spring 환경에서 우선 순위를가집니다). 따라서 어떤 자리와 기본 동작으로 끝나는 검색 위치를 추가하는 것과 같은이 `/{label}/. For example `file:/tmp/config` 동일하다`file:/tmp/config,file:/tmp/config/{label}`
 
 
+There is also a "native" profile in the Config Server that doesn’t use Git, but just loads the config files from the local classpath or file system (any static URL you want to point to with "spring.cloud.config.server.native.searchLocations"). To use the native profile just launch the Config Server with "spring.profiles.active=native".
 
 
 
 
 
-#### 모든 응용 프로그램과 구성 공유
 
 
 
-파일 기반 (즉, 자식, SVN 및 기본) 저장소에서 파일 이름을 가진 자원과 `application*`모든 클라이언트 응용 프로그램 (그래서 사이에 공유 `application.properties`, `application.yml`, `application-*.properties`등). 이러한 파일 이름의 자원을 사용하여 전역 기본값을 구성하고 필요에 따라 응용 프로그램 특정 파일로 대체 할 수 있습니다.
 
 
 
 
 
-#_property_overrides [속성 재정의] 기능은 전역 기본값을 설정하는 데 사용할 수도 있으며 자리 표시 자 응용 프로그램에서 로컬 우선 순위를 재정의 할 수 있습니다.
 
 
 
 
+<td class="content">Remember to use the `file:` prefix for file resources (the default without a prefix is usually the classpath). Just as with any Spring Boot configuration you can embed `${}`-style environment placeholders, but remember that absolute paths in Windows require an extra "/", e.g. `[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`
 
 
 
@@ -1584,13 +1967,10 @@ bootstrap.yml
 
 
 
-<td class="icon">
 
-팁
 
 
 
-<td class="content">"네이티브"프로파일 (로컬 파일 시스템 백엔드)을 사용하면 서버 자체 구성의 일부가 아닌 명시 적 검색 위치를 사용하는 것이 좋습니다. 그렇지 않으면 `application*` 그들은 서버의 일부이기 때문에 기본 검색 위치에 자원이 제거됩니다.
 
 
 
@@ -1603,12 +1983,103 @@ bootstrap.yml
 
 
 
+<td class="content">The default value of the `searchLocations` is identical to a local Spring Boot application (so `[classpath:/, classpath:/config, file:./, file:./config]`). This does not expose the `application.properties` from the server to all clients because any property sources present in the server are removed before being sent to the client.
 
-#### 속성 재정의
 
 
 
-구성 서버에는 정상적인 스프링 부트 훅을 사용하여 응용 프로그램이 실수로 변경할 수없는 모든 응용 프로그램에 구성 속성을 제공 할 수있는 "재정의"기능이 있습니다. 재정의를 선언하려면 단지에 이름 - 값 쌍의 맵을 추가 `spring.cloud.config.server.overrides`. 예를 들어
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">A filesystem backend is great for getting started quickly and for testing. To use it in production you need to be sure that the file system is reliable, and shared across all instances of the Config Server.
+
+
+
+
+
+
+
+
+
+
+
+The search locations can contain placeholders for `{application}`, `{profile}` and `{label}`. In this way you can segregate the directories in the path, and choose a strategy that makes sense for you (e.g. sub-directory per application, or sub-directory per profile).
+
+
+
+
+
+If you don’t use placeholders in the search locations, this repository also appends the `{label}` parameter of the HTTP resource to a suffix on the search path, so properties files are loaded from each search location **and** a subdirectory with the same name as the label (the labelled properties take precedence in the Spring Environment). Thus the default behaviour with no placeholders is the same as adding a search location ending with `/{label}/. For example `file:/tmp/config` is the same as `file:/tmp/config,file:/tmp/config/{label}`
+
+
+
+
+
+
+
+#### Sharing Configuration With All Applications
+
+
+
+With file-based (i.e. git, svn and native) repositories, resources with file names in `application*` are shared between all client applications (so `application.properties`, `application.yml`, `application-*.properties` etc.). You can use resources with these file names to configure global defaults and have them overridden by application-specific files as necessary.
+
+
+
+
+
+The #_property_overrides[property overrides] feature can also be used for setting global defaults, and with placeholders applications are allowed to override them locally.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">With the "native" profile (local file system backend) it is recommended that you use an explicit search location that isn’t part of the server’s own configuration. Otherwise the `application*` resources in the default search locations are removed because they are part of the server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Property Overrides
+
+
+
+The Config Server has an "overrides" feature that allows the operator to provide configuration properties to all applications that cannot be accidentally changed by the application using the normal Spring Boot hooks. To declare overrides just add a map of name-value pairs to `spring.cloud.config.server.overrides`. For example
 
 
 
@@ -1629,7 +2100,7 @@ bootstrap.yml
 
 
 
-읽기 고객을 config (설정) 모든 응용 프로그램의 원인이됩니다 `foo=bar` 자신의 구성을 독립적으로합니다. 물론 응용 프로그램은 구성 서버의 데이터를 원하는 방식으로 사용할 수 있으므로 재정의는 적용 할 수 없지만 Spring Cloud 구성 클라이언트 인 경우 유용한 기본 동작을 제공합니다.
+will cause all applications that are config clients to read `foo=bar` independent of their own configuration. (Of course an application can use the data in the Config Server in any way it likes, so overrides are not enforceable, but they do provide useful default behaviour if they are Spring Cloud Config clients.)
 
 
 
@@ -1641,15 +2112,13 @@ bootstrap.yml
 
 
 
-<td class="icon">
-
-팁
 
 
 
-<td class="content">은 "$"또는 "은 {"는, 예를 들어 탈출 ( "\") 백 슬래시를 사용하여 "$ {}"이스케이프 (클라이언트에 해결) 할 수있다 정상, 봄 환경 자리 `\${app.foo:bar}`앱하지 않는 한에 "바"를 해결합니다 자체 "app.foo"를 제공합니다. YAML에서 백 슬래시 자체를 이스케이프 할 필요는 없지만 서버에서 오버라이드를 구성 할 때는 속성 파일에서 이스케이프해야합니다.
 
 
+
+<td class="content">Normal, Spring environment placeholders with "${}" can be escaped (and resolved on the client) by using backslash ("\") to escape the "$" or the "{", e.g. `\${app.foo:bar}` resolves to "bar" unless the app provides its own "app.foo". Note that in YAML you don’t need to escape the backslash itself, but in properties files you do, when you configure the overrides on the server.
 
 
 
@@ -1659,7 +2128,9 @@ bootstrap.yml
 
 
 
-클라이언트의 모든 재정의 우선 순위를 기본값과 비슷하게 변경할 수 있으므로 응용 프로그램에서 환경 변수 또는 시스템 등록 정보에 자체 값을 제공 할 수 있습니다. 플래그는`
+
+
+You can change the priority of all overrides in the client to be more like default values, allowing applications to supply their own values in environment variables or System properties, by setting the flag `spring.cloud.config.overrideNone=true` (default is false) in the remote repository.
 
 
 
@@ -1669,17 +2140,17 @@ bootstrap.yml
 
 
 
-### 건강 지표
+### Health Indicator
 
 
 
-구성 서버 구성이 경우 확인하는 건강 지표와 함께 제공 `EnvironmentRepository`하고있다. 기본적으로는 요청 `EnvironmentRepository` 라는 응용 프로그램 `app`의 `default`프로파일 및 제공하는 기본 레이블 `EnvironmentRepository`구현입니다.
+Config Server comes with a Health Indicator that checks if the configured `EnvironmentRepository` is working. By default it asks the `EnvironmentRepository` for an application named `app`, the `default` profile and the default label provided by the `EnvironmentRepository` implementation.
 
 
 
 
 
-사용자 정의 프로파일 및 사용자 정의 레이블과 함께 더 많은 어플리케이션을 점검하도록 Health 표시기를 구성 할 수 있습니다.
+You can configure the Health Indicator to check more applications along with custom profiles and custom labels, e.g.
 
 
 
@@ -1705,7 +2176,7 @@ bootstrap.yml
 
 
 
-당신은 설정하여 건강 지표를 사용하지 않도록 설정할 수 있습니다 `spring.cloud.config.server.health.enabled=false`.
+You can disable the Health Indicator by setting `spring.cloud.config.server.health.enabled=false`.
 
 
 
@@ -1713,25 +2184,17 @@ bootstrap.yml
 
 
 
-### 보안
+### Security
 
 
 
-물리적 네트워크 보안에서부터 OAuth2 베어러 토큰에 이르는 모든 방식으로 설정 서버를 자유롭게 보호 할 수 있으며 Spring Security와 Spring Boot를 사용하면 쉽게 모든 것을 할 수 있습니다.
-
-
-
-
-
-HTTP 기본 보안 구성 기본 봄 부팅을 사용하려면, 그냥 (예를 통해 클래스 패스에 봄 보안 포함 `spring-boot-starter-security`). 기본값은 "사용자"연습에 매우 유용 될 수 없습니다 임의로 생성 된 암호의 이름, 그래서 우리는 당신이 (를 통해 암호를 구성하는 것이 좋습니다 `security.user.password`)과 (을 암호화하는 것이 수행하는 방법에 대한 지침은 아래를 참조하십시오 ).
+You are free to secure your Config Server in any way that makes sense to you (from physical network security to OAuth2 bearer tokens), and Spring Security and Spring Boot make it easy to do pretty much anything.
 
 
 
 
 
-
-
-### 암호화 및 암호 해독
+To use the default Spring Boot configured HTTP Basic security, just include Spring Security on the classpath (e.g. through `spring-boot-starter-security`). The default is a username of "user" and a randomly generated password, which isn’t going to be very useful in practice, so we recommend you configure the password (via `security.user.password`) and encrypt it (see below for instructions on how to do that).
 
 
 
@@ -1739,15 +2202,7 @@ HTTP 기본 보안 구성 기본 봄 부팅을 사용하려면, 그냥 (예를 �
 
 
 
-
-
-<td class="icon">
-
-중대한
-
-
-
-<td class="content">**전제 조건 :** 당신이 당신의 JVM에 설치된 전체 강도 JCE를 필요로하는 암호화 및 복호화 기능 (기본값이 아닙니다)를 사용합니다. Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).
+### Encryption and Decryption
 
 
 
@@ -1759,19 +2214,35 @@ HTTP 기본 보안 구성 기본 봄 부팅을 사용하려면, 그냥 (예를 �
 
 
 
-원격 속성 소스 (값으로 시작 암호화 된 콘텐츠를 포함하는 경우 `{cipher}`) 그들은 HTTP를 통해 클라이언트에 전송하기 전에 암호를 해독 할 것입니다. 이 설정의 가장 큰 장점은 속성 값이 "휴식"(예 : 자식 저장소에서) 일 때 일반 텍스트 일 ​​필요가 없다는 것입니다. 값을 암호 해독 할 수 없으면이 값은 속성 원본에서 제거되고 추가 속성은 같은 키로 추가되지만 접두사는 "잘못되었습니다." "적용 할 수 없음"을 의미하는 값 (일반적으로 "<n / a>"). 이것은 주로 암호문이 실수로 누출되거나 암호로 사용되는 것을 방지하기위한 것입니다.
+
+
+
+
+<td class="content">**Prerequisites:** to use the encryption and decryption features you need the full-strength JCE installed in your JVM (it’s not there by default). You can download the "Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files" from Oracle, and follow instructions for installation (essentially replace the 2 policy files in the JRE lib/security directory with the ones that you downloaded).
 
 
 
 
 
-당신이 설정 클라이언트 응용 프로그램에 대한 원격 구성 저장소를 설정하는 경우는 포함 할 수 있습니다 `application.yml`예를 들어이 등을 :
 
 
 
 
 
-application.yml
+
+If the remote property sources contain encrypted content (values starting with `{cipher}`) they will be decrypted before sending to clients over HTTP. The main advantage of this set up is that the property values don’t have to be in plain text when they are "at rest" (e.g. in a git repository). If a value cannot be decrypted it is removed from the property source and an additional property is added with the same key, but prefixed with "invalid." and a value that means "not applicable" (usually "<n/a>"). This is largely to prevent cipher text being used as a password and accidentally leaking.
+
+
+
+
+
+If you are setting up a remote config repository for config client applications it might contain an `application.yml` like this, for instance:
+
+
+
+
+
+
 
 
 
@@ -1786,18 +2257,7 @@ application.yml
 
 
 
-.properties 파일의 암호화 된 값은 따옴표로 묶어서는 안됩니다. 그렇지 않으면 값이 해독되지 않습니다.
-
-
-
-
-
-application.properties
-
-
-
-<pre>spring.datasource.username : dbuser
-spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
+Encrypted values in a .properties file must not be wrapped in quotes, otherwise the value will not be decrypted:
 
 
 
@@ -1805,13 +2265,10 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-이 일반 텍스트를 공유 git 저장소로 안전하게 푸시 할 수 있으며 비밀 암호가 보호됩니다.
 
 
-
-
-
-서버는 또한 노출 `/encrypt`하고 `/decrypt`(이 확보하고 공인 에이전트에 의해 액세스되는 것으로 가정) 엔드 포인트. 원격 구성 파일을 편집하는 경우 당신은에 게시하여 값을 암호화하기 위해 구성 서버를 사용하여 `/encrypt`엔드 포인트, 예를 들어,
+<pre>spring.datasource.username: dbuser
+spring.datasource.password: {cipher}FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
@@ -1819,7 +2276,21 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-<pre>$ curl localhost : 8888 / encrypt -d mysecret
+You can safely push this plain text to a shared git repository and the secret password is protected.
+
+
+
+
+
+The server also exposes `/encrypt` and `/decrypt` endpoints (on the assumption that these will be secured and only accessed by authorized agents). If you are editing a remote config file you can use the Config Server to encrypt values by POSTing to the `/encrypt` endpoint, e.g.
+
+
+
+
+
+
+
+<pre>$ curl localhost:8888/encrypt -d mysecret
 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda</pre>
 
 
@@ -1828,7 +2299,7 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-역 동작도를 통해 사용할 수 있습니다 `/decrypt`(서버가 대칭 키 또는 전체 키 쌍으로 구성되어 제공)
+The inverse operation is also available via `/decrypt` (provided the server is configured with a symmetric key or a full key pair):
 
 
 
@@ -1836,8 +2307,8 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-<pre>$ curl localhost : 8888 / decrypt -d 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda
-나의 비밀</pre>
+<pre>$ curl localhost:8888/decrypt -d 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda
+mysecret</pre>
 
 
 
@@ -1851,15 +2322,13 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-<td class="icon">
 
-팁
 
 
 
-<td class="content">당신은 컬과 같이 테스트하는 경우, 사용 `--data-urlencode`(대신 `-d`명시 적)을 설정하거나 `Content-Type: text/plain`확인 컬 특수 문자가있는 경우 정확하게 데이터를 인코딩하기 위해 ( '+'는 특히 까다 롭다).
 
 
+<td class="content">If you are testing like this with curl, then use `--data-urlencode` (instead of `-d`) or set an explicit `Content-Type: text/plain` to make sure curl encodes the data correctly when there are special characters ('+' is particularly tricky).
 
 
 
@@ -1869,15 +2338,15 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-암호화 된 값을 타고 추가 `{cipher}`, 잠재적으로 안전하지 않은 매장은 YAML 또는 속성에 넣어 제출하기 전에 접두사를, 당신은 커밋하기 전에 원격으로 밀어 넣습니다.
 
 
+Take the encrypted value and add the `{cipher}` prefix before you put it in the YAML or properties file, and before you commit and push it to a remote, potentially insecure store.
 
 
 
-`/encrypt`과 `/decrypt`끝점은 두 형태의 경로를 받아 `/*/{name}/{profiles}`클라이언트 메인 환경 자원으로 호출 할 때 애플리케이션 (명) 및 프로파일에 따라 암호화를 제어하기 위해 사용될 수있다.
 
 
+The `/encrypt` and `/decrypt` endpoints also both accept paths of the form `/*/{name}/{profiles}` which can be used to control cryptography per application (name) and profile when clients call into the main Environment resource.
 
 
 
@@ -1887,17 +2356,15 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">당신은 또한을 제공해야이 세분화 된 방법으로 암호화 제어하는 `@Bean`타입의 `TextEncryptorLocator`이름과 프로필마다 다른 암호 화기를 만듭니다. 기본적으로 제공되는 암호화는이 작업을 수행하지 않으므로 모든 암호화가 동일한 키를 사용합니다.
 
 
 
 
+<td class="content">to control the cryptography in this granular way you must also provide a `@Bean` of type `TextEncryptorLocator` that creates a different encryptor per name and profiles. The one that is provided by default does not do this (so all encryptions use the same key).
 
 
 
@@ -1905,7 +2372,11 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 
 
 
-`spring`(설치 Spring Cloud CLI 확장자) 명령 행 클라이언트는, 예를 암호화하고 해독하는 데 사용할 수 있습니다
+
+
+
+
+The `spring` command line client (with Spring Cloud CLI extensions installed) can also be used to encrypt and decrypt, e.g.
 
 
 
@@ -1916,7 +2387,7 @@ spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ</pre>
 <pre>$ spring encrypt mysecret --key foo
 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda
 $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda
-나의 비밀</pre>
+mysecret</pre>
 
 
 
@@ -1924,7 +2395,7 @@ $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201
 
 
 
-파일 (예 : 암호화를위한 RSA 공개 키)에서 키를 사용하려면 키 값 앞에 "@"를 붙이고 파일 경로를 제공하십시오.
+To use a key in a file (e.g. an RSA public key for encryption) prepend the key value with "@" and provide the file path, e.g.
 
 
 
@@ -1932,8 +2403,8 @@ $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201
 
 
 
-<pre>$ spring encrypt mysecret --key @ $ {HOME} /. ssh / id_rsa.pub
-AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...</pre>
+<pre>$ spring encrypt mysecret --key @${HOME}/.ssh/id_rsa.pub
+AQAjPgt3eFZQXwt8tsHAVv/QHiY5sI2dRcR+...</pre>
 
 
 
@@ -1941,7 +2412,7 @@ AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...</pre>
 
 
 
-key 인수의 (a에도 불구하고 필수 `--`접두사).
+The key argument is mandatory (despite having a `--` prefix).
 
 
 
@@ -1949,39 +2420,39 @@ key 인수의 (a에도 불구하고 필수 `--`접두사).
 
 
 
-### 키 관리
+### Key Management
 
 
 
-구성 서버는 대칭 (공유) 키 또는 비대칭 (RSA 키 쌍) 키를 사용할 수 있습니다. 비대칭 선택은 보안 측면에서 우수하지만 구성 할 단일 속성 값이므로 대칭 키를 사용하는 것이 더 편리합니다.
-
-
-
-
-
-방금 설정해야합니다 대칭 키 구성하려면 `encrypt.key`비밀 String으로 (또는 환경 변수를 사용하는 `ENCRYPT_KEY`일반 텍스트 구성 파일에서 그것을 유지하기 위해 참조).
+The Config Server can use a symmetric (shared) key or an asymmetric one (RSA key pair). The asymmetric choice is superior in terms of security, but it is often more convenient to use a symmetric key since it is just a single property value to configure.
 
 
 
 
 
-비대칭 키를 구성하려면 (의 PEM 인코딩 된 텍스트 값으로 키를 설정할 수 있습니다 `encrypt.key`), 또는 키 스토어를 통해 (예에 의해 생성으로 `keytool`의 JDK와 함께 제공 유틸리티). 키 스토어 등록 정보는 다음 `encrypt.keyStore.*`과 `*`같
+To configure a symmetric key you just need to set `encrypt.key` to a secret String (or use an enviroment variable `ENCRYPT_KEY` to keep it out of plain text configuration files).
 
 
 
 
 
-*   `location`(A `Resource`위치)
-
-*   `password` (키 스토어의 잠금을 해제하기 위해)
-
-*   `alias` (상점에서 어떤 키가 사용되는지 식별하기 위해).
+To configure an asymmetric key you can either set the key as a PEM-encoded text value (in `encrypt.key`), or via a keystore (e.g. as created by the `keytool` utility that comes with the JDK). The keystore properties are `encrypt.keyStore.*` with `*` equal to
 
 
 
 
 
-암호화는 공개 키를 사용하여 수행되며 개인 키는 암호 해독에 필요합니다. 따라서 암호화를 원한다면 원칙적으로 서버의 공개 키 만 구성 할 수 있습니다 (개인 키로 로컬에서 값을 해독 할 준비가되어 있음). 실제로는 핵심 관리 프로세스가 서버에 집중되는 대신 모든 클라이언트를 중심으로 확산되므로이를 수행하고 싶지 않을 수 있습니다. 반면에 config 서버가 실제로 상대적으로 안전하지 않고 소수의 클라이언트 만 암호화 된 속성이 필요한 경우 유용한 옵션입니다.
+*   `location` (a `Resource` location),
+
+*   `password` (to unlock the keystore) and
+
+*   `alias` (to identify which key in the store is to be used).
+
+
+
+
+
+The encryption is done with the public key, and a private key is needed for decryption. Thus in principle you can configure only the public key in the server if you only want to do encryption (and are prepared to decrypt the values yourself locally with the private key). In practice you might not want to do that because it spreads the key management process around all the clients, instead of concentrating it in the server. On the other hand it’s a useful option if your config server really is relatively insecure and only a handful of clients need the encrypted properties.
 
 
 
@@ -1989,11 +2460,11 @@ key 인수의 (a에도 불구하고 필수 `--`접두사).
 
 
 
-### 테스트 용 키 저장소 만들기
+### Creating a Key Store for Testing
 
 
 
-테스트 용 키 저장소를 만들려면 다음과 같이하면됩니다.
+To create a keystore for testing you can do something like this:
 
 
 
@@ -2002,7 +2473,7 @@ key 인수의 (a에도 불구하고 필수 `--`접두사).
 
 
 <pre>$ keytool -genkeypair -alias mytestkey -keyalg RSA \
-  -dname "CN = 웹 서버, OU = 단위, O = 조직, L = 도시, S = 상태, C = 미국"
+  -dname "CN=Web Server,OU=Unit,O=Organization,L=City,S=State,C=US" \
   -keypass changeme -keystore server.jks -storepass letmein</pre>
 
 
@@ -2011,7 +2482,7 @@ key 인수의 (a에도 불구하고 필수 `--`접두사).
 
 
 
-풋 `server.jks`(예를 들어) 클래스 경로에 파일을 한 다음에 `application.yml`는 config 서버 :
+Put the `server.jks` file in the classpath (for instance) and then in your `application.yml` for the Config Server:
 
 
 
@@ -2034,11 +2505,11 @@ key 인수의 (a에도 불구하고 필수 `--`접두사).
 
 
 
-### 여러 키 및 키 회전 사용
+### Using Multiple Keys and Key Rotation
 
 
 
-받는 사람 또한 `{cipher}`암호화 된 속성 값에 접두사의 구성 서버를 찾습니다 `{name:value}`제 (Base64로 인코딩 된)가 암호문의 시작 전에 접두사 (제로 또는 많은). 키가 전달됩니다 `TextEncryptorLocator`그것은을 찾을 필요가 어떤 논리 할 수있는 `TextEncryptor`암호에 대해. 당신은 (키 스토어를 구성한 경우 `encrypt.keystore.location`) 기본 로케이터는이 같은 암호 텍스트 즉, "키"접두사가 제공 별칭 가게에서 키를 찾습니다 :
+In addition to the `{cipher}` prefix in encrypted property values, the Config Server looks for `{name:value}` prefixes (zero or many) before the start of the (Base64 encoded) cipher text. The keys are passed to a `TextEncryptorLocator` which can do whatever logic it needs to locate a `TextEncryptor` for the cipher. If you have configured a keystore (`encrypt.keystore.location`) the default locator will look for keys in the store with aliases as supplied by the "key" prefix, i.e. with a cipher text like this:
 
 
 
@@ -2055,31 +2526,13 @@ key 인수의 (a에도 불구하고 필수 `--`접두사).
 
 
 
-locator는 "testkey"라는 이름의 키를 찾을 것입니다. 비밀도를 통해 공급 될 수 `{secret:…​}`접두사 가치하지만, 그렇지 않은 경우 기본값은 (당신이 keytore를 구축하고 비밀을 지정하지 않을 때 무엇을 얻을입니다) 키 저장소 암호를 사용하는 것입니다. 당신이 경우에 **할** 비밀을 제공 당신은 또한 사용자 정의를 사용하여 비밀을 암호화하는 것이 좋습니다 `SecretLocator`.
+the locator will look for a key named "testkey". A secret can also be supplied via a `{secret:…​}` value in the prefix, but if it is not the default is to use the keystore password (which is what you get when you build a keytore and don’t specify a secret). If you **do** supply a secret it is recommended that you also encrypt the secrets using a custom `SecretLocator`.
 
 
 
 
 
-키가 구성 데이터의 몇 바이트 만 암호화하는 데 사용되는 경우 (즉, 다른 곳에서 사용되지 않는 경우) 암호화 위반으로 인해 키 순환이 거의 필요하지 않지만 보안 위반이있는 경우 키를 변경해야 할 수도 있습니다. 예. 이 경우 모든 클라이언트는 소스 설정 파일을 변경 (예를 들어 자식에) 새로운 사용해야합니다 `{key:…​}`키 별명이 구성 서버 키 스토어에서 사용할 수 있는지 사전에 물론 검사, 모든 암호에 접두사.
-
-
-
-
-
-
-
-
-
-
-
-<td class="icon">
-
-팁
-
-
-
-<td class="content">`{name:value}`접두사도에 게시 일반 텍스트 추가 할 수 있습니다 `/encrypt`당신은 구성 서버가 암호 해독뿐만 아니라 모든 암호화를 처리 할 수 있도록하려는 경우, 엔드 포인트.
+Key rotation is hardly ever necessary on cryptographic grounds if the keys are only being used to encrypt a few bytes of configuration data (i.e. they are not being used elsewhere), but occasionally you might need to change the keys if there is a security breach for instance. In that case all the clients would need to change their source config files (e.g. in git) and use a new `{key:…​}` prefix in all the ciphers, checking beforehand of course that the key alias is available in the Config Server keystore.
 
 
 
@@ -2097,19 +2550,95 @@ locator는 "testkey"라는 이름의 키를 찾을 것입니다. 비밀도를 �
 
 
 
-## 일반 텍스트 검색
+<td class="content">the `{name:value}` prefixes can also be added to plaintext posted to the `/encrypt` endpoint, if you want to let the Config Server handle all encryption as well as decryption.
 
 
 
 
 
-대신에 사용하는 `Environment`추상화 (또는 YAML 또는 속성 형식으로 그것의 다른 표현 중 하나) 응용 프로그램은 자신의 환경에 맞는 일반 일반 텍스트 구성 파일을해야 할 수도 있습니다. 는 config 서버에서 추가 엔드를 통해이 제공 `/{name}/{profile}/{label}/{path}` "이름", "프로필"및 "라벨"은 일정한 환경 엔드와 같은 의미를 가질 경우, 그러나 "경로"파일 이름 (예이다 `log.xml`). 이 엔드 포인트의 소스 파일은 환경 엔드 포인트와 동일한 방법으로 위치합니다. 동일한 검색 경로가 특성 또는 YAML 파일에 사용되지만 모든 일치하는 자원을 모으는 대신 일치하는 첫 번째 파일 만 리턴됩니다.
 
 
 
 
 
-자원이있는 후, 일반 형식 (의 자리가 `${…​}`) 유효 사용하여 해결 `Environment`제공되는 응용 프로그램의 이름, 프로필 및 레이블을. 이 f}으로 자원 엔드 포인트는 환경 엔드 포인트와 긴밀하게 통합됩니다. 예를 들어, GIT (또는 SVN) 저장소에 대한 레이아웃이있는 경우 :
+
+
+
+### Serving Encrypted Properties
+
+
+
+Sometimes you want the clients to decrypt the configuration locally, instead of doing it in the server. In that case you can still have /encrypt and /decrypt endpoints (if you provide the `encrypt.*` configuration to locate a key), but you need to explicitly switch off the decryption of outgoing properties using `spring.cloud.config.server.encrypt.enabled=false`. If you don’t care about the endpoints, then it should work if you configure neither the key nor the enabled flag.
+
+
+
+
+
+
+
+
+
+
+
+## Serving Alternative Formats
+
+
+
+
+
+The default JSON format from the environment endpoints is perfect for consumption by Spring applications because it maps directly onto the `Environment` abstraction. If you prefer you can consume the same data as YAML or Java properties by adding a suffix to the resource path (".yml", ".yaml" or ".properties"). This can be useful for consumption by applications that do not care about the structure of the JSON endpoints, or the extra metadata they provide, for example an application that is not using Spring might benefit from the simplicity of this approach.
+
+
+
+
+
+The YAML and properties representations have an additional flag (provided as a boolean query parameter `resolvePlaceholders`) to signal that placeholders in the source documents, in the standard Spring `${…​}` form, should be resolved in the output where possible before rendering. This is a useful feature for consumers that don’t know about the Spring placeholder conventions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">there are limitations in using the YAML or properties formats, mainly in relation to the loss of metadata. The JSON is structured as an ordered list of property sources, for example, with names that correlate with the source. The YAML and properties forms are coalesced into a single map, even if the origin of the values has multiple sources, and the names of the original source files are lost. The YAML representation is not necessarily a faithful representation of the YAML source in a backing repository either: it is constructed from a list of flat property sources, and assumptions have to be made about the form of the keys.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Serving Plain Text
+
+
+
+
+
+Instead of using the `Environment` abstraction (or one of the alternative representations of it in YAML or properties format) your applications might need generic plain text configuration files, tailored to their environment. The Config Server provides these through an additional endpoint at `/{name}/{profile}/{label}/{path}` where "name", "profile" and "label" have the same meaning as the regular environment endpoint, but "path" is a file name (e.g. `log.xml`). The source files for this endpoint are located in the same way as for the environment endpoints: the same search path is used as for properties or YAML files, but instead of aggregating all matching resources, only the first one to match is returned.
+
+
+
+
+
+After a resource is located, placeholders in the normal format (`${…​}`) are resolved using the effective `Environment` for the application name, profile and label supplied. In this way the resource endpoint is tightly integrated with the environment endpoints. Example, if you have this layout for a GIT (or SVN) repository:
 
 
 
@@ -2126,7 +2655,7 @@ nginx.conf</pre>
 
 
 
-위치는 `nginx.conf`다음과 같습니다 :
+where `nginx.conf` looks like this:
 
 
 
@@ -2134,9 +2663,9 @@ nginx.conf</pre>
 
 
 
-<pre>서버 {
-    80을 듣는다.
-    server_name $ {nginx.server.name};
+<pre>server {
+    listen              80;
+    server_name         ${nginx.server.name};
 }</pre>
 
 
@@ -2145,7 +2674,7 @@ nginx.conf</pre>
 
 
 
-과 `application.yml`같은 :
+and `application.yml` like this:
 
 
 
@@ -2169,7 +2698,7 @@ nginx.conf</pre>
 
 
 
-다음 `/foo/default/master/nginx.conf`리소스는 다음과 같습니다 :
+then the `/foo/default/master/nginx.conf` resource looks like this:
 
 
 
@@ -2177,9 +2706,9 @@ nginx.conf</pre>
 
 
 
-<pre>서버 {
-    80을 듣는다.
-    server_name example.com;
+<pre>server {
+    listen              80;
+    server_name         example.com;
 }</pre>
 
 
@@ -2188,7 +2717,7 @@ nginx.conf</pre>
 
 
 
-과 `/foo/development/master/nginx.conf`같은 :
+and `/foo/development/master/nginx.conf` like this:
 
 
 
@@ -2196,9 +2725,9 @@ nginx.conf</pre>
 
 
 
-<pre>서버 {
-    80을 듣는다.
-    server_name develop.com;
+<pre>server {
+    listen              80;
+    server_name         develop.com;
 }</pre>
 
 
@@ -2213,15 +2742,13 @@ nginx.conf</pre>
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">단지 환경 구성에 대한 소스 파일처럼 "프로필"은 파일 이름을 확인하는 데 사용됩니다, 그래서 당신은 프로필 - 특정 파일을 원하는 경우 다음 `/*/development/*/logback.xml`라는 파일에 의해 해결 될 것 `logback-development.xml`(에 우선 `logback.xml`).
 
 
+<td class="content">just like the source files for environment configuration, the "profile" is used to resolve the file name, so if you want a profile-specific file then `/*/development/*/logback.xml` will be resolved by a file called `logback-development.xml` (in preference to `logback.xml`).
 
 
 
@@ -2235,15 +2762,15 @@ nginx.conf</pre>
 
 
 
-## 구성 서버 포함
 
 
+## Embedding the Config Server
 
 
 
-구성 서버는 독립 실행 형 응용 프로그램으로 가장 잘 실행되지만 필요한 경우 다른 응용 프로그램에 포함 할 수 있습니다. 그냥 사용 `@EnableConfigServer`주석을. 이러한 경우에 유용 할 수있는 선택적인 속성은 `spring.cloud.config.server.bootstrap`서버가 자신의 원격 저장소에서 자동으로 구성한다는 것을 표시하는 플래그이다. 이 플래그는 시작을 지연시킬 수 있으므로 기본적으로 해제되어 있지만 다른 응용 프로그램에 포함 된 경우 다른 응용 프로그램과 같은 방법으로 초기화하는 것이 좋습니다.
 
 
+The Config Server runs best as a standalone application, but if you need to you can embed it in another application. Just use the `@EnableConfigServer` annotation. An optional property that can be useful in this case is `spring.cloud.config.server.bootstrap` which is a flag to indicate that the server should configure itself from its own remote repository. The flag is off by default because it can delay startup, but when embedded in another application it makes sense to initialize the same way as any other application.
 
 
 
@@ -2253,17 +2780,15 @@ nginx.conf</pre>
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">그것은 분명하지만 부트 스트랩 플래그를 사용하는 경우 설정 서버 이름 및 저장소 URI가 구성되어 있어야합니다 있음을 알아 두셔야합니다 `bootstrap.yml`.
 
 
 
 
+<td class="content">It should be obvious, but remember that if you use the bootstrap flag the config server will need to have its name and repository URI configured in `bootstrap.yml`.
 
 
 
@@ -2271,45 +2796,45 @@ nginx.conf</pre>
 
 
 
-할 수 있습니다 (선택 사항) 세트 서버 엔드 포인트의 위치를 변경하려면 `spring.cloud.config.server.prefix`, "/ 설정", 예를 들어 접두사에서 자원 봉사. 접두사는 시작해야하지만 "/"로 끝나지 않아야합니다. 그것은에 적용된다 `@RequestMappings`(즉, 봄 부팅 접두사 아래 구성 서버에서 `server.servletPath`하고 `server.contextPath`).
 
 
 
 
+To change the location of the server endpoints you can (optionally) set `spring.cloud.config.server.prefix`, e.g. "/config", to serve the resources under a prefix. The prefix should start but not end with a "/". It is applied to the `@RequestMappings` in the Config Server (i.e. underneath the Spring Boot prefixes `server.servletPath` and `server.contextPath`).
 
-기본적으로 엔드 포인트가없는 임베디드 구성 서버 인 백엔드 저장소 (구성 서버가 아닌)에서 응용 프로그램의 구성을 직접 읽으려는 경우. 당신이 사용하지 않는 경우에는 전체 엔드 포인트를 전환 할 수 있습니다 `@EnableConfigServer` 주석 (단지 설정을 `spring.cloud.config.server.bootstrap=true`).
 
 
 
 
+If you want to read the configuration for an application directly from the backend repository (instead of from the config server) that’s basically an embedded config server with no endpoints. You can switch off the endpoints entirely if you don’t use the `@EnableConfigServer` annotation (just set `spring.cloud.config.server.bootstrap=true`).
 
 
 
 
 
-## 푸시 알림 및 스프링 클라우드 버스
 
 
 
 
+## Push Notifications and Spring Cloud Bus
 
-많은 소스 코드 저장소 공급자 (예 : Github, Gitlab 또는 Bitbucket)는 Webhook을 통해 저장소의 변경 사항을 알려줍니다. 제공자의 사용자 인터페이스를 통해 웹 훅을 URL 및 관심있는 이벤트 세트로 구성 할 수 있습니다. 예를 들어 [Github에서이](https://developer.github.com/v3/activity/events/types/#pushevent) 커밋의 목록이 포함 된 JSON의 시체와 함께으로 webhook에 게시하고 헤더 "X-Github에서-이벤트"와 같은 "푸시"합니다. 당신이에 대한 종속성 추가하면 `spring-cloud-config-monitor`라이브러리를하고, 당신의 구성 서버에서 봄 클라우드 버스를 활성화 한 다음 "/ 모니터"엔드 포인트를 사용할 수 있습니다.
 
 
 
 
+Many source code repository providers (like Github, Gitlab or Bitbucket for instance) will notify you of changes in a repository through a webhook. You can configure the webhook via the provider’s user interface as a URL and a set of events in which you are interested. For instance [Github](https://developer.github.com/v3/activity/events/types/#pushevent) will POST to the webhook with a JSON body containing a list of commits, and a header "X-Github-Event" equal to "push". If you add a dependency on the `spring-cloud-config-monitor` library and activate the Spring Cloud Bus in your Config Server, then a "/monitor" endpoint is enabled.
 
-은 webhook가 활성화되면 구성 서버가 보내드립니다 `RefreshRemoteApplicationEvent`가 변경되었을 수 있습니다 생각하는 애플리케이션을 대상으로한다. 변경 감지는 전략적으로 수행 할 수 있지만 기본적으로 응용 프로그램 이름과 일치하는 파일의 변경 사항을 찾습니다 (예 : "foo.properties"는 "foo"응용 프로그램을 대상으로하고 "application.properties"는 모든 응용 프로그램을 대상으로 함) . 당신이 동작을 재정의하려는 경우 전략은 `PropertyPathNotificationExtractor` 매개 변수로 요청 헤더와 본문을 받아 변경 파일 경로의 목록을 반환한다.
 
 
 
 
+When the webhook is activated the Config Server will send a `RefreshRemoteApplicationEvent` targeted at the applications it thinks might have changed. The change detection can be strategized, but by default it just looks for changes in files that match the application name (e.g. "foo.properties" is targeted at the "foo" application, and "application.properties" is targeted at all applications). The strategy if you want to override the behaviour is `PropertyPathNotificationExtractor` which accepts the request headers and body as parameters and returns a list of file paths that changed.
 
-기본 구성은 Github, Gitlab 또는 Bitbucket을 사용하여 즉시 사용할 수 있습니다. Github에서, Gitlab 또는의 Bitbucket에서 JSON 알림뿐만 아니라 당신은 양식 인코딩 몸 매개 변수를 "/ 모니터"를 게시하여 변경 알림을 트리거 할 수 있습니다 `path={name}`. 이것은 "{name}"패턴 (와일드 카드를 포함 할 수 있음)과 일치하는 응용 프로그램으로 브로드 캐스팅됩니다.
 
 
 
 
+The default configuration works out of the box with Github, Gitlab or Bitbucket. In addition to the JSON notifications from Github, Gitlab or Bitbucket you can trigger a change notification by POSTing to "/monitor" with a form-encoded body parameters `path={name}`. This will broadcast to applications matching the "{name}" pattern (can contain wildcards).
 
 
 
@@ -2317,19 +2842,17 @@ nginx.conf</pre>
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">는 `RefreshRemoteApplicationEvent`가있는 경우에만 송신 될 것이다 `spring-cloud-bus`는 config 서버에 상기 클라이언트 어플리케이션이 활성화된다.
 
 
 
 
 
 
+<td class="content">the `RefreshRemoteApplicationEvent` will only be transmitted if the `spring-cloud-bus` is activated in the Config Server and in the client application.
 
 
 
@@ -2341,13 +2864,10 @@ nginx.conf</pre>
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">기본 설정은 또한 로컬 자식 저장소에서 파일 시스템 변경을 감지합니다 (이 경우 webhook은 사용되지 않지만 설정 파일을 편집하자마자 새로 고침이 브로드 캐스트됩니다).
 
 
 
@@ -2356,6 +2876,7 @@ nginx.conf</pre>
 
 
 
+<td class="content">the default configuration also detects filesystem changes in local git repositories (the webhook is not used in that case but as soon as you edit a config file a refresh will be broadcast).
 
 
 
@@ -2363,59 +2884,67 @@ nginx.conf</pre>
 
 
 
-## Spring Cloud 구성 클라이언트
 
 
 
 
 
-봄 부팅 응용 프로그램은 봄 구성 서버 (또는 응용 프로그램 개발자가 제공 한 다른 외부 속성 원)의 즉시 활용할 수 있습니다, 또한 관련된 몇 가지 추가 유용한 기능 데리러 `Environment`이벤트를 변경합니다.
 
 
 
+## Spring Cloud Config Client
 
 
-### 첫 번째 부트 스트랩 구성
 
 
 
-이는 클래스 경로에 Spring Cloud Config Client가있는 모든 애플리케이션의 기본 동작입니다. 구성 클라이언트가 시작되면 그것은 (부트 스트랩 구성 등록 정보를 통해 구성 서버에 결합 `spring.cloud.config.uri`)과 봄을 초기화 `Environment`원격 속성 소스와.
+A Spring Boot application can take immediate advantage of the Spring Config Server (or other external property sources provided by the application developer), and it will also pick up some additional useful features related to `Environment` change events.
 
 
 
 
 
-이것의 최종 결과는 구성 서버를 소비 할 모든 클라이언트 응용 프로그램이 필요하다 `bootstrap.yml`에서 서버 주소 (또는 환경 변수) `spring.cloud.config.uri`(에 기본값에 "http : // localhost를 : 8888").
+### Config First Bootstrap
 
 
 
+This is the default behaviour for any application which has the Spring Cloud Config Client on the classpath. When a config client starts up it binds to the Config Server (via the bootstrap configuration property `spring.cloud.config.uri`) and initializes Spring `Environment` with remote property sources.
 
 
 
 
-### 유레카 퍼스트 부트 스트랩
 
+The net result of this is that all client apps that want to consume the Config Server need a `bootstrap.yml` (or an environment variable) with the server address in `spring.cloud.config.uri` (defaults to "http://localhost:8888").
 
 
-Spring Cloud Netflix와 Eureka Service Discovery를 사용하고 있다면 원한다면 Eureka에 Config Server를 등록 할 수 있지만 기본적으로 "Config First"모드에서는 클라이언트가 등록을 이용할 수 없습니다.
 
 
 
 
 
-당신이 구성 서버를 찾을 수 유레카를 사용하려는 경우, 당신이 할 수있는 설정하여 `spring.cloud.config.discovery.enabled=true`(기본 "false"로). 그 최종 결과는 클라이언트 모두가 필요 앱 있다는 `bootstrap.yml`에 예 유레카 서버 주소로 (또는 환경 변수) `eureka.client.serviceUrl.defaultZone`. 이 옵션을 사용하는 가격은 서비스 등록을 찾기 위해 시작할 때 여분의 네트워크 왕복입니다. 유레카가 고정 된 지점 인 경우 구성 서버가 좌표를 변경할 수있는 이점이 있습니다. 기본 서비스 ID는 "CONFIGSERVER"하지만 당신과 함께 클라이언트에 해당을 변경할 수 있습니다 `spring.cloud.config.discovery.serviceId`(그리고 설정하여 예 서비스에 대한 일반적인 방법으로 서버에 `spring.application.name`).
+### Discovery First Bootstrap
 
 
 
+If you are using a `DiscoveryClient implementation, such as Spring Cloud Netflix and Eureka Service Discovery or Spring Cloud Consul (Spring Cloud Zookeeper does not support this yet), then you can have the Config Server register with the Discovery Service if you want to, but in the default "Config First" mode, clients won’t be able to take advantage of the registration.
 
 
-발견 클라이언트 구현은 모두 (우리가 유레카 예 : 메타 데이터 맵의 어떤 종류를 지원합니다 `eureka.instance.metadataMap`). 클라이언트가 올바르게 연결할 수 있도록 구성 서버의 일부 추가 등록 정보를 서비스 등록 메타 데이터에 구성해야 할 수 있습니다. 구성 서버가 HTTP Basic으로 보안 설정되면 "사용자 이름"및 "암호"로 자격 증명을 구성 할 수 있습니다. 구성 서버에 컨텍스트 경로가있는 경우 "configPath"를 설정할 수 있습니다. 예를 들어, 유레카 클라이언트 인 구성 서버의 경우 :
 
 
 
+If you prefer to use `DiscoveryClient` to locate the Config Server, you can do that by setting `spring.cloud.config.discovery.enabled=true` (default "false"). The net result of that is that client apps all need a `bootstrap.yml` (or an environment variable) with the appropriate discovery configuration. For example, with Spring Cloud Netflix, you need to define the Eureka server address, e.g. in `eureka.client.serviceUrl.defaultZone`. The price for using this option is an extra network round trip on start up to locate the service registration. The benefit is that the Config Server can change its co-ordinates, as long as the Discovery Service is a fixed point. The default service id is "configserver" but you can change that on the client with `spring.cloud.config.discovery.serviceId` (and on the server in the usual way for a service, e.g. by setting `spring.application.name`).
 
 
-bootstrap.yml
+
+
+
+The discovery client implementations all support some kind of metadata map (e.g. for Eureka we have `eureka.instance.metadataMap`). Some additional properties of the Config Server may need to be configured in its service registration metadata so that clients can connect correctly. If the Config Server is secured with HTTP Basic you can configure the credentials as "username" and "password". And if the Config Server has a context path you can set "configPath". Example, for a Config Server that is a Eureka client:
+
+
+
+
+
+
 
 
 
@@ -2423,7 +2952,7 @@ bootstrap.yml
       instance:
         ...
         metadataMap:
-          username: osufhalskjrtl
+          user: osufhalskjrtl
           password: lviuhlszvaorhvlo5847
           configPath: /config
 
@@ -2435,11 +2964,11 @@ bootstrap.yml
 
 
 
-### 구성 클라이언트 실패 빠른
+### Config Client Fail Fast
 
 
 
-경우에 따라 구성 서버에 연결할 수없는 경우 서비스 시작에 실패하는 것이 바람직 할 수 있습니다. 이 원하는 동작 인 경우, 부트 스트랩 구성 속성을 설정 `spring.cloud.config.failFast=true`하고, 클라이언트는 예외 중지한다.
+In some cases, it may be desirable to fail startup of a service if it cannot connect to the Config Server. If this is the desired behavior, set the bootstrap configuration property `spring.cloud.config.failFast=true` and the client will halt with an Exception.
 
 
 
@@ -2447,11 +2976,11 @@ bootstrap.yml
 
 
 
-### 구성 클라이언트 재시도
+### Config Client Retry
 
 
 
-앱이 시작될 때 설정 서버를 사용할 수 없을 것으로 예상되는 경우 오류가 발생한 후에도 계속 시도하도록 요청할 수 있습니다. 먼저 설정해야합니다 `spring.cloud.config.failFast=true`, 그리고 당신은 추가해야 `spring-retry`하고 `spring-boot-starter-aop`클래스 경로에. 기본 동작은 초기 백 오프 간격이 1000ms이고 후속 백 오프에 대해 지수 배율 1.1을 사용하여 6 회 재 시도하는 것입니다. 다음을 사용하여 이러한 속성 (및 기타) 구성 할 수 있습니다 `spring.cloud.config.retry.*`구성 속성을.
+If you expect that the config server may occasionally be unavailable when your app starts, you can ask it to keep trying after a failure. First you need to set `spring.cloud.config.failFast=true`, and then you need to add `spring-retry` and `spring-boot-starter-aop` to your classpath. The default behaviour is to retry 6 times with an initial backoff interval of 1000ms and an exponential multiplier of 1.1 for subsequent backoffs. You can configure these properties (and others) using `spring.cloud.config.retry.*` configuration properties.
 
 
 
@@ -2463,15 +2992,13 @@ bootstrap.yml
 
 
 
-<td class="icon">
 
-팁
 
 
 
-<td class="content">재시도 전체를 제어 할 수있는 추가 `@Bean`유형의 `RetryOperationsInterceptor`ID가 "configServerRetryInterceptor"로. 봄 시도는이 `RetryInterceptorBuilder`일을 만들 쉽게 만드는.
 
 
+<td class="content">To take full control of the retry add a `@Bean` of type `RetryOperationsInterceptor` with id "configServerRetryInterceptor". Spring Retry has a `RetryInterceptorBuilder` that makes it easy to create one.
 
 
 
@@ -2483,45 +3010,47 @@ bootstrap.yml
 
 
 
-### 원격 구성 리소스 찾기
 
 
+### Locating Remote Configuration Resources
 
-구성 서비스에서 속성 소스를 제공 `/{name}/{profile}/{label}`클라이언트 응용 프로그램의 기본 바인딩이있는 곳,
 
 
+The Config Service serves property sources from `/{name}/{profile}/{label}`, where the default bindings in the client app are
 
 
 
-*   "name"= `${spring.application.name}`
 
-*   "프로필"= `${spring.profiles.active}`(실제로 `Environment.getActiveProfiles()`)
 
-*   "label"= "master"
+*   "name" = `${spring.application.name}`
 
+*   "profile" = `${spring.profiles.active}` (actually `Environment.getActiveProfiles()`)
 
+*   "label" = "master"
 
 
 
-그들 모두는 설정에 의해 무시 될 수있다 `spring.cloud.config.*` (여기서 `*`"이름", "프로필"또는 "라벨"입니다). "레이블"은 이전 버전의 구성으로 롤백 할 때 유용합니다. 기본 구성 서버 구현에서는 git 레이블, 분기 이름 또는 커밋 ID가 될 수 있습니다. 레이블은 쉼표로 구분 된 목록으로 제공 될 수도 있습니다.이 경우 목록에있는 항목은 성공할 때까지 하나씩 시도됩니다. 이것은 선택 사항 (예 : 예를 들어, 기능 분기에 작업 할 때 당신이 당신의 지점으로 설정 레이블을 정렬 할 수있는 경우에 유용 할 수 있지만 수 있습니다 `spring.cloud.config.label=myfeature,develop`).
 
 
+All of them can be overridden by setting `spring.cloud.config.*` (where `*` is "name", "profile" or "label"). The "label" is useful for rolling back to previous versions of configuration; with the default Config Server implementation it can be a git label, branch name or commit id. Label can also be provided as a comma-separated list, in which case the items in the list are tried on-by-one until one succeeds. This can be useful when working on a feature branch, for instance, when you might want to align the config label with your branch, but make it optional (e.g. `spring.cloud.config.label=myfeature,develop`).
 
 
 
 
 
-### 보안
 
 
+### Security
 
-서버에서 HTTP 기본 보안을 사용하면 클라이언트는 암호 (및 기본값이 아닌 경우 사용자 이름)를 알아야합니다. 설정 서버 URI 나 별도의 사용자 이름과 패스워드 속성을 통해 할 수 있습니다.
 
 
+If you use HTTP Basic security on the server then clients just need to know the password (and username if it isn’t the default). You can do that via the config server URI, or via separate username and password properties, e.g.
 
 
 
-bootstrap.yml
+
+
+
 
 
 
@@ -2536,13 +3065,13 @@ bootstrap.yml
 
 
 
-또는
+or
 
 
 
 
 
-bootstrap.yml
+
 
 
 
@@ -2559,19 +3088,19 @@ bootstrap.yml
 
 
 
-`spring.cloud.config.password`와 `spring.cloud.config.username` 값은 URI에 제공되는 것을 우선합니다.
+The `spring.cloud.config.password` and `spring.cloud.config.username` values override anything that is provided in the URI.
 
 
 
 
 
-Cloud Foundry에 응용 프로그램을 배포하는 경우 암호를 제공하는 가장 좋은 방법은 서비스 자격 증명 (예 : URI)을 사용하는 것이므로 설정 파일에있을 필요가 없기 때문입니다. "configserver"라는 Cloud Foundry에서 사용자가 제공하는 서비스와 로컬로 작동하는 예제 :
+If you deploy your apps on Cloud Foundry then the best way to provide the password is through service credentials, e.g. in the URI, since then it doesn’t even need to be in a config file. An example which works locally and for a user-provided service on Cloud Foundry named "configserver":
 
 
 
 
 
-bootstrap.yml
+
 
 
 
@@ -2586,7 +3115,7 @@ bootstrap.yml
 
 
 
-보안의 또 다른 형태를 사용하는 경우 당신은 제공해야 할 수 있습니다 `RestTemplate`받는 사람 `ConfigServicePropertySourceLocator`(부트 스트랩 맥락에서 그것을 잡아 하나를 주입하여 예를).
+If you use another form of security you might need to provide a `RestTemplate` to the `ConfigServicePropertySourceLocator` (e.g. by grabbing it in the bootstrap context and injecting one).
 
 
 
@@ -2596,39 +3125,39 @@ bootstrap.yml
 
 
 
-# Spring Cloud 넷플 릭스
-
-
-
-이 프로젝트는 자동 환경 설정과 스프링 환경 및 기타 스프링 프로그래밍 모델 관용구에 대한 바인딩을 통해 스프링 부트 애플리케이션을위한 Netflix OSS 통합을 제공합니다. 몇 가지 간단한 주석을 사용하면 애플리케이션 내부의 공통 패턴을 신속하게 활성화 및 구성하고 전투 테스트를 거친 Netflix 구성 요소로 대규모 분산 시스템을 구축 할 수 있습니다. 제공되는 패턴에는 서비스 발견 (Eureka), 회로 차단기 (Hystrix), 지능형 라우팅 (Zuul) 및 클라이언트 측로드 균형 조정 (리본)이 포함됩니다.
+# Spring Cloud Netflix
 
 
 
 
 
-## 서비스 발견 : 유레카 클라이언트
+
+
+
+
+## Service Discovery: Eureka Clients
 
 
 
 
 
-서비스 검색은 마이크로 서비스 기반 아키텍처의 핵심 교리 중 하나입니다. 각 클라이언트 또는 일부 형식의 컨벤션 구성을 손으로 처리하는 것은 매우 어려울 수 있으며 매우 취성이 있습니다. 유레카는 Netflix 서비스 검색 서버 및 클라이언트입니다. 서버는 등록 된 서비스에 대한 상태를 다른 서버로 복제하여 각 서버가 고 가용성으로 구성 및 배치 될 수 있습니다.
+Service Discovery is one of the key tenets of a microservice based architecture. Trying to hand configure each client or some form of convention can be very difficult to do and can be very brittle. Eureka is the Netflix Service Discovery Server and Client. The server can be configured and deployed to be highly available, with each server replicating state about the registered services to the others.
 
 
 
 
 
-### 유레카 등록
+### Registering with Eureka
 
 
 
-클라이언트가 유레카에 등록하면 호스트 및 포트, 상태 표시기 URL, 홈 페이지 등과 같은 메타 데이터를 제공합니다. 유레카는 서비스에 속한 각 인스턴스에서 하트 비트 메시지를받습니다. 하트 비트가 구성 가능한 시간표에 실패하면 보통 인스턴스는 레지스트리에서 제거됩니다.
+When a client registers with Eureka, it provides meta-data about itself such as host and port, health indicator URL, home page etc. Eureka receives heartbeat messages from each instance belonging to a service. If the heartbeat fails over a configurable timetable, the instance is normally removed from the registry.
 
 
 
 
 
-예시 유레카 클라이언트 :
+Example eureka client:
 
 
 
@@ -2660,71 +3189,65 @@ bootstrap.yml
 
 
 
-(즉, 완전히 정상적인 스프링 부트 응용 프로그램). 우리가 사용하는이 예에서 `@EnableEurekaClient`명시 적으로 만 유레카 사용할 수와 함께 당신은 또한 사용할 수 있습니다 `@EnableDiscoveryClient`. Eureka 서버를 찾으려면 구성이 필요합니다. 예:
+(i.e. utterly normal Spring Boot app). In this example we use `@EnableEurekaClient` explicitly, but with only Eureka available you could also use `@EnableDiscoveryClient`. Configuration is required to locate the Eureka server. Example:
 
 
 
 
 
-application.yml
 
 
 
-<pre>유레카:
-  고객:
-    serviceUrl :
-      defaultZone : http : // localhost : 8761 / eureka /</pre>
 
+<pre>eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/</pre>
 
 
 
 
 
 
-여기서 "defaultZone"은 기본 설정을 나타내지 않는 클라이언트 (즉 유용한 기본값)에 대한 서비스 URL을 제공하는 마법 문자열 대체 값입니다.
 
+where "defaultZone" is a magic string fallback value that provides the service URL for any client that doesn’t express a preference (i.e. it’s a useful default).
 
 
 
 
-기본 프로그램 이름 (서비스 ID)는 가상 호스트와 비보안 포트는 상기에서 촬영 `Environment`하고, `${spring.application.name}`, `${spring.application.name}`및 `${server.port}`는 각각.
 
+The default application name (service ID), virtual host and non-secure port, taken from the `Environment`, are `${spring.application.name}`, `${spring.application.name}` and `${server.port}` respectively.
 
 
 
 
-`@EnableEurekaClient`응용 프로그램을 유레카 "인스턴스"(즉, 자체 등록)와 "클라이언트"(즉, 다른 서비스를 찾기 위해 레지스트리에 쿼리 할 수 ​​있음)로 만듭니다. 인스턴스 동작에 의해 구동되는 `eureka.instance.*`구성 키,하지만 당신은 응용 프로그램이이 있는지 확인하는 경우 기본값은 잘 될 것입니다 `spring.application.name`(이 유레카 서비스 ID, 또는 VIP에 대한 기본값입니다).
 
+`@EnableEurekaClient` makes the app into both a Eureka "instance" (i.e. it registers itself) and a "client" (i.e. it can query the registry to locate other services). The instance behaviour is driven by `eureka.instance.*` configuration keys, but the defaults will be fine if you ensure that your application has a `spring.application.name` (this is the default for the Eureka service ID, or VIP).
 
 
 
 
-참조 [EurekaInstanceConfigBean](https://github.com/%7Bgithub-repo%7D/tree/%7Bgithub-tag%7D/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.java) 및 [EurekaClientConfigBean를](https://github.com/%7Bgithub-repo%7D/tree/%7Bgithub-tag%7D/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientConfigBean.java) 구성 가능한 옵션의 자세한 내용은.
 
+See [EurekaInstanceConfigBean](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.java) and [EurekaClientConfigBean](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientConfigBean.java) for more details of the configurable options.
 
 
 
 
 
 
-### 상태 페이지 및 상태 표시기
 
+### Authenticating with the Eureka Server
 
 
-Eureka 인스턴스의 상태 페이지 및 상태 표시기는 각각 Spring Boot Actuator 응용 프로그램의 유용한 끝점의 기본 위치 인 "/ info"및 "/ health"로 기본 설정됩니다. 당신은 당신이 기본이 아닌 컨텍스트 경로 나 서블릿 경로 (예를 들어 사용하는 경우에도 액추에이터 응용 프로그램이 변경해야합니다 `server.servletPath=/foo`) 또는 관리 엔드 포인트 경로 (예 : `management.contextPath=/admin`). 예:
 
+HTTP basic authentication will be automatically added to your eureka client if one of the `eureka.client.serviceUrl.defaultZone` URLs has credentials embedded in it (curl style, like `[http://user:password@localhost:8761/eureka](http://user:password@localhost:8761/eureka)`). For more complex needs you can create a `@Bean` of type `DiscoveryClientOptionalArgs` and inject `ClientFilter` instances into it, all of which will be applied to the calls from the client to the server.
 
 
 
 
-application.yml
 
 
 
-<pre>유레카:
-  예:
-    statusPageUrlPath : $ {management.context-path} / info
-    healthCheckUrlPath : $ {management.context-path} / 건강</pre>
 
 
 
@@ -2732,70 +3255,67 @@ application.yml
 
 
 
-이러한 링크는 클라이언트가 사용하는 메타 데이터에 표시되며 일부 시나리오에서는 응용 프로그램에 요청을 보낼지 여부를 결정하는 데 사용되므로 정확하면 유용합니다.
 
 
 
+<td class="content">Because of a limitation in Eureka it isn’t possible to support per-server basic auth credentials, so only the first set that are found will be used.
 
 
 
 
-### 보안 응용 프로그램 등록
 
 
 
-앱이 HTTPS를 통해 연락을 원하는 경우에 당신은 두 개의 플래그를 설정할 수 있습니다 `EurekaInstanceConfig`, _즉_ `eureka.instance.[nonSecurePortEnabled,securePortEnabled]=[false,true]` 각각. 이렇게하면 Eureka가 보안 통신에 대한 명시적인 선호를 보여주는 인스턴스 정보를 게시하게됩니다. Spring Cloud은 `DiscoveryClient`항상 반환 `[https://…​](https://%E2%80%A6%E2%80%8B/);`이 방식으로 구성 서비스에 대한 URI를하고, 유레카 (기본) 인스턴스 정보는 안전한 상태 점검 URL이있을 것이다.
 
 
 
 
 
-유레카가 내부적으로 작동하는 방식 때문에 명시 적으로 명시 적으로 무시하지 않는 한 상태 및 홈 페이지에 대해 보안되지 않은 URL을 게시합니다. 자리 표시자를 사용하여 eureka 인스턴스 URL을 구성 할 수 있습니다 (예 :
 
+### Status Page and Health Indicator
 
 
 
+The status page and health indicators for a Eureka instance default to "/info" and "/health" respectively, which are the default locations of useful endpoints in a Spring Boot Actuator application. You need to change these, even for an Actuator application if you use a non-default context path or servlet path (e.g. `server.servletPath=/foo`) or management endpoint path (e.g. `management.contextPath=/admin`). Example:
 
-application.yml
 
 
 
-<pre>유레카:
-  예:
-    statusPageUrl : https : // $ {eureka.hostname} / info
-    healthCheckUrl : https : // $ {eureka.hostname} / 건강
-    homePageUrl : https : // $ {eureka.hostname} /</pre>
 
 
 
 
 
+<pre>eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health</pre>
 
 
-(즉, 주 `${eureka.hostname}`유레카의 이후 버전에서만 사용할 기본 자리 표시 자입니다. 당신은뿐만 아니라, 예를 들어 사용을 봄 자리와 같은 일을 달성 할 수있다 `${eureka.instance.hostName}`.)
 
 
 
 
 
+These links show up in the metadata that is consumed by clients, and used in some scenarios to decide whether to send requests to your application, so it’s helpful if they are accurate.
 
 
 
 
 
 
-<td class="icon">
 
-노트
+### Registering a Secure Application
 
 
 
-<td class="content">앱이 프록시 뒤에 있고 SSL 종료가 프록시에있는 경우 (예 : Cloud Foundry 또는 다른 플랫폼에서 서비스로 실행하는 경우) 프록시 "전달 된"헤더를 가로 채고 처리해야합니다. 응용 프로그램. 'X-Forwarded - \ *'헤더를 명시 적으로 설정하면 Spring Boot 애플리케이션의 임베디드 Tomcat 컨테이너가 자동으로이 기능을 수행한다. 틀린 표시는 앱이 자체적으로 렌더링 한 링크가 잘못된 것입니다 (잘못된 호스트, 포트 또는 프로토콜).
+If your app wants to be contacted over HTTPS you can set two flags in the `EurekaInstanceConfig`, _viz_ `eureka.instance.[nonSecurePortEnabled,securePortEnabled]=[false,true]` respectively. This will make Eureka publish instance information showing an explicit preference for secure communication. The Spring Cloud `DiscoveryClient` will always return an `[https://…​](https://%E2%80%A6%E2%80%8B/);` URI for a service configured this way, and the Eureka (native) instance information will have a secure health check URL.
 
 
 
 
 
+Because of the way Eureka works internally, it will still publish a non-secure URL for status and home page unless you also override those explicitly. You can use placeholders to configure the eureka instance urls, e.g.
 
 
 
@@ -2804,24 +3324,23 @@ application.yml
 
 
 
-### 유레카 건강 검사
 
+<pre>eureka:
+  instance:
+    statusPageUrl: https://${eureka.hostname}/info
+    healthCheckUrl: https://${eureka.hostname}/health
+    homePageUrl: https://${eureka.hostname}/</pre>
 
 
-기본적으로 Eureka는 클라이언트 하트 비트를 사용하여 클라이언트가 작동 중인지 확인합니다. 별도로 명시하지 않는 한 Discovery Client는 Spring Boot Actuator 당 응용 프로그램의 현재 상태 확인 상태를 전파하지 않습니다. 성공적으로 등록한 후 유레카는 응용 프로그램이 항상 UP 상태임을 발표합니다. 이 동작은 유레카 상태 검사를 사용하도록 설정하여 응용 프로그램 상태를 유레카로 전파함으로써 변경 될 수 있습니다. 결과적으로 다른 모든 응용 프로그램은 'UP'이외의 상태에서 응용 프로그램으로 트래픽을 전송하지 않습니다.
 
 
 
 
 
-application.yml
+(Note that `${eureka.hostname}` is a native placeholder only available in later versions of Eureka. You could achieve the same thing with Spring placeholders as well, e.g. using `${eureka.instance.hostName}`.)
 
 
 
-<pre>유레카:
-  고객:
-    건강 체크:
-      enabled : true</pre>
 
 
 
@@ -2829,7 +3348,6 @@ application.yml
 
 
 
-당신이 건강 검진을 통해 더 많은 제어를 필요로하는 경우, 당신은 당신의 자신의 구현을 고려할 수 있습니다 `com.netflix.appinfo.HealthCheckHandler`.
 
 
 
@@ -2837,54 +3355,101 @@ application.yml
 
 
 
-### 인스턴스 및 클라이언트에 대한 유레카 메타 데이터
+<td class="content">If your app is running behind a proxy, and the SSL termination is in the proxy (e.g. if you run in Cloud Foundry or other platforms as a service) then you will need to ensure that the proxy "forwarded" headers are intercepted and handled by the application. An embedded Tomcat container in a Spring Boot app does this automatically if it has explicit configuration for the 'X-Forwarded-\*` headers. A sign that you got this wrong will be that the links rendered by your app to itself will be wrong (the wrong host, port or protocol).
 
 
 
-Eureka 메타 데이터가 어떻게 작동하는지 이해하는 데 약간의 시간을 할애 할 가치가 있으므로 플랫폼에서 의미있는 방식으로 사용할 수 있습니다. 호스트 이름, IP 주소, 포트 번호, 상태 페이지 및 상태 확인과 같은 것들에 대한 표준 메타 데이터가 있습니다. 이들은 서비스 레지스트리에 게시되고 클라이언트가 직접적으로 서비스에 연락하는 데 사용됩니다. 추가 메타 데이터의 인스턴스 등록에 추가 될 수 `eureka.instance.metadataMap`있으며, 이는 원격 클라이언트에 액세스 할 수 있지만,이 메타 데이터의 의미를 인식하지 않는 한, 일반적으로, 클라이언트의 동작을 변경하지 않을 것이다. Spring Cloud가 이미 메타 데이터 맵에 의미를 할당 한 몇 가지 특별한 경우가 있습니다.
 
 
 
 
 
-#### Cloudfoundry에서 유레카 사용하기
 
 
 
-Cloudfoundry는 글로벌 라우터를 갖추고있어 동일한 앱의 모든 인스턴스가 동일한 호스트 이름을 갖습니다 (비슷한 아키텍처를 가진 다른 PaaS 솔루션에서도 동일 함). 이것은 반드시 Eureka를 사용하는 데 장애가되는 것은 아니지만 라우터를 사용하는 경우 (플랫폼을 설정하는 방법에 따라 권장 또는 필수) 호스트 이름과 포트 번호를 명시 적으로 설정해야합니다 (보안 또는 비보안 ) 라우터를 사용합니다. 인스턴스 메타 데이터를 사용하여 클라이언트의 인스턴스 (예 : 사용자 정의 부하 분산 장치)를 구별 할 수도 있습니다. 기본적으로는 `eureka.instance.instanceId`입니다 `vcap.application.instance_id`. 예 :
 
 
+### Eureka’s Health Checks
 
 
 
-application.yml
+By default, Eureka uses the client heartbeat to determine if a client is up. Unless specified otherwise the Discovery Client will not propagate the current health check status of the application per the Spring Boot Actuator. Which means that after successful registration Eureka will always announce that the application is in 'UP' state. This behaviour can be altered by enabling Eureka health checks, which results in propagating application status to Eureka. As a consequence every other application won’t be sending traffic to application in state other then 'UP'.
 
 
 
-<pre>유레카:
-  예:
-    호스트 이름 : $ {vcap.application.uris [0]}
-    nonSecurePort : 80</pre>
 
 
 
 
 
 
+<pre>eureka:
+  client:
+    healthcheck:
+      enabled: true</pre>
 
-Cloudfoundry 인스턴스에서 보안 규칙을 설정하는 방법에 따라 직접 서비스 간 호출에 호스트 VM의 IP 주소를 등록하고 사용할 수 있습니다. 이 기능은 중추 웹 서비스 (에 (아직) 사용할 수 없습니다 [PWS](https://run.pivotal.io/) ).
 
 
 
 
 
 
+If you require more control over the health checks, you may consider implementing your own `com.netflix.appinfo.HealthCheckHandler`.
 
-#### AWS에서 Eureka 사용
 
 
 
-애플리케이션가 AWS 클라우드에 배치 될 예정이면 유레카 인스턴스 아마존 인식하도록 구성 할 것이며, 이는 사용자 지정하여 수행 할 수 [EurekaInstanceConfigBean를](https://github.com/%7Bgithub-repo%7D/tree/%7Bgithub-tag%7D/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.java) 다음 방법 :
+
+
+
+### Eureka Metadata for Instances and Clients
+
+
+
+It’s worth spending a bit of time understanding how the Eureka metadata works, so you can use it in a way that makes sense in your platform. There is standard metadata for things like hostname, IP address, port numbers, status page and health check. These are published in the service registry and used by clients to contact the services in a straightforward way. Additional metadata can be added to the instance registration in the `eureka.instance.metadataMap`, and this will be accessible in the remote clients, but in general will not change the behaviour of the client, unless it is made aware of the meaning of the metadata. There are a couple of special cases described below where Spring Cloud already assigns meaning to the metadata map.
+
+
+
+
+
+#### Using Eureka on Cloudfoundry
+
+
+
+Cloudfoundry has a global router so that all instances of the same app have the same hostname (it’s the same in other PaaS solutions with a similar architecture). This isn’t necessarily a barrier to using Eureka, but if you use the router (recommended, or even mandatory depending on the way your platform was set up), you need to explicitly set the hostname and port numbers (secure or non-secure) so that they use the router. You might also want to use instance metadata so you can distinguish between the instances on the client (e.g. in a custom load balancer). By default, the `eureka.instance.instanceId` is `vcap.application.instance_id`. For example:
+
+
+
+
+
+
+
+
+
+<pre>eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80</pre>
+
+
+
+
+
+
+
+Depending on the way the security rules are set up in your Cloudfoundry instance, you might be able to register and use the IP address of the host VM for direct service-to-service calls. This feature is not (yet) available on Pivotal Web Services ([PWS](https://run.pivotal.io/)).
+
+
+
+
+
+
+
+#### Using Eureka on AWS
+
+
+
+If the application is planned to be deployed to an AWS cloud, then the Eureka instance will have to be configured to be Amazon aware and this can be done by customizing the [EurekaInstanceConfigBean](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.java) the following way:
 
 
 
@@ -2909,37 +3474,17 @@ Cloudfoundry 인스턴스에서 보안 규칙을 설정하는 방법에 따라 �
 
 
 
-#### 유레카 인스턴스 ID 변경
+#### Changing the Eureka Instance ID
 
 
 
-바닐라 넷플 릭스 유레카 인스턴스는 호스트 이름과 동일한 ID로 등록됩니다 (예 : 호스트 당 하나의 서비스 만). 봄 클라우드 유레카는 다음과 같다 재치있는 기본을 제공합니다 `${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}}`. 예를 들어 `myhost:myappname:8080`.
-
-
-
-
-
-봄 클라우드를 사용하여 당신의 고유 식별자를 제공하여이를 대체 할 수 있습니다 `eureka.instance.instanceId`. 예 :
+A vanilla Netflix Eureka instance is registered with an ID that is equal to its host name (i.e. only one service per host). Spring Cloud Eureka provides a sensible default that looks like this: `${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}}`. For example `myhost:myappname:8080`.
 
 
 
 
 
-application.yml
-
-
-
-<pre>유레카:
-  예:
-    instanceId : $ {spring.application.name} : $ {spring.application.instance_id : $ {random.value}}</pre>
-
-
-
-
-
-
-
-이 메타 데이터와 localhost에 배포 된 여러 서비스 인스턴스를 사용하면 무작위 값이 인스턴스를 고유하게 만듭니다. Cloudfoundry에서이 `spring.application.instance_id`랜덤 값이 필요하지 않도록, 봄 부팅 액추에이터 응용 프로그램에서 자동으로 채워집니다.
+Using Spring Cloud you can override this by providing a unique identifier in `eureka.instance.instanceId`. For example:
 
 
 
@@ -2949,11 +3494,31 @@ application.yml
 
 
 
-### EurekaClient 사용
+<pre>eureka:
+  instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}</pre>
 
 
 
-당신이 응용 프로그램을 일단 `@EnableDiscoveryClient`(또는 `@EnableEurekaClient`) 당신은에서 서비스 인스턴스를 검색하는 데 사용할 수 있습니다 [유레카 서버](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-eureka-server) . 이를위한 한 가지 방법은 기본을 사용하는 것이다 `com.netflix.discovery.EurekaClient`(Spring Cloud 반대로 `DiscoveryClient`), 예를 들면
+
+
+
+
+With this metadata, and multiple service instances deployed on localhost, the random value will kick in there to make the instance unique. In Cloudfoundry the `spring.application.instance_id` will be populated automatically in a Spring Boot Actuator application, so the random value will not be needed.
+
+
+
+
+
+
+
+
+
+### Using the EurekaClient
+
+
+
+Once you have an app that is `@EnableDiscoveryClient` (or `@EnableEurekaClient`) you can use it to discover service instances from the [Eureka Server](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-eureka-server). One way to do that is to use the native `com.netflix.discovery.EurekaClient` (as opposed to the Spring Cloud `DiscoveryClient`), e.g.
 
 
 
@@ -2962,11 +3527,11 @@ application.yml
 
 
 <pre>@Autowired
-개인 EurekaClient discoveryClient;
+private EurekaClient discoveryClient;
 
-public String serviceUrl () {
-    InstanceInfo 인스턴스 = discoveryClient.getNextServerFromEureka ( "저장", 거짓);
-    return instance.getHomePageUrl ();
+public String serviceUrl() {
+    InstanceInfo instance = discoveryClient.getNextServerFromEureka("STORES", false);
+    return instance.getHomePageUrl();
 }</pre>
 
 
@@ -2981,19 +3546,17 @@ public String serviceUrl () {
 
 
 
-<td class="icon">
-
-팁
 
 
 
-<td class="content">
 
 
 
-사용하지 마십시오 `EurekaClient`의 `@PostConstruct`방법 또는에서 `@Scheduled`합니다 (이 경우 아무 곳이나 방법은 `ApplicationContext`아직 시작되지 않을 수 있습니다). 그것은 초기화됩니다 `SmartLifecycle`(과 `phase=0`) 그래서 당신이 사용할 수있는 신뢰할 수있는 최초의 또 다른에 `SmartLifecycle`더 높은 단계로.
 
 
+
+
+Don’t use the `EurekaClient` in `@PostConstruct` method or in a `@Scheduled` method (or anywhere where the `ApplicationContext` might not be started yet). It is initialized in a `SmartLifecycle` (with `phase=0`) so the earliest you can rely on it being available is in another `SmartLifecycle` with higher phase.
 
 
 
@@ -3009,17 +3572,19 @@ public String serviceUrl () {
 
 
 
-### 기본 Netflix EurekaClient의 대안
+
+
+### Alternatives to the native Netflix EurekaClient
 
 
 
-넌 넷플릭스 원재료를 사용하지 않은 `EurekaClient`보통 일종의 래퍼 뒤에 사용하는 것이 더 편리하다. 봄 클라우드에 대한 지원이 [척하기](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign) (A REST 클라이언트 빌더)도 [스프링`RestTemplate`](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon) 대신 실제 URL의 논리적 인 유레카 서비스 식별자 (VIP를) 사용합니다. 당신은 간단하게 설정할 수있는 물리적 서버의 고정 목록 리본을 구성하려면 `<client>.ribbon.listOfServers`물리적 주소 (또는 호스트 이름)의 쉼표로 구분 된 목록에 `<client>`클라이언트의 ID입니다.
+You don’t have to use the raw Netflix `EurekaClient` and usually it is more convenient to use it behind a wrapper of some sort. Spring Cloud has support for [Feign](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-feign) (a REST client builder) and also [Spring `RestTemplate`](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-ribbon) using the logical Eureka service identifiers (VIPs) instead of physical URLs. To configure Ribbon with a fixed list of physical servers you can simply set `<client>.ribbon.listOfServers` to a comma-separated list of physical addresses (or hostnames), where `<client>` is the ID of the client.
 
 
 
 
 
-당신은 또한 사용할 수 있습니다 `org.springframework.cloud.client.discovery.DiscoveryClient` 넷플릭스, 예를 들어, 특정 아닙니다 발견 클라이언트에 대한 간단한 API를 제공하는을
+You can also use the `org.springframework.cloud.client.discovery.DiscoveryClient` which provides a simple API for discovery clients that is not specific to Netflix, e.g.
 
 
 
@@ -3028,14 +3593,14 @@ public String serviceUrl () {
 
 
 <pre>@Autowired
-개인용 DiscoveryClient discoveryClient;
+private DiscoveryClient discoveryClient;
 
-public String serviceUrl () {
-    List <ServiceInstance> list = client.getInstances ( "STORES");
-    if (list! = null && list.size ()> 0) {
-        return list.get (0) .getUri ();
+public String serviceUrl() {
+    List<ServiceInstance> list = discoveryClient.getInstances("STORES");
+    if (list != null && list.size() > 0 ) {
+        return list.get(0).getUri();
     }
-    null를 돌려 준다.
+    return null;
 }</pre>
 
 
@@ -3046,15 +3611,11 @@ public String serviceUrl () {
 
 
 
-### 서비스 등록이 너무 느린 이유는 무엇입니까?
+### Why is it so Slow to Register a Service?
 
 
 
-인스턴스가된다는 것은 또한 (클라이언트를 통해 레지스트리에 주기적 하트 비트 포함 `serviceUrl`기본 기간 30초과를). 인스턴스, 서버 및 클라이언트가 모두 로컬 캐시에 동일한 메타 데이터를 가지고 있기 때문에 (예 : 3 비트가 필요할 수 있음) 클라이언트가 서비스를 검색 할 수 없습니다. 사용자는 사용 기간이 변경 `eureka.instance.leaseRenewalIntervalInSeconds`이 다른 서비스에 접속 된 클라이언트를 얻는 과정을 빠르게한다. 프로덕션 환경에서는 임대 갱신 기간에 대한 가정을 서버에서 내부적으로 계산하기 때문에 기본값을 사용하는 것이 좋습니다.
-
-
-
-
+Being an instance also involves a periodic heartbeat to the registry (via the client’s `serviceUrl`) with default duration 30 seconds. A service is not available for discovery by clients until the instance, the server and the client all have the same metadata in their local cache (so it could take 3 heartbeats). You can change the period using `eureka.instance.leaseRenewalIntervalInSeconds` and this will speed up the process of getting clients connected to other services. In production it’s probably better to stick with the default because there are some computations internally in the server that make assumptions about the lease renewal period.
 
 
 
@@ -3062,13 +3623,17 @@ public String serviceUrl () {
 
 
 
-## 서비스 발견 : 유레카 서버
+
+
+
+
+## Service Discovery: Eureka Server
 
 
 
 
 
-유레카 서버의 예 (예 : spring-cloud-starter-eureka-server를 사용하여 클래스 경로 설정)
+Example eureka server (e.g. using spring-cloud-starter-eureka-server to set up the classpath):
 
 
 
@@ -3092,13 +3657,13 @@ public String serviceUrl () {
 
 
 
-서버는 UI와 홈페이지를 갖고, 아래 일반 유레카 기능마다 HTTP API의 종단점 `/eureka/*`.
+The server has a home page with a UI, and HTTP API endpoints per the normal Eureka functionality under `/eureka/*`.
 
 
 
 
 
-유레카 배경 읽기 : 참조 [플럭스 커패시터](https://github.com/cfregly/fluxcapacitor/wiki/NetflixOSS-FAQ#eureka-service-discovery-load-balancer) 와 [구글의 그룹 토론을](https://groups.google.com/forum/?fromgroups#!topic/eureka_netflix/g3p2r7gHnN0) .
+Eureka background reading: see [flux capacitor](https://github.com/cfregly/fluxcapacitor/wiki/NetflixOSS-FAQ#eureka-service-discovery-load-balancer) and [google group discussion](https://groups.google.com/forum/?fromgroups#!topic/eureka_netflix/g3p2r7gHnN0).
 
 
 
@@ -3110,37 +3675,37 @@ public String serviceUrl () {
 
 
 
-<td class="icon">
-
-팁
-
-
-
-<td class="content">
-
-
-
-Gradle의 의존성 해결 규칙과 부모 bom 기능의 부족으로 인해 spring-cloud-starter-eureka-server에 의존하기 만하면 응용 프로그램 시작시 오류가 발생할 수 있습니다. 이 문제를 해결하려면 Spring 종속성 관리 플러그인을 추가해야하며 Spring 클라우드 스타터 상위 bom을 다음과 같이 가져와야합니다.
 
 
 
 
 
-build.gradle
+
+
+
+
+
+Due to Gradle’s dependency resolution rules and the lack of a parent bom feature, simply depending on spring-cloud-starter-eureka-server can cause failures on application startup. To remedy this the Spring Boot Gradle plugin must be added and the Spring cloud starter parent bom must be imported like so:
+
+
+
+
+
+
 
 
 
     buildscript {
       dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:0.4.0.RELEASE"
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.5.RELEASE")
       }
     }
 
-    apply plugin: "io.spring.dependency-management"
+    apply plugin: "spring-boot"
 
     dependencyManagement {
       imports {
-        mavenBom 'org.springframework.cloud:spring-cloud-starter-parent:1.0.0.RELEASE'
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.RELEASE"
       }
     }
 
@@ -3160,55 +3725,23 @@ build.gradle
 
 
 
-### 고 가용성, 영역 및 영역
+### High Availability, Zones and Regions
 
 
 
-Eureka 서버에는 백엔드 저장소가 없지만 레지스트리의 서비스 인스턴스는 등록을 최신 상태로 유지하기 위해 하트 비트를 보내야합니다 (메모리에서이 작업을 수행 할 수 있습니다). 또한 클라이언트는 메모리에 유레카 등록 캐시를 가지고 있기 때문에 (서비스에 대한 모든 단일 요청에 대해 레지스트리에 갈 필요가 없습니다).
-
-
-
-
-
-기본적으로 모든 유레카 서버는 유레카 클라이언트이기도하며 피어를 찾기 위해 적어도 하나의 서비스 URL이 필요합니다. 제공하지 않으면 서비스가 실행되고 작동하지만 피어와 함께 등록 할 수 없다는 것에 대한 많은 소음이 로그에 기록됩니다.
+The Eureka server does not have a backend store, but the service instances in the registry all have to send heartbeats to keep their registrations up to date (so this can be done in memory). Clients also have an in-memory cache of eureka registrations (so they don’t have to go to the registry for every single request to a service).
 
 
 
 
 
-참고 [리본 지원 자세한 내용은 아래](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon) 영역 및 지역에 대한 클라이언트 측에.
+By default every Eureka server is also a Eureka client and requires (at least one) service URL to locate a peer. If you don’t provide it the service will run and work, but it will shower your logs with a lot of noise about not being able to register with the peer.
 
 
 
 
 
-
-
-### 독립 실행 형 모드
-
-
-
-두 개의 캐시 (클라이언트 및 서버)와 하트 비트의 결합으로 독립 실행 형 유레카 서버는 모니터 또는 탄력적 인 런타임 (예 : Cloud Foundry)을 유지하는 한 실패에 상당히 탄력적입니다. 독립 실행 형 모드에서는 클라이언트 측 동작을 계속 끌 수 있으므로 계속 시도하지 않고 피어에 도달하지 못할 수도 있습니다. 예:
-
-
-
-
-
-application.yml (독립 실행 형 유레카 서버)
-
-
-
-<pre>섬기는 사람:
-  포트 : 8761
-
-유레카:
-  예:
-    호스트 이름 : localhost
-  고객:
-    registerWithEureka : false
-    fetchRegistry : 거짓
-    serviceUrl :
-      defaultZone : http : // $ {eureka.instance.hostname} : $ {server.port} / eureka /</pre>
+See also [below for details of Ribbon support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-ribbon) on the client side for Zones and Regions.
 
 
 
@@ -3216,7 +3749,11 @@ application.yml (독립 실행 형 유레카 서버)
 
 
 
-(가) 알 `serviceUrl`로컬 인스턴스와 동일한 호스트를 가리키고 있습니다.
+### Standalone Mode
+
+
+
+The combination of the two caches (client and server) and the heartbeats make a standalone Eureka server fairly resilient to failure, as long as there is some sort of monitor or elastic runtime keeping it alive (e.g. Cloud Foundry). In standalone mode, you might prefer to switch off the client side behaviour, so it doesn’t keep trying and failing to reach its peers. Example:
 
 
 
@@ -3224,39 +3761,67 @@ application.yml (독립 실행 형 유레카 서버)
 
 
 
-### 또래 인식
+
+
+<pre>server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/</pre>
 
 
 
-유레카는 여러 인스턴스를 실행하고 서로 등록하도록 요청함으로써 훨씬 더 탄력적으로 사용할 수 있습니다. 사실,이 때문에 당신이 그것을 작동하도록 할 필요가 유효한를 추가하고, 기본 동작입니다 `serviceUrl`피어, 예를
+
+
+
+
+Notice that the `serviceUrl` is pointing to the same host as the local instance.
 
 
 
 
 
-application.yml (두 개의 피어 인식 유레카 서버)
+
+
+### Peer Awareness
+
+
+
+Eureka can be made even more resilient and available by running multiple instances and asking them to register with each other. In fact, this is the default behaviour, so all you need to do to make it work is add a valid `serviceUrl` to a peer, e.g.
+
+
+
+
+
+
 
 
 
 <pre>---
-봄:
-  프로필 : peer1
-유레카:
-  예:
-    호스트 이름 : peer1
-  고객:
-    serviceUrl :
-      defaultZone : http : // peer2 / eureka /
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    serviceUrl:
+      defaultZone: http://peer2/eureka/
 
 ---
-봄:
-  프로필 : peer2
-유레카:
-  예:
-    호스트 이름 : peer2
-  고객:
-    serviceUrl :
-      defaultZone : http : // peer1 / eureka /</pre>
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1/eureka/</pre>
 
 
 
@@ -3264,13 +3829,13 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 
 
-이 예제에서는 두 개의 호스트 (peer1 및 peer2)에서 동일한 서버를 실행하고 다른 Spring 프로파일에서 실행하여 사용할 수있는 YAML 파일을 가지고 있습니다. 당신은 조작하여 (생산에 그 일을 훨씬 값이 아니다) 단일 호스트에서 피어 인식을 테스트하기 위해이 구성을 사용할 수있는 `/etc/hosts`호스트 이름을 해결하기 위해이. 사실,이 `eureka.instance.hostname`당신이 자신의 호스트 이름을 알고있는 컴퓨터에서 실행중인 경우 필요하지 않습니다 (그것은 사용하여 조회됩니다 `java.net.InetAddress`기본적으로).
+In this example we have a YAML file that can be used to run the same server on 2 hosts (peer1 and peer2), by running it in different Spring profiles. You could use this configuration to test the peer awareness on a single host (there’s not much value in doing that in production) by manipulating `/etc/hosts` to resolve the host names. In fact, the `eureka.instance.hostname` is not needed if you are running on a machine that knows its own hostname (it is looked up using `java.net.InetAddress` by default).
 
 
 
 
 
-시스템에 여러 피어를 추가 할 수 있으며, 둘 이상의 피어가 모두 하나의 가장자리로 서로 연결되어 있으면 서로간에 등록을 동기화합니다. 피어가 물리적으로 분리 된 경우 (데이터 센터 내부 또는 여러 데이터 센터간에) 시스템은 원칙적으로 스플릿 브레인 유형 장애를 극복 할 수 있습니다.
+You can add multiple peers to a system, and as long as they are all directly connected to each other, they will synchronize the registrations amongst themselves.
 
 
 
@@ -3278,13 +3843,33 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 
 
-### IP 주소 선호
 
 
+<pre>eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1/eureka/,http://peer2/eureka/,http://peer3/eureka/
 
-어떤 경우에는 유레카가 호스트 이름이 아닌 서비스의 IP 주소를 광고하는 것이 바람직합니다. 집합 `eureka.instance.preferIpAddress` 을 `true`응용 프로그램 유레카에 등록 할 때, 호스트 이름 대신 IP 주소를 사용한다.
+---
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
 
+---
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
 
+---
+spring:
+  profiles: peer3
+eureka:
+  instance:
+    hostname: peer3</pre>
 
 
 
@@ -3294,47 +3879,63 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 
 
-## 회로 차단기 : Hystrix 클라이언트
+### Prefer IP Address
 
 
 
+In some cases, it is preferable for Eureka to advertise the IP Adresses of services rather than the hostname. Set `eureka.instance.preferIpAddress` to `true` and when the application registers with eureka, it will use its IP Address rather than its hostname.
 
 
-넷플릭스라는 라이브러리를 만들었습니다 [Hystrix](https://github.com/Netflix/Hystrix) 구현하는 [회로 차단기 패턴을](http://martinfowler.com/bliki/CircuitBreaker.html) . 마이크로 서비스 아키텍처에서는 서비스 호출의 다중 레이어를 갖는 것이 일반적입니다.
 
 
 
 
 
-![HystrixGraph](./spring-cloud-doc-images/HystrixGraph.png)
 
-그림 1\. 마이크로 서비스 그래프
 
 
 
+## Circuit Breaker: Hystrix Clients
 
 
-서비스 수준이 낮 으면 서비스가 실패하여 연쇄 적으로 장애가 발생할 수 있습니다. 특정 서비스에 대한 통화가 특정 임계 값에 도달하면 (Hystrix에서는 5 초 동안 20 개의 실패가 기본값 임) 회선이 열리고 통화가 이루어지지 않습니다. 오류 및 개방 회로의 경우 폴백은 개발자가 제공 할 수 있습니다.
 
 
 
+Netflix has created a library called [Hystrix](https://github.com/Netflix/Hystrix) that implements the [circuit breaker pattern](http://martinfowler.com/bliki/CircuitBreaker.html). In a microservice architecture it is common to have multiple layers of service calls.
 
 
-![HystrixFallback](./spring-cloud-doc-images/HystrixFallback.png)
 
-그림 2\. Hystrix 폴백으로 계단식 오류 방지
 
 
 
 
 
-개방 회로가 있으면 계단식 오류가 발생하지 않으므로 압도되거나 실패한 서비스를 치료할 수 있습니다. 폴백은 또 다른 Hystrix 보호 호출, 정적 데이터 또는 정상적인 빈 값일 수 있습니다. 폴백은 체인으로 연결되어 첫 번째 폴백이 다른 비즈니스 호출을 만들어 정적 데이터로 다시 폴백 할 수 있습니다.
 
 
 
 
 
-부팅 앱의 예 :
+A service failure in the lower level of services can cause cascading failure all the way up to the user. When calls to a particular service reach a certain threshold (20 failures in 5 seconds is the default in Hystrix), the circuit opens and the call is not made. In cases of error and an open circuit a fallback can be provided by the developer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Having an open circuit stops cascading failures and allows overwhelmed or failing services time to heal. The fallback can be another Hystrix protected call, static data or a sane empty value. Fallbacks may be chained so the first fallback makes some other business call which in turn falls back to static data.
+
+
+
+
+
+Example boot app:
 
 
 
@@ -3346,22 +3947,22 @@ application.yml (두 개의 피어 인식 유레카 서버)
 @EnableCircuitBreaker
 public class Application {
 
-    공공 정적 무효 메인 (문자열 [] args) {
-        새로운 SpringApplicationBuilder (Application.class) .web (true) .run (args);
+    public static void main(String[] args) {
+        new SpringApplicationBuilder(Application.class).web(true).run(args);
     }
 
 }
 
-@구성 요소
-공용 클래스 StoreIntegration {
+@Component
+public class StoreIntegration {
 
-    @HystrixCommand (fallbackMethod = "defaultStores")
-    공용 객체 getStores (Map <String, Object> 매개 변수) {
-        // 실패 할 수있는 일을하십시오.
+    @HystrixCommand(fallbackMethod = "defaultStores")
+    public Object getStores(Map<String, Object> parameters) {
+        //do stuff that might fail
     }
 
-    공용 객체 defaultStores (Map <String, Object> 매개 변수) {
-        return / * 유용한 정보 * /;
+    public Object defaultStores(Map<String, Object> parameters) {
+        return /* something useful */;
     }
 }</pre>
 
@@ -3371,23 +3972,23 @@ public class Application {
 
 
 
-이 `@HystrixCommand`라는 넷플 릭스있는 contrib 라이브러리에서 제공하는 ["javanica"](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica) . 스프링 클라우드는 Hystrix 회로 차단기에 연결된 프록시에서 주석을 사용하여 스프링 빈을 자동으로 래핑합니다. 회로 차단기는 회로를 열고 닫는시기와 고장이 발생할 경우 수행 할 작업을 계산합니다.
+The `@HystrixCommand` is provided by a Netflix contrib library called ["javanica"](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica). Spring Cloud automatically wraps Spring beans with that annotation in a proxy that is connected to the Hystrix circuit breaker. The circuit breaker calculates when to open and close the circuit, and what to do in case of a failure.
 
 
 
 
 
-를 구성하려면 `@HystrixCommand`당신은 사용할 수 `commandProperties` 의 목록 속성을 `@HystrixProperty`주석. 참조하십시오 [여기에](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica#configuration) 자세한 내용은. 참고 항목 [Hystrix 위키](https://github.com/Netflix/Hystrix/wiki/Configuration) 사용할 수있는 속성에 대한 자세한 내용을.
+To configure the `@HystrixCommand` you can use the `commandProperties` attribute with a list of `@HystrixProperty` annotations. See [here](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica#configuration) for more details. See the [Hystrix wiki](https://github.com/Netflix/Hystrix/wiki/Configuration) for details on the properties available.
 
 
 
 
 
-### 보안 컨텍스트 전파 또는 스프링 스코프 사용
+### Propagating the Security Context or using Spring Scopes
 
 
 
-당신은 어떤 스레드 로컬 컨텍스트가에 전파하려는 경우 `@HystrixCommand`는 (시간 초과의 경우) 스레드 풀에서 명령을 실행하기 때문에 작동하지 않습니다 디폴트 선언. 일부 구성을 사용하여 발신자와 동일한 스레드를 사용하거나 주석에서 다른 "격리 전략"을 사용하도록 요청하여 Hystrix를 전환 할 수 있습니다. 예 :
+If you want some thread local context to propagate into a `@HystrixCommand` the default declaration will not work because it executes the command in a thread pool (in case of timeouts). You can switch Hystrix to use the same thread as the caller using some configuration, or directly in the annotation, by asking it to use a different "Isolation Strategy". For example:
 
 
 
@@ -3408,7 +4009,7 @@ public class Application {
 
 
 
-당신이 사용하는 경우 같은 일이 적용 `@SessionScope`나 `@RequestScope`. 범위가 지정된 컨텍스트를 찾을 수 없다는 런타임 예외 때문에이 작업을 수행해야하는시기를 알 수 있습니다.
+The same thing applies if you are using `@SessionScope` or `@RequestScope`. You will know when you need to do this because of a runtime exception that says it can’t find the scoped context.
 
 
 
@@ -3416,11 +4017,11 @@ public class Application {
 
 
 
-### 건강 지표
+### Health Indicator
 
 
 
-접속 회로 차단기의 상태도에 노출되어 `/health`호출 애플리케이션의 엔드 포인트.
+The state of the connected circuit breakers are also exposed in the `/health` endpoint of the calling application.
 
 
 
@@ -3446,11 +4047,11 @@ public class Application {
 
 
 
-### Hystrix 메트릭스 스트림
+### Hystrix Metrics Stream
 
 
 
-Hystrix 메트릭 스트림을 사용하려면에 대한 종속성을 포함한다 `spring-boot-starter-actuator`. 이 노출됩니다 `/hystrix.stream`관리 엔드 포인트로.
+To enable the Hystrix metrics stream include a dependency on `spring-boot-starter-actuator`. This will expose the `/hystrix.stream` as a management endpoint.
 
 
 
@@ -3475,136 +4076,130 @@ Hystrix 메트릭 스트림을 사용하려면에 대한 종속성을 포함한�
 
 
 
-## 회로 차단기 : Hystrix 대시 보드
+## Circuit Breaker: Hystrix Dashboard
 
 
 
 
 
-Hystrix의 주요 이점 중 하나는 각 HystrixCommand에 대해 수집하는 일련의 메트릭입니다. Hystrix Dashboard는 각 회로 차단기의 상태를 효율적으로 표시합니다.
+One of the main benefits of Hystrix is the set of metrics it gathers about each HystrixCommand. The Hystrix Dashboard displays the health of each circuit breaker in an efficient manner.
 
 
 
 
 
-![Hystrix](./spring-cloud-doc-images/Hystrix.png)
 
-그림 3\. Hystrix 대시 보드
 
 
 
 
 
-Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니다 `@EnableHystrixDashboard`. 그런 다음 방문 `/hystrix`및 개별 인스턴스에 대시 보드를 가리 `/hystrix.stream`Hystrix 클라이언트 응용 프로그램에서 엔드 포인트.
 
 
+To run the Hystrix Dashboard annotate your Spring Boot main class with `@EnableHystrixDashboard`. You then visit `/hystrix` and point the dashboard to an individual instances `/hystrix.stream` endpoint in a Hystrix client application.
 
 
 
-### 터빈
 
 
+### Turbine
 
-개별 인스턴스를 보면 Hystrix 데이터는 시스템의 전반적인 상태와 관련하여별로 유용하지 않습니다. [터빈](https://github.com/Netflix/Turbine) 관련 모든 집계하는 응용 프로그램입니다 `/hystrix.stream`결합으로 엔드 포인트를 `/turbine.stream`Hystrix 대시 보드에 사용. 개별 인스턴스는 Eureka를 통해 위치합니다. 터빈을 실행하면 사용하여 메인 클래스에 주석을만큼 간단하다 `@EnableTurbine`(예를 들어, 클래스 경로를 설정하는 스프링 클라우드 스타터 터빈을 사용하여) 주석. 에서 문서화 된 구성 등록 정보의 모든 [터빈 1 위키](https://github.com/Netflix/Turbine/wiki/Configuration-(1.x)) 적용됩니다. 유일한 차이점은이 있다는 것입니다 `turbine.instanceUrlSuffix`이 자동으로하지 않는 한 처리로 앞에 추가 포트를 필요로하지 않는다 `turbine.instanceInsertPort=false`.
 
 
+Looking at an individual instances Hystrix data is not very useful in terms of the overall health of the system. [Turbine](https://github.com/Netflix/Turbine) is an application that aggregates all of the relevant `/hystrix.stream` endpoints into a combined `/turbine.stream` for use in the Hystrix Dashboard. Individual instances are located via Eureka. Running Turbine is as simple as annotating your main class with the `@EnableTurbine` annotation (e.g. using spring-cloud-starter-turbine to set up the classpath). All of the documented configuration properties from [the Turbine 1 wiki](https://github.com/Netflix/Turbine/wiki/Configuration-(1.x)) apply. The only difference is that the `turbine.instanceUrlSuffix` does not need the port prepended as this is handled automatically unless `turbine.instanceInsertPort=false`.
 
 
 
-구성 키는 `turbine.appConfig`터빈 인스턴스를 조회하는 데 사용할 유레카 serviceIds의 목록입니다. : 터빈 스트림은 다음과 같은 URL을 사용 Hystrix 대시 보드에 사용된다 `[http://my.turbine.sever:8080/turbine.stream?cluster=<CLUSTERNAME>](http://my.turbine.sever:8080/turbine.stream?cluster=%3CCLUSTERNAME%3E);`(클러스터 파라미터 이름이 "기본"인 경우 생략 될 수있다)를. `cluster`매개 변수의 항목과 일치해야합니다 `turbine.aggregator.clusterConfig`. eureka에서 반환 된 값은 대문자이므로 Eureka에 등록 된 앱이 '고객'인 경우이 예제가 작동 할 것으로 기대합니다.
 
 
+The configuration key `turbine.appConfig` is a list of eureka serviceIds that turbine will use to lookup instances. The turbine stream is then used in the Hystrix dashboard using a url that looks like: `[http://my.turbine.sever:8080/turbine.stream?cluster=<CLUSTERNAME>](http://my.turbine.sever:8080/turbine.stream?cluster=%3CCLUSTERNAME%3E);` (the cluster parameter can be omitted if the name is "default"). The `cluster` parameter must match an entry in `turbine.aggregator.clusterConfig`. Values returned from eureka are uppercase, thus we expect this example to work if there is an app registered with Eureka called "customers":
 
 
 
 
 
-<pre>터빈:
-  어 그리 게이터 :
-    clusterConfig : 고객
-  appConfig : 고객</pre>
 
 
+<pre>turbine:
+  aggregator:
+    clusterConfig: CUSTOMERS
+  appConfig: customers</pre>
 
 
 
 
 
-은 `clusterName`에 SPEL 표현하여 사용자 정의 할 수 있습니다 `turbine.clusterNameExpression`루트의 인스턴스 `InstanceInfo`. 기본값은 `appName`유레카 서비스 id합니다 (즉, 클러스터 키로 끝 즉, `InstanceInfo`고객이있다 `appName`"고객"의 참조). 각기 다른 예로들 수 `turbine.clusterNameExpression=aSGName`AWS ASG 이름에서 클러스터 이름을 얻을 것이다. 다른 예 :
 
 
+The `clusterName` can be customized by a SPEL expression in `turbine.clusterNameExpression` with root an instance of `InstanceInfo`. The default value is `appName`, which means that the Eureka serviceId ends up as the cluster key (i.e. the `InstanceInfo` for customers has an `appName` of "CUSTOMERS"). A different example would be `turbine.clusterNameExpression=aSGName`, which would get the cluster name from the AWS ASG name. Another example:
 
 
 
 
 
-<pre>터빈:
-  어 그리 게이터 :
-    clusterConfig : SYSTEM, USER
-  appConfig : 고객, 상점, UI, 관리자
-  clusterName 표현식 : metadata [ 'cluster']</pre>
 
 
+<pre>turbine:
+  aggregator:
+    clusterConfig: SYSTEM,USER
+  appConfig: customers,stores,ui,admin
+  clusterNameExpression: metadata['cluster']</pre>
 
 
 
 
 
-이 경우 4 개 서비스의 클러스터 이름은 메타 데이터 맵에서 가져오고 "SYSTEM"및 "USER"가 포함 된 값이 있어야합니다.
 
 
+In this case, the cluster name from 4 services is pulled from their metadata map, and is expected to have values that include "SYSTEM" and "USER".
 
 
 
-모든 응용 프로그램에 "기본"클러스터를 사용하려면 작은 따옴표로 묶인 문자열 리터럴 표현식이 필요합니다.
 
 
+To use the "default" cluster for all apps you need a string literal expression (with single quotes, and escaped with double quotes if it is in YAML as well):
 
 
 
 
 
-<pre>터빈:
-  appConfig : 고객, 상점
-  clusterNameExpression : '기본'</pre>
 
 
+<pre>turbine:
+  appConfig: customers,stores
+  clusterNameExpression: "'default'"</pre>
 
 
 
 
 
-봄 클라우드가 제공하는 `spring-cloud-starter-turbine`당신은 터빈 서버를 실행 얻기 위해 필요한 모든 종속성을 갖는다. 그냥 봄 부팅 응용 프로그램을 작성하고 그것을 주석 `@EnableTurbine`.
 
 
+Spring Cloud provides a `spring-cloud-starter-turbine` that has all the dependencies you need to get a Turbine server running. Just create a Spring Boot application and annotate it with `@EnableTurbine`.
 
 
 
 
 
-### 터빈 AMQP
 
 
 
-일부 환경 (예 : PaaS 설정)에서는 모든 분산 Hystrix 명령에서 메트릭을 가져 오는 클래식 터빈 모델이 작동하지 않습니다. 이 경우 Hystrix가 Turbine에 메트릭을 푸시하게하고 Spring Cloud에서 AMQP 메시징으로 메트릭을 푸시 할 수 있습니다. 클라이언트에 할 필요가 종속성을 추가 할 것입니다 `spring-cloud-netflix-hystrix-amqp`및 사용할 수있는 토끼 브로커가 있는지 확인합니다 (클라이언트 자격 증명을 구성하는 방법에 대한 자세한 내용은 봄 부트 설명서를 참조하지만, 로컬 브로커 상자 밖으로 작동합니다 또는 Cloud Foundry에서).
 
 
 
 
 
-서버 측에서 그냥 봄 부팅 응용 프로그램을 작성하고 그것을 주석 `@EnableTurbineAmqp`과 기본적으로 포트 8989에 올 것이다 (모든 경로, 해당 포트에 Hystrix 대시 보드를 가리 킵니다). 당신이 중 하나를 사용하여 포트를 사용자 정의 할 수 있습니다 `server.port`또는 `turbine.amqp.port`. 당신이있는 경우 `spring-boot-starter-web`및 `spring-boot-starter-actuator`뿐만 아니라 클래스 패스에, 당신은 제공 (기본적으로 톰캣)와 별도의 포트에 액추에이터 엔드 포인트를 열 수있는 `management.port`다른 어떤을.
 
 
 
 
+<td class="content">by default the native Netflix behaviour built into Turbine does _not_ allow multiple processes per host, per cluster (the key to the instance id is the hostname). Spring Cloud generalizes this a bit, allowing the host and port to be used as the key, but only if you set the property `turbine.combineHostPort=true`
 
-그런 다음 개별 Hystrix 스트림 대신 Hystrix Dashboard를 Turbine AMQP Server로 지정할 수 있습니다. 터빈 AMQP는 myhost의 포트 8989에서 실행중인 경우, 다음 넣어 `[http://myhost:8989](http://myhost:8989/)`Hystrix 대시 보드에서 스트림 입력 필드에. 회선은 각각의 serviceId가 접두어로 붙고 그 뒤에 점과 회로 이름이옵니다.
 
 
 
 
 
-봄 클라우드가 제공하는 `spring-cloud-starter-turbine-amqp`당신은 터빈 AMQP 서버를 실행 얻기 위해 필요한 모든 종속성을 갖는다. Netty 기반이기 때문에 Java 8이 필요합니다.
 
 
 
@@ -3612,61 +4207,69 @@ Hystrix 대시 보드와 봄 부트 메인 클래스에 주석을 실행합니�
 
 
 
+### Turbine Stream
 
 
 
+In some environments (e.g. in a PaaS setting), the classic Turbine model of pulling metrics from all the distributed Hystrix commands doesn’t work. In that case you might want to have your Hystrix commands push metrics to Turbine, and Spring Cloud enables that with messaging. All you need to do on the client is add a dependency to `spring-cloud-netflix-hystrix-stream` and the `spring-cloud-starter-stream-*` of your choice (see Spring Cloud Stream documentation for details on the brokers, and how to configure the client credentials, but it should work out of the box for a local broker).
 
-## AMQP ConnectionFactory 사용자 정의
 
 
 
 
+On the server side Just create a Spring Boot application and annotate it with `@EnableTurbineStream` and by default it will come up on port 8989 (point your Hystrix dashboard to that port, any path). You can customize the port using either `server.port` or `turbine.stream.port`. If you have `spring-boot-starter-web` and `spring-boot-starter-actuator` on the classpath as well, then you can open up the Actuator endpoints on a separate port (with Tomcat by default) by providing a `management.port` which is different.
 
-당신이 AMQP를 사용하는 경우가있을 필요가 `ConnectionFactory`응용 프로그램 컨텍스트 (봄 토끼에서). 하나 있으면 `ConnectionFactory`그 사용될 또는 자격 하나 존재하는 경우 `@HystrixConnectionFactory`(클라이언트)와 `@TurbineConnectionFactory`,이 다른 것보다 바람직 할 것이다 (서버), 그렇지 않으면 `@Primary`하나가 사용된다. 규정되지 않은 연결 팩토리가 여러 개 있으면 오류가 발생합니다.
 
 
 
 
+You can then point the Hystrix Dashboard to the Turbine Stream Server instead of individual Hystrix streams. If Turbine Stream is running on port 8989 on myhost, then put `[http://myhost:8989](http://myhost:8989/)` in the stream input field in the Hystrix Dashboard. Circuits will be prefixed by their respective serviceId, followed by a dot, then the circuit name.
 
-(1.2.2 기준) 봄 부팅이 생성하는 주 `ConnectionFactory`입니다 _하지_ `@Primary` 당신이 버스를 하나의 연결 팩토리를 사용하려는 다른 비즈니스 메시지, 당신은 둘 다 작성하고 주석을해야합니다 그래서 만약, `@*ConnectionFactory`그리고 `@Primary`각각을.
 
 
 
 
+Spring Cloud provides a `spring-cloud-starter-turbine-stream` that has all the dependencies you need to get a Turbine Stream server running - just add the Stream binder of your choice, e.g. `spring-cloud-starter-stream-rabbit`. You need Java 8 to run the app because it is Netty-based.
 
 
 
 
 
-## 클라이언트 측로드 밸런서 : 리본
 
 
 
 
 
-리본은 HTTP 및 TCP 클라이언트의 동작을 제어 할 수있는 클라이언트 측로드 밸런서입니다. 당신이 사용하는, 그래서 만약 이미 리본을 사용 꾀병 `@FeignClient`다음이 섹션에도 적용됩니다.
 
+## Client Side Load Balancer: Ribbon
 
 
 
 
-리본의 중심 개념은 명명 된 클라이언트의 개념입니다. (예를 사용하여 각 부하 분산 장치는 필요에 따라 원격 서버에 접속하기 위해 함께 작동 구성 요소의 앙상블의 일부, 그리고 앙상블은 응용 프로그램 개발자로주는 이름을 가진 `@FeignClient` 주석). Spring Cloud은 같은 새로운 앙상블 작성 `ApplicationContext`하여 명명 된 각 클라이언트에 대한 수요를 `RibbonClientConfiguration`. 이것은 (다른 것들 중에서)를 포함 `ILoadBalancer`하는 `RestClient`, 및 `ServerListFilter`.
 
+Ribbon is a client side load balancer which gives you a lot of control over the behaviour of HTTP and TCP clients. Feign already uses Ribbon, so if you are using `@FeignClient` then this section also applies.
 
 
 
 
-### 리본 클라이언트 사용자 정의
 
+A central concept in Ribbon is that of the named client. Each load balancer is part of an ensemble of components that work together to contact a remote server on demand, and the ensemble has a name that you give it as an application developer (e.g. using the `@FeignClient` annotation). Spring Cloud creates a new ensemble as an `ApplicationContext` on demand for each named client using `RibbonClientConfiguration`. This contains (amongst other things) an `ILoadBalancer`, a `RestClient`, and a `ServerListFilter`.
 
 
-당신은 외부 속성을 사용하여 리본 클라이언트의 일부 비트를 구성 할 수 있습니다 `<client>.ribbon.*`당신은 봄 부팅 구성 파일을 사용할 수있는 것을 제외하고는 기본적으로 넷플 릭스 API를 사용하는 것보다 더 차이가없는. 기본 옵션은 정적 필드로 검사 할 수있다 `CommonClientConfigKey`(리본 코어의 일부).
 
 
 
+### Customizing the Ribbon Client
 
 
-Spring Cloud은 또한 당신 (의 위에 추가 구성을 선언하여 클라이언트의 모든 권한 걸릴 수 있습니다 `RibbonClientConfiguration`사용) `@RibbonClient`. 예:
+
+You can configure some bits of a Ribbon client using external properties in `<client>.ribbon.*`, which is no different than using the Netflix APIs natively, except that you can use Spring Boot configuration files. The native options can be inspected as static fields in `CommonClientConfigKey` (part of ribbon-core).
+
+
+
+
+
+Spring Cloud also lets you take full control of the client by declaring additional configuration (on top of the `RibbonClientConfiguration`) using `@RibbonClient`. Example:
 
 
 
@@ -3685,7 +4288,7 @@ Spring Cloud은 또한 당신 (의 위에 추가 구성을 선언하여 클라�
 
 
 
-이 경우 클라이언트가 이미 구성 요소로 구성되어 `RibbonClientConfiguration`어느와 함께 `FooConfiguration` (후자는 일반적으로 이전보다 우선합니다 경우).
+In this case the client is composed from the components already in `RibbonClientConfiguration` together with any in `FooConfiguration` (where the latter generally will override the former).
 
 
 
@@ -3697,15 +4300,13 @@ Spring Cloud은 또한 당신 (의 위에 추가 구성을 선언하여 클라�
 
 
 
-<td class="icon">
-
-경고
 
 
 
-<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모두에 의해 공유됩니다, 기본 응용 프로그램 컨텍스트를 `@RibbonClients`. 당신이 사용하는 경우 `@ComponentScan`(또는 `@SpringBootApplication`당신이 포함되지 않도록하기위한 조치를 취할 필요) (예를 들어 별도의 겹치지 않는 패키지에 넣어, 또는 명시 적으로 검사 할 패키지를 지정 `@ComponentScan`).
 
 
+
+<td class="content">The `FooConfiguration` has to be `@Configuration` but take care that it is not in a `@ComponentScan` for the main application context, otherwise it will be shared by all the `@RibbonClients`. If you use `@ComponentScan` (or `@SpringBootApplication`) you need to take steps to avoid it being included (for instance put it in a separate, non-overlapping package, or specify the packages to scan explicitly in the `@ComponentScan`).
 
 
 
@@ -3715,29 +4316,31 @@ Spring Cloud은 또한 당신 (의 위에 추가 구성을 선언하여 클라�
 
 
 
-봄 클라우드 넷플릭스는 리본 기본적으로 (다음 콩을 제공 `BeanType`beanName에을 : `ClassName`)
+
+
+Spring Cloud Netflix provides the following beans by default for ribbon (`BeanType` beanName: `ClassName`):
 
 
 
 
 
-*   `IClientConfig` ribbonClientConfig : `DefaultClientConfigImpl`
+*   `IClientConfig` ribbonClientConfig: `DefaultClientConfigImpl`
 
-*   `IRule` ribbonRule : `ZoneAvoidanceRule`
+*   `IRule` ribbonRule: `ZoneAvoidanceRule`
 
-*   `IPing` ribbonPing : `NoOpPing`
+*   `IPing` ribbonPing: `NoOpPing`
 
-*   `ServerList<Server>` ribbonServerList : `ConfigurationBasedServerList`
+*   `ServerList<Server>` ribbonServerList: `ConfigurationBasedServerList`
 
-*   `ServerListFilter<Server>` ribbonServerListFilter : `ZonePreferenceServerListFilter`
+*   `ServerListFilter<Server>` ribbonServerListFilter: `ZonePreferenceServerListFilter`
 
-*   `ILoadBalancer` ribbonLoadBalancer : `ZoneAwareLoadBalancer`
-
-
+*   `ILoadBalancer` ribbonLoadBalancer: `ZoneAwareLoadBalancer`
 
 
 
-그 유형 중 하나의 콩 만들기 및에 배치 `@RibbonClient` 구성하면 (예 : `FooConfiguration`위)가 설명 된 콩의 각각을 대체 할 수 있습니다. 예:
+
+
+Creating a bean of one of those type and placing it in a `@RibbonClient` configuration (such as `FooConfiguration` above) allows you to override each one of the beans described. Example:
 
 
 
@@ -3759,7 +4362,7 @@ Spring Cloud은 또한 당신 (의 위에 추가 구성을 선언하여 클라�
 
 
 
-이것은 대체 `NoOpPing`와 함께 `PingUrl`.
+This replaces the `NoOpPing` with `PingUrl`.
 
 
 
@@ -3767,35 +4370,11 @@ Spring Cloud은 또한 당신 (의 위에 추가 구성을 선언하여 클라�
 
 
 
-### 유레카와 함께 리본 사용하기
+### Using Ribbon with Eureka
 
 
 
-유레카는 리본 상기와 함께 사용하는 경우 `ribbonServerList` 의 확장으로 오버라이드 (override) `DiscoveryEnabledNIWSServerList` 유레카에서 서버 목록을 채 웁니다있다. 또한 대체 `IPing`와 인터페이스 `NIWSDiscoveryPing`서버가있는 경우 유레카 명 규모가 결정되는합니다. `ServerList`기본적으로 설치되는이 인 `DomainExtractingServerList`이의 목적은 (넷플 릭스에 의존하는 것입니다) AWS AMI 메타 데이터를 사용하지 않고 부하 분산 장치에 대한 물리적 메타 데이터를 사용할 수 있도록하는 것입니다. 기본적으로 서버 목록 "영역"(있도록 클라이언트 집합 인스턴스 메타 데이터에 제공된 정보로 구성된다 `eureka.instance.metadataMap.zone`), 및 경우는 (영역 프록시 서버의 호스트 이름의 도메인 이름을 사용할 수없는 것 인 경우 플래그 `approximateZoneFromHostname`)가 설정됩니다. 영역 정보를 사용할 일단이 사용될 수있다 `ServerListFilter`(기본이 때문에 클라이언트와 동일한 영역에있는 서버를 찾는 데 기본적으로 사용한다 `ZonePreferenceServerListFilter`).
-
-
-
-
-
-
-
-### 예 : 유레카가없는 리본 사용법
-
-
-
-Eureka는 원격 서버의 발견을 추상화하는 편리한 방법이므로 클라이언트에 URL을 하드 코딩 할 필요는 없지만 사용하지 않으려는 경우에도 Ribbon 및 Feign은 여전히 ​​사용하기 쉽습니다. 당신이 선언 한 가정 `@RibbonClient`"매장"에 대한, 그리고 유레카는 (심지어 클래스 패스가 아닌)를 사용하지 않을 것입니다. 리본 클라이언트는 기본적으로 구성된 서버 목록으로 구성되며 다음과 같은 구성을 제공 할 수 있습니다
-
-
-
-
-
-application.yml
-
-
-
-<pre>백화점:
-  리본:
-    listOfServers : example.com, google.com</pre>
+When Eureka is used in conjunction with Ribbon the `ribbonServerList` is overridden with an extension of `DiscoveryEnabledNIWSServerList` which populates the list of servers from Eureka. It also replaces the `IPing` interface with `NIWSDiscoveryPing` which delegates to Eureka to determine if a server is up. The `ServerList` that is installed by default is a `DomainExtractingServerList` and the purpose of this is to make physical metadata available to the load balancer without using AWS AMI metadata (which is what Netflix relies on). By default the server list will be constructed with "zone" information as provided in the instance metadata (so on the remote clients set `eureka.instance.metadataMap.zone`), and if that is missing it can use the domain name from the server hostname as a proxy for zone (if the flag `approximateZoneFromHostname` is set). Once the zone information is available it can be used in a `ServerListFilter`. By default it will be used to locate a server in the same zone as the client because the default is a `ZonePreferenceServerListFilter`. The zone of the client is determined the same way as the remote instances by default, i.e. via `eureka.instance.metadataMap.zone`.
 
 
 
@@ -3805,23 +4384,15 @@ application.yml
 
 
 
-### 예 : 리본에서 유레카 사용을 비활성화합니다.
-
-
-
-속성을 설정하면 `ribbon.eureka.enabled = false`명시 적으로 리본에서 유레카의 사용을 중지됩니다.
 
 
 
 
 
-application.yml
 
 
 
-<pre>리본:
-  유레카:
-   enabled : false</pre>
+<td class="content">The orthodox "archaius" way to set the client zone is via a configuration property called "@zone", and Spring Cloud will use that in preference to all other settings if it is available (note that the key will have to be quoted in YAML configuration).
 
 
 
@@ -3831,11 +4402,91 @@ application.yml
 
 
 
-### 리본 API를 직접 사용
 
 
 
-당신은 또한 사용할 수 있습니다 `LoadBalancerClient`직접. 예:
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">If there is no other source of zone data then a guess is made based on the client configuration (as opposed to the instance configuration). We take `eureka.client.availabilityZones`, which is a map from region name to a list of zones, and pull out the first zone for the instance’s own region (i.e. the `eureka.client.region`, which defaults to "us-east-1" for comatibility with native Netflix).
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Example: How to Use Ribbon Without Eureka
+
+
+
+Eureka is a convenient way to abstract the discovery of remote servers so you don’t have to hard code their URLs in clients, but if you prefer not to use it, Ribbon and Feign are still quite amenable. Suppose you have declared a `@RibbonClient` for "stores", and Eureka is not in use (and not even on the classpath). The Ribbon client defaults to a configured server list, and you can supply the configuration like this
+
+
+
+
+
+
+
+
+
+<pre>stores:
+  ribbon:
+    listOfServers: example.com,google.com</pre>
+
+
+
+
+
+
+
+
+
+### Example: Disable Eureka use in Ribbon
+
+
+
+Setting the property `ribbon.eureka.enabled = false` will explicitly disable the use of Eureka in Ribbon.
+
+
+
+
+
+
+
+
+
+<pre>ribbon:
+  eureka:
+   enabled: false</pre>
+
+
+
+
+
+
+
+
+
+### Using the Ribbon API Directly
+
+
+
+You can also use the `LoadBalancerClient` directly. Example:
 
 
 
@@ -3866,19 +4517,19 @@ application.yml
 
 
 
-## 선언적 REST 클라이언트 : Feign
+## Declarative REST Client: Feign
 
 
 
 
 
-[꾀병은](https://github.com/Netflix/feign) 선언적 웹 서비스 클라이언트이다. 따라서 웹 서비스 클라이언트를 쉽게 작성할 수 있습니다. Feign을 사용하려면 인터페이스를 만들고 주석을 달아 라. Feign 주석과 JAX-RS 주석을 포함하는 플러그 가능한 주석 지원 기능을 제공합니다. Feign은 또한 플러그 형 인코더와 디코더를 지원합니다. Spring Cloud 스프링 MVC 주석과 같은 사용에 대한 지원을 추가 `HttpMessageConverters`봄 웹에서 기본적으로 사용합니다. Spring Cloud는 Ribbon과 Eureka를 통합하여 Feign을 사용할 때로드 밸런싱 된 HTTP 클라이언트를 제공합니다.
+[Feign](https://github.com/Netflix/feign) is a declarative web service client. It makes writing web service clients easier. To use Feign create an interface and annotate it. It has pluggable annotation support including Feign annotations and JAX-RS annotations. Feign also supports pluggable encoders and decoders. Spring Cloud adds support for Spring MVC annotations and for using the same `HttpMessageConverters` used by default in Spring Web. Spring Cloud integrates Ribbon and Eureka to provide a load balanced http client when using Feign.
 
 
 
 
 
-봄철 부팅 앱의 예
+Example spring boot app
 
 
 
@@ -3905,7 +4556,7 @@ application.yml
 
 
 
-StoreClient.java
+
 
 
 
@@ -3924,29 +4575,29 @@ StoreClient.java
 
 
 
-에서 `@FeignClient`주석 문자열 값 ( "저장"위)는 리본로드 밸런서 (참조 만드는 데 사용되는 임의의 클라이언트 이름입니다 [리본 지원 자세한 내용은 아래를](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon) ). 또한 사용하여 URL을 지정할 수 있습니다 `url`속성 (절대 값 또는 그냥 호스트 이름).
+In the `@FeignClient` annotation the String value ("stores" above) is an arbitrary client name, which is used to create a Ribbon load balancer (see [below for details of Ribbon support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-ribbon)). You can also specify a URL using the `url` attribute (absolute value or just a hostname). The name of the bean in the application context is the fully qualified name of the interface. An alias is also created which is the 'name' attribute plus 'FeignClient'. For the example above, `@Qualifier("storesFeignClient")` could be used to reference the bean.
 
 
 
 
 
-위의 리본 클라이언트는 "상점"서비스의 실제 주소를 검색하려고합니다. 응용 프로그램이 유레카 클라이언트 인 경우 유레카 서비스 레지스트리의 서비스가 해결됩니다. 당신은 유레카를 사용하지 않으려면, 당신은 단순히 외부 구성 (참조에서 서버 목록을 구성 할 수 있습니다 [예를 들어 위](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon-without-eureka) ).
+The Ribbon client above will want to discover the physical addresses for the "stores" service. If your application is a Eureka client then it will resolve the service in the Eureka service registry. If you don’t want to use Eureka, you can simply configure a list of servers in your external configuration (see [above for example](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-ribbon-without-eureka)).
 
 
 
 
 
-### 기본 값 재정의
+### Overriding Feign Defaults
 
 
 
-Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 개념입니다. 각 꾀병 클라이언트는 필요에 따라 원격 서버에 접속하기 위해 함께 작동 구성 요소의 앙상블의 일부이며, 앙상블 당신이 사용하는 응용 프로그램 개발자로 제공 이름이 `@FeignClient`주석을. Spring Cloud은 같은 새로운 앙상블 작성 `ApplicationContext`하여 명명 된 각 클라이언트에 대한 수요를 `FeignClientsConfiguration`. 이것은 (다른 것들 중에서)를 포함 `feign.Decoder`하는 `feign.Encoder`, 및 `feign.Contract`.
+A central concept in Spring Cloud’s Feign support is that of the named client. Each feign client is part of an ensemble of components that work together to contact a remote server on demand, and the ensemble has a name that you give it as an application developer using the `@FeignClient` annotation. Spring Cloud creates a new ensemble as an `ApplicationContext` on demand for each named client using `FeignClientsConfiguration`. This contains (amongst other things) an `feign.Decoder`, a `feign.Encoder`, and a `feign.Contract`.
 
 
 
 
 
-봄 클라우드는 (의 위에 추가 구성 선언함으로써 꾀병 클라이언트의 전체 제어 할 수 있습니다 `FeignClientsConfiguration`) 사용하여 `@FeignClient`. 예:
+Spring Cloud lets you take full control of the feign client by declaring additional configuration (on top of the `FeignClientsConfiguration`) using `@FeignClient`. Example:
 
 
 
@@ -3965,7 +4616,7 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-이 경우 클라이언트가 이미 구성 요소로 구성되어 `FeignClientsConfiguration`어떤과 함께 `FooConfiguration`(후자가 전자보다 우선합니다 경우).
+In this case the client is composed from the components already in `FeignClientsConfiguration` together with any in `FooConfiguration` (where the latter will override the former).
 
 
 
@@ -3977,15 +4628,13 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<td class="icon">
 
-경고
 
 
 
-<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모든 사용됩니다, 기본 응용 프로그램 컨텍스트를 `@FeignClient`. 당신이 사용하는 경우 `@ComponentScan`(또는 `@SpringBootApplication`당신이 포함되지 않도록하기위한 조치를 취할 필요) (예를 들어 별도의 겹치지 않는 패키지에 넣어, 또는 명시 적으로 검사 할 패키지를 지정 `@ComponentScan`).
 
 
+<td class="content">The `FooConfiguration` has to be `@Configuration` but take care that it is not in a `@ComponentScan` for the main application context, otherwise it will be used for every `@FeignClient`. If you use `@ComponentScan` (or `@SpringBootApplication`) you need to take steps to avoid it being included (for instance put it in a separate, non-overlapping package, or specify the packages to scan explicitly in the `@ComponentScan`).
 
 
 
@@ -4001,17 +4650,15 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">`serviceId`속성은 이제 찬성되지 않습니다 `name`속성.
 
 
 
 
+<td class="content">The `serviceId` attribute is now deprecated in favor of the `name` attribute.
 
 
 
@@ -4025,25 +4672,29 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<td class="icon">
 
-경고
 
 
 
-<td class="content">이전에는 사용 `url`속성은 필요하지 않은 `name`속성을. 사용하는 것이 `name`지금 필요합니다.
 
 
 
 
 
 
+<td class="content">Previously, using the `url` attribute, did not require the `name` attribute. Using `name` is now required.
 
 
 
 
 
-자리가 지원됩니다 `name`및 `url`속성.
+
+
+
+
+
+
+Placeholders are supported in the `name` and `url` attributes.
 
 
 
@@ -4062,27 +4713,27 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-봄 클라우드 넷플릭스는 꾀병을 위해 기본적으로 다음 콩 제공 ( `BeanType`beanName에을 : `ClassName`)
+Spring Cloud Netflix provides the following beans by default for feign (`BeanType` beanName: `ClassName`):
 
 
 
 
 
-*   `Decoder`feignDecoder : `ResponseEntityDecoder`(래핑 `SpringDecoder`)
+*   `Decoder` feignDecoder: `ResponseEntityDecoder` (which wraps a `SpringDecoder`)
 
-*   `Encoder` feignEncoder : `SpringEncoder`
+*   `Encoder` feignEncoder: `SpringEncoder`
 
-*   `Logger` feignLogger : `Slf4jLogger`
+*   `Logger` feignLogger: `Slf4jLogger`
 
-*   `Contract` feignContract : `SpringMvcContract`
+*   `Contract` feignContract: `SpringMvcContract`
 
-*   `Feign.Builder` feignBuilder : `HystrixFeign.Builder`
-
-
+*   `Feign.Builder` feignBuilder: `HystrixFeign.Builder`
 
 
 
-봄 클라우드 넷플릭스는 _하지 않습니다_ 꾀병 기본적으로 다음 콩을 제공하지만 여전히 꾀병 클라이언트를 만들 수있는 응용 프로그램 컨텍스트에서 이러한 종류의 콩을 검색 :
+
+
+Spring Cloud Netflix _does not_ provide the following beans by default for feign, but still looks up beans of these types from the application context to create the feign client:
 
 
 
@@ -4102,7 +4753,7 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-그 유형 중 하나의 콩 만들기 및에 배치 `@FeignClient`구성하면 (예 : `FooConfiguration`위)가 설명 된 콩의 각각을 대체 할 수 있습니다. 예:
+Creating a bean of one of those type and placing it in a `@FeignClient` configuration (such as `FooConfiguration` above) allows you to override each one of the beans described. Example:
 
 
 
@@ -4113,7 +4764,7 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
     @Configuration
     public class FooConfiguration {
         @Bean
-        public Contract feignContractg() {
+        public Contract feignContract() {
             return new feign.Contract.Default();
         }
 
@@ -4129,13 +4780,13 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-이 대체 `SpringMvcContract`로 `feign.Contract.Default`하고, 추가 `RequestInterceptor`의 컬렉션 `RequestInterceptor`.
+This replaces the `SpringMvcContract` with `feign.Contract.Default` and adds a `RequestInterceptor` to the collection of `RequestInterceptor`.
 
 
 
 
 
-기본 구성이 지정 될 수있는 `@EnableFeignClients`특성을 `defaultConfiguration`상술 한 바와 같이 유사한 방식. 차이점은이 구성에 적용 할 것입니다 _모든_ 꾀병 클라이언트.
+Default configurations can be specified in the `@EnableFeignClients` attribute `defaultConfiguration` in a similar manner as described above. The difference is that this configuration will apply to _all_ feign clients.
 
 
 
@@ -4143,23 +4794,23 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-### Hystrix 지원 지원
+### Feign Hystrix Support
 
 
 
-Hystrix가 classpath에 있다면, 기본적으로 Feign은 모든 메소드를 회로 차단기로 감쌀 것이다. 을 반환하는 `com.netflix.hystrix.HystrixCommand`도 사용할 수 있습니다. 이렇게하면에 호출 (반응 패턴을 사용할 수 있습니다 `.toObservable()`하거나 `.observe()`또는 호출과 비동기 사용 ( `.queue()`).
-
-
-
-
-
-척하기위한 Hystrix 지원을 사용하지 않으려면 설정 `feign.hystrix.enabled=false`.
+If Hystrix is on the classpath, by default Feign will wrap all methods with a circuit breaker. Returning a `com.netflix.hystrix.HystrixCommand` is also available. This lets you use reactive patterns (with a call to `.toObservable()` or `.observe()` or asynchronous use (with a call to `.queue()`).
 
 
 
 
 
-클라이언트 당 기준으로 Hystrix 지원을 비활성화하려면 바닐라 작성 `Feign.Builder`은 "프로토 타입"범위, 예를 들면와를 :
+To disable Hystrix support for Feign, set `feign.hystrix.enabled=false`.
+
+
+
+
+
+To disable Hystrix support on a per-client basis create a vanilla `Feign.Builder` with the "prototype" scope, e.g.:
 
 
 
@@ -4170,10 +4821,10 @@ Hystrix가 classpath에 있다면, 기본적으로 Feign은 모든 메소드를 
     @Configuration
     public class FooConfiguration {
         @Bean
-        @Scope("prototype")
-        public Feign.Builder feignBuilder() {
-            return Feign.builder();
-        }
+    	@Scope("prototype")
+    	public Feign.Builder feignBuilder() {
+    		return Feign.builder();
+    	}
     }
 
 
@@ -4184,11 +4835,11 @@ Hystrix가 classpath에 있다면, 기본적으로 Feign은 모든 메소드를 
 
 
 
-### Hystrix Fallbacks를 기쁘게합니다.
+### Feign Hystrix Fallbacks
 
 
 
-Hystrix는 회로가 열려 있거나 오류가있을 때 실행되는 기본 코드 경로 인 폴백의 개념을 지원합니다. A는 주어진에 대한 폴백을 사용하려면 `@FeignClient`설정된 `fallback`대체를 구현하는 클래스의 이름 속성을.
+Hystrix supports the notion of a fallback: a default code path that is executed when they circuit is open or there is an error. To enable fallbacks for a given `@FeignClient` set the `fallback` attribute to the class name that implements the fallback.
 
 
 
@@ -4221,15 +4872,13 @@ Hystrix는 회로가 열려 있거나 오류가있을 때 실행되는 기본 �
 
 
 
-<td class="icon">
-
-경고
 
 
 
-<td class="content">Feign의 대체 기능 구현과 Hystrix 대체 버전의 작동 방식에는 제한이 있습니다. 폴백은 현재 반환 방법에 대해 지원되지 않습니다 `com.netflix.hystrix.HystrixCommand`및 `rx.Observable`.
 
 
+
+<td class="content">There is a limitation with the implementation of fallbacks in Feign and how Hystrix fallbacks work. Fallbacks are currently not supported for methods that return `com.netflix.hystrix.HystrixCommand` and `rx.Observable`.
 
 
 
@@ -4241,17 +4890,19 @@ Hystrix는 회로가 열려 있거나 오류가있을 때 실행되는 기본 �
 
 
 
-### 기꺼이 상속 지원
+
+
+### Feign Inheritance Support
 
 
 
-Feign은 단일 상속 인터페이스를 통해 상용구 API를 지원합니다. 이를 통해 공통 작업을 편리한 기본 인터페이스로 그룹화 할 수 있습니다. Spring MVC와 함께 REST 엔드 포인트와 Feign 클라이언트에 대해 동일한 계약을 공유 할 수있다.
+Feign supports boilerplate apis via single-inheritance interfaces. This allows grouping common operations into convenient base interfaces.
 
 
 
 
 
-UserService.java
+
 
 
 
@@ -4267,7 +4918,7 @@ UserService.java
 
 
 
-UserResource.java
+
 
 
 
@@ -4282,7 +4933,7 @@ UserResource.java
 
 
 
-UserClient.java
+
 
 
 
@@ -4301,11 +4952,35 @@ UserClient.java
 
 
 
-### 희망 요청 / 응답 압축
 
 
 
-귀하는 귀하의 Feign 요청에 대해 요청 또는 응답 GZIP 압축을 활성화하는 것을 고려할 수 있습니다. 다음 중 하나의 특성을 사용하여이를 수행 할 수 있습니다.
+
+
+
+
+
+
+
+<td class="content">It is generally not advisable to share an interface between a server and a client. It introduces tight coupling, and also actually doesn’t work with Spring MVC in its current form (method parameter mapping is not inherited).
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Feign request/response compression
+
+
+
+You may consider enabling the request or response GZIP compression for your Feign requests. You can do this by enabling one of the properties:
 
 
 
@@ -4322,7 +4997,7 @@ UserClient.java
 
 
 
-긴급 요청 압축을 사용하면 웹 서버에 설정할 수있는 것과 비슷한 설정을 사용할 수 있습니다.
+Feign request compression gives you settings similar to what you may set for your web server:
 
 
 
@@ -4340,7 +5015,7 @@ UserClient.java
 
 
 
-이러한 등록 정보를 사용하면 압축 미디어 유형 및 최소 요청 임계 값 길이에 대한 선택을 할 수 있습니다.
+These properties allow you to be selective about the compressed media types and minimum request threshold length.
 
 
 
@@ -4348,17 +5023,17 @@ UserClient.java
 
 
 
-### 벌채 로깅
+### Feign logging
 
 
 
-작성된 각 Feign 클라이언트에 대해 로거가 작성됩니다. 기본적으로 로거 이름은 Feign 클라이언트를 만드는 데 사용 된 인터페이스의 전체 클래스 이름입니다. 척하기 로깅 만에 응답 `DEBUG`수준.
+A logger is created for each Feign client created. By default the name of the logger is the full class name of the interface used to create the Feign client. Feign logging only responds to the `DEBUG` level.
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4370,25 +5045,25 @@ application.yml
 
 
 
-`Logger.Level`는 클라이언트에 따라 구성 할 수 있습니다 목적은, 얼마를 기록하는 척하기 알려줍니다. 선택 사항은 다음과 같습니다.
+The `Logger.Level` object that you may configure per client, tells Feign how much to log. Choices are:
 
 
 
 
 
-*   `NONE`아니, 로깅 ( **DEFAULT** ).
+*   `NONE`, No logging (**DEFAULT**).
 
-*   `BASIC`, 요청 메소드와 URL 및 응답 상태 코드와 실행 시간 만 로깅하십시오.
+*   `BASIC`, Log only the request method and URL and the response status code and execution time.
 
-*   `HEADERS`, 요청 및 응답 헤더와 함께 기본 정보를 기록하십시오.
+*   `HEADERS`, Log the basic information along with request and response headers.
 
-*   `FULL`, 요청과 응답에 대한 헤더, 본문 및 메타 데이터를 기록합니다.
-
-
+*   `FULL`, Log the headers, body, and metadata for both requests and responses.
 
 
 
-예를 들어, 다음을 설정할 것이다 `Logger.Level`하기 `FULL`:
+
+
+For example, the following would set the `Logger.Level` to `FULL`:
 
 
 
@@ -4416,19 +5091,19 @@ application.yml
 
 
 
-## 외부 구성 : Archaius
+## External Configuration: Archaius
 
 
 
 
 
-[Archaius는](https://github.com/Netflix/archaius) 넷플 릭스 클라이언트 측 구성 라이브러리입니다. 모든 Netflix OSS 구성 요소가 구성에 사용하는 라이브러리입니다. Archaius는의 확장 [아파치 코 몬즈 구성](https://commons.apache.org/proper/commons-configuration) 프로젝트. 소스를 폴링하여 변경 사항을 보거나 소스가 변경 사항을 클라이언트에 푸시하여 구성을 갱신 할 수 있습니다. Archaius는 동적 <Type> 속성 클래스를 속성의 핸들로 사용합니다.
+[Archaius](https://github.com/Netflix/archaius) is the Netflix client side configuration library. It is the library used by all of the Netflix OSS components for configuration. Archaius is an extension of the [Apache Commons Configuration](https://commons.apache.org/proper/commons-configuration) project. It allows updates to configuration by either polling a source for changes or for a source to push changes to the client. Archaius uses Dynamic<Type>Property classes as handles to properties.
 
 
 
 
 
-아키라 우스의 예
+
 
 
 
@@ -4448,7 +5123,7 @@ application.yml
 
 
 
-Archaius는 고유 한 구성 파일 세트 및로드 우선 순위를 가지고 있습니다. Spring 애플리케이션은 일반적으로 Archaius를 직접 사용하지 않아야하지만 Netflix 툴을 기본적으로 구성해야 할 필요성은 여전히 ​​남아 있습니다. Spring Cloud에는 Spring Environment Bridge가있어서 Archaius는 Spring Environment로부터 속성을 읽을 수 있습니다. 이를 통해 스프링 부트 프로젝트는 일반 구성 툴체인을 사용하면서 문서화 된대로 Netflix 툴을 구성 할 수 있습니다.
+Archaius has its own set of configuration files and loading priorities. Spring applications should generally not use Archaius directly, but the need to configure the Netflix tools natively remains. Spring Cloud has a Spring Environment Bridge so Archaius can read properties from the Spring Environment. This allows Spring Boot projects to use the normal configuration toolchain, while allowing them to configure the Netflix tools, for the most part, as documented.
 
 
 
@@ -4458,77 +5133,125 @@ Archaius는 고유 한 구성 파일 세트 및로드 우선 순위를 가지고
 
 
 
-## 라우터 및 필터 : Zuul
+## Router and Filter: Zuul
 
 
 
 
 
-마이크로 서비스 아키텍처의 필수 부분에서 라우팅. 예를 들어, `/`웹 어플리케이션에 매핑 될 수 있고, `/api/users`사용자의 서비스에 대응하고, `/api/shop`점포 서비스 매핑된다. [Zuul는](https://github.com/Netflix/zuul) 넷플릭스에 의해 JVM 기반의 라우터와 서버 측 부하 분산 장치입니다.
+Routing in an integral part of a microservice architecture. For example, `/` may be mapped to your web application, `/api/users` is mapped to the user service and `/api/shop` is mapped to the shop service. [Zuul](https://github.com/Netflix/zuul) is a JVM based router and server side load balancer by Netflix.
 
 
 
 
 
-[넷플릭스는 Zuul을 사용하여](http://www.slideshare.net/MikeyCohen1/edge-architecture-ieee-international-conference-on-cloud-engineering-32240146/27) 다음과 같은 사항에 대해 :
+[Netflix uses Zuul](http://www.slideshare.net/MikeyCohen1/edge-architecture-ieee-international-conference-on-cloud-engineering-32240146/27) for the following:
 
 
 
 
 
-*   입증
+*   Authentication
 
-*   통찰력
+*   Insights
 
-*   스트레스 테스트
+*   Stress Testing
 
-*   카나리아 테스트
+*   Canary Testing
 
-*   동적 라우팅
+*   Dynamic Routing
 
-*   서비스 마이그레이션
+*   Service Migration
 
-*   로드 흘리기
+*   Load Shedding
 
-*   보안
+*   Security
 
-*   정적 응답 처리
+*   Static Response handling
 
-*   액티브 / 액티브 트래픽 관리
-
-
-
-
-
-Zuul의 규칙 엔진을 사용하면 규칙과 필터를 Java 및 Groovy에 대한 지원 기능이 내장 된 본질적으로 모든 JVM 언어로 작성할 수 있습니다.
+*   Active/Active traffic management
 
 
 
 
 
-### 임베디드 Zuul 역방향 프록시
-
-
-
-Spring Cloud는 UI 애플리케이션이 하나 이상의 백엔드 서비스에 대한 호출을 프록시하기를 원하는 매우 일반적인 사용 사례의 개발을 용이하게하기 위해 임베디드 Zuul 프록시를 만들었습니다. 이 기능은 필요한 모든 백엔드에 대해 독립적으로 CORS 및 인증 문제를 관리 할 필요가 없도록 사용자 인터페이스가 필요한 백엔드 서비스로 프록시 할 때 유용합니다.
+Zuul’s rule engine allows rules and filters to be written in essentially any JVM language, with built in support for Java and Groovy.
 
 
 
 
 
-그것을 사용하려면, 함께 봄 부트 메인 클래스에 주석 `@EnableZuulProxy`, 이는 해당 서비스에 시내 전화를 전달합니다. 규칙에 따라, 유레카 ID "사용자"와 서비스에있는 프록시의 요청받을 것 `/users`(제거 접두사와 참조). 프록시는 Eureka를 통해 전달할 인스턴스를 찾기 위해 리본을 사용하며 모든 요청은 hystrix 명령으로 실행되므로 Hystrix 메트릭에 실패가 표시되고 일단 회로가 열리면 프록시는 서비스에 접속하려고 시도하지 않습니다.
 
 
 
 
 
-설정 자동으로 추가 서비스 갖는 건너 뛰려면 `zuul.ignored-services`서비스 ID 패턴 목록에 있습니다. 서비스가 무시되고 명시 적으로 구성된 라우트 맵에 포함 된 패턴과 일치하면 무시되지 않습니다. 예:
 
 
 
 
 
-application.yml
+
+
+<td class="content">The configuration property `zuul.max.host.connections` has been replaced by two new properties, `zuul.host.maxTotalConnections` and `zuul.host.maxPerRouteConnections` which default to 200 and 20 respectively.
+
+
+
+
+
+
+
+
+
+
+
+### Embedded Zuul Reverse Proxy
+
+
+
+Spring Cloud has created an embedded Zuul proxy to ease the development of a very common use case where a UI application wants to proxy calls to one or more back end services. This feature is useful for a user interface to proxy to the backend services it requires, avoiding the need to manage CORS and authentication concerns independently for all the backends.
+
+
+
+
+
+To enable it, annotate a Spring Boot main class with `@EnableZuulProxy`, and this forwards local calls to the appropriate service. By convention, a service with the ID "users", will receive requests from the proxy located at `/users` (with the prefix stripped). The proxy uses Ribbon to locate an instance to forward to via discovery, and all requests are executed in a hystrix command, so failures will show up in Hystrix metrics, and once the circuit is open the proxy will not try to contact the service.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">the Zuul starter does not include a discovery client, so for routes based on service IDs you need to provide one of those on the classpath as well (e.g. Eureka is one choice).
+
+
+
+
+
+
+
+
+
+
+
+To skip having a service automatically added, set `zuul.ignored-services` to a list of service id patterns. If a service matches a pattern that is ignored, but also included in the explicitly configured routes map, then it will be unignored. Example:
+
+
+
+
+
+
 
 
 
@@ -4543,19 +5266,19 @@ application.yml
 
 
 
-이 예에서, 모든 서비스가 무시되는 **것을 제외하고** '사용자'.
+In this example, all services are ignored **except** "users".
 
 
 
 
 
-프록시 경로를 보강하거나 변경하려면 다음과 같은 외부 구성을 추가 할 수 있습니다.
+To augment or change the proxy routes, you can add external configuration like the following:
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4569,19 +5292,19 @@ application.yml
 
 
 
-즉, "/ myusers"에 대한 http 호출은 "사용자"서비스로 전달됩니다 (예 : "/ myusers / 101"은 "/ 101"로 전달됨).
+This means that http calls to "/myusers" get forwarded to the "users" service (for example "/myusers/101" is forwarded to "/101").
 
 
 
 
 
-경로를 세밀하게 제어하려면 경로와 serviceId를 독립적으로 지정할 수 있습니다.
+To get more fine-grained control over a route you can specify the path and the serviceId independently:
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4597,19 +5320,19 @@ application.yml
 
 
 
-이것은 "/ myusers"에 대한 http 호출이 "users_service"서비스로 전달됨을 의미합니다. 라우트에는 개미 스타일 패턴으로 지정할 수있는 "경로"가 있어야하므로 "/ myusers / *"는 하나의 레벨과 만 일치하지만 "/ myusers / {asterisk} {별표}"는 계층 적으로 일치합니다.
+This means that http calls to "/myusers" get forwarded to the "users_service" service. The route has to have a "path" which can be specified as an ant-style pattern, so "/myusers/*" only matches one level, but "/myusers/**" matches hierarchically.
 
 
 
 
 
-백엔드의 위치는 "serviceId"(유레카 서비스의 경우) 또는 "url"(물리적 위치의 경우)으로 지정할 수 있습니다.
+The location of the backend can be specified as either a "serviceId" (for a service from discovery) or a "url" (for a physical location), e.g.
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4625,13 +5348,13 @@ application.yml
 
 
 
-이 간단한 url-routes는 HystrixCommand처럼 실행되지 않으며 다중 URL을 리본으로로드 밸런싱 할 수 없습니다. (이것은 현재 리본에서 해제 유레카 지원이 필요합니다 : 참조 서비스-경로를 지정하고 서비스 id를위한 리본 클라이언트를 구성이를 위해 [자세한 정보는 위](http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-ribbon-without-eureka) ), 예를 들어,
+These simple url-routes don’t get executed as a `HystrixCommand` nor can you loadbalance multiple URLs with Ribbon. To achieve this, specify a service-route and configure a Ribbon client for the serviceId (this currently requires disabling Eureka support in Ribbon: see [above for more information](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-ribbon-without-eureka)), e.g.
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4655,13 +5378,13 @@ application.yml
 
 
 
-regexmapper를 사용하여 serviceId와 route 사이에 규칙을 제공 할 수 있습니다. serviceId에서 변수를 추출하여 경로 패턴에 주입하기 위해 group이라는 정규 표현식을 사용합니다.
+You can provide convention between serviceId and routes using regexmapper. It uses regular expression named groups to extract variables from serviceId and inject them into a route pattern.
 
 
 
 
 
-ApplicationConfiguration.java
+
 
 
 
@@ -4678,19 +5401,19 @@ ApplicationConfiguration.java
 
 
 
-즉, serviceId "myusers-v1"은 "/ v1 / myusers / {asterisk} {별표}"경로에 매핑됩니다. 모든 정규식이 허용되지만 모든 명명 된 그룹은 servicePattern과 routePattern에 모두 있어야합니다. servicePattern이 serviceId와 일치하지 않으면 기본 동작이 사용됩니다. 위의 예에서 serviceId "myusers"는 경로 "/ myusers / {asterisk} {asterisk}"에 매핑됩니다 (버전이 없음).이 기능은 기본적으로 사용되지 않으며 발견 된 서비스에만 적용됩니다.
+This means that a serviceId "myusers-v1" will be mapped to route "/v1/myusers/**". Any regular expression is accepted but all named groups must be present in both servicePattern and routePattern. If servicePattern does not match a serviceId, the default behavior is used. In the example above, a serviceId "myusers" will be mapped to route "/myusers/**" (no version detected) This feature is disable by default and only applies to discovered services.
 
 
 
 
 
-설정된 모든 매핑에 접두사를 추가하려면 `zuul.prefix`다음과 같은 값으로, `/api`. 요청이 기본적으로 전달되기 전에 프록시 접두사 (와 떨어져이 동작을 전환 요청에서 제거된다 `zuul.stripPrefix=false`). 개별 경로에서 서비스 별 접두어를 제거 할 수도 있습니다 (예 :
+To add a prefix to all mappings, set `zuul.prefix` to a value, such as `/api`. The proxy prefix is stripped from the request before the request is forwarded by default (switch this behaviour off with `zuul.stripPrefix=false`). You can also switch off the stripping of the service-specific prefix from individual routes, e.g.
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4706,37 +5429,37 @@ application.yml
 
 
 
-이 예에서 "/ myusers / 101"에 대한 요청은 "users"서비스의 "/ myusers / 101"로 전달됩니다.
+In this example, requests to "/myusers/101" will be forwarded to "/myusers/101" on the "users" service.
 
 
 
 
 
-`zuul.routes`항목은 실제로 유형의 개체에 바인딩 `ProxyRouteLocator`. 해당 객체의 속성을 보면 "재시도"플래그도 있음을 알 수 있습니다. 해당 플래그를 "true"로 설정하면 리본 클라이언트가 실패한 요청을 자동으로 다시 시도합니다 (필요하면 리본 클라이언트 구성을 사용하여 재시도 작업의 매개 변수를 수정할 수 있음).
+The `zuul.routes` entries actually bind to an object of type `ZuulProperties`. If you look at the properties of that object you will see that it also has a "retryable" flag. Set that flag to "true" to have the Ribbon client automatically retry failed requests (and if you need to you can modify the parameters of the retry operations using the Ribbon client configuration).
 
 
 
 
 
-`X-Forwarded-Host`헤더는 기본적으로 전달 요청에 추가됩니다. 집합을 해제합니다 `zuul.addProxyHeaders = false`. 접두어 경로는 기본적으로 제거되고 백엔드에 대한 요청은 헤더 "X-Forwarded-Prefix"(위의 예에서 "/ myusers")를 선택합니다.
+The `X-Forwarded-Host` header is added to the forwarded requests by default. To turn it off set `zuul.addProxyHeaders = false`. The prefix path is stripped by default, and the request to the backend picks up a header "X-Forwarded-Prefix" ("/myusers" in the examples above).
 
 
 
 
 
-와 응용 프로그램은 `@EnableZuulProxy`당신이 기본 경로를 ( "/")로 설정하면 예를 들어, 독립 서버로 동작 할 수있다 `zuul.route.home: /`"홈"서비스 행 노선의 모든 트래픽 (예 : "/ {별표} {별표}") 할 것이다.
+An application with `@EnableZuulProxy` could act as a standalone server if you set a default route ("/"), for example `zuul.route.home: /` would route all traffic (i.e. "/**") to the "home" service.
 
 
 
 
 
-보다 세분화 된 무시가 필요할 경우 무시할 특정 패턴을 지정할 수 있습니다. 이 패턴은 라우트 위치 지정 프로세스의 시작에서 평가되는데, 이는 일치를 보장하기 위해 접두어가 패턴에 포함되어야 함을 의미합니다. 무시 된 패턴은 모든 서비스에 적용되며 다른 경로 사양보다 우선합니다.
+If more fine-grained ignoring is needed, you can specify specific patterns to ignore. These patterns are evaluated at the start of the route location process, which means prefixes should be included in the pattern to warrant a match. Ignored patterns span all services and supersede any other route specification.
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4751,7 +5474,7 @@ application.yml
 
 
 
-즉, "/ myusers / 101"과 같은 모든 호출은 "users"서비스의 "/ 101"로 전달됩니다. 그러나 "/ admin /"을 포함한 전화는 해결되지 않습니다.
+This means that all calls such as "/myusers/101" will be forwarded to "/101" on the "users" service. But calls including "/admin/" will not resolve.
 
 
 
@@ -4759,23 +5482,136 @@ application.yml
 
 
 
-### 교살 패턴과 로컬 전달
+### Cookies and Sensitive Headers
 
 
 
-기존 애플리케이션이나 API를 마이그레이션 할 때 일반적인 패턴은 이전 엔드 포인트를 "교살하여 다른 구현으로 천천히 대체하는 것"입니다. Zuul 프록시는 이전 엔드 포인트 클라이언트의 모든 트래픽을 처리하는 데 사용할 수 있기 때문에이 도구를 사용하면 유용하지만 일부 요청은 새 엔드 포인트로 리디렉션합니다.
-
-
-
-
-
-구성 예 :
+It’s OK to share headers between services in the same system, but you probably don’t want sensitive headers leaking downstream into external servers. You can specify a list of ignored headers as part of the route configuration. Cookies play a special role because they have well-defined semantics in browsers, and they are always to be treated as sensitive. If the consumer of your proxy is a browser, then cookies for downstream services also cause problems for the user because they all get jumbled up (all downstream services look like they come from the same place).
 
 
 
 
 
-application.yml
+If you are careful with the design of your services, for example if only one of the downstream services sets cookies, then you might be able to let them flow from the backend all the way up to the caller. Also, if your proxy sets cookies and all your back end services are part of the same system, it can be natural to simply share them (and for instance use Spring Session to link them up to some shared state). Other than that, any cookies that get set by downstream services are likely to be not very useful to the caller, so it is recommended that you make (at least) "Set-Cookie" and "Cookie" into sensitive headers for routes that are not part of your domain. Even for routes that **are** part of your domain, try to think carefully about what it means before allowing cookies to flow between them and the proxy.
+
+
+
+
+
+The sensitive headers can be configured as a comma-separated list per route, e.g.
+
+
+
+
+
+
+
+
+
+     zuul:
+      routes:
+        users:
+          path: /myusers/**
+          sensitiveHeaders: Cookie,Set-Cookie,Authorization
+          url: https://downstream
+
+
+
+
+
+
+
+Sensitive headers can also be set globally by setting `zuul.sensitiveHeaders`. If `sensitiveHeaders` is set on a route, this will override the global `sensitiveHeaders` setting.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">this is the default value for `sensitiveHeaders`, so you don’t need to set it unless you want it to be different. N.B. this is new in Spring Cloud Netflix 1.1 (in 1.0 the user had no control over headers and all cookies flow in both directions).
+
+
+
+
+
+
+
+
+
+
+
+In addition to the per-route sensitive headers, you can set a global value for `zuul.ignoredHeaders` for values that should be discarded (both request and response) during interactions with downstream services. By default these are empty, if Spring Security is not on the classpath, and otherwise they are initialized to a set of well-known "security" headers (e.g. involving caching) as specified by Spring Security. The assumption in this case is that the downstream services might add these headers too, and we want the values from the proxy.
+
+
+
+
+
+
+
+### The Routes Endpoint
+
+
+
+If you are using `@EnableZuulProxy` with tha Spring Boot Actuator you will enable (by default) an additional endpoint, available via HTTP as `/routes`. A GET to this endpoint will return a list of the mapped routes. A POST will force a refresh of the existing routes (e.g. in case there have been changes in the service catalog).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">the routes should respond automatically to changes in the service catalog, but the POST to /routes is a way to force the change to happen immediately.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Strangulation Patterns and Local Forwards
+
+
+
+A common pattern when migrating an existing application or API is to "strangle" old endpoints, slowly replacing them with different implementations. The Zuul proxy is a useful tool for this because you can use it to handle all traffic from clients of the old endpoints, but redirect some of the requests to new ones.
+
+
+
+
+
+Example configuration:
+
+
+
+
+
+
 
 
 
@@ -4800,25 +5636,7 @@ application.yml
 
 
 
-이 예에서는 다른 패턴 중 하나와 일치하지 않는 모든 요청에 ​​매핑되는 '기존'앱을 차단하고 있습니다. 의 경로는 `/first/{asterisk}{asterisk}`외부 URL로 새로운 서비스로 추출되었다. 그리고에서 경로 `/second/{asterisk}{asterisk}`forwared있다 그래서 그들은 보통 봄과 예, 로컬로 처리 할 수 있습니다 `@RequestMapping`. 의 경로 `/third/{asterisk}{asterisk}`도 전달되지만, 다른 접두사로 (즉,이 `/third/foo`전달됩니다 `/3rd/foo`).
-
-
-
-
-
-
-
-
-
-
-
-<td class="icon">
-
-노트
-
-
-
-<td class="content">무시 된 패턴은 완전히 무시되지 않고 프록시에 의해 처리되지 않습니다 (따라서 효과적으로 로컬로 전달됩니다).
+In this example we are strangling the "legacy" app which is mapped to all requests that do not match one of the other patterns. Paths in `/first/**` have been extracted into a new service with an external URL. And paths in `/second/**` are forwared so they can be handled locally, e.g. with a normal Spring `@RequestMapping`. Paths in `/third/**` are also forwarded, but with a different prefix (i.e. `/third/foo` is forwarded to `/3rd/foo`).
 
 
 
@@ -4832,17 +5650,35 @@ application.yml
 
 
 
-### Zuul을 통한 파일 업로드
-
-
-
-당신이 경우 `@EnableZuulProxy`당신은 파일을 업로드 할 프록시 경로를 사용할 수 있습니다 그리고 그것은 단지 한 파일이 작으로 작동합니다. 큰 파일의 경우 봄 우회 대안 경로가 `DispatcherServlet`"/ zuul / *"에 (다중 처리를 방지하기 위해). 즉, 만약 `zuul.routes.customers=/customers/{asterisk}{asterisk}`당신이 "/ zuul / 고객 / *"큰 파일을 게시 할 수 있습니다. 서블릿 경로를 통해 구체화된다 `zuul.servletPath`. 대용량 파일은 프록시 경로가 리본로드 밸런서를 통해 이동하는 경우 시간 초과 설정을 높여야합니다 (예 :
 
 
 
 
+<td class="content">The ignored patterns aren’t completely ignored, they just aren’t handled by the proxy (so they are also effectively forwarded locally).
 
-application.yml
+
+
+
+
+
+
+
+
+
+
+
+
+### Uploading Files through Zuul
+
+
+
+If you `@EnableZuulProxy` you can use the proxy paths to upload files and it should just work as long as the files are small. For large files there is an alternative path which bypasses the Spring `DispatcherServlet` (to avoid multipart processing) in "/zuul/*". I.e. if `zuul.routes.customers=/customers/**` then you can POST large files to "/zuul/customers/*". The servlet path is externalized via `zuul.servletPath`. Extremely large files will also require elevated timeout settings if the proxy route takes you through a Ribbon load balancer, e.g.
+
+
+
+
+
+
 
 
 
@@ -4857,7 +5693,7 @@ application.yml
 
 
 
-스트리밍을 대용량 파일로 작업하려면 요청에서 청크 분할 인코딩을 사용해야합니다 (일부 브라우저에서는 기본적으로 수행하지 않음). 예 : 명령 줄에서 :
+Note that for streaming to work with large files, you need to use chunked encoding in the request (which some browsers do not do by default). E.g. on the command line:
 
 
 
@@ -4865,8 +5701,8 @@ application.yml
 
 
 
-<pre>$ curl -v -H "전송 인코딩 : 청크 분할"\
-    -F " file=@mylarge.iso"로컬 호스트 : 9999 / zuul / 간단한 / 파일</pre>
+<pre>$ curl -v -H "Transfer-Encoding: chunked" \
+    -F "file=@mylarge.iso" localhost:9999/zuul/simple/file</pre>
 
 
 
@@ -4880,19 +5716,19 @@ application.yml
 
 
 
-당신이 사용하는 경우, 또한 프록시없이 Zuul 서버를 실행하거나, 선택적으로 프록시 플랫폼의 일부에 전환 할 수 있습니다 `@EnableZuulServer`(대신 `@EnableZuulProxy`). 만약 유형의 애플리케이션에 추가하는 콩 `ZuulFilter` 들이 함께 한, 자동적으로 설치된다 `@EnableZuulProxy`하지만 않고 프록시 필터 중 하나가 자동으로 추가된다.
+You can also run a Zuul server without the proxying, or switch on parts of the proxying platform selectively, if you use `@EnableZuulServer` (instead of `@EnableZuulProxy`). Any beans that you add to the application of type `ZuulFilter` will be installed automatically, as they are with `@EnableZuulProxy`, but without any of the proxy filters being added automatically.
 
 
 
 
 
-이 경우 Zuul 서버에 대한 경로는 "zuul.routes. *"를 구성하여 계속 지정되지만 서비스 발견 및 프록시가 없으므로 "serviceId"및 "url"설정은 무시됩니다. 예 :
+In this case the routes into the Zuul server are still specified by configuring "zuul.routes.*", but there is no service discovery and no proxying, so the "serviceId" and "url" settings are ignored. For example:
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4906,7 +5742,7 @@ application.yml
 
 
 
-"/ api / {asterisk} {별표}"의 모든 경로를 Zuul 필터 체인에 매핑합니다.
+maps all paths in "/api/**" to the Zuul filter chain.
 
 
 
@@ -4914,41 +5750,41 @@ application.yml
 
 
 
-### 주울 필터 사용 안 함
+### Disable Zuul Filters
 
 
 
-봄 클라우드에 대한 Zuul이 다수 포함되어 `ZuulFilter`모두 프록시 서버 모드에서 기본적으로 활성화 콩. 참조 [zuul 필터 패키지를](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/zuul/filters) 사용할 수 있습니다 가능한 필터에 대해. 당신이 하나를 사용하지 않으려면, 간단하게 설정 `zuul.<SimpleClassName>.<filterType>.disable=true`. 관례 적으로, 패키지는 후 `filters`Zuul 필터 유형입니다. 예를 들어 사용하지 않도록 설정하는 `org.springframework.cloud.netflix.zuul.filters.post.SendResponseFilter`설정 `zuul.SendResponseFilter.post.disable=true`.
-
-
-
-
-
-
-
-### 사이드카로 다국어 지원
-
-
-
-Eureka, Ribbon 및 Config Server를 활용하고자하는 jvm이 아닌 언어를 사용합니까? 봄 클라우드 넷플릭스 사이드카가 영감을받은 [넷플릭스 프라나](https://github.com/Netflix/Prana) . 여기에는 주어진 서비스에 대한 모든 인스턴스 (예 : 호스트 및 포트)를 가져 오는 간단한 http API가 포함되어 있습니다. Eureka에서 경로 항목을 가져온 Zuul 프록시를 통해 서비스 호출을 프록시 할 수도 있습니다. Spring Cloud Config Server는 호스트 조회 또는 Zuul 프록시를 통해 직접 액세스 할 수 있습니다. 비 jvm 앱은 헬스 체크를 구현하여 앱이 위 또는 아래로 움직이는 경우 사이드카가 eureka에보고 할 수 있도록해야합니다.
+Zuul for Spring Cloud comes with a number of `ZuulFilter` beans enabled by default in both proxy and server mode. See [the zuul filters package](https://github.com/spring-cloud/spring-cloud-netflix/tree/master/spring-cloud-netflix-core/src/main/java/org/springframework/cloud/netflix/zuul/filters) for the possible filters that are enabled. If you want to disable one, simply set `zuul.<SimpleClassName>.<filterType>.disable=true`. By convention, the package after `filters` is the Zuul filter type. For example to disable `org.springframework.cloud.netflix.zuul.filters.post.SendResponseFilter` set `zuul.SendResponseFilter.post.disable=true`.
 
 
 
 
 
-사이드카를 사용하려면, 함께 봄 부팅 응용 프로그램을 만듭니다 `@EnableSidecar`. 이 주석은 포함 `@EnableCircuitBreaker`, `@EnableDiscoveryClient`하고 `@EnableZuulProxy`. 비 -JVM 응용 프로그램과 같은 호스트에서 결과 응용 프로그램을 실행하십시오.
+
+
+### Polyglot support with Sidecar
+
+
+
+Do you have non-jvm languages you want to take advantage of Eureka, Ribbon and Config Server? The Spring Cloud Netflix Sidecar was inspired by [Netflix Prana](https://github.com/Netflix/Prana). It includes a simple http api to get all of the instances (ie host and port) for a given service. You can also proxy service calls through an embedded Zuul proxy which gets its route entries from Eureka. The Spring Cloud Config Server can be accessed directly via host lookup or through the Zuul Proxy. The non-jvm app should implement a health check so the Sidecar can report to eureka if the app is up or down.
 
 
 
 
 
-측면 차 추가 구성하려면 다음 `sidecar.port`과 `sidecar.health-uri`에를 `application.yml`. `sidecar.port`속성은 비 JVM 앱이 수신 대기하는 포트입니다. 이것은 사이드카가 앱을 유레카에 제대로 등록 할 수있게 해줍니다. 는 `sidecar.health-uri` 봄 부팅 상태 표시기를 mimicks 비 JVM을 응용 프로그램에 액세스 할 수있는 URI입니다. 다음과 같은 json 문서를 반환해야합니다.
+To enable the Sidecar, create a Spring Boot application with `@EnableSidecar`. This annotation includes `@EnableCircuitBreaker`, `@EnableDiscoveryClient`, and `@EnableZuulProxy`. Run the resulting application on the same host as the non-jvm application.
 
 
 
 
 
-건강 - 우호 - 문서
+To configure the side car add `sidecar.port` and `sidecar.health-uri` to `application.yml`. The `sidecar.port` property is the port the non-jvm app is listening on. This is so the Sidecar can properly register the app with Eureka. The `sidecar.health-uri` is a uri accessible on the non-jvm app that mimicks a Spring Boot health indicator. It should return a json document like the following:
+
+
+
+
+
+
 
 
 
@@ -4962,13 +5798,13 @@ Eureka, Ribbon 및 Config Server를 활용하고자하는 jvm이 아닌 언어�
 
 
 
-다음은 사이드카 응용 프로그램의 application.yml 예제입니다.
+Here is an example application.yml for a Sidecar application:
 
 
 
 
 
-application.yml
+
 
 
 
@@ -4988,13 +5824,13 @@ application.yml
 
 
 
-에 대한 API를 `DiscoveryClient.getInstances()`하는 방법이다 `/hosts/{serviceId}`. 여기에 대한 예제 응답입니다 `/hosts/customers`즉 다른 호스트에 두 개의 인스턴스를 반환합니다. 에서 (사이드카가 포트 5678에있는 경우)이 API는 비 JVM을 응용 프로그램에 액세스 할 수 있습니다 `[http://localhost:5678/hosts/{serviceId}](http://localhost:5678/hosts/%7BserviceId%7D)`.
+The api for the `DiscoveryClient.getInstances()` method is `/hosts/{serviceId}`. Here is an example response for `/hosts/customers` that returns two instances on different hosts. This api is accessible to the non-jvm app (if the sidecar is on port 5678) at `[http://localhost:5678/hosts/{serviceId}](http://localhost:5678/hosts/%7BserviceId%7D)`.
 
 
 
 
 
-/ hosts / customers
+
 
 
 
@@ -5021,19 +5857,19 @@ application.yml
 
 
 
-Zuul 프록시 자동으로 유레카에 공지 된 각 서비스에 대한 경로를 추가 `/<serviceId>`, 그래서 고객 서비스에서 확인할 수있다 `/customers`. 비 JVM을 앱을 통해 고객 서비스에 액세스 할 수 있습니다 `[http://localhost:5678/customers](http://localhost:5678/customers)` (사이드카가 포트 5678에서 수신 대기 가정).
+The Zuul proxy automatically adds routes for each service known in eureka to `/<serviceId>`, so the customers service is available at `/customers`. The Non-jvm app can access the customer service via `[http://localhost:5678/customers](http://localhost:5678/customers)` (assuming the sidecar is listening on port 5678).
 
 
 
 
 
-구성 서버가 Eureka에 등록 된 경우 비 jvm 응용 프로그램은 Zuul 프록시를 통해 액세스 할 수 있습니다. ConfigServer의 서비스 id 인 경우 `configserver` 와 사이드카가 포트 5678에, 다음이에서 액세스 할 수 있습니다 [에 http : // localhost를 : 5678 / configserver](http://localhost:5678/configserver)
+If the Config Server is registered with Eureka, non-jvm application can access it via the Zuul proxy. If the serviceId of the ConfigServer is `configserver` and the Sidecar is on port 5678, then it can be accessed at [http://localhost:5678/configserver](http://localhost:5678/configserver)
 
 
 
 
 
-비 jvm 앱은 YAML 문서를 반환하는 구성 서버의 기능을 이용할 수 있습니다. 예를 들어, 호출 [http://sidecar.local.spring.io:5678/configserver/default-master.yml는](http://sidecar.local.spring.io:5678/configserver/default-master.yml) 다음과 같은 YAML 문서이 발생할 수 있습니다
+Non-jvm app can take advantage of the Config Server’s ability to return YAML documents. For example, a call to [http://sidecar.local.spring.io:5678/configserver/default-master.yml](http://sidecar.local.spring.io:5678/configserver/default-master.yml) might result in a YAML document like the following
 
 
 
@@ -5062,35 +5898,177 @@ Zuul 프록시 자동으로 유레카에 공지 된 각 서비스에 대한 경�
 
 
 
-## 통계 : 관중, 서보 및지도
+## RxJava with Spring MVC
 
 
 
 
 
-Spectator / Servo와 Atlas를 함께 사용하면 거의 실시간 운영 통찰력을 제공합니다.
+Spring Cloud Netflix includes the [RxJava](https://github.com/ReactiveX/RxJava).
 
 
 
 
 
-Spectator와 Servo는 Netflix의 메트릭 컬렉션 라이브러리입니다. Atlas는 차원 시계열 데이터를 관리하기위한 Netflix 메트릭 백엔드입니다.
+> <div class="paragraph">
+>
+> RxJava is a Java VM implementation of [Reactive Extensions](http://reactivex.io/): a library for composing asynchronous and event-based programs by using observable sequences.
+>
+>
 
 
 
 
 
-Servo는 Netflix를 수년간 사용했으며 여전히 사용할 수 있지만 점차적으로 Java 8에서만 작동하도록 설계된 Spectator를 단계적으로 단계적으로 제거하고 있습니다. Spring Cloud Netflix는 둘 다 지원하지만 Java 8 기반 응용 프로그램은 Spectator .
+Spring Cloud Netflix provides support for returning `rx.Single` objects from Spring MVC Controllers. It also supports using `rx.Observable` objects for [Server-sent events (SSE)](https://en.wikipedia.org/wiki/Server-sent_events). This can be very convenient if your internal APIs are already built using RxJava (see [Feign Hystrix Support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-feign-hystrix) for examples).
 
 
 
 
 
-### 차원 대 계층 적 메트릭 비교
+Here are some examples of using `rx.Single`:
 
 
 
-스프링 부트 액츄에이터 메트릭은 계층 적이며 메트릭은 이름으로 만 구분됩니다. 이러한 이름은 종종 마침표로 구분 된 이름에 키 / 값 속성 쌍 (차원)을 포함하는 이름 지정 규칙을 따릅니다. root 및 star-star라는 두 개의 끝점에 대해 다음과 같은 측정 항목을 고려하십시오.
+
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/single")
+    public Single<String> single() {
+        return Single.just("single value");
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/singleWithResponse")
+    public ResponseEntity<Single<String>> singleWithResponse() {
+        return new ResponseEntity<>(Single.just("single value"),
+                HttpStatus.NOT_FOUND);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/singleCreatedWithResponse")
+    public Single<ResponseEntity<String>> singleOuterWithResponse() {
+        return Single.just(new ResponseEntity<>("single value", HttpStatus.CREATED));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/throw")
+    public Single<Object> error() {
+        return Single.error(new RuntimeException("Unexpected"));
+    }
+
+
+
+
+
+
+
+If you have an `Observable`, rather than a single, you can use `.toSingle()` or `.toList().toSingle()`. Here are some examples:
+
+
+
+
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/single")
+    public Single<String> single() {
+        return Observable.just("single value").toSingle();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/multiple")
+    public Single<List<String>> multiple() {
+        return Observable.just("multiple", "values").toList().toSingle();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/responseWithObservable")
+    public ResponseEntity<Single<String>> responseWithObservable() {
+
+        Observable<String> observable = Observable.just("single value");
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(APPLICATION_JSON_UTF8);
+        return new ResponseEntity<>(observable.toSingle(), headers, HttpStatus.CREATED);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/timeout")
+    public Observable<String> timeout() {
+        return Observable.timer(1, TimeUnit.MINUTES).map(new Func1<Long, String>() {
+            @Override
+            public String call(Long aLong) {
+                return "single value";
+            }
+        });
+    }
+
+
+
+
+
+
+
+If you have a streaming endpoint and client, SSE could be an option. To convert `rx.Observable` to a Spring `SseEmitter` use `RxResponse.sse()`. Here are some examples:
+
+
+
+
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sse")
+    public SseEmitter single() {
+        return RxResponse.sse(Observable.just("single value"));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/messages")
+    public SseEmitter messages() {
+        return RxResponse.sse(Observable.just("message 1", "message 2", "message 3"));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/events")
+    public SseEmitter event() {
+        return RxResponse.sse(APPLICATION_JSON_UTF8, Observable.just(
+                new EventDto("Spring io", getDate(2016, 5, 19)),
+                new EventDto("SpringOnePlatform", getDate(2016, 8, 1))
+        ));
+    }
+
+
+
+
+
+
+
+
+
+
+
+## Metrics: Spectator, Servo, and Atlas
+
+
+
+
+
+When used together, Spectator/Servo and Atlas provide a near real-time operational insight platform.
+
+
+
+
+
+Spectator and Servo are Netflix’s metrics collection libraries. Atlas is a Netflix metrics backend to manage dimensional time series data.
+
+
+
+
+
+Servo served Netflix for several years and is still usable, but is gradually being phased out in favor of Spectator, which is only designed to work with Java 8\. Spring Cloud Netflix provides support for both, but Java 8 based applications are encouraged to use Spectator.
+
+
+
+
+
+### Dimensional vs. Hierarchical Metrics
+
+
+
+Spring Boot Actuator metrics are hierarchical and metrics are separated only by name. These names often follow a naming convention that embeds key/value attribute pairs (dimensions) into the name separated by periods. Consider the following metrics for two endpoints, root and star-star:
 
 
 
@@ -5110,25 +6088,25 @@ Servo는 Netflix를 수년간 사용했으며 여전히 사용할 수 있지만 
 
 
 
-첫 x 째 메트릭은 단위 시간당 루트 엔드 포인트에 대한 정상적인 요청 성공 횟수를 제공합니다. 그러나 시스템에 20 개의 엔드 포인트가 있고 모든 엔드 포인트에 대한 성공적인 요청 수가 필요한 경우에는 어떨까요? 일부 계층 통계 백엔드는 당신은 와일드 카드를 지정할 수있는 것 **그 모든 20 메트릭을 읽고 결과를 집계한다.** **또는, 당신은 제공 할 수있는** **것을 차단과 같은 메트릭 기록** **에 상관없이 엔드 포인트의 모든 성공적인 요청을하지만, 지금은 20 + 1 가지 통계를 작성해야합니다.** **이 서비스의 모든 엔드 포인트에 대한 성공적인 요청의 총 수를 알고 싶다면 마찬가지로 같은 와일드 카드를 지정할 수 있습니다** .`counter.status.200.`**`HandlerInterceptorAdapter``counter.status.200.all``counter.status.2`**`.*`
+The first metric gives us a normalized count of successful requests against the root endpoint per unit of time. But what if the system had 20 endpoints and you want to get a count of successful requests against all the endpoints? Some hierarchical metrics backends would allow you to specify a wild card such as `counter.status.200.` **that would read all 20 metrics and aggregate the results. Alternatively, you could provide a `HandlerInterceptorAdapter` that intercepts and records a metric like `counter.status.200.all` for all successful requests irrespective of the endpoint, but now you must write 20+1 different metrics. Similarly if you want to know the total number of successful requests for all endpoints in the service, you could specify a wild card such as `counter.status.2`**`.*`.
 
 
 
 
 
-계층 적 메트릭 백엔드에서 와일드 카드 지원이 있더라도 명명 일관성은 어려울 수 있습니다. 특히 이름 문자열에있는 이러한 태그의 위치는 시간이지나면서 질의를 위반할 수 있습니다. 예를 들어 위의 계층 적 메트릭에 HTTP 메서드에 대해 추가 차원을 추가한다고 가정합니다. 그런 다음 `counter.status.200.root`이된다 없습니다 `counter.status.200.method.get.root`등 우리는 `counter.status.200.*`갑자기 더 이상 같은 의미 론적 의미를 가지고있다. 또한 새로운 차원이 코드베이스 전체에 균일하게 적용되지 않으면 특정 쿼리가 불가능해질 수 있습니다. 이것은 빨리 빠져 나갈 수 있습니다.
+Even in the presence of wildcarding support on a hierarchical metrics backend, naming consistency can be difficult. Specifically the position of these tags in the name string can slip with time, breaking queries. For example, suppose we add an additional dimension to the hierarchical metrics above for HTTP method. Then `counter.status.200.root` becomes `counter.status.200.method.get.root`, etc. Our `counter.status.200.*` suddenly no longer has the same semantic meaning. Furthermore, if the new dimension is not applied uniformly across the codebase, certain queries may become impossible. This can quickly get out of hand.
 
 
 
 
 
-Netflix 측정 항목에는 태그가 지정됩니다 (일명 차원). 각 메트릭에는 이름이 있지만이 단일 메트릭에는 더 많은 쿼리 유연성을 허용하는 여러 통계 및 '태그'키 / 값 쌍이 포함될 수 있습니다. 실제로 통계 자체는 특수 태그에 기록됩니다.
+Netflix metrics are tagged (a.k.a. dimensional). Each metric has a name, but this single named metric can contain multiple statistics and 'tag' key/value pairs that allows more querying flexibility. In fact, the statistics themselves are recorded in a special tag.
 
 
 
 
 
-Netflix Servo 또는 Spectator로 기록한 위에 설명 된 루트 끝점의 타이머에는 상태 코드 당 4 개의 통계가 포함됩니다. 여기서 카운트 통계는 Spring Boot Actuator의 카운터와 동일합니다. 지금까지 HTTP 200과 400이 발생했다면 사용 가능한 데이터 포인트는 8 개가됩니다.
+Recorded with Netflix Servo or Spectator, a timer for the root endpoint described above contains 4 statistics per status code, where the count statistic is identical to Spring Boot Actuator’s counter. In the event that we have encountered an HTTP 200 and 400 thus far, there will be 8 available data points:
 
 
 
@@ -5155,61 +6133,61 @@ Netflix Servo 또는 Spectator로 기록한 위에 설명 된 루트 끝점의 �
 
 
 
-### 기본 메트릭 컬렉션
+### Default Metrics Collection
 
 
 
-추가 종속성 또는 구성하지 않고, 봄 클라우드 기반 서비스는 서보 자동 구성됩니다 `MonitorRegistry`모든 스프링 MVC 요청에 대한 통계 수집을 시작. 기본적으로, 이름 서보 타이머 `rest`태그 MVC 각 요청에 대해 기록한다 :
-
-
-
-
-
-1.  HTTP 메소드
-
-2.  HTTP 상태 (예 : 200, 400, 500)
-
-3.  URI (URI가 비어 있으면 "root"), Atlas에 대해 살균 됨
-
-4.  요청 처리기가 예외를 던진 경우 예외 클래스 이름
-
-5.  발신자는 경우 키 일치와 요청 헤더는 `netflix.metrics.rest.callerHeader`요청에 설정되어 있습니다. 에 대한 기본 키가 없습니다 `netflix.metrics.rest.callerHeader`. 발신자 정보를 수집하려면 응용 프로그램 속성에 추가해야합니다.
+Without any additional dependencies or configuration, a Spring Cloud based service will autoconfigure a Servo `MonitorRegistry` and begin collecting metrics on every Spring MVC request. By default, a Servo timer with the name `rest` will be recorded for each MVC request which is tagged with:
 
 
 
 
 
-설정 `netflix.metrics.rest.metricName`에서 메트릭의 이름을 변경하려면 속성을 `rest`사용자가 제공하는 이름.
+1.  HTTP method
+
+2.  HTTP status (e.g. 200, 400, 500)
+
+3.  URI (or "root" if the URI is empty), sanitized for Atlas
+
+4.  The exception class name, if the request handler threw an exception
+
+5.  The caller, if a request header with a key matching `netflix.metrics.rest.callerHeader` is set on the request. There is no default key for `netflix.metrics.rest.callerHeader`. You must add it to your application properties if you wish to collect caller information.
 
 
 
 
 
-스프링 AOP가 활성화되어있는 경우 `org.aspectj:aspectjweaver`런타임 클래스 경로에 존재하는, Spring Cloud도로 만든 모든 클라이언트 호출에 대한 통계를 수집합니다 `RestTemplate`. 의 이름을 가진 서보 타이머 `restclient`태그 각 MVC 요청에 대해 기록 될 것입니다 :
+Set the `netflix.metrics.rest.metricName` property to change the name of the metric from `rest` to a name you provide.
 
 
 
 
 
-1.  HTTP 메소드
-
-2.  HTTP 상태 (예 : 200, 500, 400)는이 경우 "CLIENT_ERROR"경우 응답이 널 (null), 또는 "IO_ERROR"반환 `IOException`의 실행 중에 발생 `RestTemplate`방법
-
-3.  Atlas에 대해 살생 된 URI
-
-4.  고객 이름
+If Spring AOP is enabled and `org.aspectj:aspectjweaver` is present on your runtime classpath, Spring Cloud will also collect metrics on every client call made with `RestTemplate`. A Servo timer with the name of `restclient` will be recorded for each MVC request which is tagged with:
 
 
 
 
 
+1.  HTTP method
+
+2.  HTTP status (e.g. 200, 400, 500), "CLIENT_ERROR" if the response returned null, or "IO_ERROR" if an `IOException` occurred during the execution of the `RestTemplate` method
+
+3.  URI, sanitized for Atlas
+
+4.  Client name
 
 
-### 통계 수집 : 관중
 
 
 
-구경꾼 통계를 사용하려면 종속성에 포함 `spring-boot-starter-spectator`:
+
+
+### Metrics Collection: Spectator
+
+
+
+To enable Spectator metrics, include a dependency on `spring-boot-starter-spectator`:
 
 
 
@@ -5228,23 +6206,23 @@ Netflix Servo 또는 Spectator로 기록한 위에 설명 된 루트 끝점의 �
 
 
 
-Spectator 용어에서 미터는 명명 된, 입력 된 및 태그가있는 구성이고 메트릭은 특정 시점의 주어진 미터의 값을 나타냅니다. 관측기 미터는 현재 여러 가지 구현이있는 레지스트리에 의해 생성되고 제어됩니다. Spectator는 4 미터 유형을 제공합니다 : 카운터, 타이머, 게이지 및 분배 요약.
+In Spectator parlance, a meter is a named, typed, and tagged configuration and a metric represents the value of a given meter at a point in time. Spectator meters are created and controlled by a registry, which currently has several different implementations. Spectator provides 4 meter types: counter, timer, gauge, and distribution summary.
 
 
 
 
 
-Spring Cloud 관객 통합은 주사 구성 `com.netflix.spectator.api.Registry`당신을 위해 인스턴스를. 구체적으로는 구성 `ServoRegistry`REST 통계의 수집 및 하나의 서보 API에서 아틀라스 백엔드에 대한 메트릭의 수출을 통합하기 위해 인스턴스를. 실제로,이 코드가 서보 모니터와 구경꾼 미터 모두 봄 부팅 액추에이터에 의해 훔쳐됩니다의 혼합물을 사용할 수 있다는 것을 의미 `MetricReader`인스턴스와 모두 아틀라스 백엔드로 배송됩니다.
+Spring Cloud Spectator integration configures an injectable `com.netflix.spectator.api.Registry` instance for you. Specifically, it configures a `ServoRegistry` instance in order to unify the collection of REST metrics and the exporting of metrics to the Atlas backend under a single Servo API. Practically, this means that your code may use a mixture of Servo monitors and Spectator meters and both will be scooped up by Spring Boot Actuator `MetricReader` instances and both will be shipped to the Atlas backend.
 
 
 
 
 
-#### 관중 카운터
+#### Spectator Counter
 
 
 
-카운터는 일부 이벤트가 발생하는 비율을 측정하는 데 사용됩니다.
+A counter is used to measure the rate at which some event is occurring.
 
 
 
@@ -5263,7 +6241,7 @@ Spring Cloud 관객 통합은 주사 구성 `com.netflix.spectator.api.Registry`
 
 
 
-카운터는 단일 시간 정규화 통계를 기록합니다.
+The counter records a single time-normalized statistic.
 
 
 
@@ -5271,19 +6249,19 @@ Spring Cloud 관객 통합은 주사 구성 `com.netflix.spectator.api.Registry`
 
 
 
-#### 관중 타이머
+#### Spectator Timer
 
 
 
-타이머는 일부 이벤트가 얼마나 오래 걸리는지 측정하는 데 사용됩니다. 봄 클라우드는 자동으로 조건부 스프링 MVC 요청과에 대한 타이머 기록 `RestTemplate`후 대기 시간 등의 요청 관련 통계에 대한 대시 보드를 만들 수 있습니다 요청을 :
+A timer is used to measure how long some event is taking. Spring Cloud automatically records timers for Spring MVC requests and conditionally `RestTemplate` requests, which can later be used to create dashboards for request related metrics like latency:
 
 
 
 
 
-대기 시간 요청
 
-image :: RequestLatency.png []
+
+image::RequestLatency.png []
 
 
 
@@ -5308,13 +6286,13 @@ image :: RequestLatency.png []
 
 
 
-타이머는 count, max, totalOfSquares 및 totalTime의 4 가지 통계를 동시에 기록합니다. 카운트 통계는 항상 호출 한 경우 카운터에서 제공하는 하나의 정규화 된 값과 일치합니다 `increment()`당신은 타이밍을 기록 할 때마다의 카운터에 한 번을, 그래서 하나의 작업에 대해 개별적으로 계산하고 시간에 거의 필요하지 않습니다.
+The timer simultaneously records 4 statistics: count, max, totalOfSquares, and totalTime. The count statistic will always match the single normalized value provided by a counter if you had called `increment()` once on the counter for each time you recorded a timing, so it is rarely necessary to count and time separately for a single operation.
 
 
 
 
 
-들어 [장기 실행 작업](https://github.com/Netflix/spectator/wiki/Timer-Usage#longtasktimer) , 관객은 특별한을 제공합니다 `LongTaskTimer`.
+For [long running operations](https://github.com/Netflix/spectator/wiki/Timer-Usage#longtasktimer), Spectator provides a special `LongTaskTimer`.
 
 
 
@@ -5322,17 +6300,17 @@ image :: RequestLatency.png []
 
 
 
-#### 스펙 테이터 게이지
+#### Spectator Gauge
 
 
 
-게이지는 실행중인 상태의 대기열 또는 스레드 수와 같은 현재 값을 결정하는 데 사용됩니다. 게이지는 샘플링되므로 샘플간에 이러한 값이 변동하는 방식에 대한 정보는 제공하지 않습니다.
+Gauges are used to determine some current value like the size of a queue or number of threads in a running state. Since gauges are sampled, they provide no information about how these values fluctuate between samples.
 
 
 
 
 
-게이지의 정상적인 사용에는 초기화시 ID, 샘플링 할 객체에 대한 참조, 객체를 기반으로 숫자 값을 가져 오거나 계산하는 함수를 사용하여 게이지를 등록하는 작업이 포함됩니다. 객체에 대한 참조는 별도로 전달되며 Spectator 레지스트리는 객체에 대한 약한 참조를 유지합니다. 객체가 가비지 수집 된 경우 Spectator는 자동으로 등록을 삭제합니다. 참조 [노트](https://github.com/Netflix/spectator/wiki/Gauge-Usage#using-lambda) 이 API가 잘못 사용되는 경우 잠재적 메모리 누수에 대한 관객의 문서를.
+The normal use of a gauge involves registering the gauge once in initialization with an id, a reference to the object to be sampled, and a function to get or compute a numeric value based on the object. The reference to the object is passed in separately and the Spectator registry will keep a weak reference to the object. If the object is garbage collected, then Spectator will automatically drop the registration. See [the note](https://github.com/Netflix/spectator/wiki/Gauge-Usage#using-lambda) in Spectator’s documentation about potential memory leaks if this API is misused.
 
 
 
@@ -5354,11 +6332,11 @@ image :: RequestLatency.png []
 
 
 
-#### 관람객 분포 요약
+#### Spectator Distribution Summaries
 
 
 
-분배 요약은 이벤트 분배를 추적하는 데 사용됩니다. 이것은 타이머와 비슷하지만 크기가 일정 시간 일 필요는 없다는 점에서보다 일반적입니다. 예를 들어, 분배 요약은 서버에 도달하는 요청의 페이로드 크기를 측정하는 데 사용될 수 있습니다.
+A distribution summary is used to track the distribution of events. It is similar to a timer, but more general in that the size does not have to be a period of time. For example, a distribution summary could be used to measure the payload sizes of requests hitting a server.
 
 
 
@@ -5380,23 +6358,7 @@ image :: RequestLatency.png []
 
 
 
-### 통계 수집 : 서보
-
-
-
-
-
-
-
-
-
-<td class="icon">
-
-경고
-
-
-
-<td class="content">코드가 Java 8에서 컴파일 된 경우, 관측자로 Servo 대신 Spectator를 사용하면 장기간에 걸쳐 Servo를 완전히 대체 할 예정입니다.
+### Metrics Collection: Servo
 
 
 
@@ -5408,29 +6370,45 @@ image :: RequestLatency.png []
 
 
 
-Servo 구문에서 모니터는 명명 된 유형 지정 및 태그가 지정된 구성이며 메트릭은 특정 시점의 특정 모니터 값을 나타냅니다. 서보 모니터는 관측기 미터와 논리적으로 동일합니다. 서보 모니터 생성 및에 의해 제어된다 `MonitorRegistry`. 위의 경고에도 불구하고, 서보는 있는가 [넓은 배열](https://github.com/Netflix/servo/wiki/Getting-Started) 관객이 미터가보다 모니터 옵션을.
+
+
+
+
+<td class="content">If your code is compiled on Java 8, please use Spectator instead of Servo as Spectator is destined to replace Servo entirely in the long term.
 
 
 
 
 
-봄 클라우드 통합은 주사 구성 `com.netflix.servo.MonitorRegistry`당신을 위해 인스턴스를. 적절한 만든 후에 `Monitor`서보의 유형을, 데이터를 기록하는 과정은 관객에 전적으로 유사하다.
 
 
 
 
 
-#### 서보 모니터 만들기
 
-
-
-당신은 서보 사용하는 경우 `MonitorRegistry`(특히, 인스턴스 봄 클라우드에서 제공하는 인스턴스 `DefaultMonitorRegistry`), 서보 검색 편의 클래스를 제공 [카운터](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamiccounter) 및 [타이머를](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamictimer) . 이러한 편리한 클래스는 하나가되도록 `Monitor`이름과 태그의 고유 한 각 조합에 등록됩니다.
+In Servo parlance, a monitor is a named, typed, and tagged configuration and a metric represents the value of a given monitor at a point in time. Servo monitors are logically equivalent to Spectator meters. Servo monitors are created and controlled by a `MonitorRegistry`. In spite of the above warning, Servo does have a [wider array](https://github.com/Netflix/servo/wiki/Getting-Started) of monitor options than Spectator has meters.
 
 
 
 
 
-수동으로, 특히 편리한 메소드가 제공되지 않은, 더 이국적인 모니터 유형, 서보의 모니터 유형을 만들 제공하여 적절한 유형의 인스턴스를 `MonitorConfig`인스턴스를 :
+Spring Cloud integration configures an injectable `com.netflix.servo.MonitorRegistry` instance for you. Once you have created the appropriate `Monitor` type in Servo, the process of recording data is wholly similar to Spectator.
+
+
+
+
+
+#### Creating Servo Monitors
+
+
+
+If you are using the Servo `MonitorRegistry` instance provided by Spring Cloud (specifically, an instance of `DefaultMonitorRegistry`), Servo provides convenience classes for retrieving [counters](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamiccounter) and [timers](https://github.com/Netflix/spectator/wiki/Servo-Comparison#dynamictimer). These convenience classes ensure that only one `Monitor` is registered for each unique combination of name and tags.
+
+
+
+
+
+To manually create a Monitor type in Servo, especially for the more exotic monitor types for which convenience methods are not provided, instantiate the appropriate type by providing a `MonitorConfig` instance:
 
 
 
@@ -5454,39 +6432,39 @@ Servo 구문에서 모니터는 명명 된 유형 지정 및 태그가 지정된
 
 
 
-### 메트릭 백엔드 : Atlas
+### Metrics Backend: Atlas
 
 
 
-Atlas는 Netflix에서 거의 실시간 운영 통찰력을위한 차원 시계열 데이터를 관리하기 위해 개발되었습니다. Atlas는 메모리 내 데이터 스토리지를 특징으로하며 매우 많은 수의 메트릭을 매우 신속하게 수집하고보고 할 수 있습니다.
-
-
-
-
-
-Atlas는 운영 정보를 캡처합니다. 비즈니스 인텔리전스는 추세 분석을 위해 수집 된 데이터이지만 운영 인텔리전스는 시스템 내에서 현재 일어나고있는 상황을 보여줍니다.
+Atlas was developed by Netflix to manage dimensional time series data for near real-time operational insight. Atlas features in-memory data storage, allowing it to gather and report very large numbers of metrics, very quickly.
 
 
 
 
 
-봄 클라우드가 제공하는 `spring-cloud-starter-atlas`당신이 필요로하는 모든 종속성을 갖는다. 그런 다음 귀하의 봄 부팅 응용 프로그램을 주석 `@EnableAtlas`과와 실행 아틀라스 서버의 위치를 제공하는 `netflix.atlas.uri`속성입니다.
+Atlas captures operational intelligence. Whereas business intelligence is data gathered for analyzing trends over time, operational intelligence provides a picture of what is currently happening within a system.
 
 
 
 
 
-#### 글로벌 태그
-
-
-
-Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에 태그를 추가 할 수 있습니다. 글로벌 태그를 사용하여 애플리케이션 이름, 환경, 지역 등으로 측정 항목을 분리 할 수 ​​있습니다.
+Spring Cloud provides a `spring-cloud-starter-atlas` that has all the dependencies you need. Then just annotate your Spring Boot application with `@EnableAtlas` and provide a location for your running Atlas server with the `netflix.atlas.uri` property.
 
 
 
 
 
-구현 각 콩 `AtlasTagProvider`글로벌 태그 목록에 기여할 것입니다 :
+#### Global tags
+
+
+
+Spring Cloud enables you to add tags to every metric sent to the Atlas backend. Global tags can be used to separate metrics by application name, environment, region, etc.
+
+
+
+
+
+Each bean implementing `AtlasTagProvider` will contribute to the global tag list:
 
 
 
@@ -5508,11 +6486,11 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-#### Atlas 사용
+#### Using Atlas
 
 
 
-인 - 메모리 독립형 Atlas 인스턴스를 부트 스트랩하려면 다음을 수행하십시오.
+To bootstrap a in-memory standalone Atlas instance:
 
 
 
@@ -5535,15 +6513,13 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-<td class="icon">
-
-팁
 
 
 
-<td class="content">r3.2xlarge (61GB RAM)에서 실행되는 Atlas 독립형 노드는 주어진 6 시간 동안 분당 약 2 백만 개의 메트릭을 처리 할 수 ​​있습니다.
 
 
+
+<td class="content">An Atlas standalone node running on an r3.2xlarge (61GB RAM) can handle roughly 2 million metrics per minute for a given 6 hour window.
 
 
 
@@ -5553,7 +6529,9 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-일단 실행하고 몇 가지 메트릭을 수집했으면 Atlas 서버에 태그를 나열하여 설정이 올바른지 확인하십시오.
+
+
+Once running and you have collected a handful of metrics, verify that your setup is correct by listing tags on the Atlas server:
 
 
 
@@ -5575,15 +6553,13 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-<td class="icon">
 
-팁
 
 
 
-<td class="content">서비스에 대해 여러 요청을 실행 한 후 브라우저에 다음 URL을 붙여 넣어 요청의 대기 시간에 대한 몇 가지 기본적인 정보를 수집 할 수 있습니다. `[http://ATLAS/api/v1/graph?q=name,rest,:eq,:avg](http://atlas/api/v1/graph?q=name,rest,:eq,:avg)`
 
 
+<td class="content">After executing several requests against your service, you can gather some very basic information on the request latency of every request by pasting the following url in your browser: `[http://ATLAS/api/v1/graph?q=name,rest,:eq,:avg](http://atlas/api/v1/graph?q=name,rest,:eq,:avg)`
 
 
 
@@ -5593,15 +6569,15 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-아틀라스 위키는 포함 [샘플 쿼리의 편집](https://github.com/Netflix/atlas/wiki/Single-Line) 다양한 시나리오를.
 
 
+The Atlas wiki contains a [compilation of sample queries](https://github.com/Netflix/atlas/wiki/Single-Line) for various scenarios.
 
 
 
-밖으로 확인하십시오 [경고 철학](https://github.com/Netflix/atlas/wiki/Alerting-Philosophy) 사용과 문서를 [이중 지수 평활를](https://github.com/Netflix/atlas/wiki/DES) 동적 경고 임계 값을 생성 할 수 있습니다.
 
 
+Make sure to check out the [alerting philosophy](https://github.com/Netflix/atlas/wiki/Alerting-Philosophy) and docs on using [double exponential smoothing](https://github.com/Netflix/atlas/wiki/DES) to generate dynamic alert thresholds.
 
 
 
@@ -5611,94 +6587,105 @@ Spring Cloud를 사용하면 Atlas 백엔드로 전송되는 모든 메트릭에
 
 
 
-# 스프링 클라우드 버스
 
 
+# Spring Cloud Stream
 
 
 
 
 
-Spring Cloud Bus는 분산 시스템의 노드를 간단한 메시지 브로커와 링크합니다. 그런 다음 상태 변경 (예 : 구성 변경) 또는 기타 관리 지침을 브로드 캐스트하는 데 사용할 수 있습니다. 핵심 아이디어는 버스가 확장 된 스프링 부트 애플리케이션을위한 분산 액츄에이터와 비슷하지만 앱 간의 통신 채널로도 사용될 수 있다는 것입니다. 유일한 구현은 현재 AMQP 브로커를 전송으로 사용하지만 동일한 기본 기능 집합 (그리고 전송에 따라 좀 더 많음)은 다른 전송을위한 로드맵에 있습니다.
 
 
+This section goes into more detail about how you can work with Spring Cloud Stream. It covers topics such as creating and running stream applications.
 
 
 
-[https://raw.githubusercontent.com/spring-cloud/spring-cloud-build/master/docs/src/main/asciidoc/contributing-docs.adoc](https://raw.githubusercontent.com/spring-cloud/spring-cloud-build/master/docs/src/main/asciidoc/contributing-docs.adoc)
 
 
 
 
 
 
+## Introducing Spring Cloud Stream
 
 
 
-## 빠른 시작
 
 
+Spring Cloud Stream is a framework for building message-driven microservice applications. Spring Cloud Stream builds upon Spring Boot to create standalone, production-grade Spring applications, and uses Spring Integration to provide connectivity to message brokers. It provides opinionated configuration of middleware from several vendors, introducing the concepts of persistent publish-subscribe semantics, consumer groups, and partitions.
 
 
 
-스프링 클라우드 버스는 클래스 패스에서 자체를 감지하면 스프링 부트 자동 구성을 추가하여 작동합니다. 당신이 버스를 활성화 할 필요가 추가하는 것입니다 `spring-cloud-starter-bus-amqp`귀하의 의존성 관리와 Spring Cloud은 나머지 처리합니다. 확인 RabbitMQ를 사용할 수 있는지 확인하고 제공하도록 구성된 `ConnectionFactory`: 당신은 아무것도 할 필요가 없습니다 로컬 호스트에서 실행하지만, 브로커 자격 증명을 정의하는 봄 클라우드 커넥터, 또는 봄 부팅 규칙을 사용하여 원격으로 실행하는 경우 예를 들어,
 
 
+You can add the `@EnableBinding` annotation to your application to get immediate connectivity to a message broker, and you can add `@StreamListener` to a method to cause it to receive events for stream processing. The following is a simple sink application which receives external messages.
 
 
 
-application.yml
 
 
 
-<pre>봄:
-  rabbitmq :
-    호스트 : mybroker.com
-    포트 : 5672
-    사용자 이름 : 사용자
-    비밀 번호 : 비밀</pre>
 
+    @SpringBootApplication
+    public class StreamApplication {
 
+      public static void main(String[] args) {
+        SpringApplication.run(StreamApplication.class, args);
+      }
+    }
 
+    @EnableBinding(Sink.class)
+    public class TimerSource {
 
+      ...
 
+      @StreamListener(Sink.INPUT)
+      public void processVote(Vote vote) {
+          votingService.recordVote(vote);
+      }
+    }
 
 
-버스는 현재 모든 노드 수신 대기 또는 특정 서비스 (유레카에 정의 된대로)를위한 모든 노드로의 메시지 전송을 지원합니다. 미래에는 선택기 기준이 추가 될 것입니다 (예 : 데이터 센터 Y의 서비스 X 노드 등 ...). 는 HTTP 엔드 포인트는 아래에 `/bus/*`액츄에이터 네임 스페이스. 현재 두 가지가 구현되어 있습니다. 첫 번째는 `/bus/env`, 각 노드 봄 환경을 업데이트 / 키 값 쌍을 전송합니다. 두 번째는, `/bus/refresh`그들은 모두 자신의에 ping을했던 것처럼, 각 응용 프로그램의 구성을 다시로드합니다 `/refresh`엔드 포인트.
 
 
 
 
 
+The `@EnableBinding` annotation takes one or more interfaces as parameters (in this case, the parameter is a single `Sink` interface). An interface declares input and/or output channels. Spring Cloud Stream provides the interfaces `Source`, `Sink`, and `Processor`; you can also define your own interfaces.
 
 
 
 
-## 인스턴스 주소 지정
 
+The following is the definition of the `Source` interface:
 
 
 
 
-대상은 다음과 같습니다 "9000? / 버스 / 갱신 대상 = 고객"는 HTTP 엔드 포인트는 "대상"매개 변수, 예를 들어 동의 `ApplicationContext`ID를. ID가 버스의 인스턴스에 의해 소유되면 메시지를 처리하고 다른 모든 인스턴스는 ID를 무시합니다. 봄 부트는 당신의 ID를 설정 `ContextIdApplicationContextInitializer`의 조합으로 `spring.application.name`, 활성 프로필과 `server.port`기본적으로.
 
 
 
+    public interface Sink {
+      String INPUT = "input";
 
+      @Input(Sink.INPUT)
+      SubscribableChannel input();
+    }
 
 
 
 
 
-## 서비스의 모든 인스턴스 주소 지정
 
 
+The `@Input` annotation identifies an _input channel_, through which received messages enter the application; the `@Output` annotation identifies an _output channel_, through which published messages leave the application. The `@Input` and `@Output` annotations can take a channel name as a parameter; if a name is not provided, the name of the annotated method will be used.
 
 
 
-"대상"매개 변수는 봄에 사용된다 `PathMatcher`(콜론과 경로 분리와 `:`인스턴스가 메시지를 처리 할 수 있는지를 확인하기 위해). 위의 예제를 사용하여 "/ 버스 / 갱신 대상 = 고객 : **"상관없이로 설정 한 프로필과 포트의 "고객"서비스의 모든 인스턴스를 대상으로합니다 `ApplicationContext`ID.
 
 
+Spring Cloud Stream will create an implementation of the interface for you. You can use this in the application by autowiring it, as in the following example of a test case.
 
 
 
@@ -5706,13 +6693,23 @@ application.yml
 
 
 
-## 응용 프로그램 컨텍스트 ID는 고유해야합니다.
+    @RunWith(SpringJUnit4ClassRunner.class)
+    @SpringApplicationConfiguration(classes = StreamApplication.class)
+    @WebAppConfiguration
+    @DirtiesContext
+    public class StreamApplicationTests {
 
+      @Autowired
+      private Sink sink;
 
+      @Test
+      public void contextLoads() {
+        assertNotNull(this.sink.input());
+      }
+    }
 
 
 
-버스는 한 번 원본, 두 번 이벤트 처리를 제거하려고 `ApplicationEvent`한 번 대기열에서. 이렇게하려면 보내는 응용 프로그램 컨텍스트 ID가 현재 응용 프로그램 컨텍스트 ID를 다시 확인합니다. 서비스의 여러 인스턴스에 동일한 응용 프로그램 컨텍스트 ID가 있으면 이벤트가 처리되지 않습니다. 로컬 컴퓨터에서 실행되는 각 서비스는 다른 포트에 있으며 응용 프로그램 컨텍스트 ID의 일부가됩니다. Cloud Foundry는 차별화 지수를 제공합니다. 애플리케이션 컨텍스트 ID가 고유한지 확인하려면 설정 `spring.application.index`서비스의 각 인스턴스에 대해 고유 뭔가. 예를 들어, 격자, 설정 `spring.application.index=${INSTANCE_INDEX}`application.properties (또는 bootstrap.properties configserver를 사용하는 경우)에.
 
 
 
@@ -5721,36 +6718,3901 @@ application.yml
 
 
 
+## Main Concepts
 
-## 메시지 브로커 사용자 정의
 
 
 
 
+Spring Cloud Stream provides a number of abstractions and primitives that simplify the writing of message-driven microservice applications. This section gives an overview of the following:
 
-봄 클라우드 버스 사용 [봄 클라우드 스트림](https://cloud.spring.io/spring-cloud-stream) 만 클래스 패스에있는 당신의 선택의 바인더 구현을 포함 할 필요가 흐르도록 메시지를 얻을 수 있도록 메시지를 방송 할 수 있습니다. 편리한 스타터 구체적으로 AMQP, 카프카와 레디 스와 버스가있다 ( `spring-cloud-starter-bus-[amqp,kafka,redis]`). 인스턴스에 대한 AMQP 브로커 주소를 변경할 수 있도록 일반적으로 봄 클라우드 스트림, 미들웨어를 구성하는 봄 부팅 자동 규칙에 의존 `spring.rabbitmq.*` 구성 등록. 봄 클라우드 버스의 기본 구성 등록 정보의 소수가 있습니다 `spring.cloud.bus.*` (예 : `spring.cloud.bus.destination`상기 externall 미들웨어 사용하는 항목의 이름입니다). 일반적으로 기본값으로 충분합니다.
 
 
 
 
+*   Spring Cloud Stream’s application model
 
-메시지 브로커 설정을 사용자 정의하는 방법에 대해 자세히 알고 싶으면 Spring Cloud Stream 문서를 참조하십시오.
+*   The Binder abstraction
 
+*   Persistent publish-subscribe support
 
+*   Consumer group support
 
+*   Partitioning support
 
+*   A pluggable Binder API
 
 
 
 
 
-## 추적 버스 이벤트
+### Application Model
 
 
 
+A Spring Cloud Stream application consists of a middleware-neutral core. The application communicates with the outside world through input and output _channels_ injected into it by Spring Cloud Stream. Channels are connected to external brokers through middleware-specific Binder implementations.
 
 
-버스 이벤트 (의 서브 클래스 `RemoteApplicationEvent`)를 설정하여 추적 할 수 있습니다 `spring.cloud.bus.trace.enabled=true`. 그런 다음 봄 부팅이 작업을 수행하는 경우 `TraceRepository`(존재하는 경우) 각 서비스 인스턴스에서 전송 된 각 이벤트와 모든 ACK들을 보여줍니다. (로부터 예 `/trace`엔드 포인트)
+
+
+
+
+
+
+
+
+
+
+
+#### Fat JAR
+
+
+
+Spring Cloud Stream applications can be run in standalone mode from your IDE for testing. To run a Spring Cloud Stream application in production, you can create an executable (or "fat") JAR by using the standard Spring Boot tooling provided for Maven or Gradle.
+
+
+
+
+
+
+
+
+
+### The Binder Abstraction
+
+
+
+Spring Cloud Stream provides Binder implementations for [Kafka](https://github.com/spring-cloud/spring-cloud-stream/tree/master/spring-cloud-stream-binders/spring-cloud-stream-binder-kafka), [Rabbit MQ](https://github.com/spring-cloud/spring-cloud-stream/tree/master/spring-cloud-stream-binders/spring-cloud-stream-binder-rabbit), [Redis](https://github.com/spring-cloud/spring-cloud-stream-binder-redis), and [Gemfire](https://github.com/spring-cloud/spring-cloud-stream-binder-gemfire). Spring Cloud Stream also includes a [TestSupportBinder](https://github.com/spring-cloud/spring-cloud-stream/blob/master/spring-cloud-stream-test-support/src/main/java/org/springframework/cloud/stream/test/binder/TestSupportBinder.java), which leaves a channel unmodified so that tests can interact with channels directly and reliably assert on what is received. You can use the extensible API to write your own Binder.
+
+
+
+
+
+Spring Cloud Stream uses Spring Boot for configuration, and the Binder abstraction makes it possible for a Spring Cloud Stream application to be flexible in how it connects to middleware. For example, deployers can dynamically choose, at runtime, the destinations (e.g., the Kafka topics or RabbitMQ exchanges) to which channels connect. Such configuration can be provided through external configuration properties and in any form supported by Spring Boot (including application arguments, environment variables, and `application.yml` or `application.properties` files). In the sink example from the [Introducing Spring Cloud Stream](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_introducing_spring_cloud_stream) section, setting the application property `spring.cloud.stream.bindings.input.destination` to `raw-sensor-data` will cause it to read from the `raw-sensor-data` Kafka topic, or from a queue bound to the `raw-sensor-data` RabbitMQ exchange.
+
+
+
+
+
+Spring Cloud Stream automatically detects and uses a binder found on the classpath. You can easily use different types of middleware with the same code: just include a different binder at build time. For more complex use cases, you can also package multiple binders with your application and have it choose the binder, and even whether to use different binders for different channels, at runtime.
+
+
+
+
+
+
+
+### Persistent Publish-Subscribe Support
+
+
+
+Communication between applications follows a publish-subscribe model, where data is broadcast through shared topics. This can be seen in the following figure, which shows a typical deployment for a set of interacting Spring Cloud Stream applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data reported by sensors to an HTTP endpoint is sent to a common destination named `raw-sensor-data`. From the destination, it is independently processed by a microservice application that computes time-windowed averages and by another microservice application that ingests the raw data into HDFS. In order to process the data, both applications declare the topic as their input at runtime.
+
+
+
+
+
+The publish-subscribe communication model reduces the complexity of both the producer and the consumer, and allows new applications to be added to the topology without disruption of the existing flow. For example, downstream from the average-calculating application, you can add an application that calculates the highest temperature values for display and monitoring. You can then add another application that interprets the same flow of averages for fault detection. Doing all communication through shared topics rather than point-to-point queues reduces coupling between microservices.
+
+
+
+
+
+While the concept of publish-subscribe messaging is not new, Spring Cloud Stream takes the extra step of making it an opinionated choice for its application model. By using native middleware support, Spring Cloud Stream also simplifies use of the publish-subscribe model across different platforms.
+
+
+
+
+
+
+
+### Consumer Groups
+
+
+
+While the publish-subscribe model makes it easy to connect applications through shared topics, the ability to scale up by creating multiple instances of a given application is equally important. When doing this, different instances of an application are placed in a competing consumer relationship, where only one of the instances is expected to handle a given message.
+
+
+
+
+
+Spring Cloud Stream models this behavior through the concept of a _consumer group_. (Spring Cloud Stream consumer groups are similar to and inspired by Kafka consumer groups.) Each consumer binding can use the `spring.cloud.stream.bindings.input.group` property to specify a group name. For the consumers shown in the following figure, this property would be set as `spring.cloud.stream.bindings.input.group=hdfsWrite` or `spring.cloud.stream.bindings.input.group=average`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+All groups which subscribe to a given destination receive a copy of published data, but only one member of each group receives a given message from that destination. By default, when a group is not specified, Spring Cloud Stream assigns the application to an anonymous and independent single-member consumer group that is in a publish-subscribe relationship with all other consumer groups.
+
+
+
+
+
+#### Durability
+
+
+
+Consistent with the opinionated application model of Spring Cloud Stream, consumer group subscriptions are _durable_. That is, a binder implementation ensures that group subscriptions are persistent, and once at least one subscription for a group has been created, the group will receive messages, even if they are sent while all applications in the group are stopped.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Anonymous subscriptions are non-durable by nature. For some binder implementations (e.g., RabbitMQ), it is possible to have non-durable group subscriptions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In general, it is preferable to always specify a consumer group when binding an application to a given destination. When scaling up a Spring Cloud Stream application, you must specify a consumer group for each of its input bindings. This prevents the application’s instances from receiving duplicate messages (unless that behavior is desired, which is unusual).
+
+
+
+
+
+
+
+
+
+### Partitioning Support
+
+
+
+Spring Cloud Stream provides support for _partitioning_ data between multiple instances of a given application. In a partitioned scenario, the physical communication medium (e.g., the broker topic) is viewed as being structured into multiple partitions. One or more producer application instances send data to multiple consumer application instances and ensure that data identified by common characteristics are processed by the same consumer instance.
+
+
+
+
+
+Spring Cloud Stream provides a common abstraction for implementing partitioned processing use cases in a uniform fashion. Partitioning can thus be used whether the broker itself is naturally partitioned (e.g., Kafka) or not (e.g., RabbitMQ).
+
+
+
+
+
+
+
+
+
+
+
+
+
+Partitioning is a critical concept in stateful processing, where it is critiical, for either performance or consistency reasons, to ensure that all related data is processed together. For example, in the time-windowed average calculation example, it is important that all measurements from any given sensor are processed by the same application instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To set up a partitioned processing scenario, you must configure both the data-producing and the data-consuming ends.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Programming Model
+
+
+
+
+
+This section describes Spring Cloud Stream’s programming model. Spring Cloud Stream provides a number of predefined annotations for declaring bound input and output channels as well as how to listen to channels.
+
+
+
+
+
+### Declaring and Binding Channels
+
+
+
+#### Triggering Binding Via `@EnableBinding`
+
+
+
+You can turn a Spring application into a Spring Cloud Stream application by applying the `@EnableBinding` annotation to one of the application’s configuration classes. The `@EnableBinding` annotation itself is meta-annotated with `@Configuration` and triggers the configuration of Spring Cloud Stream infrastructure:
+
+
+
+
+
+
+
+    ...
+    @Import(...)
+    @Configuration
+    @EnableIntegration
+    public @interface EnableBinding {
+        ...
+        Class<?>[] value() default {};
+    }
+
+
+
+
+
+
+
+The `@EnableBinding` annotation can take as parameters one or more interface classes that contain methods which represent bindable components (typically message channels).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In Spring Cloud Stream 1.0, the only supported bindable components are the Spring Messaging `MessageChannel` and its extensions `SubscribableChannel` and `PollableChannel`. Future versions should extend this support to other types of components, using the same mechanism. In this documentation, we will continue to refer to channels.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### `@Input` and `@Output`
+
+
+
+A Spring Cloud Stream application can have an arbitrary number of input and output channels defined in an interface as `@Input` and `@Output` methods:
+
+
+
+
+
+
+
+    public interface Barista {
+
+        @Input
+        SubscribableChannel orders();
+
+        @Output
+        MessageChannel hotDrinks();
+
+        @Output
+        MessageChannel coldDrinks();
+    }
+
+
+
+
+
+
+
+Using this interface as a parameter to `@EnableBinding` will trigger the creation of three bound channels named `orders`, `hotDrinks`, and `coldDrinks`, respectively.
+
+
+
+
+
+
+
+    @EnableBinding(Barista.class)
+    public class CafeConfiguration {
+
+       ...
+    }
+
+
+
+
+
+
+
+##### Customizing Channel Names
+
+
+
+Using the `@Input` and `@Output` annotations, you can specify a customized channel name for the channel, as shown in the following example:
+
+
+
+
+
+
+
+    public interface Barista {
+        ...
+        @Input("inboundOrders")
+        SubscribableChannel orders();
+    }
+
+
+
+
+
+
+
+In this example, the created bound channel will be named `inboundOrders`.
+
+
+
+
+
+
+
+##### `Source`, `Sink`, and `Processor`
+
+
+
+For easy addressing of the most common use cases, which involve either an input channel, an output channel, or both, Spring Cloud Stream provides three predefined interfaces out of the box.
+
+
+
+
+
+`Source` can be used for an application which has a single outbound channel.
+
+
+
+
+
+
+
+    public interface Source {
+
+      String OUTPUT = "output";
+
+      @Output(Source.OUTPUT)
+      MessageChannel output();
+
+    }
+
+
+
+
+
+
+
+`Sink` can be used for an application which has a single inbound channel.
+
+
+
+
+
+
+
+    public interface Sink {
+
+      String INPUT = "input";
+
+      @Input(Sink.INPUT)
+      SubscribableChannel input();
+
+    }
+
+
+
+
+
+
+
+`Processor` can be used for an application which has both an inbound channel and an outbound channel.
+
+
+
+
+
+
+
+    public interface Processor extends Source, Sink {
+    }
+
+
+
+
+
+
+
+Spring Cloud Stream provides no special handling for any of these interfaces; they are only provided out of the box.
+
+
+
+
+
+
+
+
+
+#### Accessing Bound Channels
+
+
+
+##### Injecting the Bound Interfaces
+
+
+
+For each bound interface, Spring Cloud Stream will generate a bean that implements the interface. Invoking a `@Input`-annotated or `@Output`-annotated method of one of these beans will return the relevant bound channel.
+
+
+
+
+
+The bean in the following example sends a message on the output channel when its `hello` method is invoked. It invokes `output()` on the injected `Source` bean to retrieve the target channel.
+
+
+
+
+
+
+
+    @Component
+    public class SendingBean {
+
+        private Source source;
+
+        @Autowired
+        public SendingBean(Source source) {
+            this.source = source;
+        }
+
+        public void sayHello(String name) {
+             source.output().send(MessageBuilder.withPayload(body).build());
+        }
+    }
+
+
+
+
+
+
+
+
+
+##### Injecting Channels Directly
+
+
+
+Bound channels can be also injected directly:
+
+
+
+
+
+
+
+    @Component
+    public class SendingBean {
+
+        private MessageChannel output;
+
+        @Autowired
+        public SendingBean(MessageChannel output) {
+            this.output = output;
+        }
+
+        public void sayHello(String name) {
+             output.send(MessageBuilder.withPayload(body).build());
+        }
+    }
+
+
+
+
+
+
+
+If the name of the channel is customized on the declaring annotation, that name should be used instead of the method name. Given the following declaration:
+
+
+
+
+
+
+
+    public interface CustomSource {
+        ...
+        @Output("customOutput")
+        MessageChannel output();
+    }
+
+
+
+
+
+
+
+The channel will be injected as shown in the following example:
+
+
+
+
+
+
+
+    @Component
+    public class SendingBean {
+
+        @Autowired
+        private MessageChannel output;
+
+        @Autowired @Qualifier("customOutput")
+        public SendingBean(MessageChannel output) {
+            this.output = output;
+        }
+
+        public void sayHello(String name) {
+             customOutput.send(MessageBuilder.withPayload(body).build());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+#### Producing and Consuming Messages
+
+
+
+You can write a Spring Cloud Stream application using either Spring Integration annotations or Spring Cloud Stream’s `@StreamListener` annotation. The `@StreamListener` annotation is modeled after other Spring Messaging annotations (such as `@MessageMapping`, `@JmsListener`, `@RabbitListener`, etc.) but adds content type management and type coercion features.
+
+
+
+
+
+##### Native Spring Integration Support
+
+
+
+Because Spring Cloud Stream is based on Spring Integration, Stream completely inherits Integration’s foundation and infrastructure as well as the component itself. For example, you can attach the output channel of a `Source` to a `MessageSource`:
+
+
+
+
+
+
+
+    @EnableBinding(Source.class)
+    public class TimerSource {
+
+      @Value("${format}")
+      private String format;
+
+      @Bean
+      @InboundChannelAdapter(value = Source.OUTPUT, poller = @Poller(fixedDelay = "${fixedDelay}", maxMessagesPerPoll = "1"))
+      public MessageSource<String> timerMessageSource() {
+        return () -> new GenericMessage<>(new SimpleDateFormat(format).format(new Date()));
+      }
+    }
+
+
+
+
+
+
+
+Or you can use a processor’s channels in a transformer:
+
+
+
+
+
+
+
+    @EnableBinding(Processor.class)
+    public class TransformProcessor {
+      @Transformer(inputChannel = Processor.INPUT, outputChannel = Processor.OUTPUT)
+      public Object transform(String message) {
+        return message.toUpper();
+      }
+    }
+
+
+
+
+
+
+
+
+
+##### Using @StreamListener for Automatic Content Type Handling
+
+
+
+Complementary to its Spring Integration support, Spring Cloud Stream provides its own `@StreamListener` annotation, modeled after other Spring Messaging annotations (e.g. `@MessageMapping`, `@JmsListener`, `@RabbitListener`, etc.). The `@StreamListener` annotation provides a simpler model for handling inbound messages, especially when dealing with use cases that involve content type management and type coercion.
+
+
+
+
+
+Spring Cloud Stream provides an extensible `MessageConverter` mechanism for handling data conversion by bound channels and for, in this case, dispatching to methods annotated with `@StreamListener`. The following is an example of an application which processes external `Vote` events:
+
+
+
+
+
+
+
+    @EnableBinding(Sink.class)
+    public class VoteHandler {
+
+      @Autowired
+      VotingService votingService;
+
+      @StreamListener(Sink.INPUT)
+      public void handle(Vote vote) {
+        votingService.record(vote);
+      }
+    }
+
+
+
+
+
+
+
+The distinction between `@StreamListener` and a Spring Integration `@ServiceActivator` is seen when considering an inbound `Message` that has a `String` payload and a `contentType` header of `application/json`. In the case of `@StreamListener`, the `MessageConverter` mechanism will use the `contentType` header to parse the `String` payload into a `Vote` object.
+
+
+
+
+
+As with other Spring Messaging methods, method arguments can be annotated with `@Payload`, `@Headers` and `@Header`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For methods which return data, you must use the `@SendTo` annotation to specify the output binding destination for data returned by the method:
+
+
+
+
+
+
+
+    @EnableBinding(Processor.class)
+    public class TransformProcessor {
+
+      @Autowired
+      VotingService votingService;
+
+      @StreamListener(Processor.INPUT)
+      @SendTo(Processor.OUTPUT)
+      public VoteResult handle(Vote vote) {
+        return votingService.record(vote);
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In the case of RabbitMQ, content type headers can be set by external applications. Spring Cloud Stream supports them as part of an extended internal protocol used for any type of transport (including transports, such as Kafka, that do not normally support headers).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Aggregation
+
+
+
+Spring Cloud Stream provides support for aggregating multiple applications together, connecting their input and output channels directly and avoiding the additional cost of exchanging messages via a broker. As of version 1.0 of Spring Cloud Stream, aggregation is supported only for the following types of applications:
+
+
+
+
+
+*   _sources_ - applications with a single output channel named `output`, typically having a single binding of the type `org.springframework.cloud.stream.messaging.Source`
+
+*   _sinks_ - applications with a single input channel named `input`, typically having a single binding of the type `org.springframework.cloud.stream.messaging.Sink`
+
+*   _processors_ - applications with a single input channel named `input` and a single output channel named `output`, typically having a single binding of the type `org.springframework.cloud.stream.messaging.Processor`.
+
+
+
+
+
+They can be aggregated together by creating a sequence of interconnected applications, in which the output channel of an element in the sequence is connected to the input channel of the next element, if it exists. A sequence can start with either a _source_ or a _processor_, it can contain an arbitrary number of _processors_ and must end with either a _processor_ or a _sink_.
+
+
+
+
+
+Depending on the nature of the starting and ending element, the sequence may have one or more bindable channels, as follows:
+
+
+
+
+
+*   if the sequence starts with a source and ends with a sink, all communication between the applications is direct and no channels will be bound
+
+*   if the sequence starts with a processor, then its input channel will become the `input` channel of the aggregate and will be bound accordingly
+
+*   if the sequence ends with a processor, then its output channel will become the `output` channel of the aggregate and will be bound accordingly
+
+
+
+
+
+Aggregation is performed using the `AggregateApplicationBuilder` utility class, as in the following example. Let’s consider a project in which we have source, processor and a sink, which may be defined in the project, or may be contained in one of the project’s dependencies.
+
+
+
+
+
+
+
+    @SpringBootApplication
+    @EnableBinding(Sink.class)
+    public class SinkApplication {
+
+    	private static Logger logger = LoggerFactory.getLogger(SinkModuleDefinition.class);
+
+    	@ServiceActivator(inputChannel=Sink.INPUT)
+    	public void loggerSink(Object payload) {
+    		logger.info("Received: " + payload);
+    	}
+    }
+
+
+
+
+
+
+
+
+
+    @SpringBootApplication
+    @EnableBinding(Processor.class)
+    public class ProcessorApplication {
+
+    	@Transformer
+    	public String loggerSink(String payload) {
+    		return payload.toUpperCase();
+    	}
+    }
+
+
+
+
+
+
+
+
+
+    @SpringBootApplication
+    @EnableBinding(Source.class)
+    public class SourceApplication {
+
+    	@Bean
+    	@InboundChannelAdapter(value = Source.OUTPUT)
+    	public String timerMessageSource() {
+    		return new SimpleDateFormat().format(new Date());
+    	}
+    }
+
+
+
+
+
+
+
+Each configuration can be used for running a separate component, but in this case they can be aggregated together as follows:
+
+
+
+
+
+
+
+    @SpringBootApplication
+    public class SampleAggregateApplication {
+
+    	public static void main(String[] args) {
+    		new AggregateApplicationBuilder()
+    			.from(SourceApplication.class).args("--fixedDelay=5000")
+    			.via(ProcessorApplication.class)
+    			.to(SinkApplication.class).args("--debug=true").run(args);
+    	}
+    }
+
+
+
+
+
+
+
+The starting component of the sequence is provided as argument to the `from()` method. The ending component of the sequence is provided as argument to the `to()` method. Intermediate processors are provided as argument to the `via()` method. Multiple processors of the same type can be chained together (e.g. for pipelining transformations with different configurations). For each component, the builder can provide runtime arguments for Spring Boot configuration.
+
+
+
+
+
+
+
+#### RxJava support
+
+
+
+Spring Cloud Stream provides support for RxJava-based processors through the `RxJavaProcessor` available in `spring-cloud-stream-rxjava`.
+
+
+
+
+
+
+
+    public interface RxJavaProcessor<I, O> {
+    	Observable<O> process(Observable<I> input);
+    }
+
+
+
+
+
+
+
+An implementation of `RxJavaProcessor` will receive `Observable` as an input that represents the flow of inbound message payloads. The `process` method is invoked once at startup for setting up the data flow.
+
+
+
+
+
+You can enable the use of RxJava-based processors and use them in your processor application by using the `@EnableRxJavaProcessor` annotation. `@EnableRxJavaProcessor` is meta-annotated with `@EnableBinding(Processor.class)` and will create the `Processor` binding. Here is an example of an RxJava-based processor:
+
+
+
+
+
+
+
+    @EnableRxJavaProcessor
+    public class RxJavaTransformer {
+
+    	private static Logger logger = LoggerFactory.getLogger(RxJavaTransformer.class);
+
+    	@Bean
+    	public RxJavaProcessor<String,String> processor() {
+    		return inputStream -> inputStream.map(data -> {
+    			logger.info("Got data = " + data);
+    			return data;
+    		})
+    		.buffer(5)
+    		.map(data -> String.valueOf(avg(data)));
+    	}
+
+    	private static Double avg(List<String> data) {
+    		double sum = 0;
+    		double count = 0;
+    		for(String d : data) {
+    			count++;
+    			sum += Double.valueOf(d);
+    		}
+    		return sum/count;
+    	}
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When implementing an RxJava processor, it is important to handle exceptions as part of your processing flow. Uncaught exceptions will be treated as errors by RxJava and will cause the `Observable` to complete, disrupting the flow.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Binders
+
+
+
+
+
+Spring Cloud Stream provides a Binder abstraction for use in connecting to physical destinations at the external middleware. This section provides information about the main concepts behind the Binder SPI, its main components, and implementation-specific details.
+
+
+
+
+
+### Producers and Consumers
+
+
+
+
+
+
+
+
+
+
+
+A _producer_ is any component that sends messages to a channel. The channel can be bound to an external message broker via a Binder implementation for that broker. When invoking the `bindProducer()` method, the first parameter is the name of the destination within the broker, the second parameter is the local channel instance to which the producer will send messages, and the third parameter contains properties (such as a partition key expression) to be used within the adapter that is created for that channel.
+
+
+
+
+
+A _consumer_ is any component that receives messages from a channel. As with a producer, the consumer’s channel can be bound to an external message broker. When invoking the `bindConsumer()` method, the first parameter is the destination name, and a second parameter provides the name of a logical group of consumers. Each group that is represented by consumer bindings for a given destination receives a copy of each message that a producer sends to that destination (i.e., publish-subscribe semantics). If there are multiple consumer instances bound using the same group name, then messages will be load-balanced across those consumer instances so that each message sent by a producer is consumed by only a single consumer instance within each group (i.e., queueing semantics).
+
+
+
+
+
+
+
+### Binder SPI
+
+
+
+The Binder SPI consists of a number of interfaces, out-of-the box utility classes and discovery strategies that provide a pluggable mechanism for connecting to external middleware.
+
+
+
+
+
+The key point of the SPI is the `Binder` interface which is a strategy for connecting inputs and outputs to external middleware.
+
+
+
+
+
+
+
+    public interface Binder<T, C extends ConsumerProperties, P extends ProducerProperties> {
+    	Binding<T> bindConsumer(String name, String group, T inboundBindTarget, C consumerProperties);
+
+    	Binding<T> bindProducer(String name, T outboundBindTarget, P producerProperties);
+    }
+
+
+
+
+
+
+
+The interface is parameterized, offering a number of extension points:
+
+
+
+
+
+*   input and output bind targets - as of version 1.0, only `MessageChannel` is supported, but this is intended to be used as an extension point in the future;
+
+*   extended consumer and producer properties - allowing specific Binder implementations to add supplemental properties which can be supported in a type-safe manner.
+
+
+
+
+
+A typical binder implementation consists of the following
+
+
+
+
+
+*   a class that implements the `Binder` interface;
+
+*   a Spring `@Configuration` class that creates a bean of the type above along with the middleware connection infrastructure;
+
+*   a `META-INF/spring.binders` file found on the classpath containing one or more binder definitions, e.g.
+
+
+
+
+
+
+
+    kafka:\
+    org.springframework.cloud.stream.binder.kafka.config.KafkaBinderConfiguration
+
+
+
+
+
+
+
+
+
+### Binder Detection
+
+
+
+Spring Cloud Stream relies on implementations of the Binder SPI to perform the task of connecting channels to message brokers. Each Binder implementation typically connects to one type of messaging system. Out of the box, Spring Cloud Stream provides binders for Kafka, RabbitMQ, and Redis.
+
+
+
+
+
+#### Classpath Detection
+
+
+
+By default, Spring Cloud Stream relies on Spring Boot’s auto-configuration to configure the binding process. If a single Binder implementation is found on the classpath, Spring Cloud Stream will use it automatically. For example, a Spring Cloud Stream project that aims to bind only to RabbitMQ can simply add the following dependency:
+
+
+
+
+
+
+
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+    </dependency>
+
+
+
+
+
+
+
+
+
+
+
+### Multiple Binders on the Classpath
+
+
+
+When multiple binders are present on the classpath, the application must indicate which binder is to be used for each channel binding. Each binder configuration contains a `META-INF/spring.binders`, which is a simple properties file:
+
+
+
+
+
+
+
+    rabbit:\
+    org.springframework.cloud.stream.binder.rabbit.config.RabbitServiceAutoConfiguration
+
+
+
+
+
+
+
+Similar files exist for the other provided binder implementations (e.g., Kafka), and custom binder implementations are expected to provide them, as well. The key represents an identifying name for the binder implementation, whereas the value is a comma-separated list of configuration classes that each contain one and only one bean definition of type `org.springframework.cloud.stream.binder.Binder`.
+
+
+
+
+
+Binder selection can either be performed globally, using the `spring.cloud.stream.defaultBinder` property (e.g., `spring.cloud.stream.defaultBinder=rabbit`) or individually, by configuring the binder on each channel binding. For instance, a processor application which reads from Kafka and writes to RabbitMQ can specify the following configuration:
+
+
+
+
+
+
+
+<pre>spring.cloud.stream.bindings.input.binder=kafka
+spring.cloud.stream.bindings.output.binder=rabbit</pre>
+
+
+
+
+
+
+
+
+
+### Connecting to Multiple Systems
+
+
+
+By default, binders share the application’s Spring Boot auto-configuration, so that one instance of each binder found on the classpath will be created. If your application should connect to more than one broker of the same type, you can specify multiple binder configurations, each with different environment settings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Turning on explicit binder configuration will disable the default binder configuration process altogether. If you do this, all binders in use must be included in the configuration. Frameworks that intend to use Spring Cloud Stream transparently may create binder configurations that can be referenced by name, but will not affect the default binder configuration. In order to do so, a binder configuration may have its `defaultCandidate` flag set to false, e.g. `spring.cloud.stream.binders.<configurationName>.defaultCandidate=false`. This denotes a configuration that will exist independently of the default binder configuration process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For example, this is the typical configuration for a processor application which connects to two RabbitMQ broker instances:
+
+
+
+
+
+
+
+    spring:
+      cloud:
+        stream:
+          bindings:
+            input:
+              destination: foo
+              binder: rabbit1
+            output:
+              destination: bar
+              binder: rabbit2
+          binders:
+            rabbit1:
+              type: rabbit
+              environment:
+                spring:
+                  rabbitmq:
+                    host: <host1>
+            rabbit2:
+              type: rabbit
+              environment:
+                spring:
+                  rabbitmq:
+                    host: <host2>
+
+
+
+
+
+
+
+
+
+### Binder configuration properties
+
+
+
+The following properties are available when creating custom binder configurations. They must be prefixed with `spring.cloud.stream.binders.<configurationName>`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">type</dt>
+
+<dd>
+
+The binder type. It typically references one of the binders found on the classpath, in particular a key in a `META-INF/spring.binders` file.
+
+
+
+By default, it has the same value as the configuration name.
+
+
+
+</dd>
+
+<dt class="hdlist1">inheritEnvironment</dt>
+
+<dd>
+
+Whether the configuration will inherit the environment of the application itself.
+
+
+
+Default `true`.
+
+
+
+</dd>
+
+<dt class="hdlist1">environment</dt>
+
+<dd>
+
+Root for a set of properties that can be used to customize the environment of the binder. When this is configured, the context in which the binder is being created is not a child of the application context. This allows for complete separation between the binder components and the application components.
+
+
+
+Default `empty`.
+
+
+
+</dd>
+
+<dt class="hdlist1">defaultCandidate</dt>
+
+<dd>
+
+Whether the binder configuration is a candidate for being considered a default binder, or can be used only when explicitly referenced. This allows adding binder configurations without interfering with the default processing.
+
+
+
+Default `true`.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+### Implementation strategies
+
+
+
+This section details the binder implementation strategies for Kafka and Rabbit MQ, in what concerns mapping the Spring Cloud Stream concepts onto the middleware concepts.
+
+
+
+
+
+#### Kafka Binder
+
+
+
+
+
+
+
+
+
+
+
+The Kafka Binder implementation maps the destination to a Kafka topic. The consumer group maps directly to the same Kafka concept. Spring Cloud Stream does not use the high-level consumer, but implements a similar concept for the simple consumer.
+
+
+
+
+
+
+
+#### RabbitMQ Binder
+
+
+
+
+
+
+
+
+
+
+
+The RabbitMQ Binder implementation maps the destination to a `TopicExchange`. For each consumer group, a `Queue` will be bound to that `TopicExchange`. Each consumer instance that binds will trigger creation of a corresponding RabbitMQ `Consumer` instance for its group’s `Queue`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Configuration Options
+
+
+
+
+
+Spring Cloud Stream supports general configuration options as well as configuration for bindings and binders. Some binders allow additional binding properties to support middleware-specific features.
+
+
+
+
+
+Configuration options can be provided to Spring Cloud Stream applications via any mechanism supported by Spring Boot. This includes application arguments, environment variables, and YAML or .properties files.
+
+
+
+
+
+### Spring Cloud Stream Properties
+
+
+
+<dl>
+
+<dt class="hdlist1">spring.cloud.stream.instanceCount</dt>
+
+<dd>
+
+The number of deployed instances of an application. Must be set for partitioning and if using Kafka.
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.instanceIndex</dt>
+
+<dd>
+
+The instance index of the application: a number from `0` to `instanceCount`-1. Used for partitioning and with Kafka. Automatically set in Cloud Foundry to match the application’s instance index.
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.dynamicDestinations</dt>
+
+<dd>
+
+A list of destinations that can be bound dynamically (for example, in a dynamic routing scenario). If set, only listed destinations can be bound.
+
+
+
+Default: empty (allowing any destination to be bound).
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.defaultBinder</dt>
+
+<dd>
+
+The default binder to use, if multiple binders are configured. See [Multiple Binders on the Classpath](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#multiple-binders).
+
+
+
+Default: empty.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.overrideCloudConnectors</dt>
+
+<dd>
+
+This property is only applicable when the `cloud` profile is active and Spring Cloud Connectors are provided with the application. If the property is false (the default), the binder will detect a suitable bound service (e.g. a RabbitMQ service bound in Cloud Foundry for the RabbitMQ binder) and will use it for creating connections (usually via Spring Cloud Connectors). When set to true, this property instructs binders to completely ignore the bound services and rely on Spring Boot properties (e.g. relying on the `spring.rabbitmq.*` properties provided in the environment for the RabbitMQ binder). The typical usage of this property is to be nested in a customized environment [when connecting to multiple systems](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#multiple-systems).
+
+
+
+Default: false.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+### Binding Properties
+
+
+
+Binding properties are supplied using the format `spring.cloud.stream.bindings.<channelName>.<property>=<value>`. The `<channelName>` represents the name of the channel being configured (e.g., `output` for a `Source`).
+
+
+
+
+
+In what follows, we indicate where we have omitted the `spring.cloud.stream.bindings.<channelName>.` prefix and focus just on the property name, with the understanding that the prefix will be included at runtime.
+
+
+
+
+
+#### Properties for Use of Spring Cloud Stream
+
+
+
+The following binding properties are available for both input and output bindings and must be prefixed with `spring.cloud.stream.bindings.<channelName>.`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">destination</dt>
+
+<dd>
+
+The target destination of a channel on the bound middleware (e.g., the RabbitMQ exchange or Kafka topic). If the channel is bound as a consumer, it could be bound to multiple destinations and the destination names can be specified as comma separated String values. If not set, the channel name is used instead.
+
+</dd>
+
+<dt class="hdlist1">group</dt>
+
+<dd>
+
+The consumer group of the channel. Applies only to inbound bindings. See [Consumer Groups](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#consumer-groups).
+
+
+
+Default: null (indicating an anonymous consumer).
+
+
+
+</dd>
+
+<dt class="hdlist1">contentType</dt>
+
+<dd>
+
+The content type of the channel. //See [[content type management]](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#content type management).
+
+
+
+Default: null (so that no type coercion is performed).
+
+
+
+</dd>
+
+<dt class="hdlist1">binder</dt>
+
+<dd>
+
+The binder used by this binding. See [Multiple Binders on the Classpath](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#multiple-binders) for details.
+
+
+
+Default: null (the default binder will be used, if one exists).
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+#### Consumer properties
+
+
+
+The following binding properties are available for input bindings only and must be prefixed with `spring.cloud.stream.bindings.<channelName>.consumer.`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">concurrency</dt>
+
+<dd>
+
+The concurrency of the inbound consumer.
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+<dt class="hdlist1">partitioned</dt>
+
+<dd>
+
+Whether the consumer receives data from a partitioned producer.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">headerMode</dt>
+
+<dd>
+
+When set to `raw`, disables header parsing on input. Effective only for messaging middleware that does not support message headers natively and requires header embedding. Useful when inbound data is coming from outside Spring Cloud Stream applications.
+
+
+
+Default: `embeddedHeaders`.
+
+
+
+</dd>
+
+<dt class="hdlist1">maxAttempts</dt>
+
+<dd>
+
+The number of attempts of re-processing an inbound message.
+
+
+
+Default: `3`.
+
+
+
+</dd>
+
+<dt class="hdlist1">backOffInitialInterval</dt>
+
+<dd>
+
+The backoff initial interval on retry.
+
+
+
+Default: `1000`.
+
+
+
+</dd>
+
+<dt class="hdlist1">backOffMaxInterval</dt>
+
+<dd>
+
+The maximum backoff interval.
+
+
+
+Default: `10000`.
+
+
+
+</dd>
+
+<dt class="hdlist1">backOffMultiplier</dt>
+
+<dd>
+
+The backoff multiplier.
+
+
+
+Default: `2.0`.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+#### Producer Properties
+
+
+
+The following binding properties are available for output bindings only and must be prefixed with `spring.cloud.stream.bindings.<channelName>.producer.`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">partitionKeyExpression</dt>
+
+<dd>
+
+A SpEL expression that determines how to partition outbound data. If set, or if `partitionKeyExtractorClass` is set, outbound data on this channel will be partitioned, and `partitionCount` must be set to a value greater than 1 to be effective. The two options are mutually exclusive. See [Partitioning Support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#partitioning).
+
+
+
+Default: null.
+
+
+
+</dd>
+
+<dt class="hdlist1">partitionKeyExtractorClass</dt>
+
+<dd>
+
+A `PartitionKeyExtractorStrategy` implementation. If set, or if `partitionKeyExpression` is set, outbound data on this channel will be partitioned, and `partitionCount` must be set to a value greater than 1 to be effective. The two options are mutually exclusive. See [Partitioning Support](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#partitioning).
+
+
+
+Default: null.
+
+
+
+</dd>
+
+<dt class="hdlist1">partitionSelectorClass</dt>
+
+<dd>
+
+A `PartitionSelectorStrategy` implementation. Mutually exclusive with `partitionSelectorExpression`. If neither is set, the partition will be selected as the `hashCode(key) % partitionCount`, where `key` is computed via either `partitionKeyExpression` or `partitionKeyExtractorClass`.
+
+
+
+Default: null.
+
+
+
+</dd>
+
+<dt class="hdlist1">partitionSelectorExpression</dt>
+
+<dd>
+
+A SpEL expression for customizing partition selection. Mutually exclusive with `partitionSelectorClass`. If neither is set, the partition will be selected as the `hashCode(key) % partitionCount`, where `key` is computed via either `partitionKeyExpression` or `partitionKeyExtractorClass`.
+
+
+
+Default: null.
+
+
+
+</dd>
+
+<dt class="hdlist1">partitionCount</dt>
+
+<dd>
+
+The number of target partitions for the data, if partitioning is enabled. Must be set to a value greater than 1 if the producer is partitioned. On Kafka, interpreted as a hint; the larger of this and the partition count of the target topic is used instead.
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+<dt class="hdlist1">requiredGroups</dt>
+
+<dd>
+
+A comma-separated list of groups to which the producer must ensure message delivery even if they start after it has been created (e.g., by pre-creating durable queues in RabbitMQ).
+
+</dd>
+
+<dt class="hdlist1">headerMode</dt>
+
+<dd>
+
+When set to `raw`, disables header embedding on output. Effective only for messaging middleware that does not support message headers natively and requires header embedding. Useful when producing data for non-Spring Cloud Stream applications.
+
+
+
+Default: `embeddedHeaders`.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Binder-Specific Configuration
+
+
+
+
+
+The following binder, consumer, and producer properties are specific to binder implementations.
+
+
+
+
+
+### Rabbit-Specific Settings
+
+
+
+#### RabbitMQ Binder Properties
+
+
+
+By default, the RabbitMQ binder uses Spring Boot’s `ConnectionFactory`, and it therefore supports all Spring Boot configuration options for RabbitMQ. (For reference, consult the [Spring Boot documentation](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#common-application-properties).) RabbitMQ configuration options use the `spring.rabbitmq` prefix.
+
+
+
+
+
+In addition to the Spring Boot options, the RabbitMQ binder supports the following properties:
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">spring.cloud.stream.rabbit.binder.adminAddresses</dt>
+
+<dd>
+
+A comma-separated list of RabbitMQ management plugin URLs. Only used when `nodes` contains more than one entry. Each entry in this list must have a corresponding entry in `spring.rabbitmq.addresses`.
+
+
+
+Default: empty.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.rabbit.binder.nodes</dt>
+
+<dd>
+
+A comma-separated list of RabbitMQ node names. When more than one entry, used to locate the server address where a queue is located. Each entry in this list must have a corresponding entry in `spring.rabbitmq.addresses`.
+
+
+
+Default: empty.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.rabbit.binder.compressionLevel</dt>
+
+<dd>
+
+Compression level for compressed bindings. See `java.util.zip.Deflater`.
+
+
+
+Default: `1` (BEST_LEVEL).
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+#### RabbitMQ Consumer Properties
+
+
+
+The following properties are available for Rabbit consumers only and must be prefixed with `spring.cloud.stream.rabbit.bindings.<channelName>.consumer.`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">acknowledgeMode</dt>
+
+<dd>
+
+The acknowledge mode.
+
+
+
+Default: `AUTO`.
+
+
+
+</dd>
+
+<dt class="hdlist1">autoBindDlq</dt>
+
+<dd>
+
+Whether to automatically declare the DLQ and bind it to the binder DLX.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">durableSubscription</dt>
+
+<dd>
+
+Whether subscription should be durable. Only effective if `group` is also set.
+
+
+
+Default: `true`.
+
+
+
+</dd>
+
+<dt class="hdlist1">maxConcurrency</dt>
+
+<dd>
+
+Default: `1`.
+
+</dd>
+
+<dt class="hdlist1">prefetch</dt>
+
+<dd>
+
+Prefetch count.
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+<dt class="hdlist1">prefix</dt>
+
+<dd>
+
+A prefix to be added to the name of the `destination` and queues.
+
+
+
+Default: "".
+
+
+
+</dd>
+
+<dt class="hdlist1">recoveryInterval</dt>
+
+<dd>
+
+The interval between connection recovery attempts, in milliseconds.
+
+
+
+Default: `5000`.
+
+
+
+</dd>
+
+<dt class="hdlist1">requeueRejected</dt>
+
+<dd>
+
+Whether delivery failures should be requeued.
+
+
+
+Default: `true`.
+
+
+
+</dd>
+
+<dt class="hdlist1">requestHeaderPatterns</dt>
+
+<dd>
+
+The request headers to be transported.
+
+
+
+Default: `[STANDARD_REQUEST_HEADERS,'*']`.
+
+
+
+</dd>
+
+<dt class="hdlist1">replyHeaderPatterns</dt>
+
+<dd>
+
+The reply headers to be transported.
+
+
+
+Default: `[STANDARD_REPLY_HEADERS,'*']`.
+
+
+
+</dd>
+
+<dt class="hdlist1">republishToDlq</dt>
+
+<dd>
+
+By default, messages which fail after retries are exhausted are rejected. If a dead-letter queue (DLQ) is configured, RabbitMQ will route the failed message (unchanged) to the DLQ. If set to `true`, the bus will republish failed messages to the DLQ with additional headers, including the exception message and stack trace from the cause of the final failure.
+
+</dd>
+
+<dt class="hdlist1">transacted</dt>
+
+<dd>
+
+Whether to use transacted channels.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">txSize</dt>
+
+<dd>
+
+The number of deliveries between acks.
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+#### Rabbit Producer Properties
+
+
+
+The following properties are available for Rabbit producers only and must be prefixed with `spring.cloud.stream.rabbit.bindings.<channelName>.producer.`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">autoBindDlq</dt>
+
+<dd>
+
+Whether to automatically declare the DLQ and bind it to the binder DLX.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">batchingEnabled</dt>
+
+<dd>
+
+Whether to enable message batching by producers.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">batchSize</dt>
+
+<dd>
+
+The number of messages to buffer when batching is enabled.
+
+
+
+Default: `100`.
+
+
+
+</dd>
+
+<dt class="hdlist1">batchBufferLimit</dt>
+
+<dd>
+
+Default: `10000`.
+
+</dd>
+
+<dt class="hdlist1">batchTimeout</dt>
+
+<dd>
+
+Default: `5000`.
+
+</dd>
+
+<dt class="hdlist1">compress</dt>
+
+<dd>
+
+Whether data should be compressed when sent.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">deliveryMode</dt>
+
+<dd>
+
+Delivery mode.
+
+
+
+Default: `PERSISTENT`.
+
+
+
+</dd>
+
+<dt class="hdlist1">prefix</dt>
+
+<dd>
+
+A prefix to be added to the name of the `destination` exchange.
+
+
+
+Default: "".
+
+
+
+</dd>
+
+<dt class="hdlist1">requestHeaderPatterns</dt>
+
+<dd>
+
+The request headers to be transported.
+
+
+
+Default: `[STANDARD_REQUEST_HEADERS,'*']`.
+
+
+
+</dd>
+
+<dt class="hdlist1">replyHeaderPatterns</dt>
+
+<dd>
+
+The reply headers to be transported.
+
+
+
+Default: `[STANDARD_REPLY_HEADERS,'*']`.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+
+
+### Kafka-Specific Settings
+
+
+
+#### Kafka Binder Properties
+
+
+
+<dl>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.brokers</dt>
+
+<dd>
+
+A list of brokers to which the Kafka binder will connect.
+
+
+
+Default: `localhost`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.defaultBrokerPort</dt>
+
+<dd>
+
+`brokers` allows hosts specified with or without port information (e.g., `host1,host2:port2`). This sets the default port when no port is configured in the broker list.
+
+
+
+Default: `9092`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.zkNodes</dt>
+
+<dd>
+
+A list of ZooKeeper nodes to which the Kafka binder can connect.
+
+
+
+Default: `localhost`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.defaultZkPort</dt>
+
+<dd>
+
+`zkNodes` allows hosts specified with or without port information (e.g., `host1,host2:port2`). This sets the default port when no port is configured in the node list.
+
+
+
+Default: `2181`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.headers</dt>
+
+<dd>
+
+The list of custom headers that will be transported by the binder.
+
+
+
+Default: empty.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.offsetUpdateTimeWindow</dt>
+
+<dd>
+
+The frequency, in milliseconds, with which offsets are saved. Ignored if `0`.
+
+
+
+Default: `10000`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.offsetUpdateCount</dt>
+
+<dd>
+
+The frequency, in number of updates, which which consumed offsets are persisted. Ignored if `0`. Mutually exclusive with `offsetUpdateTimeWindow`.
+
+
+
+Default: `0`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.requiredAcks</dt>
+
+<dd>
+
+The number of required acks on the broker.
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.minPartitionCount</dt>
+
+<dd>
+
+Effective only if `autoCreateTopics` or `autoAddPartitions` is set. The global minimum number of partitions that the binder will configure on topics on which it produces/consumes data. It can be superseded by the `partitionCount` setting of the producer or by the value of `instanceCount` * `concurrency` settings of the producer (if either is larger).
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.replicationFactor</dt>
+
+<dd>
+
+The replication factor of auto-created topics if `autoCreateTopics` is active.
+
+
+
+Default: `1`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.autoCreateTopics</dt>
+
+<dd>
+
+If set to `true`, the binder will create new topics automatically. If set to `false`, the binder will rely on the topics being already configured. In the latter case, if the topics do not exist, the binder will fail to start. Of note, this setting is independent of the `auto.topic.create.enable` setting of the broker and it does not influence it: if the server is set to auto-create topics, they may be created as part of the metadata retrieval request, with default broker settings.
+
+
+
+Default: `true`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.autoAddPartitions</dt>
+
+<dd>
+
+If set to `true`, the binder will create add new partitions if required. If set to `false`, the binder will rely on the partition size of the topic being already configured. If the partition count of the target topic is smaller than the expected value, the binder will fail to start.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">spring.cloud.stream.kafka.binder.socketBufferSize</dt>
+
+<dd>
+
+Size (in bytes) of the socket buffer to be used by the Kafka consumers.
+
+
+
+Default: `2097152`.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+#### Kafka Consumer Properties
+
+
+
+The following properties are available for Kafka consumers only and must be prefixed with `spring.cloud.stream.kafka.bindings.<channelName>.consumer.`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">autoCommitOffset</dt>
+
+<dd>
+
+Whether to autocommit offsets when a message has been processed. If set to `false`, an `Acknowledgment` header will be available in the message headers for late acknowledgment.
+
+
+
+Default: `true`.
+
+
+
+</dd>
+
+<dt class="hdlist1">autoCommitOnError</dt>
+
+<dd>
+
+Effective only if `autoCommitOffset` is set to `true`. If set to `false` it suppresses auto-commits for messages that result in errors, and will commit only for successful messages, allows a stream to automatically replay from the last successfully processed message, in case of persistent failures. If set to `true`, it will always auto-commit (if auto-commit is enabled). If not set (default), it effectively has the same value as `enableDlq`, auto-committing erroneous messages if they are sent to a DLQ, and not committing them otherwise.
+
+
+
+Default: not set.
+
+
+
+</dd>
+
+<dt class="hdlist1">recoveryInterval</dt>
+
+<dd>
+
+The interval between connection recovery attempts, in milliseconds.
+
+
+
+Default: `5000`.
+
+
+
+</dd>
+
+<dt class="hdlist1">resetOffsets</dt>
+
+<dd>
+
+Whether to reset offsets on the consumer to the value provided by `startOffset`.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">startOffset</dt>
+
+<dd>
+
+The starting offset for new groups, or when `resetOffsets` is `true`. Allowed values: `earliest`, `latest`.
+
+
+
+Default: null (equivalent to `earliest`).
+
+
+
+</dd>
+
+<dt class="hdlist1">enableDlq</dt>
+
+<dd>
+
+When set to true, it will send enable DLQ behavior for the consumer. Messages that result in errors will be forwarded to a topic named `error.<destination>.<group>`. This provides an alternative option to the more common Kafka replay scenario for the case when the number of errors is relatively small and replaying the entire original topic may be too cumbersome.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+#### Kafka Producer Properties
+
+
+
+The following properties are available for Kafka producers only and must be prefixed with `spring.cloud.stream.kafka.bindings.<channelName>.producer.`.
+
+
+
+
+
+<dl>
+
+<dt class="hdlist1">bufferSize</dt>
+
+<dd>
+
+Upper limit, in bytes, of how much data the Kafka producer will attempt to batch before sending.
+
+
+
+Default: `16384`.
+
+
+
+</dd>
+
+<dt class="hdlist1">sync</dt>
+
+<dd>
+
+Whether the producer is synchronous.
+
+
+
+Default: `false`.
+
+
+
+</dd>
+
+<dt class="hdlist1">batchTimeout</dt>
+
+<dd>
+
+How long the producer will wait before sending in order to allow more messages to accumulate in the same batch. (Normally the producer does not wait at all, and simply sends all the messages that accumulated while the previous send was in progress.) A non-zero value may increase throughput at the expense of latency.
+
+
+
+Default: `0`.
+
+
+
+</dd>
+
+<dt class="hdlist1">maxRequestSize</dt>
+
+<dd>
+
+The maximum size of a message sending request.
+
+
+
+Default: `1048576`.
+
+
+
+</dd>
+
+<dt class="hdlist1">configuration</dt>
+
+<dd>
+
+Map with a key/value pair containing generic Kafka producer properties.
+
+
+
+Default: Empty map.
+
+
+
+</dd>
+
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Content Type and Transformation
+
+
+
+
+
+To allow you to propagate information about the content type of produced messages, Spring Cloud Stream attaches, by default, a `contentType` header to outbound messages. For middleware that does not directly support headers, Spring Cloud Stream provides its own mechanism of automatically wrapping outbound messages in an envelope of its own. For middleware that does support headers, Spring Cloud Stream applications may receive messages with a given content type from non-Spring Cloud Stream applications.
+
+
+
+
+
+Spring Cloud Stream can handle messages based on this information in two ways:
+
+
+
+
+
+*   Through its `contentType` settings on inbound and outbound channels
+
+*   Through its argument mapping performed for methods annotated with `@StreamListener`
+
+
+
+
+
+Spring Cloud Stream allows you to declaratively configure type conversion for inputs and outputs using the `content-type` property of a binding. Note that general type conversion may also be accomplished easily by using a transformer inside your application. Currently, Spring Cloud Stream natively supports the following type conversions commonly used in streams:
+
+
+
+
+
+*   **JSON** to/from **POJO**
+
+*   **JSON** to/from [org.springframework.tuple.Tuple](https://github.com/spring-projects/spring-tuple/blob/master/spring-tuple/src/main/java/org/springframework/tuple/Tuple.java)
+
+*   **Object** to/from **byte[]** : Either the raw bytes serialized for remote transport, bytes emitted by an application, or converted to bytes using Java serialization(requires the object to be Serializable)
+
+*   **String** to/from **byte[]**
+
+*   **Object** to **plain text** (invokes the object’s _toString()_ method)
+
+
+
+
+
+Where _JSON_ represents either a byte array or String payload containing JSON. Currently, Objects may be converted from a JSON byte array or String. Converting to JSON always produces a String.
+
+
+
+
+
+### MIME types
+
+
+
+`content-type` values are parsed as media types, e.g., `application/json` or `text/plain;charset=UTF-8`. MIME types are especially useful for indicating how to convert to String or byte[] content. Spring Cloud Stream also uses MIME type format to represent Java types, using the general type `application/x-java-object` with a `type` parameter. For example, `application/x-java-object;type=java.util.Map` or `application/x-java-object;type=com.bar.Foo` can be set as the `content-type` property of an input binding. In addition, Spring Cloud Stream provides custom MIME types, notably, `application/x-spring-tuple` to specify a Tuple.
+
+
+
+
+
+
+
+### MIME types and Java types
+
+
+
+The type conversions Spring Cloud Stream provides out of the box are summarized in the following table:
+
+
+
+<table class="tableblock frame-all grid-all spread"><colgroup><col style="width: 20%;"> <col style="width: 20%;"> <col style="width: 20%;"> <col style="width: 20%;"> <col style="width: 20%;"></colgroup>
+
+<thead>
+
+
+
+<th class="tableblock halign-left valign-top">Source Payload</th>
+
+<th class="tableblock halign-left valign-top">Target Payload</th>
+
+<th class="tableblock halign-left valign-top">content-type header</th>
+
+<th class="tableblock halign-left valign-top">content-type</th>
+
+<th class="tableblock halign-left valign-top">Comments</th>
+
+
+
+</thead>
+
+
+
+
+
+
+
+POJO
+
+
+
+
+
+JSON String
+
+
+
+
+
+ignored
+
+
+
+
+
+application/json
+
+
+
+
+
+
+
+
+
+Tuple
+
+
+
+
+
+JSON String
+
+
+
+
+
+ignored
+
+
+
+
+
+application/json
+
+
+
+
+
+JSON is tailored for Tuple
+
+
+
+
+
+
+
+
+
+POJO
+
+
+
+
+
+String (toString())
+
+
+
+
+
+ignored
+
+
+
+
+
+text/plain, java.lang.String
+
+
+
+
+
+
+
+
+
+POJO
+
+
+
+
+
+byte[] (java.io serialized)
+
+
+
+
+
+ignored
+
+
+
+
+
+application/x-java-serialized-object
+
+
+
+
+
+
+
+
+
+JSON byte[] or String
+
+
+
+
+
+POJO
+
+
+
+
+
+application/json (or none)
+
+
+
+
+
+application/x-java-object
+
+
+
+
+
+
+
+
+
+byte[] or String
+
+
+
+
+
+Serializable
+
+
+
+
+
+application/x-java-serialized-object
+
+
+
+
+
+application/x-java-object
+
+
+
+
+
+
+
+
+
+JSON byte[] or String
+
+
+
+
+
+Tuple
+
+
+
+
+
+application/json (or none)
+
+
+
+
+
+application/x-spring-tuple
+
+
+
+
+
+
+
+
+
+byte[]
+
+
+
+
+
+String
+
+
+
+
+
+any
+
+
+
+
+
+text/plain, java.lang.String
+
+
+
+
+
+will apply any Charset specified in the content-type header
+
+
+
+
+
+
+
+
+
+String
+
+
+
+
+
+byte[]
+
+
+
+
+
+any
+
+
+
+
+
+application/octet-stream
+
+
+
+
+
+will apply any Charset specified in the content-type header
+
+
+
+
+
+
+
+
+
+
+
+Conversion applies to payloads that require type conversion. For example, if a module produces an XML string with outputType=application/json, the payload will not be converted from XML to JSON. This is because the payload at the module’s output channel is already a String so no conversion will be applied at runtime.
+
+
+
+
+
+While conversion is supported for both input and output channels, it is especially recommended to be used for the conversion of outbound messages. For the conversion of inbound messages, especially when the target is a POJO, the `@StreamListener` support will perform the conversion automatically.
+
+
+
+
+
+
+
+### `@StreamListener` and Message Conversion
+
+
+
+The `@StreamListener` annotation provides a convenient way for converting incoming messages without the need to specify the content type of an input channel. During the dispatching process to methods annotated with `@StreamListener`, a conversion will be applied automatically if the argument requires it.
+
+
+
+
+
+For example, let’s consider a message with the String content `{"greeting":"Hello, world"}` and a `content-type` header of `application/json` is received on the input channel. Let us consider the following application that receives it:
+
+
+
+
+
+
+
+    public class GreetingMessage {
+
+      String greeting;
+
+      public String getGreeting() {
+        return greeting;
+      }
+
+      public void setGreeting(String greeting) {
+        this.greeting = greeting;
+      }
+    }
+
+    @EnableBinding(Sink.class)
+    @EnableAutoConfiguration
+    public static class GreetingSink {
+
+    		@StreamListener(Sink.INPUT)
+    		public void receive(Greeting greeting) {
+    			// handle Greeting
+    		}
+    	}
+
+
+
+
+
+
+
+The argument of the method will be populated automatically with the POJO containing the unmarshalled form of the JSON String.
+
+
+
+
+
+
+
+
+
+
+
+## Inter-Application Communication
+
+
+
+
+
+### Connecting Multiple Application Instances
+
+
+
+While Spring Cloud Stream makes it easy for individual Spring Boot applications to connect to messaging systems, the typical scenario for Spring Cloud Stream is the creation of multi-application pipelines, where microservice applications send data to each other. You can achieve this scenario by correlating the input and output destinations of adjacent applications.
+
+
+
+
+
+Supposing that a design calls for the Time Source application to send data to the Log Sink application, you can use a common destination named `ticktock` for bindings within both applications.
+
+
+
+
+
+Time Source will set the following property:
+
+
+
+
+
+
+
+<pre>spring.cloud.stream.bindings.output.destination=ticktock</pre>
+
+
+
+
+
+
+
+Log Sink will set the following property:
+
+
+
+
+
+
+
+<pre>spring.cloud.stream.bindings.input.destination=ticktock</pre>
+
+
+
+
+
+
+
+
+
+### Instance Index and Instance Count
+
+
+
+When scaling up Spring Cloud Stream applications, each instance can receive information about how many other instances of the same application exist and what its own instance index is. Spring Cloud Stream does this through the `spring.cloud.stream.instanceCount` and `spring.cloud.stream.instanceIndex` properties. For example, if there are three instances of a HDFS sink application, all three instances will have `spring.cloud.stream.instanceCount` set to `3`, and the individual applications will have `spring.cloud.stream.instanceIndex` set to `0`, `1`, and `2`, respectively.
+
+
+
+
+
+When Spring Cloud Stream applications are deployed via Spring Cloud Data Flow, these properties are configured automatically; when Spring Cloud Stream applications are launched independently, these properties must be set correctly. By default, `spring.cloud.stream.instanceCount` is `1`, and `spring.cloud.stream.instanceIndex` is `0`.
+
+
+
+
+
+In a scaled-up scenario, correct configuration of these two properties is important for addressing partitioning behavior (see below) in general, and the two properties are always required by certain binders (e.g., the Kafka binder) in order to ensure that data are split correctly across multiple consumer instances.
+
+
+
+
+
+
+
+### Partitioning
+
+
+
+#### Configuring Output Bindings for Partitioning
+
+
+
+An output binding is configured to send partitioned data by setting one and only one of its `partitionKeyExpression` or `partitionKeyExtractorClass` properties, as well as its `partitionCount` property. For example, the following is a valid and typical configuration:
+
+
+
+
+
+
+
+<pre>spring.cloud.stream.bindings.output.producer.partitionKeyExpression=payload.id
+spring.cloud.stream.bindings.output.producer.partitionCount=5</pre>
+
+
+
+
+
+
+
+Based on the above example configuration, data will be sent to the target partition using the following logic.
+
+
+
+
+
+A partition key’s value is calculated for each message sent to a partitioned output channel based on the `partitionKeyExpression`. The `partitionKeyExpression` is a SpEL expression which is evaluated against the outbound message for extracting the partitioning key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If a SpEL expression is not sufficient for your needs, you can instead calculate the partition key value by setting the property `partitionKeyExtractorClass` to a class which implements the `org.springframework.cloud.stream.binder.PartitionKeyExtractorStrategy` interface. While the SpEL expression should usually suffice, more complex cases may use the custom implementation strategy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Once the message key is calculated, the partition selection process will determine the target partition as a value between `0` and `partitionCount - 1`. The default calculation, applicable in most scenarios, is based on the formula `key.hashCode() % partitionCount`. This can be customized on the binding, either by setting a SpEL expression to be evaluated against the key (via the `partitionSelectorExpression` property) or by setting a `org.springframework.cloud.stream.binder.PartitionSelectorStrategy` implementation (via the `partitionSelectorClass` property).
+
+
+
+
+
+Additional properties can be configured for more advanced scenarios, as described in the following section.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Kafka binder will use the `partitionCount` setting as a hint to create a topic with the given partition count (in conjunction with the `minPartitionCount`, the maximum of the two being the value being used). Exercise caution when configuring both `minPartitionCount` for a binder and `partitionCount` for an application, as the larger value will be used. If a topic already exists with a smaller partition count and `autoAddPartitions` is disabled (the default), then the binder will fail to start. If a topic already exists with a smaller partition count and `autoAddPartitions` is enabled, new partitions will be added. If a topic already exists with a larger number of partitions than the maximum of (`minPartitionCount` and `partitionCount`), the existing partition count will be used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### Configuring Input Bindings for Partitioning
+
+
+
+An input binding is configured to receive partitioned data by setting its `partitioned` property, as well as the `instanceIndex` and `instanceCount` properties on the application itself, as in the following example:
+
+
+
+
+
+
+
+<pre>spring.cloud.stream.bindings.input.consumer.partitioned=true
+spring.cloud.stream.instanceIndex=3
+spring.cloud.stream.instanceCount=5</pre>
+
+
+
+
+
+
+
+The `instanceCount` value represents the total number of application instances between which the data need to be partitioned, and the `instanceIndex` must be a unique value across the multiple instances, between `0` and `instanceCount - 1`. The instance index helps each application instance to identify the unique partition (or, in the case of Kafka, the partition set) from which it receives data. It is important to set both values correctly in order to ensure that all of the data is consumed and that the application instances receive mutually exclusive datasets.
+
+
+
+
+
+While a scenario which using multiple instances for partitioned data processing may be complex to set up in a standalone case, Spring Cloud Dataflow can simplify the process significantly by populating both the input and output values correctly as well as relying on the runtime infrastructure to provide information about the instance index and instance count.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Testing
+
+
+
+
+
+Spring Cloud Stream provides support for testing your microservice applications without connecting to a messaging system. You can do that by using the `TestSupportBinder`. This is useful especially for unit testing your microservices.
+
+
+
+
+
+The `TestSupportBinder` allows users to interact with the bound channels and inspect what messages are sent and received by the application
+
+
+
+
+
+For outbound message channels, the `TestSupportBinder` registers a single subscriber and retains the messages emitted by the application in a `MessageCollector`. They can be retrieved during tests and have assertions made against them.
+
+
+
+
+
+The user can also send messages to inbound message channels, so that the consumer application can consume the messages. The following example shows how to test both input and output channels on a processor.
+
+
+
+
+
+
+
+    @RunWith(SpringJUnit4ClassRunner.class)
+    @SpringApplicationConfiguration(classes = ExampleTest.MyProcessor.class)
+    @IntegrationTest({"server.port=-1"})
+    @DirtiesContext
+    public class ExampleTest {
+
+      @Autowired
+      private Processor processor;
+
+      @Autowired
+      private BinderFactory<MessageChannel> binderFactory;
+
+      @Autowired
+      private MessageCollector messageCollector;
+
+      @Test
+      @SuppressWarnings("unchecked")
+      public void testWiring() {
+        Message<String> message = new GenericMessage<>("hello");
+        processor.input().send(message);
+        Message<String> received = (Message<String>) messageCollector.forChannel(processor.output()).poll();
+        assertThat(received.getPayload(), equalTo("hello world"));
+      }
+
+      @SpringBootApplication
+      @EnableBinding(Processor.class)
+      public static class MyProcessor {
+
+        @Autowired
+        private Processor channels;
+
+        @Transformer(inputChannel = Processor.INPUT, outputChannel = Processor.OUTPUT)
+        public String transform(String in) {
+          return in + " world";
+        }
+      }
+    }
+
+
+
+
+
+
+
+In the example above, we are creating an application that has an input and an output channel, bound through the `Processor` interface. The bound interface is injected into the test so we can have access to both channels. We are sending a message on the input channel and we are using the `MessageCollector` provided by Spring Cloud Stream’s test support to capture the message has been sent to the output channel as a result. Once we have received the message, we can validate that the component functions correctly.
+
+
+
+
+
+
+
+
+
+## Health Indicator
+
+
+
+
+
+Spring Cloud Stream provides a health indicator for binders. It is registered under the name of `binders` and can be enabled or disabled by setting the `management.health.binders.enabled` property.
+
+
+
+
+
+
+
+
+
+## Samples
+
+
+
+
+
+For Spring Cloud Stream samples, please refer to the [spring-cloud-stream-samples](https://github.com/spring-cloud/spring-cloud-stream-samples) repository on GitHub.
+
+
+
+
+
+
+
+
+
+## Getting Started
+
+
+
+
+
+To get started with creating Spring Cloud Stream applications, visit the [Spring Initializr](https://start.spring.io/) and create a new Maven project named "GreetingSource". Select Spring Boot version 1.3.4 SNAPSHOT and search or tick the checkbox for Stream Kafka (we will be using Kafka for messaging).
+
+
+
+
+
+Next, create a new class, `GreetingSource`, in the same package as the `GreetingSourceApplication` class. Give it the following code:
+
+
+
+
+
+
+
+    import org.springframework.cloud.stream.annotation.EnableBinding;
+    import org.springframework.cloud.stream.messaging.Source;
+    import org.springframework.integration.annotation.InboundChannelAdapter;
+
+    @EnableBinding(Source.class)
+    public class GreetingSource {
+
+        @InboundChannelAdapter(Source.OUTPUT)
+        public String greet() {
+            return "hello world " + System.currentTimeMillis();
+        }
+    }
+
+
+
+
+
+
+
+The `@EnableBinding` annotation is what triggers the creation of Spring Integration infrastructure components. Specifically, it will create a Kafka connection factory, a Kafka outbound channel adapter, and the message channel defined inside the Source interface:
+
+
+
+
+
+
+
+    public interface Source {
+
+      String OUTPUT = "output";
+
+      @Output(Source.OUTPUT)
+      MessageChannel output();
+
+    }
+
+
+
+
+
+
+
+The auto-configuration also creates a default poller, so that the `greet()` method will be invoked once per second. The standard Spring Integration `@InboundChannelAdapter` annotation sends a message to the source’s output channel, using the return value as the payload of the message.
+
+
+
+
+
+To test-drive this setup, run a Kafka message broker. An easy way to do this is to use a Docker image:
+
+
+
+
+
+
+
+    # On OS X
+    $ docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 spotify/kafka
+
+    # On Linux
+    $ docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=localhost --env ADVERTISED_PORT=9092 spotify/kafka
+
+
+
+
+
+
+
+Build the application:
+
+
+
+
+
+
+
+<pre>./mvnw clean package</pre>
+
+
+
+
+
+
+
+The consumer application is coded in a similar manner. Go back to Initializr and create another project, named LoggingSink. Then create a new class, `LoggingSink`, in the same package as the class `LoggingSinkApplication` and with the following code:
+
+
+
+
+
+
+
+    import org.springframework.cloud.stream.annotation.EnableBinding;
+    import org.springframework.cloud.stream.annotation.StreamListener;
+    import org.springframework.cloud.stream.messaging.Sink;
+
+    @EnableBinding(Sink.class)
+    public class LoggingSink {
+
+        @StreamListener(Sink.INPUT)
+        public void log(String message) {
+            System.out.println(message);
+        }
+    }
+
+
+
+
+
+
+
+Build the application:
+
+
+
+
+
+
+
+<pre>./mvnw clean package</pre>
+
+
+
+
+
+
+
+To connect the GreetingSource application to the LoggingSink application, each application must share the same destination name. Starting up both applications as shown below, you will see the consumer application printing "hello world" and a timestamp to the console:
+
+
+
+
+
+
+
+    cd GreetingSource
+    java -jar target/GreetingSource-0.0.1-SNAPSHOT.jar --spring.cloud.stream.bindings.output.destination=mydest
+
+    cd LoggingSink
+    java -jar target/LoggingSink-0.0.1-SNAPSHOT.jar --server.port=8090 --spring.cloud.stream.bindings.input.destination=mydest
+
+
+
+
+
+
+
+(The different server port prevents collisions of the HTTP port used to service the Spring Boot Actuator endpoints in the two applications.)
+
+
+
+
+
+The output of the LoggingSink application will look something like the following:
+
+
+
+
+
+
+
+    [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+    [           main] com.example.LoggingSinkApplication       : Started LoggingSinkApplication in 6.828 seconds (JVM running for 7.371)
+    hello world 1458595076731
+    hello world 1458595077732
+    hello world 1458595078733
+    hello world 1458595079734
+    hello world 1458595080735
+
+
+
+
+
+
+
+
+
+# Spring Cloud Bus
+
+
+
+
+
+
+
+
+
+## Quick Start
+
+
+
+
+
+Spring Cloud Bus works by adding Spring Boot autconfiguration if it detects itself on the classpath. All you need to do to enable the bus is to add `spring-cloud-starter-bus-amqp` or `spring-cloud-starter-bus-kafka` to your dependency management and Spring Cloud takes care of the rest. Make sure the broker (RabbitMQ or Kafka) is available and configured: running on localhost you shouldn’t have to do anything, but if you are running remotely use Spring Cloud Connectors, or Spring Boot conventions to define the broker credentials, e.g. for Rabbit
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  rabbitmq:
+    host: mybroker.com
+    port: 5672
+    username: user
+    password: secret</pre>
+
+
+
+
+
+
+
+The bus currently supports sending messages to all nodes listening or all nodes for a particular service (as defined by Eureka). More selector criteria may be added in the future (ie. only service X nodes in data center Y, etc…​). There are also some http endpoints under the `/bus/*` actuator namespace. There are currently two implemented. The first, `/bus/env`, sends key/value pairs to update each node’s Spring Environment. The second, `/bus/refresh`, will reload each application’s configuration, just as if they had all been pinged on their `/refresh` endpoint.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">The Bus starters cover Rabbit and Kafka, because those are the two most common implementations, but Spring Cloud Stream is quite flexible and binder will work combined with `spring-cloud-bus`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Addressing an Instance
+
+
+
+
+
+The HTTP endpoints accept a "destination" parameter, e.g. "/bus/refresh?destination=customers:9000", where the destination is an `ApplicationContext` ID. If the ID is owned by an instance on the Bus then it will process the message and all other instances will ignore it. Spring Boot sets the ID for you in the `ContextIdApplicationContextInitializer` to a combination of the `spring.application.name`, active profiles and `server.port` by default.
+
+
+
+
+
+
+
+
+
+## Addressing all instances of a service
+
+
+
+
+
+The "destination" parameter is used in a Spring `PathMatcher` (with the path separator as a colon `:`) to determine if an instance will process the message. Using the example from above, "/bus/refresh?destination=customers:**" will target all instances of the "customers" service regardless of the profiles and ports set as the `ApplicationContext` ID.
+
+
+
+
+
+
+
+
+
+## Application Context ID must be unique
+
+
+
+
+
+The bus tries to eliminate processing an event twice, once from the original `ApplicationEvent` and once from the queue. To do this, it checks the sending application context id againts the current application context id. If multiple instances of a service have the same application context id, events will not be processed. Running on a local machine, each service will be on a different port and that will be part of the application context id. Cloud Foundry supplies an index to differentiate. To ensure that the application context id is the unique, set `spring.application.index` to something unique for each instance of a service. For example, in lattice, set `spring.application.index=${INSTANCE_INDEX}` in application.properties (or bootstrap.properties if using configserver).
+
+
+
+
+
+
+
+
+
+## Customizing the Message Broker
+
+
+
+
+
+Spring Cloud Bus uses [Spring Cloud Stream](https://cloud.spring.io/spring-cloud-stream) to broadcast the messages so to get messages to flow you only need to include the binder implementation of your choice in the classpath. There are convenient starters specifically for the bus with AMQP (RabbitMQ) and Kafka (`spring-cloud-starter-bus-[amqp,kafka]`). Generally speaking Spring Cloud Stream relies on Spring Boot autoconfiguration conventions for configuring middleware, so for instance the AMQP broker address can be changed with `spring.rabbitmq.*` configuration properties. Spring Cloud Bus has a handful of native configuration properties in `spring.cloud.bus.*` (e.g. `spring.cloud.bus.destination` is the name of the topic to use the the externall middleware). Normally the defaults will suffice.
+
+
+
+
+
+To lean more about how to customize the message broker settings consult the Spring Cloud Stream documentation.
+
+
+
+
+
+
+
+
+
+## Tracing Bus Events
+
+
+
+
+
+Bus events (subclasses of `RemoteApplicationEvent`) can be traced by setting `spring.cloud.bus.trace.enabled=true`. If you do this then the Spring Boot `TraceRepository` (if it is present) will show each event sent and all the acks from each service instance. Example (from the `/trace` endpoint):
 
 
 
@@ -5795,13 +10657,13 @@ application.yml
 
 
 
-이 추적은이 것을 보여준다 `RefreshRemoteApplicationEvent`에서 전송 된 `customers:9000`모든 서비스를 방송하고,이 수신 (애크) 한 `customers:9000`과 `stores:8081`.
+This trace shows that a `RefreshRemoteApplicationEvent` was sent from `customers:9000`, broadcast to all services, and it was received (acked) by `customers:9000` and `stores:8081`.
 
 
 
 
 
-상기 ACK 신호를 직접 처리하기 위해 당신은 추가 할 수 `@EventListener` 에 대한 `AckRemoteAppplicationEvent`및 `SentApplicationEvent`앱에 대한 유형을 (그리고 추적을 사용 가능). 아니면 활용할 수 `TraceRepository`거기에서 데이터를 마이닝.
+To handle the ack signals yourself you could add an `@EventListener` for the `AckRemoteApplicationEvent` and `SentApplicationEvent` types to your app (and enable tracing). Or you could tap into the `TraceRepository` and mine the data from there.
 
 
 
@@ -5813,15 +10675,13 @@ application.yml
 
 
 
-<td class="icon">
 
-노트
 
 
 
-<td class="content">모든 버스 응용 프로그램은 acks를 추적 할 수 있지만 때때로 데이터에 대해 더 복잡한 쿼리를 수행 할 수있는 중앙 서비스에서이 작업을 수행하는 것이 유용합니다. 또는 특수화 된 추적 서비스로 전달하십시오.
 
 
+<td class="content">Any Bus application can trace acks, but sometimes it will be useful to do this in a central service that can do more complex queries on the data. Or forward it to a specialized tracing service.
 
 
 
@@ -5833,46 +10693,45 @@ application.yml
 
 
 
-# 스프링 부트 클라우드 CLI
 
 
 
 
+## Broadcasting Your Own Events
 
 
 
-봄 부팅 CLI가 제공하는 [봄 부트](http://projects.spring.io/spring-boot) 에 대한 명령 줄 기능을 [Spring Cloud](https://github.com/spring-cloud) . 당신은 봄 클라우드 구성 요소 응용 프로그램을 실행하는 데 (예를 그루비 스크립트를 작성할 수 있습니다 `@EnableEurekaServer`). 또한 암호화 및 복호화와 같은 작업을 수행하여 비밀 구성 값으로 Spring Cloud Config 클라이언트를 지원할 수 있습니다.
 
 
+The Bus can carry any event of type `RemoteApplicationEvent`, but the default transport is JSON and the deserializer needs to know which types are going to be used ahead of time. To register a new type it needs to be in a subpackage of `org.springframework.cloud.bus.event`. You can use `@JsonTypeName` on your custom class or rely on the default strategy which is to use the simple name of the class. Note that both the producer and the consumer will need access to the class definition.
 
 
 
-[https://raw.githubusercontent.com/spring-cloud/spring-cloud-build/master/docs/src/main/asciidoc/contributing-docs.adoc](https://raw.githubusercontent.com/spring-cloud/spring-cloud-build/master/docs/src/main/asciidoc/contributing-docs.adoc)
 
 
 
 
+# Spring Cloud Sleuth
 
 
 
 
 
-## 설치
 
 
+Adrian Cole, Spencer Gibb, Marcin Grzejszczak, Dave Syer
 
 
 
-확인 설치해야합니다, 당신은 [봄 부트 CLI](https://github.com/spring-projects/spring-boot) (1.2.0 이상) :
 
 
+**Brixton.BUILD-SNAPSHOT**
 
 
 
 
 
-<pre>$ 봄 버전
-Spring CLI v1.2.3.RELEASE</pre>
+Spring Cloud Sleuth implements a distributed tracing solution for [Spring Cloud](http://cloud.spring.io/).
 
 
 
@@ -5880,24 +10739,4078 @@ Spring CLI v1.2.3.RELEASE</pre>
 
 
 
-예 : GVM 사용자
 
 
+### Terminology
 
 
 
+Spring Cloud Sleuth borrows [Dapper’s](http://research.google.com/pubs/pub36356.html) terminology.
 
 
-    $ gvm install springboot 1.3.0.M5
-    $ gvm use springboot 1.3.0.M5
 
 
 
+**Span:** The basic unit of work. For example, sending an RPC is a new span, as is sending a response to an RPC. Span’s are identified by a unique 64-bit ID for the span and another 64-bit ID for the trace the span is a part of. Spans also have other data, such as descriptions, timestamped events, key-value annotations (tags), the ID of the span that caused them, and process ID’s (normally IP address).
 
 
 
 
-Spring Cloud 플러그인을 설치한다.
+
+Spans are started and stopped, and they keep track of their timing information. Once you create a span, you must stop it at some point in the future.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">The initial span that starts a trace is called a `root span`. The value of span id of that span is equal to trace id.
+
+
+
+
+
+
+
+
+
+
+
+**Trace:** A set of spans forming a tree-like structure. For example, if you are running a distributed big-data store, a trace might be formed by a put request.
+
+
+
+
+
+**Annotation:** is used to record existence of an event in time. Some of the core annotations used to define the start and stop of a request are:
+
+
+
+
+
+*   **cs** - Client Sent - The client has made a request. This annotation depicts the start of the span.
+
+*   **sr** - Server Received - The server side got the request and will start processing it. If one subtracts the cs timestamp from this timestamp one will receive the network latency.
+
+*   **ss** - Server Sent - Annotated upon completion of request processing (when the response got sent back to the client). If one subtracts the sr timestamp from this timestamp one will receive the time needed by the server side to process the request.
+
+*   **cr** - Client Received - Signifies the end of the span. The client has successfully received the response from the server side. If one subtracts the cs timestamp from this timestamp one will receive the whole time needed by the client to receive the response from the server.
+
+
+
+
+
+Visualization of what **Span** and **Trace** will look in a system together with the Zipkin annotations:
+
+
+
+
+
+
+
+
+
+
+
+Each color of a note signifies a span (7 spans - from **A** to **G**). If you have such information in the note:
+
+
+
+
+
+
+
+    Trace Id = X
+    Span Id = D
+    Client Sent
+
+
+
+
+
+
+
+That means that the current span has **Trace-Id** set to **X**, **Span-Id** set to **D**. It also has emitted **Client Sent** event.
+
+
+
+
+
+This is how the visualization of the parent / child relationship of spans would look like:
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Purpose
+
+
+
+In the following sections the example from the image above will be taken into consideration.
+
+
+
+
+
+#### Distributed tracing with Zipkin
+
+
+
+Altogether there are **7 spans** . If you go to traces in Zipkin you will see this number in the second trace:
+
+
+
+
+
+
+
+
+
+
+
+However if you pick a particular trace then you will see **4 spans**:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">When picking a particular trace you will see merged spans. That means that if there were 2 spans sent to Zipkin with Server Received and Server Sent / Client Received and Client Sent annotations then they will presented as a single span.
+
+
+
+
+
+
+
+
+
+
+
+Why is there a difference between the 7 and 4 spans in this case?
+
+
+
+
+
+*   2 spans come from `http:/start` span. It has the Server Received (SR) and Server Sent (SS) annotations.
+
+*   2 spans come from the RPC call from `service1` to `service2` to the `http:/foo` endpoint. It has the Client Sent (CS) and Client Received (CR) annotations on `service1` side. It also has Server Received (SR) and Server Sent (SS) annotations on the `service2` side. Physically there are 2 spans but they form 1 logical span related to an RPC call.
+
+*   2 spans come from the RPC call from `service2` to `service3` to the `http:/bar` endpoint. It has the Client Sent (CS) and Client Received (CR) annotations on `service2` side. It also has Server Received (SR) and Server Sent (SS) annotations on the `service3` side. Physically there are 2 spans but they form 1 logical span related to an RPC call.
+
+*   2 spans come from the RPC call from `service2` to `service4` to the `http:/baz` endpoint. It has the Client Sent (CS) and Client Received (CR) annotations on `service2` side. It also has Server Received (SR) and Server Sent (SS) annotations on the `service4` side. Physically there are 2 spans but they form 1 logical span related to an RPC call.
+
+
+
+
+
+So if we count the physical spans we have **1** from `http:/start`, **2** from `service1` calling `service2`, **2** form `service2` calling `service3` and **2** from `service2` calling `service4`. Altogether **7** spans.
+
+
+
+
+
+Logically we see the information of **Total Spans: 4** because we have **1** span related to the incoming request to `service1` and **3** spans related to RPC calls.
+
+
+
+
+
+
+
+#### Visualizing errors
+
+
+
+Zipkin allows you to visualize errors in your trace. When an exception was thrown and wasn’t caught then we’re setting proper tags on the span which Zipkin can properly colorize. You could see in the list of traces one trace that was in red color. That’s because there was an exception thrown.
+
+
+
+
+
+If you click that trace then you’ll see a similar picture
+
+
+
+
+
+
+
+
+
+
+
+Then if you click on one of the spans you’ll see the following
+
+
+
+
+
+
+
+
+
+
+
+As you can see you can easily see the reason for an error and the whole stacktrace related to it.
+
+
+
+
+
+
+
+#### Live examples
+
+
+
+
+
+
+
+
+
+
+
+The dependency graph in Zipkin would look like this:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Log correlation
+
+
+
+When grepping the logs of those four applications by trace id equal to e.g. `2485ec27856c56f4` one would get the following:
+
+
+
+
+
+
+
+    service1.log:2016-02-26 11:15:47.561  INFO [service1,2485ec27856c56f4,2485ec27856c56f4,true] 68058 --- [nio-8081-exec-1] i.s.c.sleuth.docs.service1.Application   : Hello from service1\. Calling service2
+    service2.log:2016-02-26 11:15:47.710  INFO [service2,2485ec27856c56f4,9aa10ee6fbde75fa,true] 68059 --- [nio-8082-exec-1] i.s.c.sleuth.docs.service2.Application   : Hello from service2\. Calling service3 and then service4
+    service3.log:2016-02-26 11:15:47.895  INFO [service3,2485ec27856c56f4,1210be13194bfe5,true] 68060 --- [nio-8083-exec-1] i.s.c.sleuth.docs.service3.Application   : Hello from service3
+    service2.log:2016-02-26 11:15:47.924  INFO [service2,2485ec27856c56f4,9aa10ee6fbde75fa,true] 68059 --- [nio-8082-exec-1] i.s.c.sleuth.docs.service2.Application   : Got response from service3 [Hello from service3]
+    service4.log:2016-02-26 11:15:48.134  INFO [service4,2485ec27856c56f4,1b1845262ffba49d,true] 68061 --- [nio-8084-exec-1] i.s.c.sleuth.docs.service4.Application   : Hello from service4
+    service2.log:2016-02-26 11:15:48.156  INFO [service2,2485ec27856c56f4,9aa10ee6fbde75fa,true] 68059 --- [nio-8082-exec-1] i.s.c.sleuth.docs.service2.Application   : Got response from service4 [Hello from service4]
+    service1.log:2016-02-26 11:15:48.182  INFO [service1,2485ec27856c56f4,2485ec27856c56f4,true] 68058 --- [nio-8081-exec-1] i.s.c.sleuth.docs.service1.Application   : Got response from service2 [Hello from service2, response from service3 [Hello from service3] and from service4 [Hello from service4]]
+
+
+
+
+
+
+
+If you’re using a log aggregating tool like [Kibana](https://www.elastic.co/products/kibana), [Splunk](http://www.splunk.com/) etc. you can order the events that took place. An example of Kibana would look like this:
+
+
+
+
+
+
+
+
+
+
+
+If you want to use [Logstash](https://www.elastic.co/guide/en/logstash/current/index.html) here is the Grok pattern for Logstash:
+
+
+
+
+
+
+
+    filter {
+           # pattern matching logback pattern
+           grok {
+                  match => { "message" => "%{TIMESTAMP_ISO8601:timestamp}\s+%{LOGLEVEL:severity}\s+\[%{DATA:service},%{DATA:trace},%{DATA:span},%{DATA:exportable}\]\s+%{DATA:pid}---\s+\[%{DATA:thread}\]\s+%{DATA:class}\s+:\s+%{GREEDYDATA:rest}" }
+           }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">If you want to use Grok together with the logs from Cloud Foundry you have to use this pattern:
+
+
+
+
+
+
+
+
+
+
+
+
+
+    filter {
+           # pattern matching logback pattern
+           grok {
+                  match => { "message" => "(?m)OUT\s+%{TIMESTAMP_ISO8601:timestamp}\s+%{LOGLEVEL:severity}\s+\[%{DATA:service},%{DATA:trace},%{DATA:span},%{DATA:exportable}\]\s+%{DATA:pid}---\s+\[%{DATA:thread}\]\s+%{DATA:class}\s+:\s+%{GREEDYDATA:rest}" }
+           }
+    }
+
+
+
+
+
+
+
+##### JSON Logback with Logstash
+
+
+
+Often you do not want to store your logs in a text file but in a JSON file that Logstash can immediately pick. To do that you have to do the following (for readability we’re passing the dependencies in the `groupId:artifactId:version` notation.
+
+
+
+
+
+**Dependencies setup**
+
+
+
+
+
+*   Ensure that Logback is on the classpath (`ch.qos.logback:logback-core`)
+
+*   Add Logstash Logback encode - example for version `4.6` : `net.logstash.logback:logstash-logback-encoder:4.6`
+
+
+
+
+
+**Logback setup**
+
+
+
+
+
+Below you can find an example of a Logback configuration (file named [logback-spring.xml](https://github.com/spring-cloud-samples/sleuth-documentation-apps/blob/master/service1/src/main/resources/logback-spring.xml)) that:
+
+
+
+
+
+*   logs information from the application in a JSON format to a `build/${spring.application.name}.json` file
+
+*   has commented out two additional appenders - console and standard log file
+
+*   has the same logging pattern as the one presented in the previous section
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">If you’re using a custom `logback-spring.xml` then you have to pass the `spring.application.name` in `bootstrap` instead of `application` property file. Otherwise your custom logback file won’t read the property properly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Adding to the project
+
+
+
+#### Only Sleuth (log correlation)
+
+
+
+If you want to profit only from Spring Cloud Sleuth without the Zipkin integration just add the `spring-cloud-starter-sleuth` module to your project.
+
+
+
+
+
+
+
+
+
+    <dependencyManagement> (1)
+          <dependencies>
+              <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-dependencies</artifactId>
+                  <version>Brixton.RELEASE</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+              </dependency>
+          </dependencies>
+    </dependencyManagement>
+
+    <dependency> (2)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-starter-sleuth`
+
+
+
+
+
+
+
+
+
+    dependencyManagement { (1)
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.RELEASE"
+        }
+    }
+
+    dependencies { (2)
+        compile "org.springframework.cloud:spring-cloud-starter-sleuth"
+    }
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-starter-sleuth`
+
+
+
+
+
+
+
+#### Sleuth with Zipkin via HTTP
+
+
+
+If you want both Sleuth and Zipkin just add the `spring-cloud-starter-zipkin` dependency.
+
+
+
+
+
+
+
+
+
+    <dependencyManagement> (1)
+          <dependencies>
+              <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-dependencies</artifactId>
+                  <version>Brixton.RELEASE</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+              </dependency>
+          </dependencies>
+    </dependencyManagement>
+
+    <dependency> (2)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-starter-zipkin`
+
+
+
+
+
+
+
+
+
+    dependencyManagement { (1)
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.RELEASE"
+        }
+    }
+
+    dependencies { (2)
+        compile "org.springframework.cloud:spring-cloud-starter-zipkin"
+    }
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-starter-zipkin`
+
+
+
+
+
+
+
+#### Sleuth with Zipkin via Spring Cloud Stream
+
+
+
+If you want both Sleuth and Zipkin just add the `spring-cloud-sleuth-stream` dependency.
+
+
+
+
+
+
+
+
+
+    <dependencyManagement> (1)
+          <dependencies>
+              <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-dependencies</artifactId>
+                  <version>Brixton.RELEASE</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+              </dependency>
+          </dependencies>
+    </dependencyManagement>
+
+    <dependency> (2)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-sleuth-stream</artifactId>
+    </dependency>
+    <dependency> (3)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+    <!-- EXAMPLE FOR RABBIT BINDING -->
+    <dependency> (4)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+    </dependency>
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-sleuth-stream`
+
+3.  Add the dependency to `spring-cloud-starter-sleuth` - that way all dependant dependencies will be downloaded
+
+4.  Add a binder (e.g. Rabbit binder) to tell Spring Cloud Stream what it should bind to
+
+
+
+
+
+
+
+
+
+    dependencyManagement { (1)
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.RELEASE"
+        }
+    }
+
+    dependencies {
+        compile "org.springframework.cloud:spring-cloud-sleuth-stream" (2)
+        compile "org.springframework.cloud:spring-cloud-starter-sleuth" (3)
+        // Example for Rabbit binding
+        compile "org.springframework.cloud:spring-cloud-stream-binder-rabbit" (4)
+    }
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-sleuth-stream`
+
+3.  Add the dependency to `spring-cloud-starter-sleuth` - that way all dependant dependencies will be downloaded
+
+4.  Add a binder (e.g. Rabbit binder) to tell Spring Cloud Stream what it should bind to
+
+
+
+
+
+
+
+#### Spring Cloud Sleuth Stream Zipkin Collector
+
+
+
+If you want to start a Spring Cloud Sleuth Stream Zipkin collector just add the `spring-cloud-sleuth-zipkin-stream` dependency
+
+
+
+
+
+
+
+
+
+    <dependencyManagement> (1)
+          <dependencies>
+              <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-dependencies</artifactId>
+                  <version>Brixton.RELEASE</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+              </dependency>
+          </dependencies>
+    </dependencyManagement>
+
+    <dependency> (2)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+    </dependency>
+    <dependency> (3)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-sleuth</artifactId>
+    </dependency>
+    <!-- EXAMPLE FOR RABBIT BINDING -->
+    <dependency> (4)
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+    </dependency>
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-sleuth-zipkin-stream`
+
+3.  Add the dependency to `spring-cloud-starter-sleuth` - that way all dependant dependencies will be downloaded
+
+4.  Add a binder (e.g. Rabbit binder) to tell Spring Cloud Stream what it should bind to
+
+
+
+
+
+
+
+
+
+    dependencyManagement { (1)
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.RELEASE"
+        }
+    }
+
+    dependencies {
+        compile "org.springframework.cloud:spring-cloud-sleuth-zipkin-stream" (2)
+        compile "org.springframework.cloud:spring-cloud-starter-sleuth" (3)
+        // Example for Rabbit binding
+        compile "org.springframework.cloud:spring-cloud-stream-binder-rabbit" (4)
+    }
+
+
+
+
+
+
+
+1.  In order not to pick versions by yourself it’s much better if you add the dependency management via the Spring BOM
+
+2.  Add the dependency to `spring-cloud-sleuth-zipkin-stream`
+
+3.  Add the dependency to `spring-cloud-starter-sleuth` - that way all dependant dependencies will be downloaded
+
+4.  Add a binder (e.g. Rabbit binder) to tell Spring Cloud Stream what it should bind to
+
+
+
+
+
+and then just annotate your main class with `@EnableZipkinStreamServer` annotation:
+
+
+
+
+
+
+
+
+
+## Additional resources
+
+
+
+
+
+**Marcin Grzejszczak talking about Spring Cloud Sleuth and Zipkin**
+
+
+
+
+
+
+
+
+
+
+
+[click here to see the video](https://www.youtube.com/watch?v=eQV71Mw1u1c)
+
+
+
+
+
+
+
+
+
+## Features
+
+
+
+
+
+*   Adds trace and span ids to the Slf4J MDC, so you can extract all the logs from a given trace or span in a log aggregator. Example logs:
+
+    <div class="listingblock">
+
+    <div class="content">
+
+    <pre>2016-02-02 15:30:57.902  INFO [bar,6bfd228dc00d216b,6bfd228dc00d216b,false] 23030 --- [nio-8081-exec-3] ...
+    2016-02-02 15:30:58.372 ERROR [bar,6bfd228dc00d216b,6bfd228dc00d216b,false] 23030 --- [nio-8081-exec-3] ...
+    2016-02-02 15:31:01.936  INFO [bar,46ab0d418373cbc9,46ab0d418373cbc9,false] 23030 --- [nio-8081-exec-4] ...</pre>
+
+
+
+
+
+    <div class="paragraph">
+
+    notice the `[appname,traceId,spanId,exportable]` entries from the MDC:
+
+
+
+    <div class="ulist">
+
+    *   **spanId** - the id of a specific operation that took place
+
+    *   **appname** - the name of the application that logged the span
+
+    *   **traceId** - the id of the latency graph that contains the span
+
+    *   **exportable** - whether the log should be exported to Zipkin or not. When would you like the span not to be exportable? In the case in which you want to wrap some operation in a Span and have it written to the logs only.
+
+
+
+*   Provides an abstraction over common distributed tracing data models: traces, spans (forming a DAG), annotations, key-value annotations. Loosely based on HTrace, but Zipkin (Dapper) compatible.
+
+*   Sleuth records timing information to aid in latency analysis. Using sleuth, you can pinpoint causes of latency in your applications. Sleuth is written to not log too much, and to not cause your production application to crash.
+
+    <div class="ulist">
+
+    *   propagates structural data about your call-graph in-band, and the rest out-of-band.
+
+    *   includes opinionated instrumentation of layers such as HTTP
+
+    *   includes sampling policy to manage volume
+
+    *   can report to a Zipkin system for query and visualization
+
+
+
+*   Instruments common ingress and egress points from Spring applications (servlet filter, async endpoints, rest template, scheduled actions, message channels, zuul filters, feign client).
+
+*   Sleuth includes default logic to join a trace across http or messaging boundaries. For example, http propagation works via Zipkin-compatible request headers. This propagation logic is defined and customized via `SpanInjector` and `SpanExtractor` implementations.
+
+*   Provides simple metrics of accepted / dropped spans.
+
+*   If `spring-cloud-sleuth-zipkin` then the app will generate and collect Zipkin-compatible traces. By default it sends them via HTTP to a Zipkin server on localhost (port 9411). Configure the location of the service using `spring.zipkin.baseUrl`.
+
+*   If `spring-cloud-sleuth-stream` then the app will generate and collect traces via [Spring Cloud Stream](https://github.com/spring-cloud/spring-cloud-stream). Your app automatically becomes a producer of tracer messages that are sent over your broker of choice (e.g. RabbitMQ, Apache Kafka, Redis).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">If using Zipkin or Stream, configure the percentage of spans exported using `spring.sleuth.sampler.percentage` (default 0.1, i.e. 10%). **Otherwise you might think that Sleuth is not working cause it’s omitting some spans.**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">the SLF4J MDC is always set and logback users will immediately see the trace and span ids in logs per the example above. Other logging systems have to configure their own formatter to get the same result. The default is `logging.pattern.level` set to `%clr(%5p) %clr([${spring.application.name:},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow}` (this is a Spring Boot feature for logback users). **This means that if you’re not using SLF4J this pattern WILL NOT be automatically applied**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Sampling
+
+
+
+
+
+In distributed tracing the data volumes can be very high so sampling can be important (you usually don’t need to export all spans to get a good picture of what is happening). Spring Cloud Sleuth has a `Sampler` strategy that you can implement to take control of the sampling algorithm. Samplers do not stop span (correlation) ids from being generated, but they do prevent the tags and events being attached and exported. By default you get a strategy that continues to trace if a span is already active, but new ones are always marked as non-exportable. If all your apps run with this sampler you will see traces in logs, but not in any remote store. For testing the default is often enough, and it probably is all you need if you are only using the logs (e.g. with an ELK aggregator). If you are exporting span data to Zipkin or Spring Cloud Stream, there is also an `AlwaysSampler` that exports everything and a `PercentageBasedSampler` that samples a fixed fraction of spans.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">the `PercentageBasedSampler` is the default if you are using `spring-cloud-sleuth-zipkin` or `spring-cloud-sleuth-stream`. You can configure the exports using `spring.sleuth.sampler.percentage`. The passed value needs to be a double from `0.0` to `1.0` so it’s not a percentage. For backwards compatibility reasons we’re not changing the property name.
+
+
+
+
+
+
+
+
+
+
+
+A sampler can be installed just by creating a bean definition, e.g:
+
+
+
+
+
+
+
+    @Bean
+    public Sampler defaultSampler() {
+        return new AlwaysSampler();
+    }
+
+
+
+
+
+
+
+
+
+
+
+## Instrumentation
+
+
+
+
+
+Spring Cloud Sleuth instruments all your Spring application automatically, so you shouldn’t have to do anything to activate it. The instrumentation is added using a variety of technologies according to the stack that is available, e.g. for a servlet web application we use a `Filter`, and for Spring Integration we use `ChannelInterceptors`.
+
+
+
+
+
+You can customize the keys used in span tags. To limit the volume of span data, by default an HTTP request will be tagged only with a handful of metadata like the status code, host and URL. You can add request headers by configuring `spring.sleuth.keys.http.headers` (a list of header names).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Remember that tags are only collected and exported if there is a `Sampler` that allows it (by default there is not, so there is no danger of accidentally collecting too much data without configuring something).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Currently the instrumentation in Spring Cloud Sleuth is eager - it means that we’re actively trying to pass the tracing context between threads. Also timing events are captured even when sleuth isn’t exporting data to a tracing system. This approach may change in the future towards being lazy on this matter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Span lifecycle
+
+
+
+
+
+You can do the following operations on the Span by means of **org.springframework.cloud.sleuth.Tracer** interface:
+
+
+
+
+
+*   [start](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#creating-and-closing-spans) - when you start a span its name is assigned and start timestamp is recorded.
+
+*   [close](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#creating-and-closing-spans) - the span gets finished (the end time of the span is recorded) and if the span is **exportable** then it will be eligible for collection to Zipkin. The span is also removed from the current thread.
+
+*   [continue](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#continuing-spans) - a new instance of span will be created whereas it will be a copy of the one that it continues.
+
+*   [detach](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#continuing-spans) - the span doesn’t get stopped or closed. It only gets removed from the current thread.
+
+*   [create with explicit parent](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#creating-spans-with-explicit-parent) - you can create a new span and set an explicit parent to it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Spring creates the instance of `Tracer` for you. In order to use it all you need is to just autowire it.
+
+
+
+
+
+
+
+
+
+
+
+### Creating and closing spans
+
+
+
+You can manually create spans by using the **Tracer** interface.
+
+
+
+
+
+
+
+    // Start a span. If there was a span present in this thread it will become
+    // the `newSpan`'s parent.
+    Span newSpan = this.tracer.createSpan("calculateTax");
+    try {
+        // ...
+        // You can tag a span
+        this.tracer.addTag("taxValue", taxValue);
+        // ...
+        // You can log an event on a span
+        newSpan.logEvent("taxCalculated");
+    } finally {
+        // Once done remember to close the span. This will allow collecting
+        // the span to send it to Zipkin
+        this.tracer.close(newSpan);
+    }
+
+
+
+
+
+
+
+In this example we could see how to create a new instance of span. Assuming that there already was a span present in this thread then it would become the parent of that span.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Always clean after you create a span! Don’t forget to close a span if you want to send it to Zipkin.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Continuing spans
+
+
+
+Sometimes you don’t want to create a new span but you want to continue one. Example of such a situation might be (of course it all depends on the use-case):
+
+
+
+
+
+*   **AOP** - If there was already a span created before an aspect was reached then you might not want to create a new span.
+
+*   **Hystrix** - executing a Hystrix command is most likely a logical part of the current processing. It’s in fact only a technical implementation detail that you wouldn’t necessarily want to reflect in tracing as a separate being.
+
+
+
+
+
+The continued instance of span is equal to the one that it continues:
+
+
+
+
+
+
+
+    Span continuedSpan = this.tracer.continueSpan(spanToContinue);
+    assertThat(continuedSpan).isEqualTo(spanToContinue);
+
+
+
+
+
+
+
+To continue a span you can use the **Tracer** interface.
+
+
+
+
+
+
+
+    // let's assume that we're in a thread Y and we've received
+    // the `initialSpan` from thread X
+    Span continuedSpan = this.tracer.continueSpan(initialSpan);
+    try {
+        // ...
+        // You can tag a span
+        this.tracer.addTag("taxValue", taxValue);
+        // ...
+        // You can log an event on a span
+        continuedSpan.logEvent("taxCalculated");
+    } finally {
+        // Once done remember to detach the span. That way you'll
+        // safely remove it from the current thread without closing it
+        this.tracer.detach(continuedSpan);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Always clean after you create a span! Don’t forget to detach a span if some work was done started in one thread (e.g. thread X) and it’s waiting for other threads (e.g. Y, Z) to finish. Then the spans in the threads Y, Z should be detached at the end of their work. When the results are collected the span in thread X should be closed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Creating spans with an explicit parent
+
+
+
+There is a possibility that you want to start a new span and provide an explicit parent of that span. Let’s assume that the parent of a span is in one thread and you want to start a new span in another thread. The `startSpan` method of the `Tracer` interface is the method you are looking for.
+
+
+
+
+
+
+
+    // let's assume that we're in a thread Y and we've received
+    // the `initialSpan` from thread X. `initialSpan` will be the parent
+    // of the `newSpan`
+    Span newSpan = this.tracer.createSpan("calculateCommission", initialSpan);
+    try {
+        // ...
+        // You can tag a span
+        this.tracer.addTag("commissionValue", commissionValue);
+        // ...
+        // You can log an event on a span
+        newSpan.logEvent("commissionCalculated");
+    } finally {
+        // Once done remember to close the span. This will allow collecting
+        // the span to send it to Zipkin. The tags and events set on the
+        // newSpan will not be present on the parent
+        this.tracer.close(newSpan);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">After having created such a span remember to close it. Otherwise you will see a lot of warnings in your logs related to the fact that you have a span present in the current thread other than the one you’re trying to close. What’s worse your spans won’t get closed properly thus will not get collected to Zipkin.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Naming spans
+
+
+
+
+
+Picking a span name is not a trivial task. Span name should depict an operation name. The name should be low cardinality (e.g. not include identifiers).
+
+
+
+
+
+Since there is a lot of instrumentation going on some of the span names will be artificial like:
+
+
+
+
+
+*   `controller-method-name` when received by a Controller with a method name `conrollerMethodName`
+
+*   `async` for asynchronous operations done via wrapped `Callable` and `Runnable`.
+
+*   `@Scheduled` annotated methods will return the simple name of the class.
+
+
+
+
+
+Fortunately, for the asynchronous processing you can provide explicit naming.
+
+
+
+
+
+### @SpanName annotation
+
+
+
+You can do name the span explicitly via the `@SpanName` annotation.
+
+
+
+
+
+
+
+    @SpanName("calculateTax")
+    class TaxCountingRunnable implements Runnable {
+
+        @Override public void run() {
+            // perform logic
+        }
+    }
+
+
+
+
+
+
+
+In this case, when processed in the following manner:
+
+
+
+
+
+
+
+    Runnable runnable = new TraceRunnable(tracer, spanNamer, new TaxCountingRunnable());
+    Future<?> future = executorService.submit(runnable);
+    // ... some additional logic ...
+    future.get();
+
+
+
+
+
+
+
+The span will be named `calculateTax`.
+
+
+
+
+
+
+
+### toString() method
+
+
+
+It’s pretty rare to create separate classes for `Runnable` or `Callable`. Typically one creates an anonymous instance of those classes. You can’t annotate such classes thus to override that, if there is no `@SpanName` annotation present, we’re checking if the class has a custom implementation of the `toString()` method.
+
+
+
+
+
+So executing such code:
+
+
+
+
+
+
+
+    Runnable runnable = new TraceRunnable(tracer, spanNamer, new Runnable() {
+        @Override public void run() {
+            // perform logic
+        }
+
+        @Override public String toString() {
+            return "calculateTax";
+        }
+    });
+    Future<?> future = executorService.submit(runnable);
+    // ... some additional logic ...
+    future.get();
+
+
+
+
+
+
+
+will lead in creating a span named `calculateTax`.
+
+
+
+
+
+
+
+
+
+
+
+## Customizations
+
+
+
+
+
+Thanks to the `SpanInjector` and `SpanExtractor` you can customize the way spans are created and propagated.
+
+
+
+
+
+There are currently two built-in ways to pass tracing information between processes:
+
+
+
+
+
+*   via Spring Integration
+
+*   via HTTP
+
+
+
+
+
+Span ids are extracted from Zipkin-compatible (B3) headers (either `Message` or HTTP headers), to start or join an existing trace. Trace information is injected into any outbound requests so the next hop can extract them.
+
+
+
+
+
+### Spring Integration
+
+
+
+For Spring Integration these are the beans responsible for creation of a Span from a `Message` and filling in the `MessageBuilder` with tracing information.
+
+
+
+
+
+
+
+    @Bean
+    public SpanExtractor<Message> messagingSpanExtractor() {
+        ...
+    }
+
+    @Bean
+    public SpanInjector<MessageBuilder> messagingSpanInjector() {
+        ...
+    }
+
+
+
+
+
+
+
+You can override them by providing your own implementation and by adding a `@Primary` annotation to your bean definition.
+
+
+
+
+
+
+
+### HTTP
+
+
+
+For HTTP these are the beans responsible for creation of a Span from a `HttpServletRequest`.
+
+
+
+
+
+
+
+    @Bean
+    public SpanExtractor<HttpServletRequest> httpServletRequestSpanExtractor() {
+        ...
+    }
+
+
+
+
+
+
+
+You can override them by providing your own implementation and by adding a `@Primary` annotation to your bean definition.
+
+
+
+
+
+
+
+### Example
+
+
+
+Let’s assume that instead of the standard Zipkin compatible tracing HTTP header names you have
+
+
+
+
+
+*   for trace id - `correlationId`
+
+*   for span id - `mySpanId`
+
+
+
+
+
+This is a an example of a `SpanExtractor`
+
+
+
+
+
+
+
+    static class CustomHttpServletRequestSpanExtractor
+            implements SpanExtractor<HttpServletRequest> {
+
+        @Override
+        public Span joinTrace(HttpServletRequest carrier) {
+            long traceId = Span.hexToId(carrier.getHeader("correlationId"));
+            long spanId = Span.hexToId(carrier.getHeader("mySpanId"));
+            // extract all necessary headers
+            Span.SpanBuilder builder = Span.builder().traceId(traceId).spanId(spanId);
+            // build rest of the Span
+            return builder.build();
+        }
+    }
+
+
+
+
+
+
+
+And you could register it like this:
+
+
+
+
+
+
+
+    @Bean
+    @Primary
+    SpanExtractor<HttpServletRequest> customHttpServletRequestSpanExtractor() {
+        return new CustomHttpServletRequestSpanExtractor();
+    }
+
+
+
+
+
+
+
+Spring Cloud Sleuth does not add trace/span related headers to the Http Response for security reasons. If you need the headers then a custom `SpanInjector` that injects the headers into the Http Response and a Servlet filter which makes use of this can be added the following way:
+
+
+
+
+
+
+
+    static class CustomHttpServletResponseSpanInjector
+            implements SpanInjector<HttpServletResponse> {
+
+        @Override
+        public void inject(Span span, HttpServletResponse carrier) {
+            carrier.addHeader(Span.TRACE_ID_NAME, span.traceIdString());
+            carrier.addHeader(Span.SPAN_ID_NAME, Span.idToHex(span.getSpanId()));
+        }
+    }
+
+    static class HttpResponseInjectingTraceFilter extends GenericFilterBean {
+
+        private final Tracer tracer;
+        private final SpanInjector<HttpServletResponse> spanInjector;
+
+        public HttpResponseInjectingTraceFilter(Tracer tracer, SpanInjector<HttpServletResponse> spanInjector) {
+            this.tracer = tracer;
+            this.spanInjector = spanInjector;
+        }
+
+        @Override
+        public void doFilter(ServletRequest request, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+            HttpServletResponse response = (HttpServletResponse) servletResponse;
+            Span currentSpan = this.tracer.getCurrentSpan();
+            this.spanInjector.inject(currentSpan, response);
+            filterChain.doFilter(request, response);
+        }
+    }
+
+
+
+
+
+
+
+And you could register them like this:
+
+
+
+
+
+
+
+    @Bean
+    SpanInjector<HttpServletResponse> customHttpServletResponseSpanInjector() {
+        return new CustomHttpServletResponseSpanInjector();
+    }
+
+    @Bean
+    HttpResponseInjectingTraceFilter responseInjectingTraceFilter(Tracer tracer) {
+        return new HttpResponseInjectingTraceFilter(tracer, customHttpServletResponseSpanInjector());
+    }
+
+
+
+
+
+
+
+
+
+### Custom SA tag in Zipkin
+
+
+
+Sometimes you want to create a manual Span that will wrap a call to an external service which is not instrumented. What you can do is to create a span with the `peer.service` tag that will contain a value of the service that you want to call. Below you can see an example of a call to Redis that is wrapped in such a span.
+
+
+
+
+
+
+
+    org.springframework.cloud.sleuth.Span newSpan = tracer.createSpan("redis");
+    try {
+        newSpan.tag("redis.op", "get");
+        newSpan.tag("lc", "redis");
+        newSpan.logEvent(org.springframework.cloud.sleuth.Span.CLIENT_SEND);
+        // call redis service e.g
+        // return (SomeObj) redisTemplate.opsForHash().get("MYHASH", someObjKey);
+    } finally {
+        newSpan.tag("peer.service", "redisService");
+        newSpan.tag("peer.ipv4", "1.2.3.4");
+        newSpan.tag("peer.port", "1234");
+        newSpan.logEvent(org.springframework.cloud.sleuth.Span.CLIENT_RECV);
+        tracer.close(newSpan);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Remember not to add both `peer.service` tag and the `SA` tag! You have to add only `peer.service`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Custom service name
+
+
+
+By default Sleuth assumes that when you send a span to Zipkin, you want the span’s service name to be equal to `spring.application.name` value. That’s not always the case though. There are situations in which you want to explicitly provide a different service name for all spans coming from your application. To achieve that it’s enough to just pass the following property to your application to override that value (example for `foo` service name):
+
+
+
+
+
+
+
+    spring.zipkin.service.name: foo
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Span Data as Messages
+
+
+
+
+
+You can accumulate and send span data over [Spring Cloud Stream](http://cloud.spring.io/spring-cloud-stream) by including the `spring-cloud-sleuth-stream` jar as a dependency, and adding a Channel Binder implementation (e.g. `spring-cloud-starter-stream-rabbit` for RabbitMQ or `spring-cloud-starter-stream-kafka` for Kafka). This will automatically turn your app into a producer of messages with payload type `Spans`.
+
+
+
+
+
+### Zipkin Consumer
+
+
+
+There is a special convenience annotation for setting up a message consumer for the Span data and pushing it into a Zipkin `SpanStore`. This application
+
+
+
+
+
+
+
+    @SpringBootApplication
+    @EnableZipkinStreamServer
+    public class Consumer {
+    	public static void main(String[] args) {
+    		SpringApplication.run(Consumer.class, args);
+    	}
+    }
+
+
+
+
+
+
+
+will listen for the Span data on whatever transport you provide via a Spring Cloud Stream `Binder` (e.g. include `spring-cloud-starter-stream-rabbit` for RabbitMQ, and similar starters exist for Redis and Kafka). If you add the following UI dependency
+
+
+
+
+
+
+
+    <groupId>io.zipkin.java</groupId>
+    <artifactId>zipkin-autoconfigure-ui</artifactId>
+
+
+
+
+
+
+
+Then you’ll have your app a [Zipkin server](https://github.com/openzipkin/zipkin), which hosts the UI and api on port 9411.
+
+
+
+
+
+The default `SpanStore` is in-memory (good for demos and getting started quickly). For a more robust solution you can add MySQL and `spring-boot-starter-jdbc` to your classpath and enable the JDBC `SpanStore` via configuration, e.g.:
+
+
+
+
+
+
+
+    spring:
+      rabbitmq:
+        host: ${RABBIT_HOST:localhost}
+      datasource:
+        schema: classpath:/mysql.sql
+        url: jdbc:mysql://${MYSQL_HOST:localhost}/test
+        username: root
+        password: root
+    # Switch this on to create the schema on startup:
+        initialize: true
+        continueOnError: true
+      sleuth:
+        enabled: false
+    zipkin:
+      storage:
+        type: mysql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">The `@EnableZipkinStreamServer` is also annotated with `@EnableZipkinServer` so the process will also expose the standard Zipkin server endpoints for collecting spans over HTTP, and for querying in the Zipkin Web UI.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Custom Consumer
+
+
+
+A custom consumer can also easily be implemented using `spring-cloud-sleuth-stream` and binding to the `SleuthSink`. Example:
+
+
+
+
+
+
+
+    @EnableBinding(SleuthSink.class)
+    @SpringBootApplication(exclude = SleuthStreamAutoConfiguration.class)
+    @MessageEndpoint
+    public class Consumer {
+
+        @ServiceActivator(inputChannel = SleuthSink.INPUT)
+        public void sink(Spans input) throws Exception {
+            // ... process spans
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">the sample consumer application above explicitly excludes `SleuthStreamAutoConfiguration` so it doesn’t send messages to itself, but this is optional (you might actually want to trace requests into the consumer app).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Metrics
+
+
+
+
+
+Currently Spring Cloud Sleuth registers very simple metrics related to spans. It’s using the [Spring Boot’s metrics support](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-metrics.html#production-ready-recording-metrics) to calculate the number of accepted and dropped spans. Each time a span gets sent to Zipkin the number of accepted spans will increase. If there’s an error then the number of dropped spans will get increased.
+
+
+
+
+
+
+
+
+
+## Integrations
+
+
+
+
+
+### Runnable and Callable
+
+
+
+If you’re wrapping your logic in `Runnable` or `Callable` it’s enough to wrap those classes in their Sleuth representative.
+
+
+
+
+
+Example for `Runnable`:
+
+
+
+
+
+
+
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            // do some work
+        }
+
+        @Override
+        public String toString() {
+            return "spanNameFromToStringMethod";
+        }
+    };
+    // Manual `TraceRunnable` creation with explicit "calculateTax" Span name
+    Runnable traceRunnable = new TraceRunnable(tracer, spanNamer, runnable, "calculateTax");
+    // Wrapping `Runnable` with `Tracer`. The Span name will be taken either from the
+    // `@SpanName` annotation or from `toString` method
+    Runnable traceRunnableFromTracer = tracer.wrap(runnable);
+
+
+
+
+
+
+
+Example for `Callable`:
+
+
+
+
+
+
+
+    Callable<String> callable = new Callable<String>() {
+        @Override
+        public String call() throws Exception {
+            return someLogic();
+        }
+
+        @Override
+        public String toString() {
+            return "spanNameFromToStringMethod";
+        }
+    };
+    // Manual `TraceCallable` creation with explicit "calculateTax" Span name
+    Callable<String> traceCallable = new TraceCallable<>(tracer, spanNamer, callable, "calculateTax");
+    // Wrapping `Callable` with `Tracer`. The Span name will be taken either from the
+    // `@SpanName` annotation or from `toString` method
+    Callable<String> traceCallableFromTracer = tracer.wrap(callable);
+
+
+
+
+
+
+
+That way you will ensure that a new Span is created and closed for each execution.
+
+
+
+
+
+
+
+### Hystrix
+
+
+
+#### Custom Concurrency Strategy
+
+
+
+We’re registering a custom [`HystrixConcurrencyStrategy`](https://github.com/Netflix/Hystrix/wiki/Plugins#concurrencystrategy) that wraps all `Callable` instances into their Sleuth representative - the `TraceCallable`. The strategy either starts or continues a span depending on the fact whether tracing was already going on before the Hystrix command was called. To disable the custom Hystrix Concurrency Strategy set the `spring.sleuth.hystrix.strategy.enabled` to `false`.
+
+
+
+
+
+
+
+#### Manual Command setting
+
+
+
+Assuming that you have the following `HystrixCommand`:
+
+
+
+
+
+
+
+    HystrixCommand<String> hystrixCommand = new HystrixCommand<String>(setter) {
+        @Override
+        protected String run() throws Exception {
+            return someLogic();
+        }
+    };
+
+
+
+
+
+
+
+In order to pass the tracing information you have to wrap the same logic in the Sleuth version of the `HystrixCommand` which is the `TraceCommand`:
+
+
+
+
+
+
+
+    TraceCommand<String> traceCommand = new TraceCommand<String>(tracer, traceKeys, setter) {
+        @Override
+        public String doRun() throws Exception {
+            return someLogic();
+        }
+    };
+
+
+
+
+
+
+
+
+
+
+
+### RxJava
+
+
+
+We’re registering a custom [`RxJavaSchedulersHook`](https://github.com/ReactiveX/RxJava/wiki/Plugins#rxjavaschedulershook) that wraps all `Action0` instances into their Sleuth representative - the `TraceAction`. The hook either starts or continues a span depending on the fact whether tracing was already going on before the Action was scheduled. To disable the custom RxJavaSchedulersHook set the `spring.sleuth.rxjava.schedulers.hook.enabled` to `false`.
+
+
+
+
+
+You can define a list of regular expressions for thread names, for which you don’t want a Span to be created. Just provide a comma separated list of regular expressions in the `spring.sleuth.rxjava.schedulers.ignoredthreads` property.
+
+
+
+
+
+
+
+### HTTP integration
+
+
+
+Features from this section can be disabled by providing the `spring.sleuth.web.enabled` property with value equal to `false`.
+
+
+
+
+
+#### HTTP Filter
+
+
+
+Via the `TraceFilter` all sampled incoming requests result in creation of a Span. That Span’s name is `http:` + the path to which the request was sent. E.g. if the request was sent to `/foo/bar` then the name will be `http:/foo/bar`. You can configure which URIs you would like to skip via the `spring.sleuth.web.skipPattern` property. If you have `ManagementServerProperties` on classpath then its value of `contextPath` gets appended to the provided skip pattern.
+
+
+
+
+
+
+
+#### HandlerInterceptor
+
+
+
+Since we want the span names to be precise we’re using a `TraceHandlerInterceptor` that either wraps an existing `HandlerInterceptor` or is added directly to the list of existing `HandlerInterceptors`. The `TraceHandlerInterceptor` adds a special request attribute to the given `HttpServletRequest`. If the the `TraceFilter` doesn’t see this attribute set it will create a "fallback" span which is an additional span created on the server side so that the trace is presented properly in the UI. Seeing that most likely signifies that there is a missing instrumentation. In that case please file an issue in Spring Cloud Sleuth.
+
+
+
+
+
+
+
+#### Async Servlet support
+
+
+
+If your controller returns a `Callable` or a `WebAsyncTask` Spring Cloud Sleuth will continue the existing span instead of creating a new one.
+
+
+
+
+
+
+
+
+
+### HTTP client integration
+
+
+
+#### Synchronous Rest Template
+
+
+
+We’re injecting a `RestTemplate` interceptor that ensures that all the tracing information is passed to the requests. Each time a call is made a new Span is created. It gets closed upon receiving the response. In order to block the synchronous `RestTemplate` features just set `spring.sleuth.web.client.enabled` to `false`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">You have to register `RestTemplate` as a bean so that the interceptors will get injected. If you create a `RestTemplate` instance with a `new` keyword then the instrumentation WILL NOT work.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Asynchronous Rest Template
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">A traced version of an `AsyncRestTemplate` bean is registered for you out of the box. If you have your own bean you have to wrap it in a `TraceAsyncRestTemplate` representation. The best solution is to only customize the `ClientHttpRequestFactory` and / or `AsyncClientHttpRequestFactory`. **If you have your own `AsyncRestTemplate` and you don’t wrap it your calls WILL NOT GET TRACED**.
+
+
+
+
+
+
+
+
+
+
+
+Custom instrumentation is set to create and close Spans upon sending and receiving requests. You can customize the `ClientHttpRequestFactory` and the `AsyncClientHttpRequestFactory` by registering your beans. Remember to use tracing compatible implementations (e.g. don’t forget to wrap `ThreadPoolTaskScheduler` in a `TraceAsyncListenableTaskExecutor`). Example of custom request factories:
+
+
+
+
+
+
+
+    @EnableAutoConfiguration
+    @Configuration
+    public static class TestConfiguration {
+
+        @Bean
+        ClientHttpRequestFactory mySyncClientFactory() {
+            return new MySyncClientHttpRequestFactory();
+        }
+
+        @Bean
+        AsyncClientHttpRequestFactory myAsyncClientFactory() {
+            return new MyAsyncClientHttpRequestFactory();
+        }
+    }
+
+
+
+
+
+
+
+To block the `AsyncRestTemplate` features set `spring.sleuth.web.async.client.enabled` to `false`. To disable creation of the default `TraceAsyncClientHttpRequestFactoryWrapper` set `spring.sleuth.web.async.client.factory.enabled` to `false`. If you don’t want to create `AsyncRestClient` at all set `spring.sleuth.web.async.client.template.enabled` to `false`.
+
+
+
+
+
+
+
+
+
+### Feign
+
+
+
+By default Spring Cloud Sleuth provides integration with feign via the `TraceFeignClientAutoConfiguration`. You can disable it entirely by setting `spring.sleuth.feign.enabled` to false. If you do so then no Feign related instrumentation will take place.
+
+
+
+
+
+Part of Feign instrumentation is done via a `FeignBeanPostProcessor`. You can disable it by providing the `spring.sleuth.feign.processor.enabled` equal to `false`. If you set it like this then Spring Cloud Sleuth will not instrument any of your custom Feign components. All the default instrumentation however will be still there.
+
+
+
+
+
+
+
+### Asynchronous communication
+
+
+
+#### @Async annotated methods
+
+
+
+In Spring Cloud Sleuth we’re instrumenting async related components so that the tracing information is passed between threads. You can disable this behaviour by setting the value of `spring.sleuth.async.enabled` to `false`.
+
+
+
+
+
+If you annotate your method with `@Async` then we’ll automatically create a new Span with the following characteristics:
+
+
+
+
+
+*   the Span name will be the annotated method name
+
+*   the Span will be tagged with that method’s class name and the method name too
+
+
+
+
+
+
+
+#### @Scheduled annotated methods
+
+
+
+In Spring Cloud Sleuth we’re instrumenting scheduled method execution so that the tracing information is passed between threads. You can disable this behaviour by setting the value of `spring.sleuth.scheduled.enabled` to `false`.
+
+
+
+
+
+If you annotate your method with `@Scheduled` then we’ll automatically create a new Span with the following characteristics:
+
+
+
+
+
+*   the Span name will be the annotated method name
+
+*   the Span will be tagged with that method’s class name and the method name too
+
+
+
+
+
+If you want to skip Span creation for some `@Scheduled` annotated classes you can set the `spring.sleuth.scheduled.skipPattern` with a regular expression that will match the fully qualified name of the `@Scheduled` annotated class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">If you are using `spring-cloud-sleuth-stream` and `spring-cloud-netflix-hystrix-stream` together, Span will be created for each Hystrix metrics and sent to Zipkin. This may be annoying. You can prevent this by setting `spring.sleuth.scheduled.skipPattern=org.springframework.cloud.netflix.hystrix.stream.HystrixStreamTask`
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Executor, ExecutorService and ScheduledExecutorService
+
+
+
+We’re providing `LazyTraceExecutor`, `TraceableExecutorService` and `TraceableScheduledExecutorService`. Those implementations are creating Spans each time a new task is submitted, invoked or scheduled.
+
+
+
+
+
+Here you can see an example of how to pass tracing information with `TraceableExecutorService` when working with `CompletableFuture`:
+
+
+
+
+
+
+
+    CompletableFuture<Long> completableFuture = CompletableFuture.supplyAsync(() -> {
+        // perform some logic
+        return 1_000_000L;
+    }, new TraceableExecutorService(executorService,
+            // 'calculateTax' explicitly names the span - this param is optional
+            tracer, traceKeys, spanNamer, "calculateTax"));
+
+
+
+
+
+
+
+
+
+
+
+### Messaging
+
+
+
+Spring Cloud Sleuth integrates with [Spring Integration](http://projects.spring.io/spring-integration/). It creates spans for publish and subscribe events. To disable Spring Integration instrumentation, set `spring.sleuth.integration.enabled` to false.
+
+
+
+
+
+Spring Cloud Sleuth up till version 1.0.4 is sending invalid tracing headers when using messaging. Those headers are actually the same as the ones sent in HTTP (they contain a `-`) in its name. For the sake of backwards compatibility in 1.0.4 we’ve started sending both valid and invalid headers. Please upgrade to 1.0.4 because in Spring Cloud Sleuth 1.1 we will remove the support for the deprecated headers.
+
+
+
+
+
+Since 1.0.4 you can provide the `spring.sleuth.integration.patterns` pattern to explicitly provide the names of channels that you want to include for tracing. By default all channels are included.
+
+
+
+
+
+
+
+### Zuul
+
+
+
+We’re registering Zuul filters to propagate the tracing information (the request header is enriched with tracing data). To disable Zuul support set the `spring.sleuth.zuul.enabled` property to `false`.
+
+
+
+
+
+
+
+
+
+
+
+## Running examples
+
+
+
+
+
+You can find the running examples deployed in the [Pivotal Web Services](https://run.pivotal.io/). Check them out in the following links:
+
+
+
+
+
+*   [Zipkin for apps presented in the samples to the top](https://docssleuth-zipkin-server.cfapps.io/)
+
+*   [Zipkin for Brewery on PWS](https://docsbrewing-zipkin-web.cfapps.io/), its [Github Code](https://github.com/spring-cloud-samples/brewery)
+
+
+
+
+
+
+
+# Spring Cloud Consul
+
+
+
+
+
+
+
+
+
+## Install Consul
+
+
+
+
+
+Please see the [installation documentation](https://www.consul.io/intro/getting-started/install.html) for instructions on how to install Consul.
+
+
+
+
+
+
+
+
+
+## Consul Agent
+
+
+
+
+
+A Consul Agent client must be available to all Spring Cloud Consul applications. By default, the Agent client is expected to be at `localhost:8500`. See the [Agent documentation](https://consul.io/docs/agent/basics.html) for specifics on how to start an Agent client and how to connect to a cluster of Consul Agent Servers. For development, after you have installed consul, you may start a Consul Agent using the following command:
+
+
+
+
+
+
+
+<pre>./src/main/bash/local_run_consul.sh</pre>
+
+
+
+
+
+
+
+This will start an agent in server mode on port 8500, with the ui available at [http://localhost:8500](http://localhost:8500/)
+
+
+
+
+
+
+
+
+
+## Service Discovery with Consul
+
+
+
+
+
+Service Discovery is one of the key tenets of a microservice based architecture. Trying to hand configure each client or some form of convention can be very difficult to do and can be very brittle. Consul provides Service Discovery services via an [HTTP API](https://www.consul.io/docs/agent/http.html) and [DNS](https://www.consul.io/docs/agent/dns.html). Spring Cloud Consul leverages the HTTP API for service registration and discovery. This does not prevent non-Spring Cloud applications from leveraging the DNS interface. Consul Agents servers are run in a [cluster](https://www.consul.io/docs/internals/architecture.html) that communicates via a [gossip protocol](https://www.consul.io/docs/internals/gossip.html) and uses the [Raft consensus protocol](https://www.consul.io/docs/internals/consensus.html).
+
+
+
+
+
+### Registering with Consul
+
+
+
+When a client registers with Consul, it provides meta-data about itself such as host and port, id, name and tags. An HTTP [Check](https://www.consul.io/docs/agent/checks.html) is created by default that Consul hits the `/health` endpoint every 10 seconds. If the health check fails, the service instance is marked as critical.
+
+
+
+
+
+Example Consul client:
+
+
+
+
+
+
+
+    @SpringBootApplication
+    @EnableDiscoveryClient
+    @RestController
+    public class Application {
+
+        @RequestMapping("/")
+        public String home() {
+            return "Hello world";
+        }
+
+        public static void main(String[] args) {
+            new SpringApplicationBuilder(Application.class).web(true).run(args);
+        }
+
+    }
+
+
+
+
+
+
+
+(i.e. utterly normal Spring Boot app). If the Consul client is located somewhere other than `localhost:8500`, the configuration is required to locate the client. Example:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">If you use [Spring Cloud Consul Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-config), the above values will need to be placed in `bootstrap.yml` instead of `application.yml`.
+
+
+
+
+
+
+
+
+
+
+
+The default service name, instance id and port, taken from the `Environment`, are `${spring.application.name}`, the Spring Context ID and `${server.port}` respectively.
+
+
+
+
+
+`@EnableDiscoveryClient` make the app into both a Consul "service" (i.e. it registers itself) and a "client" (i.e. it can query Consul to locate other services).
+
+
+
+
+
+
+
+### HTTP Health Check
+
+
+
+The health check for a Consul instance defaults to "/health", which is the default locations of a useful endpoint in a Spring Boot Actuator application. You need to change these, even for an Actuator application if you use a non-default context path or servlet path (e.g. `server.servletPath=/foo`) or management endpoint path (e.g. `management.contextPath=/admin`). The interval that Consul uses to check the health endpoint may also be configured. "10s" and "1m" represent 10 seconds and 1 minute respectively. Example:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    consul:
+      discovery:
+        healthCheckPath: ${management.contextPath}/health
+        healthCheckInterval: 15s</pre>
+
+
+
+
+
+
+
+#### Metadata and Consul tags
+
+
+
+Consul does not yet support metadata on services. Spring Cloud’s `ServiceInstance` has a `Map<String, String> metadata` field. Spring Cloud Consul uses Consul tags to approximate metadata until Consul officially supports metadata. Tags with the form `key=value` will be split and used as a `Map` key and value respectively. Tags without the equal `=` sign, will be used as both the key and value.
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    consul:
+      discovery:
+        tags: foo=bar, baz</pre>
+
+
+
+
+
+
+
+The above configuration will result in a map with `foo→bar` and `baz→baz`.
+
+
+
+
+
+
+
+#### Making the Consul Instance ID Unique
+
+
+
+By default a consul instance is registered with an ID that is equal to its Spring Application Context ID. By default, the Spring Application Context ID is `${spring.application.name}:comma,separated,profiles:${server.port}`. For most cases, this will allow multiple instances of one service to run on one machine. If further uniqueness is required, Using Spring Cloud you can override this by providing a unique identifier in `spring.cloud.consul.discovery.instanceId`. For example:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}</pre>
+
+
+
+
+
+
+
+With this metadata, and multiple service instances deployed on localhost, the random value will kick in there to make the instance unique. In Cloudfoundry the `spring.application.instance_id` will be populated automatically in a Spring Boot Actuator application, so the random value will not be needed.
+
+
+
+
+
+
+
+
+
+### Using the DiscoveryClient
+
+
+
+Spring Cloud has support for [Feign](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-feign) (a REST client builder) and also [Spring `RestTemplate`](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-ribbon) using the logical service names instead of physical URLs.
+
+
+
+
+
+You can also use the `org.springframework.cloud.client.discovery.DiscoveryClient` which provides a simple API for discovery clients that is not specific to Netflix, e.g.
+
+
+
+
+
+
+
+<pre>@Autowired
+private DiscoveryClient discoveryClient;
+
+public String serviceUrl() {
+    List<ServiceInstance> list = discoveryClient.getInstances("STORES");
+    if (list != null && list.size() > 0 ) {
+        return list.get(0).getUri();
+    }
+    return null;
+}</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Distributed Configuration with Consul
+
+
+
+
+
+Consul provides a [Key/Value Store](https://consul.io/docs/agent/http/kv.html) for storing configuration and other metadata. Spring Cloud Consul Config is an alternative to the [Config Server and Client](https://github.com/spring-cloud/spring-cloud-config). Configuration is loaded into the Spring Environment during the special "bootstrap" phase. Configuration is stored in the `/config` folder by default. Multiple `PropertySource` instances are created based on the application’s name and the active profiles that mimicks the Spring Cloud Config order of resolving properties. For example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
+
+
+
+
+
+
+
+<pre>config/testApp,dev/
+config/testApp/
+config/application,dev/
+config/application/</pre>
+
+
+
+
+
+
+
+The most specific property source is at the top, with the least specific at the bottom. Properties is the `config/application` folder are applicable to all applications using consul for configuration. Properties in the `config/testApp` folder are only available to the instances of the service named "testApp".
+
+
+
+
+
+Configuration is currently read on startup of the application. Sending a HTTP POST to `/refresh` will cause the configuration to be reloaded. Watching the key value store (which Consul supports) is not currently possible, but will be a future addition to this project.
+
+
+
+
+
+### How to activate
+
+
+
+Including a dependency on `org.springframework.cloud:spring-cloud-consul-config` will enable auto-configuration that will setup Spring Cloud Consul Config.
+
+
+
+
+
+
+
+### Customizing
+
+
+
+Consul Config may be customized using the following properties:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefix: configuration
+        defaultContext: apps
+        profileSeparator: '::'</pre>
+
+
+
+
+
+
+
+*   `enabled` setting this value to "false" disables Consul Config
+
+*   `prefix` sets the base folder for configuration values
+
+*   `defaultContext` sets the folder name used by all applications
+
+*   `profileSeparator` sets the value of the separator used to separate the profile name in property sources with profiles
+
+
+
+
+
+
+
+
+
+
+
+## YAML or Properties with Config
+
+
+
+
+
+It may be more convenient to store a blob of properties in YAML or Properties format as opposed to individual key/value pairs. Set the `spring.cloud.consul.config.format` property to `YAML` or `PROPERTIES`. For example to use YAML:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    consul:
+      config:
+        format: YAML</pre>
+
+
+
+
+
+
+
+YAML must be set in the appropriate `data` key in consul. Using the defaults above the keys would look like:
+
+
+
+
+
+
+
+<pre>config/testApp,dev/data
+config/testApp/data
+config/application,dev/data
+config/application/data</pre>
+
+
+
+
+
+
+
+You could store a YAML document in any of the keys listed above.
+
+
+
+
+
+You can change the data key using `spring.cloud.consul.config.data-key`.
+
+
+
+
+
+
+
+
+
+## git2consul with Config
+
+
+
+
+
+git2consul is a Consul community project that loads files from a git repository to individual keys into Consul. By default the names of the keys are names of the files. YAML and Properties files are supported with file extensions of `.yml` and `.properties` respectively. Set the `spring.cloud.consul.config.format` property to `FILES`. For example:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    consul:
+      config:
+        format: FILES</pre>
+
+
+
+
+
+
+
+Given the following keys in `/config`, the `development` profile and an application name of `foo`:
+
+
+
+
+
+
+
+<pre>.gitignore
+application.yml
+bar.properties
+foo-development.properties
+foo-production.yml
+foo.properties
+master.ref</pre>
+
+
+
+
+
+
+
+the following property sources would be created:
+
+
+
+
+
+
+
+<pre>config/foo-development.properties
+config/foo.properties
+config/application.yml</pre>
+
+
+
+
+
+
+
+The value of each key needs to be a properly formatted YAML or Properties file.
+
+
+
+
+
+
+
+
+
+## Fail Fast
+
+
+
+
+
+It may be convenient in certain circumstances (like local development or certain test scenarios) to not fail if consul isn’t available for configuration. Setting `spring.cloud.consul.config.failFast=false` in `bootstrap.yml` will cause the configuration module to log a warning rather than throw an exception. This will allow the application to continue startup normally.
+
+
+
+
+
+
+
+
+
+## Consul Retry
+
+
+
+
+
+If you expect that the consul agent may occasionally be unavailable when your app starts, you can ask it to keep trying after a failure. You need to add `spring-retry` and `spring-boot-starter-aop` to your classpath. The default behaviour is to retry 6 times with an initial backoff interval of 1000ms and an exponential multiplier of 1.1 for subsequent backoffs. You can configure these properties (and others) using `spring.cloud.consul.retry.*` configuration properties. This works with both Spring Cloud Consul Config and Discovery registration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">To take full control of the retry add a `@Bean` of type `RetryOperationsInterceptor` with id "consulRetryInterceptor". Spring Retry has a `RetryInterceptorBuilder` that makes it easy to create one.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Spring Cloud Bus with Consul
+
+
+
+
+
+Coming in a later release.
+
+
+
+
+
+
+
+
+
+## Circuit Breaker with Hystrix
+
+
+
+
+
+Applications can use the Hystrix Circuit Breaker provided by the Spring Cloud Netflix project by including this starter in the projects pom.xml: `spring-cloud-starter-hystrix`. Hystrix doesn’t depend on the Netflix Discovery Client. The `@EnableHystrix` annotation should be placed on a configuration class (usually the main class). Then methods can be annotated with `@HystrixCommand` to be protected by a circuit breaker. See [the documentation](http://projects.spring.io/spring-cloud/spring-cloud.html#_circuit_breaker_hystrix_clients) for more details.
+
+
+
+
+
+
+
+
+
+## Hystrix metrics aggregation with Turbine and Consul
+
+
+
+
+
+Turbine (provided by the Spring Cloud Netflix project), aggregates multiple instances Hystrix metrics streams, so the dashboard can display an aggregate view. Turbine uses the `DiscoveryClient` interface to lookup relevant instances. To use Turbine with Spring Cloud Consul, configure the Turbine application in a manner similar to the following examples:
+
+
+
+
+
+
+
+
+
+<pre><dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-netflix-turbine</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+</dependency></pre>
+
+
+
+
+
+
+
+Notice that the Turbine dependency is not a starter. The turbine starter includes support for Netflix Eureka.
+
+
+
+
+
+
+
+
+
+<pre>spring.application.name: turbine
+applications: consulhystrixclient
+turbine:
+  aggregator:
+    clusterConfig: ${applications}
+  appConfig: ${applications}</pre>
+
+
+
+
+
+
+
+The `clusterConfig` and `appConfig` sections must match, so it’s useful to put the comma-separated list of service ID’s into a separate configuration property.
+
+
+
+
+
+
+
+
+
+<pre>@EnableTurbine
+@EnableDiscoveryClient
+@SpringBootApplication
+public class Turbine {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoturbinecommonsApplication.class, args);
+    }
+}</pre>
+
+
+
+
+
+
+
+
+
+# Spring Cloud Zookeeper
+
+
+
+
+
+
+
+
+
+## Install Zookeeper
+
+
+
+
+
+Please see the [installation documentation](https://zookeeper.apache.org/doc/current/zookeeperStarted.html) for instructions on how to install Zookeeper.
+
+
+
+
+
+
+
+
+
+## Service Discovery with Zookeeper
+
+
+
+
+
+Service Discovery is one of the key tenets of a microservice based architecture. Trying to hand configure each client or some form of convention can be very difficult to do and can be very brittle. [Curator](https://curator.apache.org/)(A java library for Zookeeper) provides Service Discovery services via [Service Discovery Extension](https://curator.apache.org/curator-x-discovery/). Spring Cloud Zookeeper leverages this extension for service registration and discovery.
+
+
+
+
+
+### How to activate
+
+
+
+Including a dependency on `org.springframework.cloud:spring-cloud-starter-zookeeper-discovery` will enable auto-configuration that will setup Spring Cloud Zookeeper Discovery.
+
+
+
+
+
+
+
+### Registering with Zookeeper
+
+
+
+When a client registers with Zookeeper, it provides meta-data about itself such as host and port, id and name.
+
+
+
+
+
+Example Zookeeper client:
+
+
+
+
+
+
+
+    @SpringBootApplication
+    @EnableDiscoveryClient
+    @RestController
+    public class Application {
+
+        @RequestMapping("/")
+        public String home() {
+            return "Hello world";
+        }
+
+        public static void main(String[] args) {
+            new SpringApplicationBuilder(Application.class).web(true).run(args);
+        }
+
+    }
+
+
+
+
+
+
+
+(i.e. utterly normal Spring Boot app). If Zookeeper is located somewhere other than `localhost:2181`, the configuration is required to locate the server. Example:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">If you use [Spring Cloud Zookeeper Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-config), the above values will need to be placed in `bootstrap.yml` instead of `application.yml`.
+
+
+
+
+
+
+
+
+
+
+
+The default service name, instance id and port, taken from the `Environment`, are `${spring.application.name}`, the Spring Context ID and `${server.port}` respectively.
+
+
+
+
+
+`@EnableDiscoveryClient` makes the app into both a Zookeeper "service" (i.e. it registers itself) and a "client" (i.e. it can query Zookeeper to locate other services).
+
+
+
+
+
+
+
+### Using the DiscoveryClient
+
+
+
+Spring Cloud has support for [Feign](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-feign) (a REST client builder) and also [Spring `RestTemplate`](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-ribbon) using the logical service names instead of physical URLs.
+
+
+
+
+
+You can also use the `org.springframework.cloud.client.discovery.DiscoveryClient` which provides a simple API for discovery clients that is not specific to Netflix, e.g.
+
+
+
+
+
+
+
+<pre>@Autowired
+private DiscoveryClient discoveryClient;
+
+public String serviceUrl() {
+    List<ServiceInstance> list = discoveryClient.getInstances("STORES");
+    if (list != null && list.size() > 0 ) {
+        return list.get(0).getUri().toString();
+    }
+    return null;
+}</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Zookeeper Dependencies
+
+
+
+
+
+### Using the Zookeeper Dependencies
+
+
+
+Spring Cloud Zookeeper gives you a possibility to provide dependencies of your application as properties. As dependencies you can understand other applications that are registered in Zookeeper and which you would like to call via [Feign](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-feign) (a REST client builder) and also [Spring `RestTemplate`](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-ribbon).
+
+
+
+
+
+You can also benefit from the Zookeeper Dependency Watchers functionality that lets you control and monitor what is the state of your dependencies and decide what to do with that.
+
+
+
+
+
+
+
+### How to activate Zookeeper Dependencies
+
+
+
+*   Including a dependency on `org.springframework.cloud:spring-cloud-starter-zookeeper-discovery` will enable auto-configuration that will setup Spring Cloud Zookeeper Dependencies.
+
+*   If you have to have the `spring.cloud.zookeeper.dependencies` section properly set up - check the subsequent section for more details then the feature is active
+
+*   You can have the dependencies turned off even if you’ve provided the dependencies in your properties. Just set the property `spring.cloud.zookeeper.dependency.enabled` to false (defaults to `true`).
+
+
+
+
+
+
+
+### Setting up Zookeeper Dependencies
+
+
+
+Let’s take a closer look at an example of dependencies representation:
+
+
+
+
+
+
+
+
+
+<pre>spring.application.name: yourServiceName
+spring.cloud.zookeeper:
+  dependencies:
+    newsletter:
+      path: /path/where/newsletter/has/registered/in/zookeeper
+      loadBalancerType: ROUND_ROBIN
+      contentTypeTemplate: application/vnd.newsletter.$version+json
+      version: v1
+      headers:
+        header1:
+            - value1
+        header2:
+            - value2
+      required: false
+      stubs: org.springframework:foo:stubs
+    mailing:
+      path: /path/where/mailing/has/registered/in/zookeeper
+      loadBalancerType: ROUND_ROBIN
+      contentTypeTemplate: application/vnd.mailing.$version+json
+      version: v1
+      required: true</pre>
+
+
+
+
+
+
+
+Let’s now go through each part of the dependency one by one. The root property name is `spring.cloud.zookeeper.dependencies`.
+
+
+
+
+
+#### Aliases
+
+
+
+Below the root property you have to represent each dependency has by an alias due to the constraints of Ribbon (the application id has to be placed in the URL thus you can’t pass any complex path like /foo/bar/name). The alias will be the name that you will use instead of serviceId for `DiscoveryClient`, `Feign` or `RestTemplate`.
+
+
+
+
+
+In the aforementioned examples the aliases are `newsletter` and `mailing`. Example of Feign usage with `newsletter` would be:
+
+
+
+
+
+
+
+<pre>@FeignClient("newsletter")
+public interface NewsletterService {
+        @RequestMapping(method = RequestMethod.GET, value = "/newsletter")
+        String getNewsletters();
+}</pre>
+
+
+
+
+
+
+
+
+
+#### Path
+
+
+
+Represented by `path` yaml property.
+
+
+
+
+
+Path is the path under which the dependency is registered under Zookeeper. Like presented before Ribbon operates on URLs thus this path is not compliant with its requirement. That is why Spring Cloud Zookeeper maps the alias to the proper path.
+
+
+
+
+
+
+
+#### Load balancer type
+
+
+
+Represented by `loadBalancerType` yaml property.
+
+
+
+
+
+If you know what kind of load balancing strategy has to be applied when calling this particular dependency then you can provide it in the yaml file and it will be automatically applied. You can choose one of the following load balancing strategies
+
+
+
+
+
+*   STICKY - once chosen the instance will always be called
+
+*   RANDOM - picks an instance randomly
+
+*   ROUND_ROBIN - iterates over instances over and over again
+
+
+
+
+
+
+
+#### Content-Type template and version
+
+
+
+Represented by `contentTypeTemplate` and `version` yaml property.
+
+
+
+
+
+If you version your api via the `Content-Type` header then you don’t want to add this header to each of your requests. Also if you want to call a new version of the API you don’t want to roam around your code to bump up the API version. That’s why you can provide a `contentTypeTemplate` with a special `$version` placeholder. That placeholder will be filled by the value of the `version` yaml property. Let’s take a look at an example.
+
+
+
+
+
+Having the following `contentTypeTemplate`:
+
+
+
+
+
+
+
+<pre>application/vnd.newsletter.$version+json</pre>
+
+
+
+
+
+
+
+and the following `version`:
+
+
+
+
+
+
+
+<pre>v1</pre>
+
+
+
+
+
+
+
+Will result in setting up of a `Content-Type` header for each request:
+
+
+
+
+
+
+
+<pre>application/vnd.newsletter.v1+json</pre>
+
+
+
+
+
+
+
+
+
+#### Default headers
+
+
+
+Represented by `headers` map in yaml
+
+
+
+
+
+Sometimes each call to a dependency requires setting up of some default headers. In order not to do that in code you can set them up in the yaml file. Having the following `headers` section:
+
+
+
+
+
+
+
+<pre>headers:
+    Accept:
+        - text/html
+        - application/xhtml+xml
+    Cache-Control:
+        - no-cache</pre>
+
+
+
+
+
+
+
+Results in adding the `Accept` and `Cache-Control` headers with appropriate list of values in your HTTP request.
+
+
+
+
+
+
+
+#### Obligatory dependencies
+
+
+
+Represented by `required` property in yaml
+
+
+
+
+
+If one of your dependencies is required to be up and running when your application is booting then it’s enough to set up the `required: true` property in the yaml file.
+
+
+
+
+
+If your application can’t localize the required dependency during boot time it will throw an exception and the Spring Context will fail to set up. In other words your application won’t be able to start if the required dependency is not registered in Zookeeper.
+
+
+
+
+
+You can read more about Spring Cloud Zookeeper Presence Checker in the following sections.
+
+
+
+
+
+
+
+#### Stubs
+
+
+
+You can provide a colon separated path to the JAR containing stubs of the dependency. Example
+
+
+
+
+
+
+
+    stubs: org.springframework:foo:stubs
+
+
+
+
+
+
+
+means that for a particular dependencies can be found under:
+
+
+
+
+
+*   groupId: `org.springframework`
+
+*   artifactId: `foo`
+
+*   classifier: `stubs` - this is the default value
+
+
+
+
+
+This is actually equal to
+
+
+
+
+
+
+
+    stubs: org.springframework:foo
+
+
+
+
+
+
+
+since `stubs` is the default classifier.
+
+
+
+
+
+
+
+
+
+### Configuring Spring Cloud Zookeeper Dependencies
+
+
+
+There is a bunch of properties that you can set to enable / disable parts of Zookeeper Dependencies functionalities.
+
+
+
+
+
+*   `spring.cloud.zookeeper.dependencies` - if you don’t set this property you won’t benefit from Zookeeper Dependencies
+
+*   `spring.cloud.zookeeper.dependency.ribbon.enabled` (enabled by default) - Ribbon requires explicit global configuration or a particular one for a dependency. By turning on this property runtime load balancing strategy resolution is possible and you can profit from the `loadBalancerType` section of the Zookeeper Dependencies. The configuration that needs this property has an implementation of `LoadBalancerClient` that delegates to the `ILoadBalancer` presented in the next bullet
+
+*   `spring.cloud.zookeeper.dependency.ribbon.loadbalancer` (enabled by default) - thanks to this property the custom `ILoadBalancer` knows that the part of the URI passed to Ribbon might actually be the alias that has to be resolved to a proper path in Zookeeper. Without this property you won’t be able to register applications under nested paths.
+
+*   `spring.cloud.zookeeper.dependency.headers.enabled` (enabled by default) - this property registers such a `RibbonClient` that automatically will append appropriate headers and content types with version as presented in the Dependency configuration. Without this setting of those two parameters will not be operational.
+
+*   `spring.cloud.zookeeper.dependency.resttemplate.enabled` (enabled by default) - when enabled will modify the request headers of `@LoadBalanced` annotated `RestTemplate` so that it passes headers and content type with version set in Dependency configuration. Wihtout this setting of those two parameters will not be operational.
+
+
+
+
+
+
+
+
+
+
+
+## Spring Cloud Zookeeper Dependency Watcher
+
+
+
+
+
+The Dependency Watcher mechanism allows you to register listeners to your dependencies. The functionality is in fact an implementation of the `Observator` pattern. When a dependency changes its state (UP or DOWN) then some custom logic can be applied.
+
+
+
+
+
+### How to activate
+
+
+
+Spring Cloud Zookeeper Dependencies functionality needs to be enabled to profit from Dependency Watcher mechanism.
+
+
+
+
+
+
+
+### Registering a listener
+
+
+
+In order to register a listener you have to implement an interface `org.springframework.cloud.zookeeper.discovery.watcher.DependencyWatcherListener` and register it as a bean. The interface gives you one method:
+
+
+
+
+
+
+
+<pre>    void stateChanged(String dependencyName, DependencyState newState);</pre>
+
+
+
+
+
+
+
+If you want to register a listener for a particular dependency then the `dependencyName` would be the discriminator for your concrete implementation. `newState` will provide you with information whether your dependency has changed to `CONNECTED` or `DISCONNECTED`.
+
+
+
+
+
+
+
+### Presence Checker
+
+
+
+Bound with Dependency Watcher is the functionality called Presence Checker. It allows you to provide custom behaviour upon booting of your application to react accordingly to the state of your dependencies.
+
+
+
+
+
+The default implementation of the abstract `org.springframework.cloud.zookeeper.discovery.watcher.presence.DependencyPresenceOnStartupVerifier` class is the `org.springframework.cloud.zookeeper.discovery.watcher.presence.DefaultDependencyPresenceOnStartupVerifier` which works in the following way.
+
+
+
+
+
+*   If the dependency is marked us `required` and it’s not in Zookeeper then upon booting your application will throw an exception and shutdown
+
+*   If dependency is not `required` the `org.springframework.cloud.zookeeper.discovery.watcher.presence.LogMissingDependencyChecker` will log that application is missing at `WARN` level
+
+
+
+
+
+The functionality can be overriden since the `DefaultDependencyPresenceOnStartupVerifier` is registered only when there is no bean of `DependencyPresenceOnStartupVerifier`.
+
+
+
+
+
+
+
+
+
+
+
+## Distributed Configuration with Zookeeper
+
+
+
+
+
+Zookeeper provides a [hierarchical namespace](https://zookeeper.apache.org/doc/current/zookeeperOver.html#sc_dataModelNameSpace) that allows clients to store arbitrary data, such as configuration data. Spring Cloud Zookeeper Config is an alternative to the [Config Server and Client](https://github.com/spring-cloud/spring-cloud-config). Configuration is loaded into the Spring Environment during the special "bootstrap" phase. Configuration is stored in the `/config` namespace by default. Multiple `PropertySource` instances are created based on the application’s name and the active profiles that mimicks the Spring Cloud Config order of resolving properties. For example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
+
+
+
+
+
+
+
+<pre>config/testApp,dev
+config/testApp
+config/application,dev
+config/application</pre>
+
+
+
+
+
+
+
+The most specific property source is at the top, with the least specific at the bottom. Properties is the `config/application` namespace are applicable to all applications using zookeeper for configuration. Properties in the `config/testApp` namespace are only available to the instances of the service named "testApp".
+
+
+
+
+
+Configuration is currently read on startup of the application. Sending a HTTP POST to `/refresh` will cause the configuration to be reloaded. Watching the configuration namespace (which Zookeeper supports) is not currently implemented, but will be a future addition to this project.
+
+
+
+
+
+### How to activate
+
+
+
+Including a dependency on `org.springframework.cloud:spring-cloud-starter-zookeeper-config` will enable auto-configuration that will setup Spring Cloud Zookeeper Config.
+
+
+
+
+
+
+
+### Customizing
+
+
+
+Zookeeper Config may be customized using the following properties:
+
+
+
+
+
+
+
+
+
+<pre>spring:
+  cloud:
+    zookeeper:
+      config:
+        enabled: true
+        root: configuration
+        defaultContext: apps
+        profileSeparator: '::'</pre>
+
+
+
+
+
+
+
+*   `enabled` setting this value to "false" disables Zookeeper Config
+
+*   `root` sets the base namespace for configuration values
+
+*   `defaultContext` sets the name used by all applications
+
+*   `profileSeparator` sets the value of the separator used to separate the profile name in property sources with profiles
+
+
+
+
+
+
+
+
+
+# Spring Boot Cloud CLI
+
+
+
+
+
+
+
+
+
+## Installation
+
+
+
+
+
+To install, make sure you have [Spring Boot CLI](https://github.com/spring-projects/spring-boot) (1.4.1 or better):
+
+
+
+
+
+
+
+<pre>$ spring version
+Spring CLI v1.4.1.RELEASE</pre>
+
+
+
+
+
+
+
+E.g. for SDKMan users
+
+
+
+
+
+
+
+    $ sdk install springboot 1.4.1.RELEASE
+    $ sdk use springboot 1.4.1.RELEASE
+
+
+
+
+
+
+
+and install the Spring Cloud plugin
 
 
 
@@ -5906,27 +14819,7 @@ Spring Cloud 플러그인을 설치한다.
 
 
     $ mvn install
-    $ spring install org.springframework.cloud:spring-cloud-cli:1.1.0.BUILD-SNAPSHOT
-
-
-
-
-
-
-
-
-
-
-
-
-
-<td class="icon">
-
-중대한
-
-
-
-<td class="content">**전제 조건 :** 당신이 당신의 JVM에 설치된 전체 강도 JCE를 필요로하는 암호화 및 복호화 기능 (기본값이 아닙니다)를 사용합니다. Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).
+    $ spring install org.springframework.cloud:spring-cloud-cli:1.2.3.BUILD-SNAPSHOT
 
 
 
@@ -5942,19 +14835,366 @@ Spring Cloud 플러그인을 설치한다.
 
 
 
-## Groovy 스크립트 작성 및 응용 프로그램 실행
+
+
+
+
+<td class="content">**Prerequisites:** to use the encryption and decryption features you need the full-strength JCE installed in your JVM (it’s not there by default). You can download the "Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files" from Oracle, and follow instructions for installation (essentially replace the 2 policy files in the JRE lib/security directory with the ones that you downloaded).
 
 
 
 
 
-봄 클라우드 CLI는 같은과 Spring Cloud 선언적 기능의 대부분에 대한 지원이 `@Enable*`주석의 클래스를. 예를 들어, 다음은 유레카 서버입니다.
 
 
 
 
 
-app.groovy
+
+
+
+
+
+## Running Spring Cloud Services in Development
+
+
+
+
+
+The Launcher CLI can be used to run common services like Eureka, Config Server etc. from the command line. To list the available services you can do `spring cloud --list`, and to launch a default set of services just `spring cloud`. To choose the services to deploy, just list them on the command line, e.g.
+
+
+
+
+
+
+
+<pre>$ spring cloud eureka configserver h2 kafka zipkin</pre>
+
+
+
+
+
+
+
+Summary of supported deployables:
+
+
+
+<table class="tableblock frame-all grid-all spread"><colgroup><col style="width: 25%;"> <col style="width: 25%;"> <col style="width: 25%;"> <col style="width: 25%;"></colgroup>
+
+<thead>
+
+
+
+<th class="tableblock halign-left valign-top">Service</th>
+
+<th class="tableblock halign-left valign-top">Name</th>
+
+<th class="tableblock halign-left valign-top">Address</th>
+
+<th class="tableblock halign-left valign-top">Description</th>
+
+
+
+</thead>
+
+
+
+
+
+
+
+eureka
+
+
+
+
+
+Eureka Server
+
+
+
+
+
+[http://localhost:8761](http://localhost:8761/)
+
+
+
+
+
+Eureka server for service registration and discovery. All the other services show up in its catalog by default.
+
+
+
+
+
+
+
+
+
+configserver
+
+
+
+
+
+Config Server
+
+
+
+
+
+[http://localhost:8888](http://localhost:8888/)
+
+
+
+
+
+Spring Cloud Config Server running in the "native" profile and serving configuration from the local directory ./launcher
+
+
+
+
+
+
+
+
+
+h2
+
+
+
+
+
+H2 Database
+
+
+
+
+
+[http://localhost:9095](http://localhost:9095/) (console), jdbc:h2:tcp://localhost:9096/{data}
+
+
+
+
+
+Relation database service. Use a file path for `{data}` (e.g. `./target/test`) when you connect. Remember that you can add `;MODE=MYSQL` or `;MODE=POSTGRESQL` to connect with compatibility to other server types.
+
+
+
+
+
+
+
+
+
+kafka
+
+
+
+
+
+Kafka Broker
+
+
+
+
+
+[http://localhost:9091](http://localhost:9091/) (actuator endpoints), localhost:9092
+
+
+
+
+
+
+
+
+
+hystrixdashboard
+
+
+
+
+
+Hystrix Dashboard
+
+
+
+
+
+[http://localhost:7979](http://localhost:7979/)
+
+
+
+
+
+Any Spring Cloud app that declares Hystrix circuit breakers publishes metrics on `/hystrix.stream`. Type that address into the dashboard to visualize all the metrics,
+
+
+
+
+
+
+
+
+
+dataflow
+
+
+
+
+
+Dataflow Server
+
+
+
+
+
+[http://localhost:9393](http://localhost:9393/)
+
+
+
+
+
+Spring Cloud Dataflow server with UI at /admin-ui. Connect the Dataflow shell to target at root path.
+
+
+
+
+
+
+
+
+
+zipkin
+
+
+
+
+
+Zipkin Server
+
+
+
+
+
+[http://localhost:9411](http://localhost:9411/)
+
+
+
+
+
+Zipkin Server with UI for visualizing traces. Stores span data in memory and accepts them via HTTP POST of JSON data.
+
+
+
+
+
+
+
+
+
+
+
+Each of these apps can be configured using a local YAML file with the same name (in the current working directory or a subdirectory called "config" or in `~/.spring-cloud`). E.g. in `configserver.yml` you might want to do something like this to locate a local git repository for the backend:
+
+
+
+
+
+
+
+
+
+    spring:
+      profiles:
+        active: git
+      cloud:
+        config:
+          server:
+            git:
+              uri: file://${user.home}/dev/demo/config-repo
+
+
+
+
+
+
+
+### Adding Additional Applications
+
+
+
+Additional applications can be added to `./config/cloud.yml` (not `./config.yml` because that would replace the defaults), e.g. with
+
+
+
+
+
+
+
+
+
+    spring:
+      cloud:
+        launcher:
+          deployables:
+            source:
+              coordinates: maven://com.example:source:0.0.1-SNAPSHOT
+              port: 7000
+            sink:
+              coordinates: maven://com.example:sink:0.0.1-SNAPSHOT
+              port: 7001
+
+
+
+
+
+
+
+when you list the apps:
+
+
+
+
+
+
+
+    $ spring cloud --list
+    source sink configserver dataflow eureka h2 hystrixdashboard kafka zipkin
+
+
+
+
+
+
+
+(notice the additional apps at the start of the list).
+
+
+
+
+
+
+
+
+
+
+
+## Writing Groovy Scripts and Running Applications
+
+
+
+
+
+Spring Cloud CLI has support for most of the Spring Cloud declarative features, such as the `@Enable*` class of annotations. For example, here is a fully functional Eureka server
+
+
+
+
+
+
 
 
 
@@ -5967,7 +15207,7 @@ app.groovy
 
 
 
-이 명령 줄에서 다음과 같이 실행할 수 있습니다.
+which you can run from the command line like this
 
 
 
@@ -5983,13 +15223,13 @@ app.groovy
 
 
 
-추가 종속성을 포함하려면, 종종 그냥 예를 들어, 해당 기능이 활성화 주석을 추가하기에 충분 `@EnableConfigServer`, `@EnableOAuth2Sso`또는 `@EnableEurekaClient`. 수동으로 사용자가 사용할 수 있습니다 종속성 포함하려면 `@Grab`AMQP에서 수신하는 클라이언트 응용 프로그램을 설정하는 예를 들어 특별한 "봄 부팅"짧은 스타일 이슈 좌표로, 즉 단지 이슈 ID (그룹 또는 버전 정보에 대한 필요성)과를, Spring CLoud Bus의 관리 이벤트 용 :
+To include additional dependencies, often it suffices just to add the appropriate feature-enabling annotation, e.g. `@EnableConfigServer`, `@EnableOAuth2Sso` or `@EnableEurekaClient`. To manually include a dependency you can use a `@Grab` with the special "Spring Boot" short style artifact co-ordinates, i.e. with just the artifact ID (no need for group or version information), e.g. to set up a client app to listen on AMQP for management events from the Spring CLoud Bus:
 
 
 
 
 
-app.groovy
+
 
 
 
@@ -6010,13 +15250,13 @@ app.groovy
 
 
 
-## 암호화 및 암호 해독
+## Encryption and Decryption
 
 
 
 
 
-Spring Cloud CLI에는 "encrypt"와 "decrypt"명령이있다. 둘 다 필수적인 "--key"로 지정된 키를 사용하여 동일한 형식의 인수를 허용합니다.
+The Spring Cloud CLI comes with an "encrypt" and a "decrypt" command. Both accept arguments in the same form with a key specified as a mandatory "--key", e.g.
 
 
 
@@ -6027,7 +15267,7 @@ Spring Cloud CLI에는 "encrypt"와 "decrypt"명령이있다. 둘 다 필수적�
 <pre>$ spring encrypt mysecret --key foo
 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda
 $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda
-나의 비밀</pre>
+mysecret</pre>
 
 
 
@@ -6035,7 +15275,7 @@ $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201
 
 
 
-파일에서 키를 사용하려면 (예 : encyption을위한 RSA 공개 키) 키 값 앞에 "@"를 붙이고 파일 경로를 제공하십시오.
+To use a key in a file (e.g. an RSA public key for encyption) prepend the key value with "@" and provide the file path, e.g.
 
 
 
@@ -6043,32 +15283,8 @@ $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201
 
 
 
-<pre>$ spring encrypt mysecret --key @ $ {HOME} /. ssh / id_rsa.pub
-AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...</pre>
-
-
-
-
-
-
-
-
-
-# 스프링 클라우드 보안
-
-
-
-
-
-
-
-Spring Cloud Security는 최소한의 소란으로 보안 애플리케이션 및 서비스를 구축하기위한 일련의 프리미티브를 제공합니다. 외부 적으로 (또는 중앙 집중적으로) 구성 할 수있는 선언적 모델은 일반적으로 중앙 압흔 관리 서비스와 함께 공동 작동하는 원격 구성 요소의 대형 시스템 구현에 적합합니다. 또한 Cloud Foundry와 같은 서비스 플랫폼에서 사용하기가 매우 쉽습니다. Spring Boot and Spring Security OAuth2를 기반으로 싱글 사인온 (single sign on), 토큰 릴레이 및 토큰 교환과 같은 공통 패턴을 구현하는 시스템을 신속하게 생성 할 수 있습니다.
-
-
-
-
-
-[https://raw.githubusercontent.com/spring-cloud/spring-cloud-build/master/docs/src/main/asciidoc/contributing-docs.adoc](https://raw.githubusercontent.com/spring-cloud/spring-cloud-build/master/docs/src/main/asciidoc/contributing-docs.adoc)
+<pre>$ spring encrypt mysecret --key @${HOME}/.ssh/id_rsa.pub
+AQAjPgt3eFZQXwt8tsHAVv/QHiY5sI2dRcR+...</pre>
 
 
 
@@ -6078,23 +15294,33 @@ Spring Cloud Security는 최소한의 소란으로 보안 애플리케이션 및
 
 
 
-## 빠른 시작
+# Spring Cloud Security
 
 
 
 
 
-### OAuth2 싱글 사인온
-
-
-
-다음은 HTTP 기본 인증과 단일 사용자 계정을 가진 Spring Cloud "Hello World"앱입니다.
 
 
 
 
+## Quickstart
 
-app.groovy
+
+
+
+
+### OAuth2 Single Sign On
+
+
+
+Here’s a Spring Cloud "Hello World" app with HTTP Basic authentication and a single user account:
+
+
+
+
+
+
 
 
 
@@ -6115,19 +15341,19 @@ app.groovy
 
 
 
-당신은 그것을 실행할 수 있습니다 `spring run app.groovy`(사용자 이름이 "사용자"입니다) 및 비밀번호에 대한 로그를보십시오. 지금까지는 Spring Boot app의 기본값입니다.
+You can run it with `spring run app.groovy` and watch the logs for the password (username is "user"). So far this is just the default for a Spring Boot app.
 
 
 
 
 
-다음은 OAuth2 SSO가 적용된 Spring Cloud 앱입니다.
+Here’s a Spring Cloud app with OAuth2 SSO:
 
 
 
 
 
-app.groovy
+
 
 
 
@@ -6148,19 +15374,19 @@ app.groovy
 
 
 
-차이점이 있습니까? 이 앱은 실제로 OAuth2 신상을 알지 못하기 때문에 이전 앱과 정확히 동일하게 작동합니다.
+Spot the difference? This app will actually behave exactly the same as the previous one, because it doesn’t know it’s OAuth2 credentals yet.
 
 
 
 
 
-github에서 앱을 쉽게 등록 할 수 있으므로 자신의 도메인에 프로덕션 응용 프로그램이 필요한 경우 시도하십시오. localhost : 8080에서 테스트 할 수 있다면 응용 프로그램 구성에서 다음 등록 정보를 설정하십시오.
+You can register an app in github quite easily, so try that if you want a production app on your own domain. If you are happy to test on localhost:8080, then set up these properties in your application configuration:
 
 
 
 
 
-application.yml
+
 
 
 
@@ -6182,31 +15408,13 @@ application.yml
 
 
 
-위의 앱을 실행하면 인증을 위해 github로 리디렉션됩니다. github에 이미 로그인 한 경우 인증을받지 못합니다. 이 자격 증명은 앱이 포트 8080에서 실행되는 경우에만 작동합니다.
+run the app above and it will redirect to github for authorization. If you are already signed into github you won’t even notice that it has authenticated. These credentials will only work if your app is running on port 8080.
 
 
 
 
 
-클라이언트는 액세스 사용자가 설정할 수있는 토큰을 획득 할 때 요청하는 범위를 제한 `spring.oauth2.client.scope`(또는 쉼표로 구분 YAML의 배열). 기본적으로 범위는 비어 있으며 권한 서버가 보유해야하는 클라이언트 등록의 설정에 따라 기본값을 결정해야합니다.
-
-
-
-
-
-
-
-
-
-
-
-<td class="icon">
-
-노트
-
-
-
-<td class="content">위의 예는 모두 Groovy 스크립트입니다. 자바 (또는 그루비)에서 동일한 코드를 작성하려는 경우에는 (예를 들어 볼 수있는 클래스 패스에 봄 보안 OAuth2를 추가 할 필요가 [여기에 샘플](https://github.com/spring-cloud-samples/sso) ).
+To limit the scope that the client asks for when it obtains an access token you can set `spring.oauth2.client.scope` (comma separated or an array in YAML). By default the scope is empty and it is up to to Authorization Server to decide what the defaults should be, usually depending on the settings in the client registration that it holds.
 
 
 
@@ -6220,17 +15428,35 @@ application.yml
 
 
 
-### OAuth2 보호 된 리소스
-
-
-
-OAuth2 토큰을 사용하여 API 리소스를 보호하고 싶습니까? 다음은 위의 클라이언트와 쌍을 이루는 간단한 예제입니다.
 
 
 
 
+<td class="content">The examples above are all Groovy scripts. If you want to write the same code in Java (or Groovy) you need to add Spring Security OAuth2 to the classpath (e.g. see the [sample here](https://github.com/spring-cloud-samples/sso)).
 
-app.groovy
+
+
+
+
+
+
+
+
+
+
+
+
+### OAuth2 Protected Resource
+
+
+
+You want to protect an API resource with an OAuth2 token? Here’s a simple example (paired with the client above):
+
+
+
+
+
+
 
 
 
@@ -6252,13 +15478,13 @@ app.groovy
 
 
 
-및
+and
 
 
 
 
 
-application.yml
+
 
 
 
@@ -6280,29 +15506,13 @@ application.yml
 
 
 
-## 상세 정보
+## More Detail
 
 
 
 
 
-### 단일 사인온
-
-
-
-
-
-
-
-
-
-
-
-노트
-
-
-
-OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 이전되었습니다. 당신은에서 문서를 찾을 수 있습니다 [봄 부팅 사용자 설명서를](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) .
+### Single Sign On
 
 
 
@@ -6316,27 +15526,79 @@ OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 �
 
 
 
-### 토큰 중계
 
 
-
-토큰 릴레이는 OAuth2 고객이 클라이언트 역할을하고 들어오는 토큰을 나가는 리소스 요청으로 전달하는 곳입니다. 소비자는 순수 클라이언트 (SSO 응용 프로그램과 같은) 또는 자원 서버가 될 수 있습니다.
-
-
-
-
-
-#### 클라이언트 토큰 릴레이
-
-
-
-앱이있는 경우 [Spring Cloud Zuul](http://cloud.spring.io/spring-cloud.html#netflix-zuul-reverse-proxy) (사용 포함 된 역방향 프록시를 `@EnableZuulProxy`) 다음은 프록시 된 서비스 하류 OAuth2를 액세스 토큰을 전달하도록 요청할 수 있습니다. 따라서 위의 SSO 앱은 다음과 같이 간단하게 향상시킬 수 있습니다.
+<td class="content">All of the OAuth2 SSO and resource server features moved to Spring Boot in version 1.3\. You can find documentation in the [Spring Boot user guide](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/).
 
 
 
 
 
-app.groovy
+
+
+
+
+
+
+
+
+### Token Relay
+
+
+
+A Token Relay is where an OAuth2 consumer acts as a Client and forwards the incoming token to outgoing resource requests. The consumer can be a pure Client (like an SSO application) or a Resource Server.
+
+
+
+
+
+#### Client Token Relay
+
+
+
+If your app is a user facing OAuth2 client (i.e. has declared `@EnableOAuth2Sso` or `@EnableOAuth2Client`) then it has an `OAuth2ClientContext` in request scope from Spring Boot. You can create your own `OAuth2RestTemplate` from this context and an autowired `OAuth2ProtectedResourceDetails`, and then the context will always forward the access token downstream, also refreshing the access token automatically if it expires. (These are features of Spring Security and Spring Boot.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">Spring Boot (1.4.1) does not create an `OAuth2ProtectedResourceDetails` automatically if you are using `client_credentials` tokens. In that case you need to create your own `ClientCredentialsResourceDetails` and configure it with `@ConfigurationProperties("security.oauth2.client")`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Client Token Relay in Zuul Proxy
+
+
+
+If your app also has a [Spring Cloud Zuul](http://cloud.spring.io/spring-cloud.html#netflix-zuul-reverse-proxy) embedded reverse proxy (using `@EnableZuulProxy`) then you can ask it to forward OAuth2 access tokens downstream to the services it is proxying. Thus the SSO app above can be enhanced simply like this:
+
+
+
+
+
+
 
 
 
@@ -6353,13 +15615,13 @@ app.groovy
 
 
 
-그것은 (추가에서 사용자를 loggin에와 토큰을 잡는까지)에 토큰 하류 인증을 통과 할 것이다 `/proxy/*` 서비스를 제공합니다. 이러한 서비스를 구현하는 경우 `@EnableOAuth2Resource`그들은 올바른 헤더에 유효한 토큰을 얻을 것이다.
+and it will (in addition to logging the user in and grabbing a token) pass the authentication token downstream to the `/proxy/*` services. If those services are implemented with `@EnableResourceServer` then they will get a valid token in the correct header.
 
 
 
 
 
-어떻게 작동합니까? `@EnableOAuth2Sso`주석에 끌어 `spring-cloud-starter-security`(당신은 기존의 응용 프로그램에서 수동으로 할 수있는), 그리고 차례로 그는 몇 가지 자동 트리거 `ZuulFilter`Zuul 클래스 경로 (경유에 있기 때문에 그 자체가 활성화되고 `@EnableZuulProxy`). {github} /tree/master/src/main/java/org/springframework/cloud/security/oauth2/proxy/OAuth2TokenRelayFilter.java [필터]는 현재 인증 된 사용자로부터 액세스 토큰을 추출하여 요청에 넣습니다 헤더를 포함한다.
+How does it work? The `@EnableOAuth2Sso` annotation pulls in `spring-cloud-starter-security` (which you could do manually in a traditional app), and that in turn triggers some autoconfiguration for a `ZuulFilter`, which itself is activated because Zuul is on the classpath (via `@EnableZuulProxy`). The [filter](https://github.com/spring-cloud/spring-cloud-security/tree/master/src/main/java/org/springframework/cloud/security/oauth2/proxy/OAuth2TokenRelayFilter.java) just extracts an access token from the currently authenticated user, and puts it in a request header for the downstream requests.
 
 
 
@@ -6367,17 +15629,56 @@ app.groovy
 
 
 
-#### 리소스 서버 토큰 릴레이
+#### Resource Server Token Relay
 
 
 
-앱이있는 경우 `@EnableOAuth2Resource`또한 클라이언트 (즉, 그것은을 가지고있다 `spring.oauth2.client.clientId`그것을 사용하지 않는 경우에도), 다음 `OAuth2RestOperations`그 제공된다 `@Autowired` (이로 선언 Spring Cloud에 의해 사용자 `@Primary`도) 앞으로 토큰을 것입니다. 당신은 토큰을 전달하지 않으려는 (당신이 아니라 당신에게 토큰을 보낸 클라이언트보다, 자신의 역할을 할 수 있으므로 즉, 올바른 선택입니다) 당신은 당신의 자신을 만들 필요가있는 경우 `OAuth2RestOperations`대신 기본 autowiring에 하나. 다음은 autowired 나머지 템플릿 ( "foo.com"은 주변 서버와 동일한 토큰을 허용하는 리소스 서버)의 사용을 보여주는 기본 예제입니다.
+If your app has `@EnableResourceServer` you might want to relay the incoming token downstream to other services. If you use a `RestTemplate` to contact the downstream services then this is just a matter of how to create the template with the right context.
 
 
 
 
 
-MyController.java
+If your service uses `UserInfoTokenServices` to authenticate incoming tokens (i.e. it is using the `security.oauth2.user-info-uri` configuration), then you can simply create an `OAuth2RestTemplate` using an autowired `OAuth2ClientContext` (it will be populated by the authentication process before it hits the backend code). Equivalently (with Spring Boot 1.4), you could inject a `UserInfoRestTemplateFactory` and grab its `OAuth2RestTemplate` in your configuration. For example:
+
+
+
+
+
+
+
+
+
+    @Bean
+    public OAuth2RestTemplate restTemplate(UserInfoRestTemplateFactory factory) {
+        return factory.getUserInfoRestTemplate();
+    }
+
+
+
+
+
+
+
+This rest template will then have the same `OAuth2ClientContext` (request-scoped) that is used by the authentication filter, so you can use it to send requests with the same access token.
+
+
+
+
+
+If your app is not using `UserInfoTokenServices` but is still a client (i.e. it declares `@EnableOAuth2Client` or `@EnableOAuth2Sso`), then with Spring Security Cloud any `OAuth2RestOperations` that the user creates from an `@Autowired` `@OAuth2Context` will also forward tokens. This feature is implemented by default as an MVC handler interceptor, so it only works in Spring MVC. If you are not using MVC you could use a custom filter or AOP interceptor wrapping an `AccessTokenContextRelay` to provide the same feature.
+
+
+
+
+
+Here’s a basic example showing the use of an autowired rest template created elsewhere ("foo.com" is a Resource Server accepting the same tokens as the surrounding app):
+
+
+
+
+
+
 
 
 
@@ -6397,6 +15698,13 @@ MyController.java
 
 
 
+If you don’t want to forward tokens (and that is a valid choice, since you might want to act as yourself, rather than the client that sent you the token), then you only need to create your own `OAuth2Context` instead of autowiring the default one.
+
+
+
+
+
+Feign clients will also pick up an interceptor that uses the `OAuth2ClientContext` if it is available, so they should also do a token relay anywhere where a `RestTemplate` would.
 
 
 
@@ -6405,19 +15713,24 @@ MyController.java
 
 
 
-## Zuul 프록시의 인증 다운 스트림 구성
 
 
 
 
 
-당신은 하류의 권한 부여 동작을 제어 할 수 있습니다 `@EnableZuulProxy`스루 `proxy.auth.*`설정을. 예:
+## Configuring Authentication Downstream of a Zuul Proxy
 
 
 
 
 
-application.yml
+You can control the authorization behaviour downstream of an `@EnableZuulProxy` through the `proxy.auth.*` settings. Example:
+
+
+
+
+
+
 
 
 
@@ -6434,29 +15747,13 @@ application.yml
 
 
 
-이 예에서 '고객'서비스는 OAuth2 토큰 릴레이를 가져 오며, '상점'서비스는 통과 (인증 헤더가 다운 스트림으로 전달됨)되고 '추천'서비스는 인증 헤더가 제거됩니다. 기본 동작은 사용 가능한 토큰이있는 경우 토큰 릴레이를 수행하고 그렇지 않으면 패스 스루를 수행하는 것입니다.
+In this example the "customers" service gets an OAuth2 token relay, the "stores" service gets a passthrough (the authorization header is just passed downstream), and the "recommendations" service has its authorization header removed. The default behaviour is to do a token relay if there is a token available, and passthru otherwise.
 
 
 
 
 
-자세한 내용은 {github} / tree / master / src / main / java / org / springframework / cloud / security / oauth2 / proxy / ProxyAuthenticationProperties [ProxyAuthenticationProperties]를 참조하십시오.
-
-
-
-
-
-
-
-
-
-
-최종 업데이트 : 2016-01-26 10:56:04 UTC
-
-
-
-
-![Google 번역](./spring-cloud-doc-images/translate_24dp.png)
+See [ProxyAuthenticationProperties](https://github.com/spring-cloud/spring-cloud-security/tree/master/src/main/java/org/springframework/cloud/security/oauth2/proxy/ProxyAuthenticationProperties) for full details.
 
 
 
@@ -6464,22 +15761,6226 @@ application.yml
 
 
 
-# 원본 텍스트
-
-
-
-
-
-Spring Boot has an opinionated view of how to build an application with Spring: for instance it has conventional locations for common configuration file, and endpoints for common management and monitoring tasks.
-
-
-
-
-
-* * *
+# Spring Cloud for Cloud Foundry
 
 
 
 
 
 
+
+Spring Cloud for Cloudfoundry makes it easy to run [Spring Cloud](https://github.com/spring-cloud) apps in [Cloud Foundry](https://github.com/cloudfoundry) (the Platform as a Service). Cloud Foundry has the notion of a "service", which is middlware that you "bind" to an app, essentially providing it with an environment variable containing credentials (e.g. the location and username to use for the service).
+
+
+
+
+
+The `spring-cloud-cloudfoundry-web` project provides basic support for some enhanced features of webapps in Cloud Foundry: binding automatically to single-sign-on services and optionally enabling sticky routing for discovery.
+
+
+
+
+
+The `spring-cloud-cloudfoundry-discovery` project provides an implementation of Spring Cloud Commons `DiscoveryClient` so you can `@EnableDiscoveryClient` and provide your credentials as `spring.cloud.cloudfoundry.discovery.[email,password]` and then you can use the `DiscoveryClient` directly or via a `LoadBalancerClient` (also `*.url` if you are not connecting to [Pivotal Web Services](https://run.pivotal.io/)).
+
+
+
+
+
+The first time you use it the discovery client might be slow owing to the fact that it has to get an access token from Cloud Foundry.
+
+
+
+
+
+
+
+
+
+## Discovery
+
+
+
+
+
+Here’s a Spring Cloud app with Cloud Foundry discovery:
+
+
+
+
+
+
+
+
+
+    @Grab('org.springframework.cloud:spring-cloud-cloudfoundry')
+    @RestController
+    @EnableDiscoveryClient
+    class Application {
+
+      @Autowired
+      DiscoveryClient client
+
+      @RequestMapping('/')
+      String home() {
+        'Hello from ' + client.getLocalServiceInstance()
+      }
+
+    }
+
+
+
+
+
+
+
+If you run it without any service bindings:
+
+
+
+
+
+
+
+<pre>$ spring jar app.jar app.groovy
+$ cf push -p app.jar</pre>
+
+
+
+
+
+
+
+It will show its app name in the home page.
+
+
+
+
+
+The `DiscoveryClient` can lists all the apps in a space, according to the credentials it is authenticated with, where the space defaults to the one the client is running in (if any). If neither org nor space are configured, they default per the user’s profile in Cloud Foundry.
+
+
+
+
+
+
+
+
+
+## Single Sign On
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td class="content">All of the OAuth2 SSO and resource server features moved to Spring Boot in version 1.3\. You can find documentation in the [Spring Boot user guide](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/).
+
+
+
+
+
+
+
+
+
+
+
+This project provides automatic binding from CloudFoundry service credentials to the Spring Boot features. If you have a CloudFoundry service called "sso", for instance, with credentials containing "client_id", "client_secret" and "auth_domain", it will bind automatically to the Spring OAuth2 client that you enable with `@EnableOAuth2Sso` (from Spring Boot). The name of the service can be parameterized using `spring.oauth2.sso.serviceId`.
+
+
+
+
+
+
+
+# Spring Cloud Cluster
+
+
+
+
+
+
+
+
+
+## Leader Election
+
+
+
+
+
+Leader election allows application to work together with other applications to coordinate a cluster leadership via a third party system. Currently we provide integrations with `zookeeper`, `hazelcast` and `etcd`.
+
+
+
+
+
+From user perspective election is working via interfaces `org.springframework.cloud.cluster.leader.Candidate` and `org.springframework.cloud.cluster.leader.Context`. `Candidate` contains access to leadership’s `role` and `id` and also have methods `onGranted` and `onRevoked`. These callback methods are useful if default `Candidate` implementation is changed.
+
+
+
+
+
+Leader election is auto-configured if `spring-cloud-cluster-autoconfigure` and either `spring-cloud-cluster-hazelcast`, `spring-cloud-cluster-zookeeper` or `spring-cloud-cluster-etcd` jars are found from a classpath. In case where both jars are found leader election is created using both systems. See sections [Zookeeper](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-cluster-leaderelection-zookeeper), [Hazelcast](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-cluster-leaderelection-hazelcast) and [Etcd](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-cluster-leaderelection-etcd) for more information about a created beans.
+
+
+
+
+
+Default `Candidate` created from auto-configuration is `org.springframework.cloud.cluster.leader.DefaultCandidate` which currently only logs granted and revoked events.
+
+
+
+
+
+If there’s a need for disable all leader related auto-configuration, a `spring.cloud.cluster.leader.enabled` can be set to false which then allows to do manual configuration even if the jars an on a classpath. Properties `spring.cloud.cluster.leader.id` and `spring.cloud.cluster.leader.role` can be used to set default identifier and role.
+
+
+
+
+
+If you are interested to simple get notification of granted and revoked events one option is to attach event listener into spring application context. Events `OnGrantedEvent` and `OnRevokedEvent` are sent as spring event objects.
+
+
+
+
+
+Simply create your own event listener class:
+
+
+
+
+
+
+
+    class MyEventListener implements ApplicationListener<AbstractLeaderEvent> {
+
+      @Override
+      public void onApplicationEvent(AbstractLeaderEvent event) {
+        // do something with OnGrantedEvent or OnRevokedEvent
+      }
+    }
+
+
+
+
+
+
+
+and then create it as a bean.
+
+
+
+
+
+
+
+    @Configuration
+    static class Config {
+      @Bean
+      public MyEventListener myEventListener() {
+        return new MyEventListener();
+      }
+    }
+
+
+
+
+
+
+
+For simply log events you can also use a utility class `LoggingListener` which allows easy configuration.
+
+
+
+
+
+
+
+    import org.springframework.cloud.cluster.leader.event.LoggingListener;
+
+    @Configuration
+    static class Config {
+      @Bean
+      public LoggingListener loggingListener() {
+        return new LoggingListener("info");
+      }
+    }
+
+
+
+
+
+
+
+### Zookeeper
+
+
+
+`Candidate` implementation for zookeeper is created with a bean name `zookeeperLeaderCandidate` which can be used to override the one created during auto-configuration.
+
+
+
+
+
+Zookeeper based election can be explicitly disabled using property `spring.cloud.cluster.zookeeper.leader.enabled`.
+
+
+
+
+
+Other properties `spring.cloud.cluster.zookeeper.namespace` and `spring.cloud.cluster.zookeeper.connect` can be used to set the zookeeper base namespace path and connect string.
+
+
+
+
+
+
+
+### Hazelcast
+
+
+
+`Candidate` implementation for hazelcast is created with a bean name `hazelcastLeaderCandidate` which can be used to override the one created during auto-configuration.
+
+
+
+
+
+Hazelcast based election can be explicitly disabled using property `spring.cloud.cluster.hazelcast.leader.enabled`. If you want to provide xml based configuration for Hazelcast instance use property `spring.cloud.cluster.hazelcast.config-location` to tell location of a Hazelcast xml configuration file. `config-location` is a normal spring `Resource`.
+
+
+
+
+
+
+
+### Etcd
+
+
+
+`Candidate` implementation for etcd is created with a bean name `etcdLeaderCandidate` which can be used to override the one created during auto-configuration.
+
+
+
+
+
+Etcd based election can be explicitly disabled using property `spring.cloud.cluster.etcd.leader.enabled`.
+
+
+
+
+
+Multiple etcd cluster uris can be specified using property `spring.cloud.cluster.etcd.connect`
+
+
+
+
+
+
+
+
+
+# Appendix: Compendium of Configuration Properties
+
+
+
+
+
+<table class="tableblock frame-all grid-all spread"><colgroup><col style="width: 33%;"> <col style="width: 33%;"> <col style="width: 33%;"></colgroup>
+<thead>
+
+
+
+
+<th class="tableblock halign-left valign-top">Name</th>
+
+<th class="tableblock halign-left valign-top">Default</th>
+
+<th class="tableblock halign-left valign-top">Description</th>
+
+
+
+</thead>
+
+
+
+
+
+
+
+encrypt.fail-on-error
+
+
+
+
+
+true
+
+
+
+
+
+Flag to say that a process should fail if there is an encryption or decryption error.
+
+
+
+
+
+
+
+
+
+encrypt.key
+
+
+
+
+
+A symmetric key. As a stronger alternative consider using a keystore.
+
+
+
+
+
+
+
+
+
+encrypt.key-store.alias
+
+
+
+
+
+Alias for a key in the store.
+
+
+
+
+
+
+
+
+
+encrypt.key-store.location
+
+
+
+
+
+Location of the key store file, e.g. classpath:/keystore.jks.
+
+
+
+
+
+
+
+
+
+encrypt.key-store.password
+
+
+
+
+
+Password that locks the keystore.
+
+
+
+
+
+
+
+
+
+encrypt.key-store.secret
+
+
+
+
+
+Secret protecting the key (defaults to the same as the password).
+
+
+
+
+
+
+
+
+
+encrypt.rsa.algorithm
+
+
+
+
+
+The RSA algorithm to use (DEFAULT or OEAP). Once it is set do not change it (or existing ciphers will not a decryptable).
+
+
+
+
+
+
+
+
+
+encrypt.rsa.salt
+
+
+
+
+
+deadbeef
+
+
+
+
+
+Salt for the random secret used to encrypt cipher text. Once it is set do not change it (or existing ciphers will not a decryptable).
+
+
+
+
+
+
+
+
+
+encrypt.rsa.strong
+
+
+
+
+
+false
+
+
+
+
+
+Flag to indicate that "strong" AES encryption should be used internally. If true then the GCM algorithm is applied to the AES encrypted bytes. Default is false (in which case "standard" CBC is used instead). Once it is set do not change it (or existing ciphers will not a decryptable).
+
+
+
+
+
+
+
+
+
+endpoints.bus.enabled
+
+
+
+
+
+
+
+
+
+endpoints.bus.id
+
+
+
+
+
+
+
+
+
+endpoints.bus.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.consul.enabled
+
+
+
+
+
+
+
+
+
+endpoints.consul.id
+
+
+
+
+
+
+
+
+
+endpoints.consul.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.features.enabled
+
+
+
+
+
+
+
+
+
+endpoints.features.id
+
+
+
+
+
+
+
+
+
+endpoints.features.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.pause.enabled
+
+
+
+
+
+
+
+
+
+endpoints.pause.id
+
+
+
+
+
+
+
+
+
+endpoints.pause.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.refresh.enabled
+
+
+
+
+
+
+
+
+
+endpoints.refresh.id
+
+
+
+
+
+
+
+
+
+endpoints.refresh.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.restart.enabled
+
+
+
+
+
+
+
+
+
+endpoints.restart.id
+
+
+
+
+
+
+
+
+
+endpoints.restart.pause-endpoint.enabled
+
+
+
+
+
+
+
+
+
+endpoints.restart.pause-endpoint.id
+
+
+
+
+
+
+
+
+
+endpoints.restart.pause-endpoint.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.restart.resume-endpoint.enabled
+
+
+
+
+
+
+
+
+
+endpoints.restart.resume-endpoint.id
+
+
+
+
+
+
+
+
+
+endpoints.restart.resume-endpoint.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.restart.sensitive
+
+
+
+
+
+
+
+
+
+endpoints.restart.timeout
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+endpoints.resume.enabled
+
+
+
+
+
+
+
+
+
+endpoints.resume.id
+
+
+
+
+
+
+
+
+
+endpoints.resume.sensitive
+
+
+
+
+
+
+
+
+
+eureka.client.allow-redirects
+
+
+
+
+
+false
+
+
+
+
+
+Indicates whether server can redirect a client request to a backup server/cluster. If set to false, the server will handle the request directly, If set to true, it may send HTTP redirect to the client, with a new server location.
+
+
+
+
+
+
+
+
+
+eureka.client.availability-zones
+
+
+
+
+
+Gets the list of availability zones (used in AWS data centers) for the region in which this instance resides.
+
+The changes are effective at runtime at the next registry fetch cycle as specified by registryFetchIntervalSeconds.
+
+
+
+
+
+
+
+
+
+eureka.client.backup-registry-impl
+
+
+
+
+
+Gets the name of the implementation which implements BackupRegistry to fetch the registry information as a fall back option for only the first time when the eureka client starts.
+
+This may be needed for applications which needs additional resiliency for registry information without which it cannot operate.
+
+
+
+
+
+
+
+
+
+eureka.client.cache-refresh-executor-exponential-back-off-bound
+
+
+
+
+
+10
+
+
+
+
+
+Cache refresh executor exponential back off related property. It is a maximum multiplier value for retry delay, in case where a sequence of timeouts occurred.
+
+
+
+
+
+
+
+
+
+eureka.client.cache-refresh-executor-thread-pool-size
+
+
+
+
+
+2
+
+
+
+
+
+The thread pool size for the cacheRefreshExecutor to initialise with
+
+
+
+
+
+
+
+
+
+eureka.client.client-data-accept
+
+
+
+
+
+EurekaAccept name for client data accept
+
+
+
+
+
+
+
+
+
+eureka.client.decoder-name
+
+
+
+
+
+This is a transient config and once the latest codecs are stable, can be removed (as there will only be one)
+
+
+
+
+
+
+
+
+
+eureka.client.disable-delta
+
+
+
+
+
+false
+
+
+
+
+
+Indicates whether the eureka client should disable fetching of delta and should rather resort to getting the full registry information.
+
+Note that the delta fetches can reduce the traffic tremendously, because the rate of change with the eureka server is normally much lower than the rate of fetches.
+
+The changes are effective at runtime at the next registry fetch cycle as specified by registryFetchIntervalSeconds
+
+
+
+
+
+
+
+
+
+eureka.client.dollar-replacement
+
+
+
+
+
+_-
+
+
+
+
+
+Get a replacement string for Dollar sign <code>$</code> during serializing/deserializing information in eureka server.
+
+
+
+
+
+
+
+
+
+eureka.client.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to indicate that the Eureka client is enabled.
+
+
+
+
+
+
+
+
+
+eureka.client.encoder-name
+
+
+
+
+
+This is a transient config and once the latest codecs are stable, can be removed (as there will only be one)
+
+
+
+
+
+
+
+
+
+eureka.client.escape-char-replacement
+
+
+
+
+
+__
+
+
+
+
+
+Get a replacement string for underscore sign <code>_</code> during serializing/deserializing information in eureka server.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-connection-idle-timeout-seconds
+
+
+
+
+
+30
+
+
+
+
+
+Indicates how much time (in seconds) that the HTTP connections to eureka server can stay idle before it can be closed.
+
+In the AWS environment, it is recommended that the values is 30 seconds or less, since the firewall cleans up the connection information after a few mins leaving the connection hanging in limbo
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-server-connect-timeout-seconds
+
+
+
+
+
+5
+
+
+
+
+
+Indicates how long to wait (in seconds) before a connection to eureka server needs to timeout. Note that the connections in the client are pooled by org.apache.http.client.HttpClient and this setting affects the actual connection creation and also the wait time to get the connection from the pool.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-server-dnsname
+
+
+
+
+
+Gets the DNS name to be queried to get the list of eureka servers.This information is not required if the contract returns the service urls by implementing serviceUrls.
+
+The DNS mechanism is used when useDnsForFetchingServiceUrls is set to true and the eureka client expects the DNS to configured a certain way so that it can fetch changing eureka servers dynamically.
+
+The changes are effective at runtime.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-server-port
+
+
+
+
+
+Gets the port to be used to construct the service url to contact eureka server when the list of eureka servers come from the DNS.This information is not required if the contract returns the service urls eurekaServerServiceUrls(String).
+
+The DNS mechanism is used when useDnsForFetchingServiceUrls is set to true and the eureka client expects the DNS to configured a certain way so that it can fetch changing eureka servers dynamically.
+
+The changes are effective at runtime.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-server-read-timeout-seconds
+
+
+
+
+
+8
+
+
+
+
+
+Indicates how long to wait (in seconds) before a read from eureka server needs to timeout.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-server-total-connections
+
+
+
+
+
+200
+
+
+
+
+
+Gets the total number of connections that is allowed from eureka client to all eureka servers.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-server-total-connections-per-host
+
+
+
+
+
+50
+
+
+
+
+
+Gets the total number of connections that is allowed from eureka client to a eureka server host.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-server-urlcontext
+
+
+
+
+
+Gets the URL context to be used to construct the service url to contact eureka server when the list of eureka servers come from the DNS. This information is not required if the contract returns the service urls from eurekaServerServiceUrls.
+
+The DNS mechanism is used when useDnsForFetchingServiceUrls is set to true and the eureka client expects the DNS to configured a certain way so that it can fetch changing eureka servers dynamically. The changes are effective at runtime.
+
+
+
+
+
+
+
+
+
+eureka.client.eureka-service-url-poll-interval-seconds
+
+
+
+
+
+0
+
+
+
+
+
+Indicates how often(in seconds) to poll for changes to eureka server information. Eureka servers could be added or removed and this setting controls how soon the eureka clients should know about it.
+
+
+
+
+
+
+
+
+
+eureka.client.fetch-registry
+
+
+
+
+
+true
+
+
+
+
+
+Indicates whether this client should fetch eureka registry information from eureka server.
+
+
+
+
+
+
+
+
+
+eureka.client.fetch-remote-regions-registry
+
+
+
+
+
+Comma separated list of regions for which the eureka registry information will be fetched. It is mandatory to define the availability zones for each of these regions as returned by availabilityZones. Failing to do so, will result in failure of discovery client startup.
+
+
+
+
+
+
+
+
+
+eureka.client.filter-only-up-instances
+
+
+
+
+
+true
+
+
+
+
+
+Indicates whether to get the applications after filtering the applications for instances with only InstanceStatus UP states.
+
+
+
+
+
+
+
+
+
+eureka.client.g-zip-content
+
+
+
+
+
+true
+
+
+
+
+
+Indicates whether the content fetched from eureka server has to be compressed whenever it is supported by the server. The registry information from the eureka server is compressed for optimum network traffic.
+
+
+
+
+
+
+
+
+
+eureka.client.heartbeat-executor-exponential-back-off-bound
+
+
+
+
+
+10
+
+
+
+
+
+Heartbeat executor exponential back off related property. It is a maximum multiplier value for retry delay, in case where a sequence of timeouts occurred.
+
+
+
+
+
+
+
+
+
+eureka.client.heartbeat-executor-thread-pool-size
+
+
+
+
+
+2
+
+
+
+
+
+The thread pool size for the heartbeatExecutor to initialise with
+
+
+
+
+
+
+
+
+
+eureka.client.initial-instance-info-replication-interval-seconds
+
+
+
+
+
+40
+
+
+
+
+
+Indicates how long initially (in seconds) to replicate instance info to the eureka server
+
+
+
+
+
+
+
+
+
+eureka.client.instance-info-replication-interval-seconds
+
+
+
+
+
+30
+
+
+
+
+
+Indicates how often(in seconds) to replicate instance changes to be replicated to the eureka server.
+
+
+
+
+
+
+
+
+
+eureka.client.log-delta-diff
+
+
+
+
+
+false
+
+
+
+
+
+Indicates whether to log differences between the eureka server and the eureka client in terms of registry information.
+
+Eureka client tries to retrieve only delta changes from eureka server to minimize network traffic. After receiving the deltas, eureka client reconciles the information from the server to verify it has not missed out some information. Reconciliation failures could happen when the client has had network issues communicating to server.If the reconciliation fails, eureka client gets the full registry information.
+
+While getting the full registry information, the eureka client can log the differences between the client and the server and this setting controls that.
+
+The changes are effective at runtime at the next registry fetch cycle as specified by registryFetchIntervalSecondsr
+
+
+
+
+
+
+
+
+
+eureka.client.on-demand-update-status-change
+
+
+
+
+
+true
+
+
+
+
+
+If set to true, local status updates via ApplicationInfoManager will trigger on-demand (but rate limited) register/updates to remote eureka servers
+
+
+
+
+
+
+
+
+
+eureka.client.prefer-same-zone-eureka
+
+
+
+
+
+true
+
+
+
+
+
+Indicates whether or not this instance should try to use the eureka server in the same zone for latency and/or other reason.
+
+Ideally eureka clients are configured to talk to servers in the same zone
+
+The changes are effective at runtime at the next registry fetch cycle as specified by registryFetchIntervalSeconds
+
+
+
+
+
+
+
+
+
+eureka.client.property-resolver
+
+
+
+
+
+
+
+
+
+eureka.client.proxy-host
+
+
+
+
+
+Gets the proxy host to eureka server if any.
+
+
+
+
+
+
+
+
+
+eureka.client.proxy-password
+
+
+
+
+
+Gets the proxy password if any.
+
+
+
+
+
+
+
+
+
+eureka.client.proxy-port
+
+
+
+
+
+Gets the proxy port to eureka server if any.
+
+
+
+
+
+
+
+
+
+eureka.client.proxy-user-name
+
+
+
+
+
+Gets the proxy user name if any.
+
+
+
+
+
+
+
+
+
+eureka.client.region
+
+
+
+
+
+us-east-1
+
+
+
+
+
+Gets the region (used in AWS datacenters) where this instance resides.
+
+
+
+
+
+
+
+
+
+eureka.client.register-with-eureka
+
+
+
+
+
+true
+
+
+
+
+
+Indicates whether or not this instance should register its information with eureka server for discovery by others.
+
+In some cases, you do not want your instances to be discovered whereas you just want do discover other instances.
+
+
+
+
+
+
+
+
+
+eureka.client.registry-fetch-interval-seconds
+
+
+
+
+
+30
+
+
+
+
+
+Indicates how often(in seconds) to fetch the registry information from the eureka server.
+
+
+
+
+
+
+
+
+
+eureka.client.registry-refresh-single-vip-address
+
+
+
+
+
+Indicates whether the client is only interested in the registry information for a single VIP.
+
+
+
+
+
+
+
+
+
+eureka.client.service-url
+
+
+
+
+
+Map of availability zone to list of fully qualified URLs to communicate with eureka server. Each value can be a single URL or a comma separated list of alternative locations.
+
+Typically the eureka server URLs carry protocol,host,port,context and version information if any. Example: [http://ec2-256-156-243-129.compute-1.amazonaws.com:7001/eureka/](http://ec2-256-156-243-129.compute-1.amazonaws.com:7001/eureka/)
+
+The changes are effective at runtime at the next service url refresh cycle as specified by eurekaServiceUrlPollIntervalSeconds.
+
+
+
+
+
+
+
+
+
+eureka.client.transport
+
+
+
+
+
+
+
+
+
+eureka.client.use-dns-for-fetching-service-urls
+
+
+
+
+
+false
+
+
+
+
+
+Indicates whether the eureka client should use the DNS mechanism to fetch a list of eureka servers to talk to. When the DNS name is updated to have additional servers, that information is used immediately after the eureka client polls for that information as specified in eurekaServiceUrlPollIntervalSeconds.
+
+Alternatively, the service urls can be returned serviceUrls, but the users should implement their own mechanism to return the updated list in case of changes.
+
+The changes are effective at runtime.
+
+
+
+
+
+
+
+
+
+eureka.dashboard.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to enable the Eureka dashboard. Default true.
+
+
+
+
+
+
+
+
+
+eureka.dashboard.path
+
+
+
+
+
+/
+
+
+
+
+
+The path to the Eureka dashboard (relative to the servlet path). Defaults to "/".
+
+
+
+
+
+
+
+
+
+eureka.instance.a-sgname
+
+
+
+
+
+Gets the AWS autoscaling group name associated with this instance. This information is specifically used in an AWS environment to automatically put an instance out of service after the instance is launched and it has been disabled for traffic..
+
+
+
+
+
+
+
+
+
+eureka.instance.app-group-name
+
+
+
+
+
+Get the name of the application group to be registered with eureka.
+
+
+
+
+
+
+
+
+
+eureka.instance.appname
+
+
+
+
+
+unknown
+
+
+
+
+
+Get the name of the application to be registered with eureka.
+
+
+
+
+
+
+
+
+
+eureka.instance.data-center-info
+
+
+
+
+
+Returns the data center this instance is deployed. This information is used to get some AWS specific instance information if the instance is deployed in AWS.
+
+
+
+
+
+
+
+
+
+eureka.instance.default-address-resolution-order
+
+
+
+
+
+[]
+
+
+
+
+
+
+
+
+
+eureka.instance.health-check-url
+
+
+
+
+
+Gets the absolute health check page URL for this instance. The users can provide the healthCheckUrlPath if the health check page resides in the same instance talking to eureka, else in the cases where the instance is a proxy for some other server, users can provide the full URL. If the full URL is provided it takes precedence.
+
+<p> It is normally used for making educated decisions based on the health of the instance - for example, it can be used to determine whether to proceed deployments to an entire farm or stop the deployments without causing further damage. The full URL should follow the format [http://${eureka.hostname}:7001/](http://%24%7Beureka.hostname%7D:7001/) where the value ${eureka.hostname} is replaced at runtime.
+
+
+
+
+
+
+
+
+
+eureka.instance.health-check-url-path
+
+
+
+
+
+/health
+
+
+
+
+
+Gets the relative health check URL path for this instance. The health check page URL is then constructed out of the hostname and the type of communication - secure or unsecure as specified in securePort and nonSecurePort.
+
+It is normally used for making educated decisions based on the health of the instance - for example, it can be used to determine whether to proceed deployments to an entire farm or stop the deployments without causing further damage.
+
+
+
+
+
+
+
+
+
+eureka.instance.home-page-url
+
+
+
+
+
+Gets the absolute home page URL for this instance. The users can provide the homePageUrlPath if the home page resides in the same instance talking to eureka, else in the cases where the instance is a proxy for some other server, users can provide the full URL. If the full URL is provided it takes precedence.
+
+It is normally used for informational purposes for other services to use it as a landing page. The full URL should follow the format [http://${eureka.hostname}:7001/](http://%24%7Beureka.hostname%7D:7001/) where the value ${eureka.hostname} is replaced at runtime.
+
+
+
+
+
+
+
+
+
+eureka.instance.home-page-url-path
+
+
+
+
+
+/
+
+
+
+
+
+Gets the relative home page URL Path for this instance. The home page URL is then constructed out of the hostName and the type of communication - secure or unsecure.
+
+It is normally used for informational purposes for other services to use it as a landing page.
+
+
+
+
+
+
+
+
+
+eureka.instance.host-info
+
+
+
+
+
+
+
+
+
+eureka.instance.hostname
+
+
+
+
+
+The hostname if it can be determined at configuration time (otherwise it will be guessed from OS primitives).
+
+
+
+
+
+
+
+
+
+eureka.instance.inet-utils
+
+
+
+
+
+
+
+
+
+eureka.instance.initial-status
+
+
+
+
+
+Initial status to register with rmeote Eureka server.
+
+
+
+
+
+
+
+
+
+eureka.instance.instance-enabled-onit
+
+
+
+
+
+false
+
+
+
+
+
+Indicates whether the instance should be enabled for taking traffic as soon as it is registered with eureka. Sometimes the application might need to do some pre-processing before it is ready to take traffic.
+
+
+
+
+
+
+
+
+
+eureka.instance.instance-id
+
+
+
+
+
+Get the unique Id (within the scope of the appName) of this instance to be registered with eureka.
+
+
+
+
+
+
+
+
+
+eureka.instance.ip-address
+
+
+
+
+
+Get the IPAdress of the instance. This information is for academic purposes only as the communication from other instances primarily happen using the information supplied in {@link #getHostName(boolean)}.
+
+
+
+
+
+
+
+
+
+eureka.instance.lease-expiration-duration-in-seconds
+
+
+
+
+
+90
+
+
+
+
+
+Indicates the time in seconds that the eureka server waits since it received the last heartbeat before it can remove this instance from its view and there by disallowing traffic to this instance.
+
+Setting this value too long could mean that the traffic could be routed to the instance even though the instance is not alive. Setting this value too small could mean, the instance may be taken out of traffic because of temporary network glitches.This value to be set to atleast higher than the value specified in leaseRenewalIntervalInSeconds.
+
+
+
+
+
+
+
+
+
+eureka.instance.lease-renewal-interval-in-seconds
+
+
+
+
+
+30
+
+
+
+
+
+Indicates how often (in seconds) the eureka client needs to send heartbeats to eureka server to indicate that it is still alive. If the heartbeats are not received for the period specified in leaseExpirationDurationInSeconds, eureka server will remove the instance from its view, there by disallowing traffic to this instance.
+
+Note that the instance could still not take traffic if it implements HealthCheckCallback and then decides to make itself unavailable.
+
+
+
+
+
+
+
+
+
+eureka.instance.metadata-map
+
+
+
+
+
+Gets the metadata name/value pairs associated with this instance. This information is sent to eureka server and can be used by other instances.
+
+
+
+
+
+
+
+
+
+eureka.instance.namespace
+
+
+
+
+
+eureka
+
+
+
+
+
+Get the namespace used to find properties. Ignored in Spring Cloud.
+
+
+
+
+
+
+
+
+
+eureka.instance.non-secure-port
+
+
+
+
+
+80
+
+
+
+
+
+Get the non-secure port on which the instance should receive traffic.
+
+
+
+
+
+
+
+
+
+eureka.instance.non-secure-port-enabled
+
+
+
+
+
+true
+
+
+
+
+
+Indicates whether the non-secure port should be enabled for traffic or not.
+
+
+
+
+
+
+
+
+
+eureka.instance.prefer-ip-address
+
+
+
+
+
+false
+
+
+
+
+
+Flag to say that, when guessing a hostname, the IP address of the server should be used in prference to the hostname reported by the OS.
+
+
+
+
+
+
+
+
+
+eureka.instance.secure-health-check-url
+
+
+
+
+
+Gets the absolute secure health check page URL for this instance. The users can provide the secureHealthCheckUrl if the health check page resides in the same instance talking to eureka, else in the cases where the instance is a proxy for some other server, users can provide the full URL. If the full URL is provided it takes precedence.
+
+<p> It is normally used for making educated decisions based on the health of the instance - for example, it can be used to determine whether to proceed deployments to an entire farm or stop the deployments without causing further damage. The full URL should follow the format [http://${eureka.hostname}:7001/](http://%24%7Beureka.hostname%7D:7001/) where the value ${eureka.hostname} is replaced at runtime.
+
+
+
+
+
+
+
+
+
+eureka.instance.secure-port
+
+
+
+
+
+443
+
+
+
+
+
+Get the Secure port on which the instance should receive traffic.
+
+
+
+
+
+
+
+
+
+eureka.instance.secure-port-enabled
+
+
+
+
+
+false
+
+
+
+
+
+Indicates whether the secure port should be enabled for traffic or not.
+
+
+
+
+
+
+
+
+
+eureka.instance.secure-virtual-host-name
+
+
+
+
+
+Gets the secure virtual host name defined for this instance.
+
+This is typically the way other instance would find this instance by using the secure virtual host name.Think of this as similar to the fully qualified domain name, that the users of your services will need to find this instance.
+
+
+
+
+
+
+
+
+
+eureka.instance.status-page-url
+
+
+
+
+
+Gets the absolute status page URL path for this instance. The users can provide the statusPageUrlPath if the status page resides in the same instance talking to eureka, else in the cases where the instance is a proxy for some other server, users can provide the full URL. If the full URL is provided it takes precedence.
+
+It is normally used for informational purposes for other services to find about the status of this instance. Users can provide a simple HTML indicating what is the current status of the instance.
+
+
+
+
+
+
+
+
+
+eureka.instance.status-page-url-path
+
+
+
+
+
+/info
+
+
+
+
+
+Gets the relative status page URL path for this instance. The status page URL is then constructed out of the hostName and the type of communication - secure or unsecure as specified in securePort and nonSecurePort.
+
+It is normally used for informational purposes for other services to find about the status of this instance. Users can provide a simple HTML indicating what is the current status of the instance.
+
+
+
+
+
+
+
+
+
+eureka.instance.virtual-host-name
+
+
+
+
+
+Gets the virtual host name defined for this instance.
+
+This is typically the way other instance would find this instance by using the virtual host name.Think of this as similar to the fully qualified domain name, that the users of your services will need to find this instance.
+
+
+
+
+
+
+
+
+
+eureka.server.a-sgcache-expiry-timeout-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.a-sgquery-timeout-ms
+
+
+
+
+
+300
+
+
+
+
+
+
+
+
+
+eureka.server.a-sgupdate-interval-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.a-wsaccess-id
+
+
+
+
+
+
+
+
+
+eureka.server.a-wssecret-key
+
+
+
+
+
+
+
+
+
+eureka.server.batch-replication
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+eureka.server.binding-strategy
+
+
+
+
+
+
+
+
+
+eureka.server.delta-retention-timer-interval-in-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.disable-delta
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+eureka.server.disable-delta-for-remote-regions
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+eureka.server.disable-transparent-fallback-to-other-region
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+eureka.server.e-ipbind-rebind-retries
+
+
+
+
+
+3
+
+
+
+
+
+
+
+
+
+eureka.server.e-ipbinding-retry-interval-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.e-ipbinding-retry-interval-ms-when-unbound
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.enable-replicated-request-compression
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+eureka.server.enable-self-preservation
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+eureka.server.eviction-interval-timer-in-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.g-zip-content-from-remote-region
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+eureka.server.json-codec-name
+
+
+
+
+
+
+
+
+
+eureka.server.list-auto-scaling-groups-role-name
+
+
+
+
+
+ListAutoScalingGroups
+
+
+
+
+
+
+
+
+
+eureka.server.log-identity-headers
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+eureka.server.max-elements-in-peer-replication-pool
+
+
+
+
+
+10000
+
+
+
+
+
+
+
+
+
+eureka.server.max-elements-in-status-replication-pool
+
+
+
+
+
+10000
+
+
+
+
+
+
+
+
+
+eureka.server.max-idle-thread-age-in-minutes-for-peer-replication
+
+
+
+
+
+15
+
+
+
+
+
+
+
+
+
+eureka.server.max-idle-thread-in-minutes-age-for-status-replication
+
+
+
+
+
+10
+
+
+
+
+
+
+
+
+
+eureka.server.max-threads-for-peer-replication
+
+
+
+
+
+20
+
+
+
+
+
+
+
+
+
+eureka.server.max-threads-for-status-replication
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+eureka.server.max-time-for-replication
+
+
+
+
+
+30000
+
+
+
+
+
+
+
+
+
+eureka.server.min-threads-for-peer-replication
+
+
+
+
+
+5
+
+
+
+
+
+
+
+
+
+eureka.server.min-threads-for-status-replication
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+eureka.server.number-of-replication-retries
+
+
+
+
+
+5
+
+
+
+
+
+
+
+
+
+eureka.server.peer-eureka-nodes-update-interval-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.peer-eureka-status-refresh-time-interval-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.peer-node-connect-timeout-ms
+
+
+
+
+
+200
+
+
+
+
+
+
+
+
+
+eureka.server.peer-node-connection-idle-timeout-seconds
+
+
+
+
+
+30
+
+
+
+
+
+
+
+
+
+eureka.server.peer-node-read-timeout-ms
+
+
+
+
+
+200
+
+
+
+
+
+
+
+
+
+eureka.server.peer-node-total-connections
+
+
+
+
+
+1000
+
+
+
+
+
+
+
+
+
+eureka.server.peer-node-total-connections-per-host
+
+
+
+
+
+500
+
+
+
+
+
+
+
+
+
+eureka.server.prime-aws-replica-connections
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+eureka.server.property-resolver
+
+
+
+
+
+
+
+
+
+eureka.server.rate-limiter-burst-size
+
+
+
+
+
+10
+
+
+
+
+
+
+
+
+
+eureka.server.rate-limiter-enabled
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+eureka.server.rate-limiter-full-fetch-average-rate
+
+
+
+
+
+100
+
+
+
+
+
+
+
+
+
+eureka.server.rate-limiter-privileged-clients
+
+
+
+
+
+
+
+
+
+eureka.server.rate-limiter-registry-fetch-average-rate
+
+
+
+
+
+500
+
+
+
+
+
+
+
+
+
+eureka.server.rate-limiter-throttle-standard-clients
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+eureka.server.registry-sync-retries
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.registry-sync-retry-wait-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-app-whitelist
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-connect-timeout-ms
+
+
+
+
+
+1000
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-connection-idle-timeout-seconds
+
+
+
+
+
+30
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-fetch-thread-pool-size
+
+
+
+
+
+20
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-read-timeout-ms
+
+
+
+
+
+1000
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-registry-fetch-interval
+
+
+
+
+
+30
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-total-connections
+
+
+
+
+
+1000
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-total-connections-per-host
+
+
+
+
+
+500
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-trust-store
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-trust-store-password
+
+
+
+
+
+changeit
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-urls
+
+
+
+
+
+
+
+
+
+eureka.server.remote-region-urls-with-name
+
+
+
+
+
+
+
+
+
+eureka.server.renewal-percent-threshold
+
+
+
+
+
+0.85
+
+
+
+
+
+
+
+
+
+eureka.server.renewal-threshold-update-interval-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.response-cache-auto-expiration-in-seconds
+
+
+
+
+
+180
+
+
+
+
+
+
+
+
+
+eureka.server.response-cache-update-interval-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.retention-time-in-msin-delta-queue
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.route53-bind-rebind-retries
+
+
+
+
+
+3
+
+
+
+
+
+
+
+
+
+eureka.server.route53-binding-retry-interval-ms
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.route53-domain-ttl
+
+
+
+
+
+30
+
+
+
+
+
+
+
+
+
+eureka.server.sync-when-timestamp-differs
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+eureka.server.use-read-only-response-cache
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+eureka.server.wait-time-in-ms-when-sync-empty
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+eureka.server.xml-codec-name
+
+
+
+
+
+
+
+
+
+feign.compression.request.mime-types
+
+
+
+
+
+[text/xml, application/xml, application/json]
+
+
+
+
+
+The list of supported mime types.
+
+
+
+
+
+
+
+
+
+feign.compression.request.min-request-size
+
+
+
+
+
+2048
+
+
+
+
+
+The minimum threshold content size.
+
+
+
+
+
+
+
+
+
+health.config.enabled
+
+
+
+
+
+false
+
+
+
+
+
+Flag to indicate that the config server health indicator should be installed.
+
+
+
+
+
+
+
+
+
+health.hystrix.enabled
+
+
+
+
+
+false
+
+
+
+
+
+Flag to inidicate that the hystrix health indicator should be installed.
+
+
+
+
+
+
+
+
+
+netflix.atlas.batch-size
+
+
+
+
+
+10000
+
+
+
+
+
+
+
+
+
+netflix.atlas.enabled
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+netflix.atlas.uri
+
+
+
+
+
+
+
+
+
+proxy.auth.load-balanced
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+proxy.auth.routes
+
+
+
+
+
+Authentication strategy per route.
+
+
+
+
+
+
+
+
+
+spring.cloud.bus.ack.destination-service
+
+
+
+
+
+Service that wants to listen to acks. By default null (meaning all services).
+
+
+
+
+
+
+
+
+
+spring.cloud.bus.ack.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to switch off acks (default on).
+
+
+
+
+
+
+
+
+
+spring.cloud.bus.destination
+
+
+
+
+
+springCloudBus
+
+
+
+
+
+Name of Spring Cloud Stream destination for messages.
+
+
+
+
+
+
+
+
+
+spring.cloud.bus.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to indicate that the bus is enabled.
+
+
+
+
+
+
+
+
+
+spring.cloud.bus.env.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to switch off environment change events (default on).
+
+
+
+
+
+
+
+
+
+spring.cloud.bus.refresh.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to switch off refresh events (default on).
+
+
+
+
+
+
+
+
+
+spring.cloud.bus.trace.enabled
+
+
+
+
+
+false
+
+
+
+
+
+Flag to switch on tracing of acks (default off).
+
+
+
+
+
+
+
+
+
+spring.cloud.cloudfoundry.discovery.email
+
+
+
+
+
+Email address of user to authenticate.
+
+
+
+
+
+
+
+
+
+spring.cloud.cloudfoundry.discovery.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to indicate that discovery is enabled.
+
+
+
+
+
+
+
+
+
+spring.cloud.cloudfoundry.discovery.password
+
+
+
+
+
+Password for user to authenticate and obtain token.
+
+
+
+
+
+
+
+
+
+spring.cloud.cloudfoundry.discovery.url
+
+
+
+
+
+[https://api.run.pivotal.io](https://api.run.pivotal.io/)
+
+
+
+
+
+URL of Cloud Foundry API (Cloud Controller).
+
+
+
+
+
+
+
+
+
+spring.cloud.config.allow-override
+
+
+
+
+
+true
+
+
+
+
+
+Flag to indicate that {@link #isSystemPropertiesOverride() systemPropertiesOverride} can be used. Set to false to prevent users from changing the default accidentally. Default true.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.discovery.enabled
+
+
+
+
+
+false
+
+
+
+
+
+Flag to indicate that config server discovery is enabled (config server URL will be looked up via discovery).
+
+
+
+
+
+
+
+
+
+spring.cloud.config.discovery.service-id
+
+
+
+
+
+CONFIGSERVER
+
+
+
+
+
+Service id to locate config server.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Flag to say that remote configuration is enabled. Default true;
+
+
+
+
+
+
+
+
+
+spring.cloud.config.fail-fast
+
+
+
+
+
+false
+
+
+
+
+
+Flag to indicate that failure to connect to the server is fatal (default false).
+
+
+
+
+
+
+
+
+
+spring.cloud.config.label
+
+
+
+
+
+The label name to use to pull remote configuration properties. The default is set on the server (generally "master" for a git based server).
+
+
+
+
+
+
+
+
+
+spring.cloud.config.name
+
+
+
+
+
+Name of application used to fetch remote properties.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.override-none
+
+
+
+
+
+false
+
+
+
+
+
+Flag to indicate that when {@link #setAllowOverride(boolean) allowOverride} is true, external properties should take lowest priority, and not override any existing property sources (including local config files). Default false.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.override-system-properties
+
+
+
+
+
+true
+
+
+
+
+
+Flag to indicate that the external properties should override system properties. Default true.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.password
+
+
+
+
+
+The password to use (HTTP Basic) when contacting the remote server.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.profile
+
+
+
+
+
+default
+
+
+
+
+
+The default profile to use when fetching remote configuration (comma-separated). Default is "default".
+
+
+
+
+
+
+
+
+
+spring.cloud.config.retry.initial-interval
+
+
+
+
+
+1000
+
+
+
+
+
+Initial retry interval in milliseconds.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.retry.max-attempts
+
+
+
+
+
+6
+
+
+
+
+
+Maximum number of attempts.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.retry.max-interval
+
+
+
+
+
+2000
+
+
+
+
+
+Maximum interval for backoff.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.retry.multiplier
+
+
+
+
+
+1.1
+
+
+
+
+
+Multiplier for next interval.
+
+
+
+
+
+
+
+
+
+spring.cloud.config.uri
+
+
+
+
+
+[http://localhost:8888](http://localhost:8888/)
+
+
+
+
+
+The URI of the remote server (default [http://localhost:8888](http://localhost:8888/)).
+
+
+
+
+
+
+
+
+
+spring.cloud.config.username
+
+
+
+
+
+The username to use (HTTP Basic) when contacting the remote server.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.acl-token
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.data-key
+
+
+
+
+
+data
+
+
+
+
+
+If format is Format.PROPERTIES or Format.YAML then the following field is used as key to look up consul for configuration.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.default-context
+
+
+
+
+
+application
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.enabled
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.fail-fast
+
+
+
+
+
+true
+
+
+
+
+
+Throw exceptions during config lookup if true, otherwise, log warnings.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.format
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.prefix
+
+
+
+
+
+config
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.profile-separator
+
+
+
+
+
+,
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.watch.delay
+
+
+
+
+
+10
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.watch.enabled
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.config.watch.wait-time
+
+
+
+
+
+2
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.acl-token
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.catalog-services-watch-delay
+
+
+
+
+
+10
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.catalog-services-watch-timeout
+
+
+
+
+
+2
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Is service discovery enabled?
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.health-check-interval
+
+
+
+
+
+10s
+
+
+
+
+
+How often to perform the health check (e.g. 10s)
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.health-check-path
+
+
+
+
+
+/health
+
+
+
+
+
+Alternate server path to invoke for health checking
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.health-check-timeout
+
+
+
+
+
+Timeout for health check (e.g. 10s)
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.health-check-url
+
+
+
+
+
+Custom health check url to override default
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.heartbeat.enabled
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.heartbeat.heartbeat-interval
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.heartbeat.interval-ratio
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.heartbeat.ttl-unit
+
+
+
+
+
+s
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.heartbeat.ttl-value
+
+
+
+
+
+30
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.host-info
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.hostname
+
+
+
+
+
+Hostname to use when accessing server
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.instance-id
+
+
+
+
+
+Unique service instance id
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.ip-address
+
+
+
+
+
+IP address to use when accessing service (must also set preferIpAddress to use)
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.lifecycle.enabled
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.management-suffix
+
+
+
+
+
+management
+
+
+
+
+
+Suffix to use when registering management service
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.management-tags
+
+
+
+
+
+Tags to use when registering management service
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.port
+
+
+
+
+
+Port to register the service under (defaults to listening port)
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.prefer-agent-address
+
+
+
+
+
+false
+
+
+
+
+
+Source of how we will determine the address to use
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.prefer-ip-address
+
+
+
+
+
+false
+
+
+
+
+
+Use ip address rather than hostname during registration
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.query-passing
+
+
+
+
+
+false
+
+
+
+
+
+Add the 'passing` parameter to /v1/health/service/serviceName. This pushes health check passing to the server.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.register
+
+
+
+
+
+true
+
+
+
+
+
+Register as a service in consul.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.register-health-check
+
+
+
+
+
+true
+
+
+
+
+
+Register health check in consul. Useful during development of a service.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.scheme
+
+
+
+
+
+http
+
+
+
+
+
+Whether to register an http or https service
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.server-list-query-tags
+
+
+
+
+
+Map of serviceId’s → tag to query for in server list. This allows filtering services by a single tag.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.service-name
+
+
+
+
+
+Service name
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.discovery.tags
+
+
+
+
+
+Tags to use when registering service
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.enabled
+
+
+
+
+
+true
+
+
+
+
+
+Is spring cloud consul enabled
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.host
+
+
+
+
+
+localhost
+
+
+
+
+
+Consul agent hostname. Defaults to 'localhost'.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.port
+
+
+
+
+
+8500
+
+
+
+
+
+Consul agent port. Defaults to '8500'.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.retry.initial-interval
+
+
+
+
+
+1000
+
+
+
+
+
+Initial retry interval in milliseconds.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.retry.max-attempts
+
+
+
+
+
+6
+
+
+
+
+
+Maximum number of attempts.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.retry.max-interval
+
+
+
+
+
+2000
+
+
+
+
+
+Maximum interval for backoff.
+
+
+
+
+
+
+
+
+
+spring.cloud.consul.retry.multiplier
+
+
+
+
+
+1.1
+
+
+
+
+
+Multiplier for next interval.
+
+
+
+
+
+
+
+
+
+spring.cloud.hypermedia.refresh.fixed-delay
+
+
+
+
+
+5000
+
+
+
+
+
+
+
+
+
+spring.cloud.hypermedia.refresh.initial-delay
+
+
+
+
+
+10000
+
+
+
+
+
+
+
+
+
+spring.cloud.inetutils.default-hostname
+
+
+
+
+
+localhost
+
+
+
+
+
+The default hostname. Used in case of errors.
+
+
+
+
+
+
+
+
+
+spring.cloud.inetutils.default-ip-address
+
+
+
+
+
+127.0.0.1
+
+
+
+
+
+The default ipaddress. Used in case of errors.
+
+
+
+
+
+
+
+
+
+spring.cloud.inetutils.ignored-interfaces
+
+
+
+
+
+List of Java regex expressions for network interfaces that will be ignored.
+
+
+
+
+
+
+
+
+
+spring.cloud.inetutils.timeout-seconds
+
+
+
+
+
+1
+
+
+
+
+
+Timeout in seconds for calculating hostname.
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.binders
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.bindings
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.consumer-defaults
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.default-binder
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.dynamic-destinations
+
+
+
+
+
+[]
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.ignore-unknown-properties
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.instance-count
+
+
+
+
+
+1
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.instance-index
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.producer-defaults
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.addresses
+
+
+
+
+
+[]
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.admin-adresses
+
+
+
+
+
+[]
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.compression-level
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.nodes
+
+
+
+
+
+[]
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.password
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.ssl-properties-location
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.use-ssl
+
+
+
+
+
+false
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.username
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.binder.vhost
+
+
+
+
+
+
+
+
+
+spring.cloud.stream.rabbit.bindings
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.default-health-endpoint
+
+
+
+
+
+Default health endpoint that will be checked to verify that a dependency is alive
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.dependencies
+
+
+
+
+
+Mapping of alias to ZookeeperDependency. From Ribbon perspective the alias is actually serviceID since Ribbon can’t accept nested structures in serviceID
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.dependency-configurations
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.dependency-names
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.discovery.enabled
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.discovery.instance-host
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.discovery.metadata
+
+
+
+
+
+Gets the metadata name/value pairs associated with this instance. This information is sent to zookeeper and can be used by other instances.
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.discovery.root
+
+
+
+
+
+/services
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.discovery.uri-spec
+
+
+
+
+
+{scheme}://{address}:{port}
+
+
+
+
+
+
+
+
+
+spring.cloud.zookeeper.prefix
+
+
+
+
+
+Common prefix that will be applied to all Zookeeper dependencies' paths
+
+
+
+
+
+
+
+
+
+spring.integration.poller.fixed-delay
+
+
+
+
+
+1000
+
+
+
+
+
+Fixed delay for default poller.
+
+
+
+
+
+
+
+
+
+spring.integration.poller.max-messages-per-poll
+
+
+
+
+
+1
+
+
+
+
+
+Maximum messages per poll for the default poller.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.async.class-name-key
+
+
+
+
+
+class
+
+
+
+
+
+Simple name of the class with a method annotated with {@code @Async} from which the asynchronous process started
+
+@see org.springframework.scheduling.annotation.Async
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.async.method-name-key
+
+
+
+
+
+method
+
+
+
+
+
+Name of the method annotated with {@code @Async}
+
+@see org.springframework.scheduling.annotation.Async
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.async.prefix
+
+
+
+
+
+Prefix for header names if they are added as tags.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.async.thread-name-key
+
+
+
+
+
+thread
+
+
+
+
+
+Name of the thread that executed the async method
+
+@see org.springframework.scheduling.annotation.Async
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.headers
+
+
+
+
+
+Additional headers that should be added as tags if they exist. If the header value is multi-valued, the tag value will be a comma-separated, single-quoted list.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.host
+
+
+
+
+
+http.host
+
+
+
+
+
+The domain portion of the URL or host header. Example: "mybucket.s3.amazonaws.com". Used to filter by host as opposed to ip address.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.method
+
+
+
+
+
+http.method
+
+
+
+
+
+The HTTP method, or verb, such as "GET" or "POST". Used to filter against an http route.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.path
+
+
+
+
+
+http.path
+
+
+
+
+
+The absolute http path, without any query parameters. Example: "/objects/abcd-ff". Used to filter against an http route, portably with zipkin v1\. In zipkin v1, only equals filters are supported. Dropping query parameters makes the number of distinct URIs less. For example, one can query for the same resource, regardless of signing parameters encoded in the query line. This does not reduce cardinality to a HTTP single route. For example, it is common to express a route as an http URI template like "/resource/{resource_id}". In systems where only equals queries are available, searching for {@code http.uri=/resource} won’t match if the actual request was "/resource/abcd-ff". Historical note: This was commonly expressed as "http.uri" in zipkin, eventhough it was most often just a path.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.prefix
+
+
+
+
+
+http.
+
+
+
+
+
+Prefix for header names if they are added as tags.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.request-size
+
+
+
+
+
+http.request.size
+
+
+
+
+
+The size of the non-empty HTTP request body, in bytes. Ex. "16384"
+
+<p>Large uploads can exceed limits or contribute directly to latency.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.response-size
+
+
+
+
+
+http.response.size
+
+
+
+
+
+The size of the non-empty HTTP response body, in bytes. Ex. "16384"
+
+<p>Large downloads can exceed limits or contribute directly to latency.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.status-code
+
+
+
+
+
+http.status_code
+
+
+
+
+
+The HTTP response code, when not in 2xx range. Ex. "503" Used to filter for error status. 2xx range are not logged as success codes are less interesting for latency troubleshooting. Omitting saves at least 20 bytes per span.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.http.url
+
+
+
+
+
+http.url
+
+
+
+
+
+The entire URL, including the scheme, host and query parameters if available. Ex. "https://mybucket.s3.amazonaws.com/objects/abcd-ff?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Algorithm=AWS4-HMAC-SHA256…​" Combined with {@link #method}, you can understand the fully-qualified request line. This is optional as it may include private data or be of considerable length.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.hystrix.command-group
+
+
+
+
+
+commandGroup
+
+
+
+
+
+Name of the command group. Hystrix uses the command group key to group together commands such as for reporting, alerting, dashboards, or team/library ownership.
+
+@see com.netflix.hystrix.HystrixCommandGroupKey
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.hystrix.command-key
+
+
+
+
+
+commandKey
+
+
+
+
+
+Name of the command key. Describes the name for the given command. A key to represent a {@link com.netflix.hystrix.HystrixCommand} for monitoring, circuit-breakers, metrics publishing, caching and other such uses.
+
+@see com.netflix.hystrix.HystrixCommandKey
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.hystrix.prefix
+
+
+
+
+
+Prefix for header names if they are added as tags.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.hystrix.thread-pool-key
+
+
+
+
+
+threadPoolKey
+
+
+
+
+
+Name of the thread pool key. The thread-pool key represents a {@link com.netflix.hystrix.HystrixThreadPool} for monitoring, metrics publishing, caching, and other such uses. A {@link com.netflix.hystrix.HystrixCommand} is associated with a single {@link com.netflix.hystrix.HystrixThreadPool} as retrieved by the {@link com.netflix.hystrix.HystrixThreadPoolKey} injected into it, or it defaults to one created using the {@link com.netflix.hystrix.HystrixCommandGroupKey} it is created with.
+
+@see com.netflix.hystrix.HystrixThreadPoolKey
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.message.headers
+
+
+
+
+
+Additional headers that should be added as tags if they exist. If the header value is not a String it will be converted to a String using its toString() method.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.message.payload.size
+
+
+
+
+
+message/payload-size
+
+
+
+
+
+An estimate of the size of the payload if available.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.message.payload.type
+
+
+
+
+
+message/payload-type
+
+
+
+
+
+The type of the payload.
+
+
+
+
+
+
+
+
+
+spring.sleuth.keys.message.prefix
+
+
+
+
+
+message/
+
+
+
+
+
+Prefix for header names if they are added as tags.
+
+
+
+
+
+
+
+
+
+spring.sleuth.metric.span.accepted-name
+
+
+
+
+
+counter.span.accepted
+
+
+
+
+
+
+
+
+
+spring.sleuth.metric.span.dropped-name
+
+
+
+
+
+counter.span.dropped
+
+
+
+
+
+
+
+
+
+spring.sleuth.sampler.percentage
+
+
+
+
+
+0.1
+
+
+
+
+
+Percentage of requests that should be sampled. E.g. 1.0 - 100% requests should be sampled. The precision is whole-numbers only (i.e. there’s no support for 0.1% of the traces).
+
+
+
+
+
+
+
+
+
+zuul.add-proxy-headers
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+zuul.host.max-per-route-connections
+
+
+
+
+
+20
+
+
+
+
+
+
+
+
+
+zuul.host.max-total-connections
+
+
+
+
+
+200
+
+
+
+
+
+
+
+
+
+zuul.ignore-local-service
+
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+zuul.ignored-headers
+
+
+
+
+
+
+
+
+
+zuul.ignored-patterns
+
+
+
+
+
+
+
+
+
+zuul.ignored-services
+
+
+
+
+
+
+
+
+
+zuul.prefix
+
+
+
+
+
+
+
+
+
+zuul.remove-semicolon-content
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+zuul.retryable
+
+
+
+
+
+
+
+
+
+zuul.routes
+
+
+
+
+
+
+
+
+
+zuul.security_headers
+
+
+
+
+
+
+
+
+
+zuul.servlet-path
+
+
+
+
+
+/zuul
+
+
+
+
+
+
+
+
+
+zuul.strip-prefix
+
+
+
+
+
+true
+
+
+
+
+
+
+
+
+
+zuul.trace-request-body
+
+
+
+
+
+true
