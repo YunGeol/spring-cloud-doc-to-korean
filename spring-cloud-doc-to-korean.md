@@ -309,11 +309,11 @@ JDK / jre / lib / security 폴더 (사용중인 JRE / JDK x64 / x86 버전)로 �
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">Spring Cloud는 비 제한적 Apache 2.0 라이센스에 따라 출시되었습니다. 문서의이 섹션에 기여하고 싶거나 오류가 발견되면 [github](https://github.com/spring-cloud/spring-cloud-commons/tree/master/docs/src/main/asciidoc) 에서 프로젝트의 소스 코드와 이슈 트래커를 찾으십시오 .|
+Spring Cloud는 비 제한적 Apache 2.0 라이센스에 따라 출시되었습니다. 문서의이 섹션에 기여하고 싶거나 오류가 발견되면 [github](https://github.com/spring-cloud/spring-cloud-commons/tree/master/docs/src/main/asciidoc) 에서 프로젝트의 소스 코드와 이슈 트래커를 찾으십시오 .|
 
 
 
@@ -465,11 +465,11 @@ spring:
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">추가 `BootstrapConfiguration`하는 클래스가 `@ComponentScanned`실수로 "기본"응용 프로그램 컨텍스트 에 있지 않은 사용자 지정 을 추가 할 때주의해야 합니다. 필요하지 않을 수도 있습니다. 사용자 `@ComponentScan`또는 `@SpringBootApplication` 주석이 달린 구성 클래스에서 아직 다루지 않은 부팅 구성 클래스에는 별도의 패키지 이름을 사용하십시오 .|
+추가 `BootstrapConfiguration`하는 클래스가 `@ComponentScanned`실수로 "기본"응용 프로그램 컨텍스트 에 있지 않은 사용자 지정 을 추가 할 때주의해야 합니다. 필요하지 않을 수도 있습니다. 사용자 `@ComponentScan`또는 `@SpringBootApplication` 주석이 달린 구성 클래스에서 아직 다루지 않은 부팅 구성 클래스에는 별도의 패키지 이름을 사용하십시오 .|
 
 
 
@@ -614,13 +614,13 @@ spring:
 
 
 
-<td class="icon">
+
 
 노트
 
 
 
-<td class="content">`@RefreshScope``@Configuration` 수업에서 (기술적으로) 작동 하지만 놀라운 행동으로 이어질 수 있습니다. 즉 , 해당 클래스에 정의 된 모든 것이 자체 라는 것을 의미 하지는 **않습니다** . 특히, 빈에 의존하는 모든 것은 리프레시가 시작될 때 갱신되는 것에 의지 할 수 없습니다 (리프레시시 재 빌드되고 종속성을 다시 주입 할 경우) 새로 고침에서 초기화 됨 ). `@Beans``@RefreshScope``@RefreshScope``@Configuration`|
+`@RefreshScope``@Configuration` 수업에서 (기술적으로) 작동 하지만 놀라운 행동으로 이어질 수 있습니다. 즉 , 해당 클래스에 정의 된 모든 것이 자체 라는 것을 의미 하지는 **않습니다** . 특히, 빈에 의존하는 모든 것은 리프레시가 시작될 때 갱신되는 것에 의지 할 수 없습니다 (리프레시시 재 빌드되고 종속성을 다시 주입 할 경우) 새로 고침에서 초기화 됨 ). `@Beans``@RefreshScope``@RefreshScope``@Configuration`|
 
 
 
@@ -766,11 +766,11 @@ Commons은 `@EnableDiscoveryClient`주석을 제공합니다 . 이 `DiscoveryCli
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">`RestTemplate`빈은 더 이상 자동 구성을 통해 만들어집니다. 개별 응용 프로그램에서 만들어야합니다.|
+`RestTemplate`빈은 더 이상 자동 구성을 통해 만들어집니다. 개별 응용 프로그램에서 만들어야합니다.|
 
 
 
@@ -832,11 +832,11 @@ URI는 가상 호스트 이름 (예 : 호스트 이름이 아닌 서비스 이�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">`client` 위의 예에서 리본 클라이언트의 이름으로 바꿔야합니다.|
+`client` 위의 예에서 리본 클라이언트의 이름으로 바꿔야합니다.|
 
 
 
@@ -868,11 +868,11 @@ URI는 가상 호스트 이름 (예 : 호스트 이름이 아닌 서비스 이�
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">통지 `@Primary`일반에 주석 `RestTemplate`규정되지 않은 명확하게하기 위해, 아래의 예에서 선언을 `@Autowired`주입.|
+통지 `@Primary`일반에 주석 `RestTemplate`규정되지 않은 명확하게하기 위해, 아래의 예에서 선언을 `@Autowired`주입.|
 
 
 
@@ -931,11 +931,11 @@ URI는 가상 호스트 이름 (예 : 호스트 이름이 아닌 서비스 이�
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">대신에 `java.lang.IllegalArgumentException: Can not set org.springframework.web.client.RestTemplate field com.my.app.Foo.restTemplate to com.sun.proxy.$Proxy89`주사 `RestOperations`하거나 설정을 시도하는 것과 같은 오류가 표시 됩니다 `spring.aop.proxyTargetClass=true`.|
+대신에 `java.lang.IllegalArgumentException: Can not set org.springframework.web.client.RestTemplate field com.my.app.Foo.restTemplate to com.sun.proxy.$Proxy89`주사 `RestOperations`하거나 설정을 시도하는 것과 같은 오류가 표시 됩니다 `spring.aop.proxyTargetClass=true`.|
 
 
 
@@ -1233,11 +1233,11 @@ pom.xml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">속성 소스 이름의 URL은 config 서버 URL이 아닌 git 저장소입니다.|
+속성 소스 이름의 URL은 config 서버 URL이 아닌 git 저장소입니다.|
 
 
 
@@ -1316,11 +1316,11 @@ application.properties
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">Windows에서 드라이브 접두사가 절대적이면 파일 URL에 여분의 "/"가 필요합니다 (예 :) `[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`.|
+Windows에서 드라이브 접두사가 절대적이면 파일 URL에 여분의 "/"가 필요합니다 (예 :) `[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`.|
 
 
 
@@ -1338,11 +1338,11 @@ application.properties
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">
+
 
 
 
@@ -1376,11 +1376,11 @@ application.properties
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">git 저장소에 로컬 파일 시스템을 사용하는 것은 테스트 용입니다. 프로덕션 환경에서 서버를 사용하여 구성 저장소를 호스트하십시오.|
+git 저장소에 로컬 파일 시스템을 사용하는 것은 테스트 용입니다. 프로덕션 환경에서 서버를 사용하여 구성 저장소를 호스트하십시오.|
 
 
 
@@ -1398,11 +1398,11 @@ application.properties
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">텍스트 파일 만 저장하면 구성 저장소의 초기 복제본이 빠르고 효율적입니다. 바이너리 파일, 특히 큰 파일을 저장하기 시작하면 서버의 구성 및 / 또는 메모리 부족 오류에 대한 첫 번째 요청이 지연 될 수 있습니다.|
+텍스트 파일 만 저장하면 구성 저장소의 초기 복제본이 빠르고 효율적입니다. 바이너리 파일, 특히 큰 파일을 저장하기 시작하면 서버의 구성 및 / 또는 메모리 부족 오류에 대한 첫 번째 요청이 지연 될 수 있습니다.|
 
 
 
@@ -1568,11 +1568,11 @@ if `{application}/{profile}`패턴과 일치하지 않으면 "spring.cloud.confi
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">위의 "간단한"예제에서 사용 된 "한 줄짜리"단축키는 설정할 유일한 속성이 URI 인 경우에만 사용할 수 있습니다. 다른 것을 설정해야하는 경우 (자격 증명, 패턴 등) 전체 양식을 사용해야합니다.|
+위의 "간단한"예제에서 사용 된 "한 줄짜리"단축키는 설정할 유일한 속성이 URI 인 경우에만 사용할 수 있습니다. 다른 것을 설정해야하는 경우 (자격 증명, 패턴 등) 전체 양식을 사용해야합니다.|
 
 
 
@@ -1622,11 +1622,11 @@ if `{application}/{profile}`패턴과 일치하지 않으면 "spring.cloud.confi
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">봄 클라우드에서 끝나지 않는 프로파일을 포함하는 패턴을 추측 할 것이다 `*`당신이 실제로이 패턴으로 시작하는 프로파일의 목록을 일치시킬 것을 의미한다 (그래서 `*/staging`에 대한 바로 가기입니다 `["*/staging", "*/staging,*"]`). 이는 "개발"프로필에서 로컬로 실행해야하는 응용 프로그램과 "클라우드"프로필을 원격으로 실행해야하는 경우에 일반적으로 사용됩니다.|
+봄 클라우드에서 끝나지 않는 프로파일을 포함하는 패턴을 추측 할 것이다 `*`당신이 실제로이 패턴으로 시작하는 프로파일의 목록을 일치시킬 것을 의미한다 (그래서 `*/staging`에 대한 바로 가기입니다 `["*/staging", "*/staging,*"]`). 이는 "개발"프로필에서 로컬로 실행해야하는 응용 프로그램과 "클라우드"프로필을 원격으로 실행해야하는 경우에 일반적으로 사용됩니다.|
 
 
 
@@ -1740,11 +1740,11 @@ HTTPS와 사용자 자격 증명을 사용하지 않으면 기본 디렉토리 (
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">`~/.git`디렉토리가 어디 `git config --global`에서 설정을 조작하는지 알지 못하는 경우 (예 :) `git config --global http.sslVerify false`.|
+`~/.git`디렉토리가 어디 `git config --global`에서 설정을 조작하는지 알지 못하는 경우 (예 :) `git config --global http.sslVerify false`.|
 
 
 
@@ -1804,11 +1804,11 @@ Spring Cloud Config Server는 `{application}`및 에 대한 자리 표시자가�
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">VCS 기반 백엔드 (자식, svn) 파일은 로컬 파일 시스템에 체크 아웃되거나 복제됩니다. 기본적으로 시스템 임시 디렉토리에 접두어 of를 붙입니다 `config-repo-`. 리눅스에서, 예를 들어 그것은 가능할 수 있습니다 `/tmp/config-repo-<randomid>`. 일부 운영 체제 [에서는 정기적으로](https://serverfault.com/questions/377348/when-does-tmp-get-cleared/377349#377349) 임시 디렉토리 [를](https://serverfault.com/questions/377348/when-does-tmp-get-cleared/377349#377349) 지 웁니다. 이로 인해 속성 누락과 같은 예기치 않은 동작이 발생할 수 있습니다. 이 문제를 피하려면 Config Temp가 사용 하는 디렉터리를 설정 `spring.cloud.config.server.git.basedir`하거나 `spring.cloud.config.server.svn.basedir`시스템 temp 구조에없는 디렉터리로 변경하십시오.|
+VCS 기반 백엔드 (자식, svn) 파일은 로컬 파일 시스템에 체크 아웃되거나 복제됩니다. 기본적으로 시스템 임시 디렉토리에 접두어 of를 붙입니다 `config-repo-`. 리눅스에서, 예를 들어 그것은 가능할 수 있습니다 `/tmp/config-repo-<randomid>`. 일부 운영 체제 [에서는 정기적으로](https://serverfault.com/questions/377348/when-does-tmp-get-cleared/377349#377349) 임시 디렉토리 [를](https://serverfault.com/questions/377348/when-does-tmp-get-cleared/377349#377349) 지 웁니다. 이로 인해 속성 누락과 같은 예기치 않은 동작이 발생할 수 있습니다. 이 문제를 피하려면 Config Temp가 사용 하는 디렉터리를 설정 `spring.cloud.config.server.git.basedir`하거나 `spring.cloud.config.server.svn.basedir`시스템 temp 구조에없는 디렉터리로 변경하십시오.|
 
 
 
@@ -1838,11 +1838,11 @@ Spring Cloud Config Server는 `{application}`및 에 대한 자리 표시자가�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">`file:`파일 자원 에 접두사 를 사용하는 것을 잊지 마십시오 (접두사가없는 기본값은 일반적으로 클래스 경로입니다). 어떤 Spring Boot 환경 설정과 마찬가지로 `${}`스타일 환경 자리 표시자를 내장 할 수 있지만 Windows의 절대 경로에는 추가 "/"가 필요하다는 것을 기억하십시오.`[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`|
+`file:`파일 자원 에 접두사 를 사용하는 것을 잊지 마십시오 (접두사가없는 기본값은 일반적으로 클래스 경로입니다). 어떤 Spring Boot 환경 설정과 마찬가지로 `${}`스타일 환경 자리 표시자를 내장 할 수 있지만 Windows의 절대 경로에는 추가 "/"가 필요하다는 것을 기억하십시오.`[file:///${user.home}/config-repo](file:///$%7Buser.home%7D/config-repo)`|
 
 
 
@@ -1860,11 +1860,11 @@ Spring Cloud Config Server는 `{application}`및 에 대한 자리 표시자가�
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">the의 기본값 `searchLocations`은 로컬 스프링 부트 응용 프로그램 (so `[classpath:/, classpath:/config, file:./, file:./config]`)과 동일 합니다. 이렇게 `application.properties`하면 서버에있는 속성 소스가 클라이언트에 보내기 전에 제거되므로 서버에서 모든 클라이언트로 노출되지 않습니다 .|
+the의 기본값 `searchLocations`은 로컬 스프링 부트 응용 프로그램 (so `[classpath:/, classpath:/config, file:./, file:./config]`)과 동일 합니다. 이렇게 `application.properties`하면 서버에있는 속성 소스가 클라이언트에 보내기 전에 제거되므로 서버에서 모든 클라이언트로 노출되지 않습니다 .|
 
 
 
@@ -1882,11 +1882,11 @@ Spring Cloud Config Server는 `{application}`및 에 대한 자리 표시자가�
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">파일 시스템 백엔드는 신속하게 시작하고 테스트하기에 좋습니다. 프로덕션 환경에서 사용하려면 파일 시스템이 안정적이어야하며 모든 구성 서버 인스턴스에서 공유해야합니다.|
+파일 시스템 백엔드는 신속하게 시작하고 테스트하기에 좋습니다. 프로덕션 환경에서 사용하려면 파일 시스템이 안정적이어야하며 모든 구성 서버 인스턴스에서 공유해야합니다.|
 
 
 
@@ -1968,11 +1968,11 @@ The #_property_overrides [속성 재정의] 기능은 전역 기본값을 설정
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">백 슬래시 ( "\")를 사용하여 "$"또는 "{"를 이스케이프 처리하여 "$ {}"이있는 일반 환경의 스프링 환경 자리 표시자를 이스케이프 (및 클라이언트에서 `\${app.foo:bar}`해결할 수 있습니다. 자체 "app.foo"를 제공합니다. YAML에서는 백 슬래시 자체를 이스케이프 할 필요가 없지만 서버에서 재정의를 구성 할 때 수행하는 등록 정보 파일에서주의해야합니다.|
+백 슬래시 ( "\")를 사용하여 "$"또는 "{"를 이스케이프 처리하여 "$ {}"이있는 일반 환경의 스프링 환경 자리 표시자를 이스케이프 (및 클라이언트에서 `\${app.foo:bar}`해결할 수 있습니다. 자체 "app.foo"를 제공합니다. YAML에서는 백 슬래시 자체를 이스케이프 할 필요가 없지만 서버에서 재정의를 구성 할 때 수행하는 등록 정보 파일에서주의해야합니다.|
 
 
 
@@ -2066,11 +2066,11 @@ The #_property_overrides [속성 재정의] 기능은 전역 기본값을 설정
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">**전제 조건 :** 암호화 및 암호 해독 기능을 사용하려면 JVM에 전체 강도의 JCE가 설치되어 있어야합니다 (기본값은 없습니다). Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).|
+**전제 조건 :** 암호화 및 암호 해독 기능을 사용하려면 JVM에 전체 강도의 JCE가 설치되어 있어야합니다 (기본값은 없습니다). Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).|
 
 
 
@@ -2171,11 +2171,11 @@ application.properties
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">당신은 컬과 같이 테스트하는 경우, 사용 `--data-urlencode`(대신 `-d`명시 적)을 설정하거나 `Content-Type: text/plain`확인 컬 특수 문자가있는 경우 정확하게 데이터를 인코딩하기 위해 ( '+'는 특히 까다 롭다).|
+당신은 컬과 같이 테스트하는 경우, 사용 `--data-urlencode`(대신 `-d`명시 적)을 설정하거나 `Content-Type: text/plain`확인 컬 특수 문자가있는 경우 정확하게 데이터를 인코딩하기 위해 ( '+'는 특히 까다 롭다).|
 
 
 
@@ -2205,11 +2205,11 @@ application.properties
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">이 세분화 된 방법으로 암호화를 제어하려면 이름과 프로필마다 다른 암호화 장치를 만드는 `@Bean`유형 도 제공해야합니다 `TextEncryptorLocator`. 기본적으로 제공되는 암호는이 작업을 수행하지 않으므로 모든 암호화가 동일한 키를 사용합니다.|
+이 세분화 된 방법으로 암호화를 제어하려면 이름과 프로필마다 다른 암호화 장치를 만드는 `@Bean`유형 도 제공해야합니다 `TextEncryptorLocator`. 기본적으로 제공되는 암호는이 작업을 수행하지 않으므로 모든 암호화가 동일한 키를 사용합니다.|
 
 
 
@@ -2383,11 +2383,11 @@ locator는 "testkey"라는 키를 찾을 것입니다. `{secret:…​}`접두�
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">구성 서버가 모든 암호화와 암호 해독을 처리하게 하려면 `{name:value}`접두어를 `/encrypt`엔드 포인트에 게시 된 일반 텍스트에 추가 할 수도 있습니다 .|
+구성 서버가 모든 암호화와 암호 해독을 처리하게 하려면 `{name:value}`접두어를 `/encrypt`엔드 포인트에 게시 된 일반 텍스트에 추가 할 수도 있습니다 .|
 
 
 
@@ -2441,11 +2441,11 @@ YAML과 프라퍼티 표현은 `resolvePlaceholders`소스 문서의 자리 표�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">주로 메타 데이터의 손실과 관련하여 YAML 또는 속성 형식을 사용하는 데 제한이 있습니다. JSON은 속성 소스의 정렬 된 목록으로 구성됩니다 (예 : 소스와 상호 관련된 이름 포함). 값의 출처에 여러 원본이 있고 원래 원본 파일의 이름이 손실 된 경우에도 YAML 및 속성 양식은 단일 맵으로 병합됩니다. YAML 표현은 반드시 배킹 리포지토리의 YAML 소스를 충실하게 표현한 것은 아니며 플랫 속성 소스 목록으로 구성되며 키의 형식에 대한 가정을해야합니다.|
+주로 메타 데이터의 손실과 관련하여 YAML 또는 속성 형식을 사용하는 데 제한이 있습니다. JSON은 속성 소스의 정렬 된 목록으로 구성됩니다 (예 : 소스와 상호 관련된 이름 포함). 값의 출처에 여러 원본이 있고 원래 원본 파일의 이름이 손실 된 경우에도 YAML 및 속성 양식은 단일 맵으로 병합됩니다. YAML 표현은 반드시 배킹 리포지토리의 YAML 소스를 충실하게 표현한 것은 아니며 플랫 속성 소스 목록으로 구성되며 키의 형식에 대한 가정을해야합니다.|
 
 
 
@@ -2567,11 +2567,11 @@ YAML과 프라퍼티 표현은 `resolvePlaceholders`소스 문서의 자리 표�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">환경 설정을위한 소스 파일과 마찬가지로 "프로파일"을 사용하여 파일 이름을 분석하므로 프로파일 특정 파일을 원한다면 (선호하는 ) `/*/development/*/logback.xml`파일로 해석됩니다 . `logback-development.xml``logback.xml`|
+환경 설정을위한 소스 파일과 마찬가지로 "프로파일"을 사용하여 파일 이름을 분석하므로 프로파일 특정 파일을 원한다면 (선호하는 ) `/*/development/*/logback.xml`파일로 해석됩니다 . `logback-development.xml``logback.xml`|
 
 
 
@@ -2605,11 +2605,11 @@ YAML과 프라퍼티 표현은 `resolvePlaceholders`소스 문서의 자리 표�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">부트 스트랩 플래그를 사용하면 config 서버의 이름과 저장소 URI를 구성해야 `bootstrap.yml`합니다.|
+부트 스트랩 플래그를 사용하면 config 서버의 이름과 저장소 URI를 구성해야 `bootstrap.yml`합니다.|
 
 
 
@@ -2667,11 +2667,11 @@ Webhook이 활성화되면 Config Server는 `RefreshRemoteApplicationEvent`변�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">는 `RefreshRemoteApplicationEvent`가있는 경우에만 송신 될 것이다 `spring-cloud-bus`는 config 서버에 상기 클라이언트 어플리케이션이 활성화된다.|
+는 `RefreshRemoteApplicationEvent`가있는 경우에만 송신 될 것이다 `spring-cloud-bus`는 config 서버에 상기 클라이언트 어플리케이션이 활성화된다.|
 
 
 
@@ -2689,11 +2689,11 @@ Webhook이 활성화되면 Config Server는 `RefreshRemoteApplicationEvent`변�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">기본 설정은 또한 로컬 자식 저장소에서 파일 시스템 변경을 감지합니다 (이 경우 webhook은 사용되지 않지만 설정 파일을 편집하자마자 새로 고침이 브로드 캐스트됩니다).|
+기본 설정은 또한 로컬 자식 저장소에서 파일 시스템 변경을 감지합니다 (이 경우 webhook은 사용되지 않지만 설정 파일을 편집하자마자 새로 고침이 브로드 캐스트됩니다).|
 
 
 
@@ -2809,11 +2809,11 @@ bootstrap.yml
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">재 시도를 완전히 제어하려면 "configServerRetryInterceptor"id를 가진 `@Bean`유형 `RetryOperationsInterceptor`을 추가하십시오 . Spring Retry는 하나 `RetryInterceptorBuilder`를 쉽게 만들 수있게 해줍니다.|
+재 시도를 완전히 제어하려면 "configServerRetryInterceptor"id를 가진 `@Bean`유형 `RetryOperationsInterceptor`을 추가하십시오 . Spring Retry는 하나 `RetryInterceptorBuilder`를 쉽게 만들 수있게 해줍니다.|
 
 
 
@@ -3064,11 +3064,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">유레카의 한계로 인해 서버 당 기본 인증 자격 증명을 지원할 수 없으므로 발견 된 첫 번째 세트 만 사용됩니다.|
+유레카의 한계로 인해 서버 당 기본 인증 자격 증명을 지원할 수 없으므로 발견 된 첫 번째 세트 만 사용됩니다.|
 
 
 
@@ -3152,11 +3152,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">앱이 프록시 뒤에 있고 SSL 종료가 프록시에있는 경우 (예 : Cloud Foundry 또는 다른 플랫폼에서 서비스로 실행하는 경우) 프록시 "전달 된"헤더가 가로 채어지고 처리되는지 확인해야합니다. 응용 프로그램. 'X-Forwarded - \ *'헤더를 명시 적으로 설정하면 Spring Boot 애플리케이션의 임베디드 Tomcat 컨테이너가 자동으로이 기능을 수행한다. 틀린 표시는 앱이 자체적으로 렌더링 한 링크가 잘못된 호스트 (잘못된 호스트, 포트 또는 프로토콜)가 될 것입니다.|
+앱이 프록시 뒤에 있고 SSL 종료가 프록시에있는 경우 (예 : Cloud Foundry 또는 다른 플랫폼에서 서비스로 실행하는 경우) 프록시 "전달 된"헤더가 가로 채어지고 처리되는지 확인해야합니다. 응용 프로그램. 'X-Forwarded - \ *'헤더를 명시 적으로 설정하면 Spring Boot 애플리케이션의 임베디드 Tomcat 컨테이너가 자동으로이 기능을 수행한다. 틀린 표시는 앱이 자체적으로 렌더링 한 링크가 잘못된 호스트 (잘못된 호스트, 포트 또는 프로토콜)가 될 것입니다.|
 
 
 
@@ -3325,11 +3325,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">
+
 
 
 
@@ -3444,11 +3444,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">
+
 
 
 
@@ -3880,11 +3880,11 @@ Spring Cloud는 `spring-cloud-starter-turbine`터빈 서버를 실행하는 데 
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">기본적으로 Turbine에 내장 된 기본 Netflix 동작 은 클러스터 당 호스트 당 여러 프로세스를 허용 하지 _않습니다_ (인스턴스 ID의 키는 호스트 이름 임). Spring Cloud는 이것을 약간 일반화하여 호스트와 포트를 키로 사용할 수있게하지만 속성을 설정 한 경우에만 가능합니다.`turbine.combineHostPort=true`|
+기본적으로 Turbine에 내장 된 기본 Netflix 동작 은 클러스터 당 호스트 당 여러 프로세스를 허용 하지 _않습니다_ (인스턴스 ID의 키는 호스트 이름 임). Spring Cloud는 이것을 약간 일반화하여 호스트와 포트를 키로 사용할 수있게하지만 속성을 설정 한 경우에만 가능합니다.`turbine.combineHostPort=true`|
 
 
 
@@ -3991,11 +3991,11 @@ Spring Cloud는 `spring-cloud-starter-turbine-stream`Turbine Stream 서버를 �
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모두에 의해 공유됩니다, 기본 응용 프로그램 컨텍스트를 `@RibbonClients`. `@ComponentScan`(또는 `@SpringBootApplication`) 을 사용하는 경우 포함되지 않도록 조치를 취해야합니다 (예 : 별도의 중복되지 않는 패키지에 넣거나 명시 적으로 스캔 할 패키지를 지정하는 경우 `@ComponentScan`).|
+이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모두에 의해 공유됩니다, 기본 응용 프로그램 컨텍스트를 `@RibbonClients`. `@ComponentScan`(또는 `@SpringBootApplication`) 을 사용하는 경우 포함되지 않도록 조치를 취해야합니다 (예 : 별도의 중복되지 않는 패키지에 넣거나 명시 적으로 스캔 할 패키지를 지정하는 경우 `@ComponentScan`).|
 
 
 
@@ -4075,11 +4075,11 @@ Spring Cloud Netflix는 기본적으로 리본 ( `BeanType`beanName :)에 대해
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">클라이언트 영역을 설정하는 "archaius"방식은 "@zone"이라는 구성 속성을 통해 이루어지며, Spring Cloud는 사용 가능한 경우 다른 모든 설정보다 우선적으로 사용합니다 (키는 YAML에서 인용해야합니다 구성).|
+클라이언트 영역을 설정하는 "archaius"방식은 "@zone"이라는 구성 속성을 통해 이루어지며, Spring Cloud는 사용 가능한 경우 다른 모든 설정보다 우선적으로 사용합니다 (키는 YAML에서 인용해야합니다 구성).|
 
 
 
@@ -4097,11 +4097,11 @@ Spring Cloud Netflix는 기본적으로 리본 ( `BeanType`beanName :)에 대해
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">영역 데이터의 다른 소스가없는 경우 클라이언트 구성 (인스턴스 구성과 반대 됨)을 기반으로 추측이 이루어집니다. 우리는 걸릴 `eureka.client.availabilityZones`영역 목록에 지역 이름에서지도를하다, 그리고 인스턴스의 자신의 지역의 제 1 영역을 당겨 (즉 `eureka.client.region`, 이는 기본적으로 "우리 동쪽-1"기본 넷플릭스와 comatibility)입니다.|
+영역 데이터의 다른 소스가없는 경우 클라이언트 구성 (인스턴스 구성과 반대 됨)을 기반으로 추측이 이루어집니다. 우리는 걸릴 `eureka.client.availabilityZones`영역 목록에 지역 이름에서지도를하다, 그리고 인스턴스의 자신의 지역의 제 1 영역을 당겨 (즉 `eureka.client.region`, 이는 기본적으로 "우리 동쪽-1"기본 넷플릭스와 comatibility)입니다.|
 
 
 
@@ -4309,11 +4309,11 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모든 사용됩니다, 기본 응용 프로그램 컨텍스트를 `@FeignClient`. `@ComponentScan`(또는 `@SpringBootApplication`) 을 사용하는 경우 포함되지 않도록 조치를 취해야합니다 (예 : 별도의 중복되지 않는 패키지에 넣거나 명시 적으로 스캔 할 패키지를 지정하는 경우 `@ComponentScan`).|
+이 `FooConfiguration`있어야한다 `@Configuration`하지만이 아닌 관리 걸릴 `@ComponentScan`그렇지 않으면 모든 사용됩니다, 기본 응용 프로그램 컨텍스트를 `@FeignClient`. `@ComponentScan`(또는 `@SpringBootApplication`) 을 사용하는 경우 포함되지 않도록 조치를 취해야합니다 (예 : 별도의 중복되지 않는 패키지에 넣거나 명시 적으로 스캔 할 패키지를 지정하는 경우 `@ComponentScan`).|
 
 
 
@@ -4331,11 +4331,11 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">`serviceId`속성은 이제 찬성되지 않습니다 `name`속성.|
+`serviceId`속성은 이제 찬성되지 않습니다 `name`속성.|
 
 
 
@@ -4353,11 +4353,11 @@ Spring Cloud의 Feign 지원의 핵심 개념은 명명 된 클라이언트의 �
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">이전에는 속성을 사용하여 `url`속성을 요구하지 않았습니다 `name`. 사용 `name`은 이제 필요합니다.|
+이전에는 속성을 사용하여 `url`속성을 요구하지 않았습니다 `name`. 사용 `name`은 이제 필요합니다.|
 
 
 
@@ -4547,11 +4547,11 @@ Hystrix는 회로가 열려 있거나 오류가있을 때 실행되는 기본 �
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">Feign의 대체 기능 구현과 Hystrix 대체 기능의 작동 방식에는 제한이 있습니다. fallback은 현재 `com.netflix.hystrix.HystrixCommand`와 를 반환하는 메소드에서 지원되지 않습니다 `rx.Observable`.|
+Feign의 대체 기능 구현과 Hystrix 대체 기능의 작동 방식에는 제한이 있습니다. fallback은 현재 `com.netflix.hystrix.HystrixCommand`와 를 반환하는 메소드에서 지원되지 않습니다 `rx.Observable`.|
 
 
 
@@ -4629,11 +4629,11 @@ UserClient.java
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">일반적으로 서버와 클라이언트간에 인터페이스를 공유하는 것은 바람직하지 않습니다. 이것은 tight coupling을 소개하고 실제로는 현재의 형태로 Spring MVC에서 작동하지 않습니다 (메소드 매개 변수 매핑은 상속되지 않습니다).|
+일반적으로 서버와 클라이언트간에 인터페이스를 공유하는 것은 바람직하지 않습니다. 이것은 tight coupling을 소개하고 실제로는 현재의 형태로 Spring MVC에서 작동하지 않습니다 (메소드 매개 변수 매핑은 상속되지 않습니다).|
 
 
 
@@ -4858,11 +4858,11 @@ Zuul의 규칙 엔진을 사용하면 규칙과 필터를 Java 및 Groovy에 대
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">구성 속성은 `zuul.max.host.connections`두 가지 새로운 속성으로 대체되었습니다 `zuul.host.maxTotalConnections`및 `zuul.host.maxPerRouteConnections`각각 200과 20에있는 기본.|
+구성 속성은 `zuul.max.host.connections`두 가지 새로운 속성으로 대체되었습니다 `zuul.host.maxTotalConnections`및 `zuul.host.maxPerRouteConnections`각각 200과 20에있는 기본.|
 
 
 
@@ -4896,11 +4896,11 @@ Spring Cloud는 UI 애플리케이션이 하나 이상의 백엔드 서비스에
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">Zuul 스타터에는 검색 클라이언트가 포함되어 있지 않으므로 서비스 ID를 기반으로하는 경로의 경우 클래스 패스에있는 경로 중 하나를 제공해야합니다 (예 : Eureka는 하나의 선택 사항입니다).|
+Zuul 스타터에는 검색 클라이언트가 포함되어 있지 않으므로 서비스 ID를 기반으로하는 경로의 경우 클래스 패스에있는 경로 중 하나를 제공해야합니다 (예 : Eureka는 하나의 선택 사항입니다).|
 
 
 
@@ -5200,11 +5200,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">이 값은 기본 값 `sensitiveHeaders`이므로 다른 값을 원한다면 설정하지 않아도됩니다. NB 이것은 Spring Cloud Netflix 1.1에서 새로 추가되었습니다 (1.0에서는 사용자가 헤더를 제어 할 수없고 모든 쿠키가 양방향으로 흐른다).|
+이 값은 기본 값 `sensitiveHeaders`이므로 다른 값을 원한다면 설정하지 않아도됩니다. NB 이것은 Spring Cloud Netflix 1.1에서 새로 추가되었습니다 (1.0에서는 사용자가 헤더를 제어 할 수없고 모든 쿠키가 양방향으로 흐른다).|
 
 
 
@@ -5240,11 +5240,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">경로는 서비스 카탈로그의 변경 사항에 자동으로 응답해야하지만 / routes에 대한 POST는 변경 사항을 즉시 적용하도록하는 방법입니다.|
+경로는 서비스 카탈로그의 변경 사항에 자동으로 응답해야하지만 / routes에 대한 POST는 변경 사항을 즉시 적용하도록하는 방법입니다.|
 
 
 
@@ -5311,11 +5311,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">무시 된 패턴은 완전히 무시되지 않고 프록시에 의해 처리되지 않습니다 (따라서 효과적으로 로컬로 전달됩니다).|
+무시 된 패턴은 완전히 무시되지 않고 프록시에 의해 처리되지 않습니다 (따라서 효과적으로 로컬로 전달됩니다).|
 
 
 
@@ -6028,11 +6028,11 @@ image :: RequestLatency.png []
 
 
 
-<td class="icon">
+
 
 경고
 
-<td class="content">코드가 Java 8에서 컴파일 된 경우, 관측자로 서보 대신 관객을 사용하여 장기적으로 서보를 완전히 대체 할 예정입니다.|
+코드가 Java 8에서 컴파일 된 경우, 관측자로 서보 대신 관객을 사용하여 장기적으로 서보를 완전히 대체 할 예정입니다.|
 
 
 
@@ -6171,11 +6171,11 @@ Spring Cloud를 사용하면 Atlas 백엔드에 전송 된 모든 메트릭에 �
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">r3.2xlarge (61GB RAM)에서 실행되는 Atlas 독립형 노드는 주어진 6 시간 동안 분당 약 2 백만 개의 메트릭을 처리 할 수 ​​있습니다.|
+r3.2xlarge (61GB RAM)에서 실행되는 Atlas 독립형 노드는 주어진 6 시간 동안 분당 약 2 백만 개의 메트릭을 처리 할 수 ​​있습니다.|
 
 
 
@@ -6209,11 +6209,11 @@ Spring Cloud를 사용하면 Atlas 백엔드에 전송 된 모든 메트릭에 �
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">서비스에 대한 여러 요청을 실행 한 후 브라우저에 다음 URL을 붙여 넣어 요청의 대기 시간에 대한 몇 가지 기본적인 정보를 수집 할 수 있습니다. `[http://ATLAS/api/v1/graph?q=name,rest,:eq,:avg](http://atlas/api/v1/graph?q=name,rest,:eq,:avg)`|
+서비스에 대한 여러 요청을 실행 한 후 브라우저에 다음 URL을 붙여 넣어 요청의 대기 시간에 대한 몇 가지 기본적인 정보를 수집 할 수 있습니다. `[http://ATLAS/api/v1/graph?q=name,rest,:eq,:avg](http://atlas/api/v1/graph?q=name,rest,:eq,:avg)`|
 
 
 
@@ -6540,11 +6540,11 @@ Spring Cloud Stream의 독창적 인 애플리케이션 모델과 일관되게, 
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -6608,11 +6608,11 @@ Spring Cloud Stream은 파티셔닝 된 프로세싱 유스 케이스를 일관�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -6691,11 +6691,11 @@ Spring Cloud Stream은 파티셔닝 된 프로세싱 유스 케이스를 일관�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -7131,11 +7131,11 @@ Spring Cloud Stream은 `MessageConverter`바운드 채널에 의한 데이터 �
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -7180,11 +7180,11 @@ Spring Cloud Stream은 `MessageConverter`바운드 채널에 의한 데이터 �
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -7418,11 +7418,11 @@ RxJava 기반 프로세서를 사용하도록 설정하고 주석을 사용하�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -7657,11 +7657,11 @@ Spring Cloud Stream은 채널을 메시지 브로커에 연결하는 작업을 �
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -9164,237 +9164,24 @@ _JSON_ 은 _JSON이_ 포함 된 바이트 배열 또는 String 페이로드를 �
 Spring Cloud Stream에서 제공되는 유형 변환은 다음 표에 요약되어 있습니다.
 
 
-
-<table class="tableblock frame-all grid-all spread"><colgroup><col style="width: 20%;"> <col style="width: 20%;"> <col style="width: 20%;"> <col style="width: 20%;"> <col style="width: 20%;"></colgroup>
-
-<thead>
-
-
-
-<th class="tableblock halign-left valign-top">소스 페이로드</th>
-
-<th class="tableblock halign-left valign-top">대상 페이로드</th>
-
-<th class="tableblock halign-left valign-top">내용 유형 헤더</th>
-
-<th class="tableblock halign-left valign-top">컨텐츠 타입</th>
-
-<th class="tableblock halign-left valign-top">댓글</th>
-
-
-
-</thead>
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-POJO
-
-<td class="tableblock halign-left valign-top">
-
-JSON 문자열
-
-<td class="tableblock halign-left valign-top">
-
-무시당한
-
-<td class="tableblock halign-left valign-top">
-
-응용 프로그램 / json
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-튜플
-
-<td class="tableblock halign-left valign-top">
-
-JSON 문자열
-
-<td class="tableblock halign-left valign-top">
-
-무시당한
-
-<td class="tableblock halign-left valign-top">
-
-응용 프로그램 / json
-
-<td class="tableblock halign-left valign-top">
-
-JSON은 튜플에 맞게 조정되었습니다.
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-POJO
-
-<td class="tableblock halign-left valign-top">
-
-문자열 (toString ())
-
-<td class="tableblock halign-left valign-top">
-
-무시당한
-
-<td class="tableblock halign-left valign-top">
-
-텍스트 / 일반, java.lang.String
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-POJO
-
-<td class="tableblock halign-left valign-top">
-
-byte [] (직렬화 된 java.io)
-
-<td class="tableblock halign-left valign-top">
-
-무시당한
-
-<td class="tableblock halign-left valign-top">
-
-application / x-java-serialized-object
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-JSON byte [] 또는 String
-
-<td class="tableblock halign-left valign-top">
-
-POJO
-
-<td class="tableblock halign-left valign-top">
-
-application / json (또는 none)
-
-<td class="tableblock halign-left valign-top">
-
-application / x-java-object
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-바이트 [] 또는 문자열
-
-<td class="tableblock halign-left valign-top">
-
-직렬화 가능
-
-<td class="tableblock halign-left valign-top">
-
-application / x-java-serialized-object
-
-<td class="tableblock halign-left valign-top">
-
-application / x-java-object
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-JSON byte [] 또는 String
-
-<td class="tableblock halign-left valign-top">
-
-튜플
-
-<td class="tableblock halign-left valign-top">
-
-application / json (또는 none)
-
-<td class="tableblock halign-left valign-top">
-
-응용 프로그램 / x-spring-tuple
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-바이트[]
-
-<td class="tableblock halign-left valign-top">
-
-끈
-
-<td class="tableblock halign-left valign-top">
-
-어떤
-
-<td class="tableblock halign-left valign-top">
-
-텍스트 / 일반, java.lang.String
-
-<td class="tableblock halign-left valign-top">
-
-content-type 헤더에 지정된 모든 문자 세트를 적용합니다.
-
-
-
-
-
-<td class="tableblock halign-left valign-top">
-
-끈
-
-<td class="tableblock halign-left valign-top">
-
-바이트[]
-
-<td class="tableblock halign-left valign-top">
-
-어떤
-
-<td class="tableblock halign-left valign-top">
-
-응용 프로그램 / 옥텟 스트림
-
-<td class="tableblock halign-left valign-top">
-
-content-type 헤더에 지정된 모든 문자 세트를 적용합니다.
-
-
-
-
-
+| Source Payload          | Target Payload                | content-type header                  | content-type                         | Comments                                                    |
+|-------------------------|-------------------------------|--------------------------------------|--------------------------------------|-------------------------------------------------------------|
+| POJO                    | JSON String                   | ignored                              | application/json                     |                                                             |
+| Tuple                   | JSON String                   | ignored                              | application/json                     | JSON is tailored for Tuple                                  |
+| POJO                    | String (toString())           | ignored                              | text/plain, java.lang.String         |                                                             |
+| POJO                    | byte\[\] (java.io serialized) | ignored                              | application/x-java-serialized-object |                                                             |
+| JSON byte\[\] or String | POJO                          | application/json (or none)           | application/x-java-object            |                                                             |
+| byte\[\] or String      | Serializable                  | application/x-java-serialized-object | application/x-java-object            |                                                             |
+| JSON byte\[\] or String | Tuple                         | application/json (or none)           | application/x-spring-tuple           |                                                             |
+| byte\[\]                | String                        | any                                  | text/plain, java.lang.String         | will apply any Charset specified in the content-type header |
+| String                  | byte\[\]                      | any                                  | application/octet-stream             | will apply any Charset specified in the content-type header |
 
 
 
 
 변환은 유형 변환이 필요한 페이로드에 적용됩니다. 예를 들어 모듈에서 outputType = application / json으로 XML 문자열을 생성하면 페이로드가 XML에서 JSON으로 변환되지 않습니다. 이는 모듈의 출력 채널에있는 페이로드가 이미 String이므로 런타임에 변환이 적용되지 않기 때문입니다.
 
-
-
-
-
 변환은 입력 및 출력 채널 모두에서 지원되지만, 특히 아웃 바운드 메시지의 변환에 사용하는 것이 좋습니다. 인바운드 메시지 변환의 경우, 특히 대상이 POJO 인 경우 `@StreamListener`지원이 자동으로 변환을 수행합니다.
-
-
-
 
 
 
@@ -9581,13 +9368,9 @@ A partition key’s value is calculated for each message sent to a partitioned o
 
 
 
-<td class="icon">
+
 
 Tip
-
-<td class="content">
-
-
 
 SpEL 표현식이 사용자의 필요에 충분하지 않은 경우 대신 인터페이스 `partitionKeyExtractorClass`를 구현하는 클래스로 속성 을 설정하여 파티션 키 값을 `org.springframework.cloud.stream.binder.PartitionKeyExtractorStrategy`계산할 수 있습니다. 대개 SpEL 표현식으로 충분해야하지만보다 복잡한 경우에는 사용자 정의 구현 전략을 사용할 수 있습니다.
 
@@ -9621,11 +9404,11 @@ SpEL 표현식이 사용자의 필요에 충분하지 않은 경우 대신 인�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">
+
 
 
 
@@ -10046,11 +9829,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">버스 시동기는 Rabbit과 Kafka를 포함합니다. 두 가지가 가장 일반적인 구현이기 때문에 Spring Cloud Stream은 매우 유연하고 바인더는 함께 작동 `spring-cloud-bus`합니다.|
+버스 시동기는 Rabbit과 Kafka를 포함합니다. 두 가지가 가장 일반적인 구현이기 때문에 Spring Cloud Stream은 매우 유연하고 바인더는 함께 작동 `spring-cloud-bus`합니다.|
 
 
 
@@ -10205,11 +9988,11 @@ Spring Cloud Bus는 [Spring Cloud Stream](https://cloud.spring.io/spring-cloud-s
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">모든 버스 응용 프로그램은 acks를 추적 할 수 있지만 때때로 데이터에 대해 더 복잡한 쿼리를 수행 할 수있는 중앙 서비스에서이 작업을 수행하는 것이 유용합니다. 또는 전문화 된 추적 서비스로 전달하십시오.|
+모든 버스 응용 프로그램은 acks를 추적 할 수 있지만 때때로 데이터에 대해 더 복잡한 쿼리를 수행 할 수있는 중앙 서비스에서이 작업을 수행하는 것이 유용합니다. 또는 전문화 된 추적 서비스로 전달하십시오.|
 
 
 
@@ -10297,11 +10080,11 @@ Spring Cloud Sleuth는 [Dapper의](http://research.google.com/pubs/pub36356.html
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">추적을 시작하는 초기 범위를 a라고합니다 `root span`. 해당 범위의 span id 값은 trace id와 같습니다.|
+추적을 시작하는 초기 범위를 a라고합니다 `root span`. 해당 범위의 span id 값은 trace id와 같습니다.|
 
 
 
@@ -10431,11 +10214,11 @@ Spring Cloud Sleuth는 [Dapper의](http://research.google.com/pubs/pub36356.html
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">특정 추적을 선택하면 병합 된 기간이 표시됩니다. 즉, Zipkin에 서버 수신 및 서버 전송 / 클라이언트 수신 및 클라이언트 전송 주석이있는 2 개의 스팬이있는 경우 단일 스팬으로 표시됩니다.|
+특정 추적을 선택하면 병합 된 기간이 표시됩니다. 즉, Zipkin에 서버 수신 및 서버 전송 / 클라이언트 수신 및 클라이언트 전송 주석이있는 2 개의 스팬이있는 경우 단일 스팬으로 표시됩니다.|
 
 
 
@@ -10620,11 +10403,11 @@ Pivotal Web Services 아이콘을 클릭하면 라이브가 표시됩니다. Piv
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">Grok을 Cloud Foundry의 로그와 함께 사용하려면이 패턴을 사용해야합니다.|
+Grok을 Cloud Foundry의 로그와 함께 사용하려면이 패턴을 사용해야합니다.|
 
 
 
@@ -10703,11 +10486,11 @@ Pivotal Web Services 아이콘을 클릭하면 라이브가 표시됩니다. Piv
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">사용자 정의 `logback-spring.xml`를 사용하는 경우 속성 파일 대신 `spring.application.name`in 을 전달해야 합니다. 그렇지 않으면 사용자 지정 로그백 파일이 속성을 제대로 읽지 않습니다. `bootstrap``application`|
+사용자 정의 `logback-spring.xml`를 사용하는 경우 속성 파일 대신 `spring.application.name`in 을 전달해야 합니다. 그렇지 않으면 사용자 지정 로그백 파일이 속성을 제대로 읽지 않습니다. `bootstrap``application`|
 
 
 
@@ -11177,11 +10960,11 @@ Spring Cloud Sleuth Stream Zipkin 콜렉터를 시작하려면 의존성을 추�
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">Zipkin 또는 Stream을 사용하는 경우 내보내는 범위의 비율 `spring.sleuth.sampler.percentage` (기본값 0.1, 즉 10 %)을 구성합니다. **그렇지 않으면 Sleuth가 작동하지 않는다고 생각할 수 있습니다. 일부 기간을 생략했기 때문입니다.**|
+Zipkin 또는 Stream을 사용하는 경우 내보내는 범위의 비율 `spring.sleuth.sampler.percentage` (기본값 0.1, 즉 10 %)을 구성합니다. **그렇지 않으면 Sleuth가 작동하지 않는다고 생각할 수 있습니다. 일부 기간을 생략했기 때문입니다.**|
 
 
 
@@ -11199,11 +10982,11 @@ Spring Cloud Sleuth Stream Zipkin 콜렉터를 시작하려면 의존성을 추�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">SLF4J MDC가 항상 설정되고 로그백 사용자는 위 예제에 따라 로그에서 추적 및 스팬 ID를 즉시 보게됩니다. 다른 로깅 시스템은 동일한 결과를 얻으려면 자체 포맷터를 구성해야합니다. 기본이되는 `logging.pattern.level`설정 `%clr(%5p) %clr([${spring.application.name:},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow}` (이 logback 사용자를위한 봄 부팅 기능입니다). **즉, SLF4J를 사용하지 않을 경우이 패턴이 자동으로 적용되지 않습니다** .|
+SLF4J MDC가 항상 설정되고 로그백 사용자는 위 예제에 따라 로그에서 추적 및 스팬 ID를 즉시 보게됩니다. 다른 로깅 시스템은 동일한 결과를 얻으려면 자체 포맷터를 구성해야합니다. 기본이되는 `logging.pattern.level`설정 `%clr(%5p) %clr([${spring.application.name:},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow}` (이 logback 사용자를위한 봄 부팅 기능입니다). **즉, SLF4J를 사용하지 않을 경우이 패턴이 자동으로 적용되지 않습니다** .|
 
 
 
@@ -11237,11 +11020,11 @@ Spring Cloud Sleuth Stream Zipkin 콜렉터를 시작하려면 의존성을 추�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">은 `PercentageBasedSampler`당신이 사용하는 경우 기본이다 `spring-cloud-sleuth-zipkin`나 `spring-cloud-sleuth-stream`. 를 사용하여 내보내기를 구성 할 수 있습니다 `spring.sleuth.sampler.percentage`. 전달 된 값은 이중 있어야 `0.0`에 `1.0`이 비율하지 그래서. 이전 버전과의 호환성을 위해 속성 이름을 변경하지 않습니다.|
+은 `PercentageBasedSampler`당신이 사용하는 경우 기본이다 `spring-cloud-sleuth-zipkin`나 `spring-cloud-sleuth-stream`. 를 사용하여 내보내기를 구성 할 수 있습니다 `spring.sleuth.sampler.percentage`. 전달 된 값은 이중 있어야 `0.0`에 `1.0`이 비율하지 그래서. 이전 버전과의 호환성을 위해 속성 이름을 변경하지 않습니다.|
 
 
 
@@ -11300,11 +11083,11 @@ span 태그에 사용되는 키를 사용자 정의 할 수 있습니다. 범위
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">태그는 태그 `Sampler`를 허용하고 있는 경우에만 수집되고 내보내집니다 (기본적으로 태그 가 없기 때문에 무언가를 구성하지 않으면 실수로 너무 많은 데이터를 수집 할 위험이 없습니다).|
+태그는 태그 `Sampler`를 허용하고 있는 경우에만 수집되고 내보내집니다 (기본적으로 태그 가 없기 때문에 무언가를 구성하지 않으면 실수로 너무 많은 데이터를 수집 할 위험이 없습니다).|
 
 
 
@@ -11322,11 +11105,11 @@ span 태그에 사용되는 키를 사용자 정의 할 수 있습니다. 범위
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">현재 Spring Cloud Sleuth의 도구는 열심입니다. 즉, 우리는 스레드간에 추적 컨텍스트를 능동적으로 전달하려고합니다. 또한 타이밍 이벤트는 추적 시스템이 추적 시스템으로 데이터를 내보내지 않는 경우에도 캡처됩니다. 이 접근 방식은 앞으로이 문제에 대해 게으른쪽으로 바뀔 수 있습니다.|
+현재 Spring Cloud Sleuth의 도구는 열심입니다. 즉, 우리는 스레드간에 추적 컨텍스트를 능동적으로 전달하려고합니다. 또한 타이밍 이벤트는 추적 시스템이 추적 시스템으로 데이터를 내보내지 않는 경우에도 캡처됩니다. 이 접근 방식은 앞으로이 문제에 대해 게으른쪽으로 바뀔 수 있습니다.|
 
 
 
@@ -11374,11 +11157,11 @@ span 태그에 사용되는 키를 사용자 정의 할 수 있습니다. 범위
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">Spring은 `Tracer`당신 을 위한 인스턴스를 생성한다 . 그것을 사용하기 위해서는 당신이 필요로하는 모든 것은 단지 그것을 자동 배선하는 것입니다.|
+Spring은 `Tracer`당신 을 위한 인스턴스를 생성한다 . 그것을 사용하기 위해서는 당신이 필요로하는 모든 것은 단지 그것을 자동 배선하는 것입니다.|
 
 
 
@@ -11436,11 +11219,11 @@ span 태그에 사용되는 키를 사용자 정의 할 수 있습니다. 범위
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">스팬을 만든 후에는 항상 청소하십시오! Zipkin으로 보내려면 범위를 닫는 것을 잊지 마십시오.|
+스팬을 만든 후에는 항상 청소하십시오! Zipkin으로 보내려면 범위를 닫는 것을 잊지 마십시오.|
 
 
 
@@ -11525,11 +11308,11 @@ span 태그에 사용되는 키를 사용자 정의 할 수 있습니다. 범위
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">스팬을 만든 후에는 항상 청소하십시오! 하나의 스레드 (예 : 스레드 X)에서 시작된 작업과 다른 스레드 (예 : Y, Z)가 완료 될 때까지 기다리는 작업이있는 경우 스팬을 분리하는 것을 잊지 마십시오. 그런 다음 작업 Y, Z의 스팬은 작업이 끝나면 분리해야합니다. 결과가 수집되면 스레드 X의 스팬을 닫아야합니다.|
+스팬을 만든 후에는 항상 청소하십시오! 하나의 스레드 (예 : 스레드 X)에서 시작된 작업과 다른 스레드 (예 : Y, Z)가 완료 될 때까지 기다리는 작업이있는 경우 스팬을 분리하는 것을 잊지 마십시오. 그런 다음 작업 Y, Z의 스팬은 작업이 끝나면 분리해야합니다. 결과가 수집되면 스레드 X의 스팬을 닫아야합니다.|
 
 
 
@@ -11585,11 +11368,11 @@ span 태그에 사용되는 키를 사용자 정의 할 수 있습니다. 범위
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">그런 범위를 창조 한 후에 그것을 닫는 것을 기억하십시오. 그렇지 않으면 닫으려는 스레드가 아닌 현재 스레드에 스팬이 있다는 사실과 관련된 많은 경고가 로그에 표시됩니다. 스파크가 제대로 닫히지 않으면 Zipkin에 수집되지 않습니다.|
+그런 범위를 창조 한 후에 그것을 닫는 것을 기억하십시오. 그렇지 않으면 닫으려는 스레드가 아닌 현재 스레드에 스팬이 있다는 사실과 관련된 많은 경고가 로그에 표시됩니다. 스파크가 제대로 닫히지 않으면 Zipkin에 수집되지 않습니다.|
 
 
 
@@ -12016,11 +11799,11 @@ Spring Cloud Sleuth는 보안상의 이유로 Http Response에 추적 / 스팬 �
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">`peer.service`태그와 태그를 모두 추가하지 않도록하십시오 `SA`! 추가 만해야합니다 `peer.service`.|
+`peer.service`태그와 태그를 모두 추가하지 않도록하십시오 `SA`! 추가 만해야합니다 `peer.service`.|
 
 
 
@@ -12158,11 +11941,11 @@ Spring Cloud Stream을 통해 제공하는 모든 전송에 대한 Span 데이�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">또한 `@EnableZipkinStreamServer`이 주석은 주석으로 `@EnableZipkinServer`처리되어 HTTP를 통해 범위를 수집하고 Zipkin 웹 UI에서 쿼리하는 표준 Zipkin 서버 끝점을 노출합니다.|
+또한 `@EnableZipkinStreamServer`이 주석은 주석으로 `@EnableZipkinServer`처리되어 HTTP를 통해 범위를 수집하고 Zipkin 웹 UI에서 쿼리하는 표준 Zipkin 서버 끝점을 노출합니다.|
 
 
 
@@ -12211,11 +11994,11 @@ Spring Cloud Stream을 통해 제공하는 모든 전송에 대한 Span 데이�
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">위의 샘플 소비자 애플리케이션은 명시 적으로 제외 `SleuthStreamAutoConfiguration`되므로 자체적으로 메시지를 보내지 않지만 선택 사항입니다 (실제로 소비자 애플리케이션으로 요청을 추적하려고 할 수 있습니다).|
+위의 샘플 소비자 애플리케이션은 명시 적으로 제외 `SleuthStreamAutoConfiguration`되므로 자체적으로 메시지를 보내지 않지만 선택 사항입니다 (실제로 소비자 애플리케이션으로 요청을 추적하려고 할 수 있습니다).|
 
 
 
@@ -12487,11 +12270,11 @@ Span을 생성하지 않으려는 스레드 이름에 대한 정규 표현식 �
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">`RestTemplate`인터셉터가 주입되도록 빈 으로 등록 해야합니다. 키워드 로 `RestTemplate`인스턴스 를 생성 `new`하면 도구가 작동하지 않습니다.|
+`RestTemplate`인터셉터가 주입되도록 빈 으로 등록 해야합니다. 키워드 로 `RestTemplate`인스턴스 를 생성 `new`하면 도구가 작동하지 않습니다.|
 
 
 
@@ -12515,11 +12298,11 @@ Span을 생성하지 않으려는 스레드 이름에 대한 정규 표현식 �
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">추적 된 버전의 `AsyncRestTemplate`bean이 사용자를 위해 즉시 등록됩니다. 자신의 bean을 가지고 있다면 그것을 표현으로 포장해야 `TraceAsyncRestTemplate`합니다. 가장 좋은 해결책은 `ClientHttpRequestFactory`및 / 또는을 (를) 사용자 지정하는 것 `AsyncClientHttpRequestFactory`입니다. **자신 만의 것이 `AsyncRestTemplate`있고 그것을 포장하지 않으면 귀하의 전화가 추적되지 않습니다** .|
+추적 된 버전의 `AsyncRestTemplate`bean이 사용자를 위해 즉시 등록됩니다. 자신의 bean을 가지고 있다면 그것을 표현으로 포장해야 `TraceAsyncRestTemplate`합니다. 가장 좋은 해결책은 `ClientHttpRequestFactory`및 / 또는을 (를) 사용자 지정하는 것 `AsyncClientHttpRequestFactory`입니다. **자신 만의 것이 `AsyncRestTemplate`있고 그것을 포장하지 않으면 귀하의 전화가 추적되지 않습니다** .|
 
 
 
@@ -12654,11 +12437,11 @@ Spring Cloud Sleuth에서는 스케쥴 된 메소드 실행을 계측하여 추�
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">당신이 사용하는 경우 `spring-cloud-sleuth-stream`와 `spring-cloud-netflix-hystrix-stream`함께, 스팬 각 Hystrix 메트릭 생성 및 지프 킨로 전송됩니다. 이것은 귀찮을 수 있습니다. 설정을 통해이를 방지 할 수 있습니다.`spring.sleuth.scheduled.skipPattern=org.springframework.cloud.netflix.hystrix.stream.HystrixStreamTask`|
+당신이 사용하는 경우 `spring-cloud-sleuth-stream`와 `spring-cloud-netflix-hystrix-stream`함께, 스팬 각 Hystrix 메트릭 생성 및 지프 킨로 전송됩니다. 이것은 귀찮을 수 있습니다. 설정을 통해이를 방지 할 수 있습니다.`spring.sleuth.scheduled.skipPattern=org.springframework.cloud.netflix.hystrix.stream.HystrixStreamTask`|
 
 
 
@@ -12903,11 +12686,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 주의
 
-<td class="content">[Spring Cloud Consul Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-config) 를 사용 하는 경우 위의 값을 `bootstrap.yml`대신에 배치해야합니다 `application.yml`.|
+[Spring Cloud Consul Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-consul-config) 를 사용 하는 경우 위의 값을 `bootstrap.yml`대신에 배치해야합니다 `application.yml`.|
 
 
 
@@ -13292,11 +13075,11 @@ bootstrap.yml
 
 
 
-<td class="icon">
+
 
 팁
 
-<td class="content">재시도를 완전히 제어하려면 id가 "consulRetryInterceptor" `@Bean`인 유형 `RetryOperationsInterceptor`을 추가하십시오 . Spring Retry에는 `RetryInterceptorBuilder`쉽게 재사용 할 수 있는 재 시도가 있습니다.|
+재시도를 완전히 제어하려면 id가 "consulRetryInterceptor" `@Bean`인 유형 `RetryOperationsInterceptor`을 추가하십시오 . Spring Retry에는 `RetryInterceptorBuilder`쉽게 재사용 할 수 있는 재 시도가 있습니다.|
 
 
 
@@ -13520,11 +13303,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 주의
 
-<td class="content">[Spring Cloud Zookeeper Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-config) 를 사용 하는 경우 위의 값을 `bootstrap.yml`대신에 배치해야합니다 `application.yml`.|
+[Spring Cloud Zookeeper Config](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#spring-cloud-zookeeper-config) 를 사용 하는 경우 위의 값을 `bootstrap.yml`대신에 배치해야합니다 `application.yml`.|
 
 
 
@@ -14191,11 +13974,11 @@ Spring Cloud 플러그인 설치하기
 
 
 
-<td class="icon">
+
 
 중대한
 
-<td class="content">**전제 조건 :** 암호화 및 암호 해독 기능을 사용하려면 JVM에 전체 강도의 JCE가 설치되어 있어야합니다 (기본값은 없습니다). Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).|
+**전제 조건 :** 암호화 및 암호 해독 기능을 사용하려면 JVM에 전체 강도의 JCE가 설치되어 있어야합니다 (기본값은 없습니다). Oracle에서 "Java Cryptography Extension (JCE) 무제한 강도 관할 정책 파일"을 다운로드하고 설치 지침을 따르십시오 (기본적으로 JRE lib / security 디렉토리에있는 2 개의 정책 파일을 다운로드 한 정책 파일로 대체하십시오).|
 
 
 
@@ -14243,13 +14026,13 @@ Launcher CLI를 사용하여 Eureka, Config Server 등의 공통 서비스를 �
 
 
 
-<th class="tableblock halign-left valign-top">서비스</th>
+<th>서비스</td>
 
-<th class="tableblock halign-left valign-top">이름</th>
+<th>이름</td>
 
-<th class="tableblock halign-left valign-top">주소</th>
+<th>주소</td>
 
-<th class="tableblock halign-left valign-top">기술</th>
+<th>기술</td>
 
 
 
@@ -14259,19 +14042,19 @@ Launcher CLI를 사용하여 Eureka, Config Server 등의 공통 서비스를 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 8761](http://localhost:8761/)
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서비스 등록 및 검색을위한 유레카 서버. 다른 모든 서비스는 기본적으로 카탈로그에 표시됩니다.
 
@@ -14279,19 +14062,19 @@ Launcher CLI를 사용하여 Eureka, Config Server 등의 공통 서비스를 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 구성 서버
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 구성 서버
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 8888](http://localhost:8888/)
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 "기본"프로파일로 실행되고 로컬 디렉토리 ./launcher에서 구성을 제공하는 Spring Cloud 구성 서버
 
@@ -14299,19 +14082,19 @@ Launcher CLI를 사용하여 Eureka, Config Server 등의 공통 서비스를 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 h2
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 H2 데이터베이스
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 9095](http://localhost:9095/) (console), jdbc : h2 : tcp : // localhost : 9096 / {data}
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 관계 데이터베이스 서비스. 연결시 파일 경로를 사용하십시오 `{data}`(예 `./target/test`:). 추가 `;MODE=MYSQL`하거나 `;MODE=POSTGRESQL`다른 서버 유형과의 호환성으로 연결할 수 있습니다 .
 
@@ -14319,15 +14102,15 @@ H2 데이터베이스
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 카프카
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 카프카 브로커
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 9091](http://localhost:9091/) (액츄에이터 끝점), localhost : 9092
 
@@ -14335,19 +14118,19 @@ H2 데이터베이스
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 hystrix 대시 보드
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 Hystrix 대시 보드
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 7979](http://localhost:7979/)
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 Hystrix 회로 차단기를 선언하는 모든 Spring Cloud 앱은 메트릭을 게시 `/hystrix.stream`합니다. 이 주소를 대시 보드에 입력하여 모든 측정 항목을 시각화하고,
 
@@ -14355,19 +14138,19 @@ Hystrix 회로 차단기를 선언하는 모든 Spring Cloud 앱은 메트릭을
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 데이터 흐름
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 데이터 흐름 서버
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 9393](http://localhost:9393/)
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 / admin-ui에 UI가있는 Spring Cloud Dataflow 서버. 데이터 흐름 쉘을 루트 경로에서 대상에 연결하십시오.
 
@@ -14375,19 +14158,19 @@ Hystrix 회로 차단기를 선언하는 모든 Spring Cloud 앱은 메트릭을
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 지퍼 킨
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 Zipkin 서버
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 9411](http://localhost:9411/)
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 추적을 시각화하기위한 UI가있는 Zipkin Server. 상점은 데이터를 메모리에 저장하고 JSON 데이터의 HTTP POST를 통해이를 수용합니다.
 
@@ -14724,11 +14507,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">위의 예는 모두 Groovy 스크립트입니다. 동일한 코드를 Java (또는 Groovy)로 작성하려면 Spring Security OAuth2를 클래스 경로에 추가해야합니다 (예 : [여기 샘플](https://github.com/spring-cloud-samples/sso) 참조 ).|
+위의 예는 모두 Groovy 스크립트입니다. 동일한 코드를 Java (또는 Groovy)로 작성하려면 Spring Security OAuth2를 클래스 경로에 추가해야합니다 (예 : [여기 샘플](https://github.com/spring-cloud-samples/sso) 참조 ).|
 
 
 
@@ -14818,11 +14601,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 이전되었습니다. [Spring Boot 사용자 가이드](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) 에서 문서를 찾을 수 있습니다 .|
+OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 이전되었습니다. [Spring Boot 사용자 가이드](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) 에서 문서를 찾을 수 있습니다 .|
 
 
 
@@ -14862,11 +14645,11 @@ application.yml
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">토큰 `OAuth2ProtectedResourceDetails`을 사용하고 있다면 스프링 부트 (1.4.1)가 자동으로 생성되지 않습니다 `client_credentials`. 이 경우 당신은 당신의 자신을 만들 필요 `ClientCredentialsResourceDetails`하고 그것을 구성 `@ConfigurationProperties("security.oauth2.client")`.|
+토큰 `OAuth2ProtectedResourceDetails`을 사용하고 있다면 스프링 부트 (1.4.1)가 자동으로 생성되지 않습니다 `client_credentials`. 이 경우 당신은 당신의 자신을 만들 필요 `ClientCredentialsResourceDetails`하고 그것을 구성 `@ConfigurationProperties("security.oauth2.client")`.|
 
 
 
@@ -15170,11 +14953,11 @@ app.groovy
 
 
 
-<td class="icon">
+
 
 노트
 
-<td class="content">OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 이전되었습니다. [Spring Boot 사용자 가이드](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) 에서 문서를 찾을 수 있습니다 .|
+OAuth2 SSO 및 리소스 서버 기능은 모두 Spring Boot 버전 1.3으로 이전되었습니다. [Spring Boot 사용자 가이드](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) 에서 문서를 찾을 수 있습니다 .|
 
 
 
@@ -15394,11 +15177,11 @@ Etcd 기반 선거는 속성을 사용하여 명시 적으로 비활성화 할 �
 
 
 
-<th class="tableblock halign-left valign-top">이름</th>
+<th>이름</td>
 
-<th class="tableblock halign-left valign-top">태만</th>
+<th>태만</td>
 
-<th class="tableblock halign-left valign-top">기술</th>
+<th>기술</td>
 
 
 
@@ -15408,15 +15191,15 @@ Etcd 기반 선거는 속성을 사용하여 명시 적으로 비활성화 할 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 <font class="">encrypt.fail-on-error
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 암호화 또는 암호 해독 오류가있는 경우 프로세스가 실패해야한다고 말하는 플래그입니다.
 
@@ -15424,11 +15207,11 @@ Etcd 기반 선거는 속성을 사용하여 명시 적으로 비활성화 할 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.key
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 대칭 키. 더 강력한 대안으로 키 스토어 사용을 고려하십시오.
 
@@ -15436,11 +15219,11 @@ encrypt.key
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.key-store.alias
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 저장소의 키 별칭입니다.
 
@@ -15448,11 +15231,11 @@ encrypt.key-store.alias
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.key-store.location
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 키 저장 파일의 위치 (예 : classpath : /keystore.jks).
 
@@ -15460,11 +15243,11 @@ encrypt.key-store.location
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.key-store.password
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 키 저장소를 잠그는 암호입니다.
 
@@ -15472,11 +15255,11 @@ encrypt.key-store.password
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.key-store.secret
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 비밀 키 보호 (기본값은 암호와 동일).
 
@@ -15484,11 +15267,11 @@ encrypt.key-store.secret
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.rsa.algorithm
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 사용할 RSA 알고리즘 (DEFAULT 또는 OEAP)입니다. 설정이 끝나면 변경하지 마십시오 (또는 기존 암호는 해독 할 수 없습니다).
 
@@ -15496,15 +15279,15 @@ encrypt.rsa.algorithm
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.rsa.salt
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 죽은 자
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 암호 텍스트를 암호화하는 데 사용되는 임의의 암호에 대한 소금. 설정이 끝나면 변경하지 마십시오 (또는 기존 암호는 해독 할 수 없습니다).
 
@@ -15512,15 +15295,15 @@ encrypt.rsa.salt
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 encrypt.rsa.strong
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 "강력한"AES 암호화가 내부적으로 사용되어야 함을 나타내는 플래그. true이면 GCM 알고리즘이 AES 암호화 된 바이트에 적용됩니다. 기본값은 false입니다 (이 경우 "표준"CBC가 대신 사용됩니다). 설정이 끝나면 변경하지 마십시오 (또는 기존 암호는 해독 할 수 없습니다).
 
@@ -15528,7 +15311,7 @@ encrypt.rsa.strong
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.bus.enabled
 
@@ -15536,7 +15319,7 @@ endpoints.bus.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.bus.id
 
@@ -15544,7 +15327,7 @@ endpoints.bus.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.bus.sensitive
 
@@ -15552,7 +15335,7 @@ endpoints.bus.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.consul.enabled
 
@@ -15560,7 +15343,7 @@ endpoints.consul.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.consul.id
 
@@ -15568,7 +15351,7 @@ endpoints.consul.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.consul.sensitive
 
@@ -15576,7 +15359,7 @@ endpoints.consul.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.features.enabled
 
@@ -15584,7 +15367,7 @@ endpoints.features.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.features.id
 
@@ -15592,7 +15375,7 @@ endpoints.features.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.features.sensitive
 
@@ -15600,7 +15383,7 @@ endpoints.features.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.pause.enabled
 
@@ -15608,7 +15391,7 @@ endpoints.pause.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.pause.id
 
@@ -15616,7 +15399,7 @@ endpoints.pause.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.pause.sensitive
 
@@ -15624,7 +15407,7 @@ endpoints.pause.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.refresh.enabled
 
@@ -15632,7 +15415,7 @@ endpoints.refresh.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.refresh.id
 
@@ -15640,7 +15423,7 @@ endpoints.refresh.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.refresh.sensitive
 
@@ -15648,7 +15431,7 @@ endpoints.refresh.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.enabled
 
@@ -15656,7 +15439,7 @@ endpoints.restart.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.id
 
@@ -15664,7 +15447,7 @@ endpoints.restart.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.pause-endpoint.enabled
 
@@ -15672,7 +15455,7 @@ endpoints.restart.pause-endpoint.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.pause-endpoint.id
 
@@ -15680,7 +15463,7 @@ endpoints.restart.pause-endpoint.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.pause-endpoint.sensitive
 
@@ -15688,7 +15471,7 @@ endpoints.restart.pause-endpoint.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.resume-endpoint.enabled
 
@@ -15696,7 +15479,7 @@ endpoints.restart.resume-endpoint.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.resume-endpoint.id
 
@@ -15704,7 +15487,7 @@ endpoints.restart.resume-endpoint.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.resume-endpoint.sensitive
 
@@ -15712,7 +15495,7 @@ endpoints.restart.resume-endpoint.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.sensitive
 
@@ -15720,11 +15503,11 @@ endpoints.restart.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.restart.timeout
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -15732,7 +15515,7 @@ endpoints.restart.timeout
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.resume.enabled
 
@@ -15740,7 +15523,7 @@ endpoints.resume.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.resume.id
 
@@ -15748,7 +15531,7 @@ endpoints.resume.id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 endpoints.resume.sensitive
 
@@ -15756,15 +15539,15 @@ endpoints.resume.sensitive
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.allow-redirects
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서버가 클라이언트 요청을 백업 서버 / 클러스터로 재지 정할 수 있는지 여부를 나타냅니다. false로 설정하면 서버가 요청을 직접 처리합니다. true로 설정하면 새 서버 위치로 클라이언트에 HTTP 리디렉션을 보낼 수 있습니다.
 
@@ -15772,11 +15555,11 @@ eureka.client.allow-redirects
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.availability-zones
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스가있는 지역의 가용성 영역 목록 (AWS 데이터 센터에서 사용됨)을 가져옵니다.
 
@@ -15786,11 +15569,11 @@ eureka.client.availability-zones
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.backup-registry-impl
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka 클라이언트가 처음 시작될 때만 레지스트리 정보를 폴백 옵션으로 가져 오기 위해 BackupRegistry를 구현하는 구현의 이름을 가져옵니다.
 
@@ -15800,15 +15583,15 @@ eureka 클라이언트가 처음 시작될 때만 레지스트리 정보를 폴�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.cache-refresh-executor-exponential-back-off-bound
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 executor exponential back off 관련 속성을 캐시에 새로 고칩니다. 일련의 시간 초과가 발생한 경우 재시도 지연에 대한 최대 배율 값입니다.
 
@@ -15816,15 +15599,15 @@ executor exponential back off 관련 속성을 캐시에 새로 고칩니다. �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.cache-refresh-executor-thread-pool-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 cacheRefreshExecutor가 초기화 할 스레드 풀 크기
 
@@ -15832,11 +15615,11 @@ cacheRefreshExecutor가 초기화 할 스레드 풀 크기
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.client-data-accept
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 클라이언트 데이터 수용을위한 EurekaAccept 이름
 
@@ -15844,11 +15627,11 @@ eureka.client.client-data-accept
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.decoder-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이것은 일시적인 구성이며 최신 코덱이 안정되면 제거 할 수 있습니다 (단 하나만있을 수 있음).
 
@@ -15856,15 +15639,15 @@ eureka.client.decoder-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.disable-delta
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 클라이언트가 델타 가져 오기를 비활성화해야하는지 여부를 나타내며 전체 레지스트리 정보를 가져와야합니다.
 
@@ -15876,15 +15659,15 @@ eureka.client.disable-delta
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.dollar-replacement
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 _-
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버에서 정보 직렬화 / 역 직렬화 중에 <code> $ </ code> 달러 기호에 대한 대체 문자열을 가져옵니다.
 
@@ -15892,15 +15675,15 @@ _-
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 클라이언트가 활성화되었음을 나타내는 플래그입니다.
 
@@ -15908,11 +15691,11 @@ eureka.client.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.encoder-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이것은 일시적인 구성이며 최신 코덱이 안정되면 제거 할 수 있습니다 (단 하나만있을 수 있음).
 
@@ -15920,15 +15703,15 @@ eureka.client.encoder-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.escape-char-replacement
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 __
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버의 정보 직렬화 / 직렬화 해제 중 밑줄 기호 <code> _ </ code>에 대한 대체 문자열을 가져옵니다.
 
@@ -15936,15 +15719,15 @@ __
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-connection-idle-timeout-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버에 대한 HTTP 연결이 닫히기 전에 유휴 상태를 유지할 수있는 시간 (초)을 나타냅니다.
 
@@ -15954,15 +15737,15 @@ AWS 환경에서는 Limbo에 연결이 끊긴 채로 몇 분이 지난 후에 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-server-connect-timeout-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 5
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버에 대한 연결이 시간 초과되어야하기까지 대기 할 시간 (초)을 나타냅니다. 클라이언트의 연결은 org.apache.http.client.HttpClient에 의해 풀링되며이 설정은 실제 연결 생성과 풀에서 연결을 기다리는 시간에 영향을줍니다.
 
@@ -15970,11 +15753,11 @@ eureka.client.eureka-server-connect-timeout-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-server-dnsname
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버 목록을 가져 오기 위해 쿼리 할 DNS 이름을 가져옵니다. 계약서에서 serviceUrl을 구현하여 서비스 URL을 반환하면이 정보는 필요하지 않습니다.
 
@@ -15986,11 +15769,11 @@ DNS 메커니즘은 useDnsForFetchingServiceUrls가 true로 설정되고 유레�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-server-port
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버 목록이 DNS에서 왔을 때 유레카 서버에 접속할 서비스 URL을 구성하는 데 사용할 포트를 가져옵니다. 계약서에서 서비스 URL 인 eurekaServerServiceUrls (String)를 반환하는 경우이 정보는 필요하지 않습니다.
 
@@ -16002,15 +15785,15 @@ DNS 메커니즘은 useDnsForFetchingServiceUrls가 true로 설정되고 유레�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-server-read-timeout-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 8
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버에서 읽는 시간이 초과되기까지 대기 할 시간 (초)을 나타냅니다.
 
@@ -16018,15 +15801,15 @@ eureka.client.eureka-server-read-timeout-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-server-total-connections
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 200
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka 클라이언트에서 모든 eureka 서버로 허용되는 총 연결 수를 가져옵니다.
 
@@ -16034,15 +15817,15 @@ eureka 클라이언트에서 모든 eureka 서버로 허용되는 총 연결 수
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-server-total-connections-per-host
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 50
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka 클라이언트에서 eureka 서버 호스트로 허용되는 총 연결 수를 가져옵니다.
 
@@ -16050,11 +15833,11 @@ eureka 클라이언트에서 eureka 서버 호스트로 허용되는 총 연결 
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-server-urlcontext
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버 목록이 DNS에서 왔을 때 eureka 서버에 접속할 서비스 url을 생성하는 데 사용할 URL 컨텍스트를 가져옵니다. 계약서가 eurekaServerServiceUrls에서 서비스 URL을 반환하는 경우이 정보는 필요하지 않습니다.
 
@@ -16064,15 +15847,15 @@ DNS 메커니즘은 useDnsForFetchingServiceUrls가 true로 설정되고 유레�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.eureka-service-url-poll-interval-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버 정보의 변경 사항을 폴링하는 빈도 (초)를 나타냅니다. 유레카 서버를 추가하거나 제거 할 수 있으며이 설정은 유레카 클라이언트가 얼마나 빨리 그 사실을 알아야 할지를 제어합니다.
 
@@ -16080,15 +15863,15 @@ eureka.client.eureka-service-url-poll-interval-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.fetch-registry
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 클라이언트가 eureka 서버에서 eureka 레지스트리 정보를 가져와야하는지 여부를 나타냅니다.
 
@@ -16096,11 +15879,11 @@ eureka.client.fetch-registry
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.fetch-remote-regions-registry
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 레지스트리 정보를 가져올 영역의 쉼표로 구분 된 목록입니다. availabilityZones가 반환 한 각 영역의 가용성 영역을 정의하는 것이 필수입니다. 그렇게하지 않으면 검색 클라이언트가 시작되지 않습니다.
 
@@ -16108,15 +15891,15 @@ eureka.client.fetch-remote-regions-registry
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.filter-only-up-instances
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 InstanceStatus UP 상태 만있는 인스턴스에 대해 응용 프로그램을 필터링 한 후 응용 프로그램을 가져올 지 여부를 나타냅니다.
 
@@ -16124,15 +15907,15 @@ InstanceStatus UP 상태 만있는 인스턴스에 대해 응용 프로그램을
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.g-zip-content
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka 서버에서 가져온 내용을 서버에서 지원할 때마다 압축해야하는지 여부를 나타냅니다. 최적의 네트워크 트래픽을 위해 유레카 서버의 레지스트리 정보가 압축됩니다.
 
@@ -16140,15 +15923,15 @@ eureka 서버에서 가져온 내용을 서버에서 지원할 때마다 압축�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.heartbeat-executor-exponential-back-off-bound
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 하트 비트 실행 프로그램 지수 관련 기능을 다시 시작합니다. 일련의 시간 초과가 발생한 경우 재시도 지연에 대한 최대 배율 값입니다.
 
@@ -16156,15 +15939,15 @@ eureka.client.heartbeat-executor-exponential-back-off-bound
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.heartbeat-executor-thread-pool-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 heartbeatExecutor가 초기화 할 스레드 풀 크기
 
@@ -16172,15 +15955,15 @@ heartbeatExecutor가 초기화 할 스레드 풀 크기
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.initial-instance-info-replication-interval-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 40
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 인스턴스 정보를 유레카 서버에 복제하는 데 걸리는 시간 (초)을 나타냅니다.
 
@@ -16188,15 +15971,15 @@ eureka.client.initial-instance-info-replication-interval-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.instance-info-replication-interval-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버에 복제본을 복제하는 빈도 (초)를 나타냅니다.
 
@@ -16204,15 +15987,15 @@ eureka.client.instance-info-replication-interval-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.log-delta-diff
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 레지스트리 정보의 관점에서 유레카 서버와 유레카 클라이언트 간의 차이를 기록할지 여부를 나타냅니다.
 
@@ -16226,15 +16009,15 @@ eureka.client.log-delta-diff
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.on-demand-update-status-change
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 true로 설정하면 ApplicationInfoManager를 통한 로컬 상태 업데이트가 원격 유레카 서버에 대한 주문형 (속도 제한적) 등록 / 업데이트를 트리거합니다
 
@@ -16242,15 +16025,15 @@ true로 설정하면 ApplicationInfoManager를 통한 로컬 상태 업데이트
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.prefer-same-zone-eureka
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스가 대기 시간 및 / 또는 다른 이유로 같은 영역에서 유레카 서버를 사용하려고 시도해야하는지 여부를 나타냅니다.
 
@@ -16262,7 +16045,7 @@ eureka.client.prefer-same-zone-eureka
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.property-resolver
 
@@ -16270,11 +16053,11 @@ eureka.client.property-resolver
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.proxy-host
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 존재하는 경우 유레카 서버에 대한 프록시 호스트를 가져옵니다.
 
@@ -16282,11 +16065,11 @@ eureka.client.proxy-host
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.proxy-password
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 프록시 암호가 있으면 가져옵니다.
 
@@ -16294,11 +16077,11 @@ eureka.client.proxy-password
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.proxy-port
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 존재하는 경우 유레카 서버에 대한 프록시 포트를 가져옵니다.
 
@@ -16306,11 +16089,11 @@ eureka.client.proxy-port
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.proxy-user-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 프록시 사용자 이름이 있으면 가져옵니다.
 
@@ -16318,15 +16101,15 @@ eureka.client.proxy-user-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.region
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 우리 동쪽 1
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스가있는 지역 (AWS 데이터 센터에서 사용됨)을 가져옵니다.
 
@@ -16334,15 +16117,15 @@ eureka.client.region
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.register-with-eureka
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스가 다른 사용자가 발견 할 수 있도록 유레카 서버에 정보를 등록해야하는지 여부를 나타냅니다.
 
@@ -16352,15 +16135,15 @@ eureka.client.register-with-eureka
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.registry-fetch-interval-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버에서 레지스트리 정보를 가져 오는 빈도 (초)를 나타냅니다.
 
@@ -16368,11 +16151,11 @@ eureka.client.registry-fetch-interval-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.registry-refresh-single-vip-address
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 클라이언트가 단일 VIP에 대한 레지스트리 정보에만 관심이 있는지 여부를 나타냅니다.
 
@@ -16380,11 +16163,11 @@ eureka.client.registry-refresh-single-vip-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.service-url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 서버와 통신 할 수있는 완전한 URL 목록에 가용 영역을 매핑합니다. 각 값은 단일 URL이거나 쉼표로 구분 된 대체 위치 목록 일 수 있습니다.
 
@@ -16396,7 +16179,7 @@ eureka.client.service-url
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.transport
 
@@ -16404,15 +16187,15 @@ eureka.client.transport
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.client.use-dns-for-fetching-service-urls
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 클라이언트가 DNS 메커니즘을 사용하여 대화 할 유레카 서버 목록을 가져와야하는지 여부를 나타냅니다. DNS 이름이 추가 서버를 갖도록 업데이트되면 eurekaServiceUrlPollIntervalSeconds에 지정된대로 해당 정보를 유레카 클라이언트가 폴링 한 직후에 해당 정보가 사용됩니다.
 
@@ -16424,15 +16207,15 @@ eureka.client.use-dns-for-fetching-service-urls
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.dashboard.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 대시 보드를 사용하도록 설정합니다. 기본값은 true입니다.
 
@@ -16440,15 +16223,15 @@ eureka.dashboard.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.dashboard.path
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 /
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 대시 보드에 대한 경로입니다 (서블릿 경로 기준). 기본값은 "/"입니다.
 
@@ -16456,11 +16239,11 @@ eureka.dashboard.path
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.a-sgname
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스에 연결된 AWS 자동 확장 그룹 이름을 가져옵니다. 이 정보는 AWS 환경에서 인스턴스가 시작된 후 자동으로 인스턴스를 서비스에 넣고 트래픽이 비활성화 된 경우에 사용됩니다.
 
@@ -16468,11 +16251,11 @@ eureka.instance.a-sgname
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.app-group-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka에 등록 할 응용 프로그램 그룹의 이름을 가져옵니다.
 
@@ -16480,15 +16263,15 @@ eureka에 등록 할 응용 프로그램 그룹의 이름을 가져옵니다.
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.appname
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 알 수 없는
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka에 등록 할 신청서의 이름을 받으십시오.
 
@@ -16496,11 +16279,11 @@ eureka에 등록 할 신청서의 이름을 받으십시오.
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.data-center-info
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스가 배치 된 데이터 센터를 반환합니다. 이 정보는 인스턴스가 AWS에 배포 된 경우 AWS 특정 인스턴스 정보를 가져 오는 데 사용됩니다.
 
@@ -16508,11 +16291,11 @@ eureka.instance.data-center-info
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.default-address-resolution-order
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 []
 
@@ -16520,11 +16303,11 @@ eureka.instance.default-address-resolution-order
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.health-check-url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스의 절대 상태 확인 페이지 URL을 가져옵니다. 상태 확인 페이지가 유레카와 동일한 인스턴스에있는 경우 사용자가 healthCheckUrlPath를 제공 할 수 있습니다. 인스턴스가 다른 서버의 프록시 인 경우 사용자가 전체 URL을 제공 할 수 있습니다. 전체 URL이 제공되면 우선 순위가 부여됩니다.
 
@@ -16534,15 +16317,15 @@ eureka.instance.health-check-url
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.health-check-url-path
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 /건강
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스의 상대 상태 확인 URL 경로를 가져옵니다. 그런 다음 상태 확인 페이지 URL은 securePort 및 nonSecurePort에 지정된대로 보안 또는 비보안 인 호스트 이름 및 통신 유형으로 구성됩니다.
 
@@ -16552,11 +16335,11 @@ eureka.instance.health-check-url-path
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.home-page-url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스의 절대 홈 페이지 URL을 가져옵니다. 사용자가 홈 페이지가 eureka와 동일한 인스턴스에있는 경우 homePageUrlPath를 제공 할 수 있습니다. 인스턴스가 다른 서버의 프록시 인 경우 사용자가 전체 URL을 제공 할 수 있습니다. 전체 URL이 제공되면 우선 순위가 부여됩니다.
 
@@ -16566,15 +16349,15 @@ eureka.instance.home-page-url
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.home-page-url-path
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 /
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스의 상대적 홈 페이지 URL 경로를 가져옵니다. 홈 페이지 URL은 hostName 및 통신 유형 (안전 또는 비보안)으로 구성됩니다.
 
@@ -16584,7 +16367,7 @@ eureka.instance.home-page-url-path
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.host-info
 
@@ -16592,11 +16375,11 @@ eureka.instance.host-info
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.hostname
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 구성 시간에 결정될 수있는 경우 호스트 이름입니다 (그렇지 않으면 OS 프리미티브에서 추측됩니다).
 
@@ -16604,7 +16387,7 @@ eureka.instance.hostname
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.inet-utils
 
@@ -16612,11 +16395,11 @@ eureka.instance.inet-utils
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.initial-status
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 rmeote 유레카 서버에 등록 할 초기 상태입니다.
 
@@ -16624,15 +16407,15 @@ rmeote 유레카 서버에 등록 할 초기 상태입니다.
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.instance-enabled-onit
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka에 등록 된 즉시 인스턴스를 사용할 수 있는지 여부를 나타냅니다. 경우에 따라 트래픽을 처리 할 준비가되기 전에 애플리케이션에서 사전 처리 작업을 수행해야하는 경우가 있습니다.
 
@@ -16640,11 +16423,11 @@ eureka에 등록 된 즉시 인스턴스를 사용할 수 있는지 여부를 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.instance-id
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka에 등록 할이 인스턴스의 고유 ID (appName 범위 내에 있음)를 가져옵니다.
 
@@ -16652,11 +16435,11 @@ eureka에 등록 할이 인스턴스의 고유 ID (appName 범위 내에 있음)
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.ip-address
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 인스턴스의 IPAdress를 가져옵니다. 이 정보는 다른 인스턴스의 통신이 주로 {@link #getHostName (boolean)}에 제공된 정보를 사용하여 발생하기 때문에 학업 목적으로 만 사용됩니다.
 
@@ -16664,15 +16447,15 @@ eureka.instance.ip-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.lease-expiration-duration-in-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 90
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 뷰에서이 인스턴스를 제거하기 전에 마지막 하트 비트를 수신 한 이후 유레카 서버가 대기하는 시간 (초)을 나타내며이 인스턴스에 대한 트래픽을 허용하지 않음으로써 시간을 나타냅니다.
 
@@ -16682,15 +16465,15 @@ eureka.instance.lease-expiration-duration-in-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.lease-renewal-interval-in-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카 클라이언트가 아직 살아 있음을 나타 내기 위해 유레카 서버에 하트 비트를 보내는 빈도 (초)를 나타냅니다. leaseExpirationDurationInSeconds에 지정된 기간 동안 하트 비트가 수신되지 않으면 eureka 서버는이 인스턴스에 대한 트래픽을 허용하지 않음으로써 뷰에서 해당 인스턴스를 제거합니다.
 
@@ -16700,11 +16483,11 @@ HealthCheckCallback을 구현하고 인스턴스를 사용할 수 없도록 결�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.metadata-map
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스와 관련된 메타 데이터 이름 / 값 쌍을 가져옵니다. 이 정보는 eureka 서버로 전송되며 다른 인스턴스에서 사용할 수 있습니다.
 
@@ -16712,15 +16495,15 @@ eureka.instance.metadata-map
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.namespace
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 유레카
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 속성을 찾는 데 사용되는 네임 스페이스를 가져옵니다. Spring Cloud에서는 무시됩니다.
 
@@ -16728,15 +16511,15 @@ eureka.instance.namespace
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.non-secure-port
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 80
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 인스턴스가 트래픽을 수신해야하는 비보안 포트를 가져옵니다.
 
@@ -16744,15 +16527,15 @@ eureka.instance.non-secure-port
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.non-secure-port-enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 비보안 포트를 트래픽에 사용할 수 있는지 여부를 나타냅니다.
 
@@ -16760,15 +16543,15 @@ eureka.instance.non-secure-port-enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.prefer-ip-address
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 호스트 이름을 추측 할 때 서버의 IP 주소를 OS가보고하는 호스트 이름을 기준으로 사용해야한다고 말하는 플래그입니다.
 
@@ -16776,11 +16559,11 @@ eureka.instance.prefer-ip-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.secure-health-check-url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스의 절대 보안 상태 확인 페이지 URL을 가져옵니다. 사용자는 health check 페이지가 eureka와 통신하는 동일한 인스턴스에 상주하는 경우 secureHealthCheckUrl을 제공 할 수 있으며 인스턴스가 다른 서버의 프록시 인 경우 사용자가 전체 URL을 제공 할 수 있습니다. 전체 URL이 제공되면 우선 순위가 부여됩니다.
 
@@ -16790,15 +16573,15 @@ eureka.instance.secure-health-check-url
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.secure-port
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 443
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 인스턴스가 트래픽을 수신해야하는 보안 포트를 가져옵니다.
 
@@ -16806,15 +16589,15 @@ eureka.instance.secure-port
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.secure-port-enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 보안 포트가 트래픽에 대해 활성화되어야하는지 여부를 나타냅니다.
 
@@ -16822,11 +16605,11 @@ eureka.instance.secure-port-enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.secure-virtual-host-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스에 대해 정의 된 보안 가상 호스트 이름을 가져옵니다.
 
@@ -16836,11 +16619,11 @@ eureka.instance.secure-virtual-host-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.status-page-url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스의 절대 상태 페이지 URL 경로를 가져옵니다. 상태 페이지가 유레카와 동일한 인스턴스에있는 경우 사용자가 statusPageUrlPath를 제공 할 수 있습니다. 인스턴스가 다른 서버의 프록시 인 경우 사용자가 전체 URL을 제공 할 수 있습니다. 전체 URL이 제공되면 우선 순위가 부여됩니다.
 
@@ -16850,15 +16633,15 @@ eureka.instance.status-page-url
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.status-page-url-path
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 / 정보
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스의 상대 상태 페이지 URL 경로를 가져옵니다. 상태 페이지 URL은 hostName 및 통신 유형 (securePort 및 nonSecurePort에 지정된대로 보안 또는 비보안)으로 구성됩니다.
 
@@ -16868,11 +16651,11 @@ eureka.instance.status-page-url-path
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.instance.virtual-host-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스에 대해 정의 된 가상 호스트 이름을 가져옵니다.
 
@@ -16882,11 +16665,11 @@ eureka.instance.virtual-host-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.a-sgcache-expiry-timeout-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -16894,11 +16677,11 @@ eureka.server.a-sgcache-expiry-timeout-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.a-sgquery-timeout-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 300
 
@@ -16906,11 +16689,11 @@ eureka.server.a-sgquery-timeout-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.a-sgupdate-interval-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -16918,7 +16701,7 @@ eureka.server.a-sgupdate-interval-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.a-wsaccess-id
 
@@ -16926,7 +16709,7 @@ eureka.server.a-wsaccess-id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.a-wssecret-key
 
@@ -16934,11 +16717,11 @@ eureka.server.a-wssecret-key
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.batch-replication
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -16946,7 +16729,7 @@ eureka.server.batch-replication
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.binding-strategy
 
@@ -16954,11 +16737,11 @@ eureka.server.binding-strategy
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.delta-retention-timer-interval-in-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -16966,11 +16749,11 @@ eureka.server.delta-retention-timer-interval-in-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.disable-delta
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -16978,11 +16761,11 @@ eureka.server.disable-delta
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.disable-delta-for-remote-regions
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -16990,11 +16773,11 @@ eureka.server.disable-delta-for-remote-regions
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.disable-transparent-fallback-to-other-region
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -17002,11 +16785,11 @@ eureka.server.disable-transparent-fallback-to-other-region
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.e-ipbind-rebind-retries
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 삼
 
@@ -17014,11 +16797,11 @@ eureka.server.e-ipbind-rebind-retries
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.e-ipbinding-retry-interval-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17026,11 +16809,11 @@ eureka.server.e-ipbinding-retry-interval-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.e-ipbinding-retry-interval-ms-when-unbound
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17038,11 +16821,11 @@ eureka.server.e-ipbinding-retry-interval-ms-when-unbound
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.enable-replicated-request-compression
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -17050,11 +16833,11 @@ eureka.server.enable-replicated-request-compression
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.enable-self-preservation
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -17062,11 +16845,11 @@ eureka.server.enable-self-preservation
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.eviction-interval-timer-in-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17074,11 +16857,11 @@ eureka.server.eviction-interval-timer-in-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.g-zip-content-from-remote-region
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -17086,7 +16869,7 @@ eureka.server.g-zip-content-from-remote-region
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.json-codec-name
 
@@ -17094,11 +16877,11 @@ eureka.server.json-codec-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.list-auto-scaling-groups-role-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 ListAutoScalingGroups
 
@@ -17106,11 +16889,11 @@ ListAutoScalingGroups
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.log-identity-headers
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -17118,11 +16901,11 @@ eureka.server.log-identity-headers
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.max-elements-in-peer-replication-pool
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10000
 
@@ -17130,11 +16913,11 @@ eureka.server.max-elements-in-peer-replication-pool
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.max-elements-in-status-replication-pool
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10000
 
@@ -17142,11 +16925,11 @@ eureka.server.max-elements-in-status-replication-pool
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.max-idle-thread-age-in-peer-replication을위한 시간
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 15 명
 
@@ -17154,11 +16937,11 @@ eureka.server.max-idle-thread-age-in-peer-replication을위한 시간
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.max-idle-thread-in-minutes-status-for-status-replication
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10
 
@@ -17166,11 +16949,11 @@ eureka.server.max-idle-thread-in-minutes-status-for-status-replication
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.max-threads-for-peer-replication
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 20
 
@@ -17178,11 +16961,11 @@ eureka.server.max-threads-for-peer-replication
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.max-status-replication 용 스레드
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1
 
@@ -17190,11 +16973,11 @@ eureka.server.max-status-replication 용 스레드
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.max-time-for-replication
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30000
 
@@ -17202,11 +16985,11 @@ eureka.server.max-time-for-replication
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.min-threads-for-peer-replication
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 5
 
@@ -17214,11 +16997,11 @@ eureka.server.min-threads-for-peer-replication
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.min-threads-status-replication
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1
 
@@ -17226,11 +17009,11 @@ eureka.server.min-threads-status-replication
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.number-of-replication-retries
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 5
 
@@ -17238,11 +17021,11 @@ eureka.server.number-of-replication-retries
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.peer-eureka-nodes-update-interval-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17250,11 +17033,11 @@ eureka.server.peer-eureka-nodes-update-interval-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.peer-eureka-status-refresh-time-interval-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17262,11 +17045,11 @@ eureka.server.peer-eureka-status-refresh-time-interval-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.peer-node-connect-timeout-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 200
 
@@ -17274,11 +17057,11 @@ eureka.server.peer-node-connect-timeout-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.peer-node-connection-idle-timeout-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
@@ -17286,11 +17069,11 @@ eureka.server.peer-node-connection-idle-timeout-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.peer-node-read-timeout-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 200
 
@@ -17298,11 +17081,11 @@ eureka.server.peer-node-read-timeout-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.peer-node-total-connections
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1000
 
@@ -17310,11 +17093,11 @@ eureka.server.peer-node-total-connections
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.peer-node-total-connections-per-host
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 500
 
@@ -17322,11 +17105,11 @@ eureka.server.peer-node-total-connections-per-host
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.prime-aws-replica-connections
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -17334,7 +17117,7 @@ eureka.server.prime-aws-replica-connections
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.property-resolver
 
@@ -17342,11 +17125,11 @@ eureka.server.property-resolver
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.rate-limiter-burst-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10
 
@@ -17354,11 +17137,11 @@ eureka.server.rate-limiter-burst-size
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.rate-limiter-enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -17366,11 +17149,11 @@ eureka.server.rate-limiter-enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.rate-limiter-full-fetch-average-rate
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 100
 
@@ -17378,7 +17161,7 @@ eureka.server.rate-limiter-full-fetch-average-rate
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.rate-limiter-privileged-clients
 
@@ -17386,11 +17169,11 @@ eureka.server.rate-limiter-privileged-clients
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.rate-limiter-registry-fetch-average-rate
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 500
 
@@ -17398,11 +17181,11 @@ eureka.server.rate-limiter-registry-fetch-average-rate
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.rate-limiter-throttle-standard-clients
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -17410,11 +17193,11 @@ eureka.server.rate-limiter-throttle-standard-clients
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.registry-sync-retries
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17422,11 +17205,11 @@ eureka.server.registry-sync-retries
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.registry-sync-retry-wait-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17434,7 +17217,7 @@ eureka.server.registry-sync-retry-wait-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-app-whitelist
 
@@ -17442,11 +17225,11 @@ eureka.server.remote-region-app-whitelist
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-connect-timeout-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1000
 
@@ -17454,11 +17237,11 @@ eureka.server.remote-region-connect-timeout-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-connection-idle-timeout-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
@@ -17466,11 +17249,11 @@ eureka.server.remote-region-connection-idle-timeout-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-fetch-thread-pool-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 20
 
@@ -17478,11 +17261,11 @@ eureka.server.remote-region-fetch-thread-pool-size
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-read-timeout-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1000
 
@@ -17490,11 +17273,11 @@ eureka.server.remote-region-read-timeout-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-registry-fetch-interval
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
@@ -17502,11 +17285,11 @@ eureka.server.remote-region-registry-fetch-interval
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-total-connections
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1000
 
@@ -17514,11 +17297,11 @@ eureka.server.remote-region-total-connections
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-total-connections-per-host
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 500
 
@@ -17526,7 +17309,7 @@ eureka.server.remote-region-total-connections-per-host
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-trust-store
 
@@ -17534,11 +17317,11 @@ eureka.server.remote-region-trust-store
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-trust-store-password
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 changeit
 
@@ -17546,7 +17329,7 @@ changeit
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-urls
 
@@ -17554,7 +17337,7 @@ eureka.server.remote-region-urls
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.remote-region-urls-with-name
 
@@ -17562,11 +17345,11 @@ eureka.server.remote-region-urls-with-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.renewal-percent-threshold
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0.85
 
@@ -17574,11 +17357,11 @@ eureka.server.renewal-percent-threshold
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.renewal-threshold-update-interval-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17586,11 +17369,11 @@ eureka.server.renewal-threshold-update-interval-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.response-cache-auto-expiration-in-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 180
 
@@ -17598,11 +17381,11 @@ eureka.server.response-cache-auto-expiration-in-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.response-cache-update-interval-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17610,11 +17393,11 @@ eureka.server.response-cache-update-interval-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.retention-time-in-msin-delta-queue
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17622,11 +17405,11 @@ eureka.server.retention-time-in-msin-delta-queue
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.route53-bind-rebind-retries
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 삼
 
@@ -17634,11 +17417,11 @@ eureka.server.route53-bind-rebind-retries
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.route53-binding-retry-interval-ms
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17646,11 +17429,11 @@ eureka.server.route53-binding-retry-interval-ms
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.route53-domain-ttl
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
@@ -17658,11 +17441,11 @@ eureka.server.route53-domain-ttl
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.sync-when-timestamp-different
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -17670,11 +17453,11 @@ eureka.server.sync-when-timestamp-different
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.use-read-only-response-cache
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -17682,11 +17465,11 @@ eureka.server.use-read-only-response-cache
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.wait-time-in-ms-when-sync-empty
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -17694,7 +17477,7 @@ eureka.server.wait-time-in-ms-when-sync-empty
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 eureka.server.xml-codec-name
 
@@ -17702,15 +17485,15 @@ eureka.server.xml-codec-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 feign.compression.request.mime-types
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [text / xml, application / xml, application / json]
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 지원되는 MIME 유형 목록.
 
@@ -17718,15 +17501,15 @@ feign.compression.request.mime-types
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 feign.compression.request.min-request-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2048
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 최소 임계 값 콘텐츠 크기
 
@@ -17734,15 +17517,15 @@ feign.compression.request.min-request-size
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 health.config.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 구성 서버 상태 표시기를 설치해야 함을 표시하는 플래그.
 
@@ -17750,15 +17533,15 @@ health.config.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 health.hystrix.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 hystrix 상태 표시기가 설치되어 있는지 확인하십시오.
 
@@ -17766,11 +17549,11 @@ hystrix 상태 표시기가 설치되어 있는지 확인하십시오.
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 netflix.atlas.batch-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10000
 
@@ -17778,11 +17561,11 @@ netflix.atlas.batch-size
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 netflix.atlas.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -17790,7 +17573,7 @@ netflix.atlas.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 netflix.atlas.uri
 
@@ -17798,11 +17581,11 @@ netflix.atlas.uri
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 proxy.auth.load-balanced
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -17810,11 +17593,11 @@ proxy.auth.load-balanced
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 프록시 .auth.routes
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 경로 별 인증 전략.
 
@@ -17822,11 +17605,11 @@ proxy.auth.load-balanced
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.bus.ack.destination-service
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 멍청한 말을 듣고 싶어하는 서비스. 기본적으로 null입니다 (모든 서비스를 의미 함).
 
@@ -17834,15 +17617,15 @@ spring.cloud.bus.ack.destination-service
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.bus.ack.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 acks를 끄기위한 플래그 (기본값은 켜짐).
 
@@ -17850,15 +17633,15 @@ acks를 끄기위한 플래그 (기본값은 켜짐).
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.bus.destination
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 springCloudBus
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 메시지에 대한 Spring Cloud Stream 대상의 이름.
 
@@ -17866,15 +17649,15 @@ springCloudBus
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.bus.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 버스가 활성화되었음을 나타내는 플래그입니다.
 
@@ -17882,15 +17665,15 @@ spring.cloud.bus.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.bus.env.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 환경 변경 이벤트를 끄기위한 플래그입니다 (기본값은 켜짐).
 
@@ -17898,15 +17681,15 @@ spring.cloud.bus.env.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.bus.refresh.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 새로 고침 이벤트를 끄기 위해 플래그를 설정합니다 (기본 설정).
 
@@ -17914,15 +17697,15 @@ spring.cloud.bus.refresh.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.bus.trace.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 acks의 추적을 켜기 위해 플래그를 설정합니다 (기본값은 off).
 
@@ -17930,11 +17713,11 @@ acks의 추적을 켜기 위해 플래그를 설정합니다 (기본값은 off).
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.cloudfoundry.discovery.email
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 인증 할 사용자의 전자 메일 주소입니다.
 
@@ -17942,15 +17725,15 @@ spring.cloud.cloudfoundry.discovery.email
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.cloudfoundry.discovery.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 발견이 가능함을 나타내는 플래그.
 
@@ -17958,11 +17741,11 @@ spring.cloud.cloudfoundry.discovery.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.cloudfoundry.discovery.password
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 사용자가 토큰을 인증하고 획득하기위한 암호입니다.
 
@@ -17970,15 +17753,15 @@ spring.cloud.cloudfoundry.discovery.password
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.cloudfoundry.discovery.url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [https://api.run.pivotal.io](https://api.run.pivotal.io/)
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 Cloud Foundry API (Cloud Controller)의 URL입니다.
 
@@ -17986,15 +17769,15 @@ Cloud Foundry API (Cloud Controller)의 URL입니다.
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.allow-override
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 {isSystemPropertiesOverride () systemPropertiesOverride}를 사용할 수있는 것을 나타내는 플래그입니다. 사용자가 실수로 기본값을 변경하지 못하게하려면 false로 설정하십시오. 기본값은 true입니다.
 
@@ -18002,15 +17785,15 @@ spring.cloud.config.allow-override
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.discovery.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 설정 서버 검색이 활성화되었음을 나타 내기 위해 플래그를 지정합니다 (검색을 통해 구성 서버 URL이 조회됩니다).
 
@@ -18018,15 +17801,15 @@ spring.cloud.config.discovery.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.discovery.service-id
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 CONFIGSERVER
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 구성 서버를 찾기위한 서비스 ID.
 
@@ -18034,15 +17817,15 @@ CONFIGSERVER
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 원격 구성이 활성화되었다고 알리는 플래그. 기본값은 true입니다.
 
@@ -18050,15 +17833,15 @@ spring.cloud.config.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.fail-fast
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서버에 연결하지 못하는 것이 치명적임을 나타내는 플래그입니다 (기본값은 false).
 
@@ -18066,11 +17849,11 @@ spring.cloud.config.fail-fast
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.label
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 원격 구성 등록 정보를 가져 오는 데 사용할 레이블 이름입니다. 기본값은 서버에서 설정됩니다 (일반적으로 자식 기반 서버의 경우 "마스터").
 
@@ -18078,11 +17861,11 @@ spring.cloud.config.label
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 원격 등록 정보를 가져 오는 데 사용되는 응용 프로그램의 이름입니다.
 
@@ -18090,15 +17873,15 @@ spring.cloud.config.name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.override-none
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 #setAllowOverride (boolean) allowOverride}가 true의 경우, 외부 프로퍼티의 우선 순위는 낮아, 기존의 프로퍼티 소스 (로컬 설정 파일을 포함한다)는 오버라이드 (override)하지 말아주세요. 기본값은 false입니다.
 
@@ -18106,15 +17889,15 @@ spring.cloud.config.override-none
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 overclock.config -override-system-properties
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 외부 프로퍼티가 시스템 프로퍼티를 오버라이드 (override)하는 것을 나타내는 플래그입니다. 기본값은 true입니다.
 
@@ -18122,11 +17905,11 @@ overclock.config -override-system-properties
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.password
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 원격 서버에 연결할 때 사용할 암호 (HTTP 기본)입니다.
 
@@ -18134,15 +17917,15 @@ spring.cloud.config.password
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.profile
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 태만
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 원격 구성을 가져올 때 사용할 기본 프로파일 (쉼표로 구분). 기본값은 "default"입니다.
 
@@ -18150,15 +17933,15 @@ spring.cloud.config.profile
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.retry.initial-interval
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1000
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 초기 재시도 간격 (밀리 초).
 
@@ -18166,15 +17949,15 @@ spring.cloud.config.retry.initial-interval
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.retry.max-attempts
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 6
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 최대 시도 횟수.
 
@@ -18182,15 +17965,15 @@ spring.cloud.config.retry.max-attempts
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.retry.max-interval
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2000 년
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 백 오프의 최대 간격.
 
@@ -18198,15 +17981,15 @@ spring.cloud.config.retry.max-interval
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.retry.multiplier
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1.1
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 다음 간격의 배율입니다.
 
@@ -18214,15 +17997,15 @@ spring.cloud.config.retry.multiplier
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.uri
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 [http : // localhost : 8888](http://localhost:8888/)
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 원격 서버의 URI (기본값 [http : // localhost : 8888](http://localhost:8888/) ).
 
@@ -18230,11 +18013,11 @@ spring.cloud.config.uri
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.config.username
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 원격 서버에 연결할 때 사용할 사용자 이름 (HTTP 기본)입니다.
 
@@ -18242,7 +18025,7 @@ spring.cloud.config.username
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.acl-token
 
@@ -18250,15 +18033,15 @@ spring.cloud.consul.config.acl-token
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.data-key
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 데이터
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 형식이 Format.PROPERTIES 또는 Format.YAML 인 경우 다음 필드가 구성 용 영사를 조회하는 키로 사용됩니다.
 
@@ -18266,11 +18049,11 @@ spring.cloud.consul.config.data-key
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.default-context
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 신청
 
@@ -18278,11 +18061,11 @@ spring.cloud.consul.config.default-context
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -18290,15 +18073,15 @@ spring.cloud.consul.config.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.fail-fast
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 true이면 설정 조회 중에 예외를 던지고, 그렇지 않으면 경고를 남깁니다.
 
@@ -18306,7 +18089,7 @@ true이면 설정 조회 중에 예외를 던지고, 그렇지 않으면 경고�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.format
 
@@ -18314,11 +18097,11 @@ spring.cloud.consul.config.format
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.prefix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 구성
 
@@ -18326,11 +18109,11 @@ spring.cloud.consul.config.prefix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.profile-separator
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 ,
 
@@ -18338,11 +18121,11 @@ spring.cloud.consul.config.profile-separator
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.watch.delay
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10
 
@@ -18350,11 +18133,11 @@ spring.cloud.consul.config.watch.delay
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.watch.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -18362,11 +18145,11 @@ spring.cloud.consul.config.watch.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.config.watch.wait-time
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2
 
@@ -18374,7 +18157,7 @@ spring.cloud.consul.config.watch.wait-time
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.acl-token
 
@@ -18382,11 +18165,11 @@ spring.cloud.consul.discovery.acl-token
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.catalog-services-watch-delay
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10
 
@@ -18394,11 +18177,11 @@ spring.cloud.consul.discovery.catalog-services-watch-delay
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.catalog-services-watch-timeout
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2
 
@@ -18406,15 +18189,15 @@ spring.cloud.consul.discovery.catalog-services-watch-timeout
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서비스 검색이 활성화되어 있습니까?
 
@@ -18422,15 +18205,15 @@ spring.cloud.consul.discovery.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 health.chealth- check- interval.consul.discovery.health-check-interval
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10 대
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 상태 확인을 수행하는 빈도 (예 : 10 초)
 
@@ -18438,15 +18221,15 @@ health.chealth- check- interval.consul.discovery.health-check-interval
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 건강 검진을위한 spring.cloud.consul.discovery.health-check-path
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 /건강
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 상태 확인을 위해 호출 할 대체 서버 경로
 
@@ -18454,11 +18237,11 @@ health.chealth- check- interval.consul.discovery.health-check-interval
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 health.chealth- check-timeout
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 상태 확인 제한 시간 (예 : 10 초)
 
@@ -18466,11 +18249,11 @@ health.chealth- check-timeout
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 health.chealth-check-url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 기본 설정을 무시할 수있는 사용자 정의 상태 확인 URL
 
@@ -18478,11 +18261,11 @@ health.chealth-check-url
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.heartbeat.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -18490,7 +18273,7 @@ spring.cloud.consul.discovery.heartbeat.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 봄. 클라우드. 회의. 디스커버리. 하트 비트. 하트 비트 인터벌
 
@@ -18498,7 +18281,7 @@ spring.cloud.consul.discovery.heartbeat.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.heartbeat.interval-ratio
 
@@ -18506,11 +18289,11 @@ spring.cloud.consul.discovery.heartbeat.interval-ratio
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 하트 비트 .ttl- 유닛
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 에스
 
@@ -18518,11 +18301,11 @@ spring.cloud.consul.discovery.heartbeat.interval-ratio
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 심장 박동. 심박계. 심장 박동. 가치 - 가치
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 30
 
@@ -18530,7 +18313,7 @@ spring.cloud.consul.discovery.heartbeat.interval-ratio
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.host-info
 
@@ -18538,11 +18321,11 @@ spring.cloud.consul.discovery.host-info
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.hostname
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서버에 액세스 할 때 사용할 호스트 이름
 
@@ -18550,11 +18333,11 @@ spring.cloud.consul.discovery.hostname
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.instance-id
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 고유 서비스 인스턴스 ID
 
@@ -18562,11 +18345,11 @@ spring.cloud.consul.discovery.instance-id
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.ip-address
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서비스에 액세스 할 때 사용할 IP 주소 (사용하려면 preferIpAddress도 설정해야 함)
 
@@ -18574,11 +18357,11 @@ spring.cloud.consul.discovery.ip-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.lifecycle.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -18586,15 +18369,15 @@ spring.cloud.consul.discovery.lifecycle.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.management-suffix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 조치
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 관리 서비스 등록시 사용할 접미사
 
@@ -18602,11 +18385,11 @@ spring.cloud.consul.discovery.management-suffix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.management-tags
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 관리 서비스를 등록 할 때 사용할 태그
 
@@ -18614,11 +18397,11 @@ spring.cloud.consul.discovery.management-tags
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.port
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서비스를 등록 할 포트 (기본값은 수신 대기 포트)
 
@@ -18626,15 +18409,15 @@ spring.cloud.consul.discovery.port
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.prefer-agent-address
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 사용할 주소를 결정하는 방법의 출처
 
@@ -18642,15 +18425,15 @@ spring.cloud.consul.discovery.prefer-agent-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.prefer-ip-address
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 등록하는 동안 호스트 이름 대신 IP 주소 사용
 
@@ -18658,15 +18441,15 @@ spring.cloud.consul.discovery.prefer-ip-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 질문. 통과.
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 / v1 / health / service / serviceName에 'passing'매개 변수를 추가하십시오. 이렇게하면 상태 검사가 서버로 전달됩니다.
 
@@ -18674,15 +18457,15 @@ spring.cloud.consul.discovery.prefer-ip-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.register
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 영사 서비스에 등록하십시오.
 
@@ -18690,15 +18473,15 @@ spring.cloud.consul.discovery.register
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.register-health-check
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 영사관에 건강 검진을 등록하십시오. 서비스 개발 중에 유용합니다.
 
@@ -18706,15 +18489,15 @@ spring.cloud.consul.discovery.register-health-check
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.scheme
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http 또는 https 서비스 등록 여부
 
@@ -18722,11 +18505,11 @@ http 또는 https 서비스 등록 여부
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.server-list-query-tags
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 serviceId의 → 서버 목록에서 쿼리 할 태그. 이를 통해 단일 태그로 서비스를 필터링 할 수 있습니다.
 
@@ -18734,11 +18517,11 @@ serviceId의 → 서버 목록에서 쿼리 할 태그. 이를 통해 단일 태
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.service-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서비스 이름
 
@@ -18746,11 +18529,11 @@ spring.cloud.consul.discovery.service-name
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.discovery.tags
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 서비스 등록시 사용할 태그
 
@@ -18758,15 +18541,15 @@ spring.cloud.consul.discovery.tags
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 봄 구름 영사가 가능합니까?
 
@@ -18774,15 +18557,15 @@ spring.cloud.consul.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.host
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 로컬 호스트
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 총영사관 호스트 이름. 기본값은 'localhost'입니다.
 
@@ -18790,15 +18573,15 @@ spring.cloud.consul.host
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.port
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 8500
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 영사관 요원. 기본값은 '8500'입니다.
 
@@ -18806,15 +18589,15 @@ spring.cloud.consul.port
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 봄철. 초. 중. 재시별 - 간격
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1000
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 초기 재시도 간격 (밀리 초).
 
@@ -18822,15 +18605,15 @@ spring.cloud.consul.port
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.retry.max-attempts
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 6
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 최대 시도 횟수.
 
@@ -18838,15 +18621,15 @@ spring.cloud.consul.retry.max-attempts
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.consul.retry.max-interval
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2000 년
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 백 오프의 최대 간격.
 
@@ -18854,15 +18637,15 @@ spring.cloud.consul.retry.max-interval
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 .retry.multiplier
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1.1
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 다음 간격의 배율입니다.
 
@@ -18870,11 +18653,11 @@ spring.cloud.consul.retry.max-interval
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.hypermedia.refresh.fixed-delay
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 5000
 
@@ -18882,11 +18665,11 @@ spring.cloud.hypermedia.refresh.fixed-delay
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 초기 지연 - spring.cloud.hypermedia.refresh.it
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 10000
 
@@ -18894,15 +18677,15 @@ spring.cloud.hypermedia.refresh.fixed-delay
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.inetutils.default-hostname
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 로컬 호스트
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 기본 호스트 이름. 오류가 발생한 경우에 사용됩니다.
 
@@ -18910,15 +18693,15 @@ spring.cloud.inetutils.default-hostname
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.inetutils.default-ip-address
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 127.0.0.1
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 기본 ipaddress입니다. 오류가 발생한 경우에 사용됩니다.
 
@@ -18926,11 +18709,11 @@ spring.cloud.inetutils.default-ip-address
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.inetutils.ignored-interfaces
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 무시 될 네트워크 인터페이스의 Java 정규 표현식 목록입니다.
 
@@ -18938,15 +18721,15 @@ spring.cloud.inetutils.ignored-interfaces
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.inetutils.timeout-seconds
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 호스트 이름을 계산하기위한 시간 제한 (초).
 
@@ -18954,7 +18737,7 @@ spring.cloud.inetutils.timeout-seconds
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.binders
 
@@ -18962,7 +18745,7 @@ spring.cloud.stream.binders
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.bindings
 
@@ -18970,7 +18753,7 @@ spring.cloud.stream.bindings
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.consumer-defaults
 
@@ -18978,7 +18761,7 @@ spring.cloud.stream.consumer-defaults
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.default-binder
 
@@ -18986,11 +18769,11 @@ spring.cloud.stream.default-binder
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.dynamic-destinations
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 []
 
@@ -18998,11 +18781,11 @@ spring.cloud.stream.dynamic-destinations
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 Spring.cloud.stream.ignore-unknown-properties
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -19010,11 +18793,11 @@ Spring.cloud.stream.ignore-unknown-properties
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.instance-count
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1
 
@@ -19022,11 +18805,11 @@ spring.cloud.stream.instance-count
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.instance-index
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -19034,7 +18817,7 @@ spring.cloud.stream.instance-index
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.producer-defaults
 
@@ -19042,11 +18825,11 @@ spring.cloud.stream.producer-defaults
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.addresses
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 []
 
@@ -19054,11 +18837,11 @@ spring.cloud.stream.rabbit.binder.addresses
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.admin-adresses
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 []
 
@@ -19066,11 +18849,11 @@ spring.cloud.stream.rabbit.binder.admin-adresses
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.com 노출 수준
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0
 
@@ -19078,11 +18861,11 @@ spring.cloud.stream.rabbit.binder.com 노출 수준
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.nodes
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 []
 
@@ -19090,7 +18873,7 @@ spring.cloud.stream.rabbit.binder.nodes
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.password
 
@@ -19098,7 +18881,7 @@ spring.cloud.stream.rabbit.binder.password
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.ssl-properties-location
 
@@ -19106,11 +18889,11 @@ spring.cloud.stream.rabbit.binder.ssl-properties-location
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.use-ssl
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 그릇된
 
@@ -19118,7 +18901,7 @@ spring.cloud.stream.rabbit.binder.use-ssl
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.username
 
@@ -19126,7 +18909,7 @@ spring.cloud.stream.rabbit.binder.username
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.binder.vhost
 
@@ -19134,7 +18917,7 @@ spring.cloud.stream.rabbit.binder.vhost
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.stream.rabbit.bindings
 
@@ -19142,11 +18925,11 @@ spring.cloud.stream.rabbit.bindings
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.default-health-endpoint
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 종속성이 있는지 확인하기 위해 검사 할 기본 상태 종점
 
@@ -19154,11 +18937,11 @@ spring.cloud.zookeeper.default-health-endpoint
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 스프링클러. 주키퍼.
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 ZookeeperDependency에 대한 별칭 매핑. Ribbon은 serviceID에 중첩 된 구조를 허용 할 수 없기 때문에 실제로 별칭은 serviceID입니다.
 
@@ -19166,7 +18949,7 @@ ZookeeperDependency에 대한 별칭 매핑. Ribbon은 serviceID에 중첩 된 �
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.dependency-configurations
 
@@ -19174,7 +18957,7 @@ spring.cloud.zookeeper.dependency-configurations
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.dependency-names
 
@@ -19182,11 +18965,11 @@ spring.cloud.zookeeper.dependency-names
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.discovery.enabled
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -19194,7 +18977,7 @@ spring.cloud.zookeeper.discovery.enabled
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.discovery.instance-host
 
@@ -19202,11 +18985,11 @@ spring.cloud.zookeeper.discovery.instance-host
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.discovery.metadata
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 이 인스턴스와 관련된 메타 데이터 이름 / 값 쌍을 가져옵니다. 이 정보는 사육사에게 보내어 다른 인스턴스에서 사용할 수 있습니다.
 
@@ -19214,11 +18997,11 @@ spring.cloud.zookeeper.discovery.metadata
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.discovery.root
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 /서비스
 
@@ -19226,11 +19009,11 @@ spring.cloud.zookeeper.discovery.root
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.discovery.uri-spec
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 {scheme} : // {address} : {port}
 
@@ -19238,11 +19021,11 @@ spring.cloud.zookeeper.discovery.uri-spec
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.cloud.zookeeper.prefix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 모든 사육사 의존성 경로에 적용되는 공통 접두사
 
@@ -19250,15 +19033,15 @@ spring.cloud.zookeeper.prefix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.integration.poller.fixed-delay
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1000
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 기본 폴러에 대한 고정 지연.
 
@@ -19266,15 +19049,15 @@ spring.integration.poller.fixed-delay
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.integration.poller.max-poll-poll
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 1
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 기본 폴러에 대한 폴링 당 최대 메시지 수.
 
@@ -19282,15 +19065,15 @@ spring.integration.poller.max-poll-poll
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.async.class-name-key
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 수업
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 비동기 프로세스가 시작된 @Async} 주석이있는 메소드가있는 클래스의 단순한 이름입니다.
 
@@ -19300,15 +19083,15 @@ spring.sleuth.keys.async.class-name-key
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.async.method-name-key
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 방법
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 @Async}로 주석 첨부 된 메소드의 이름
 
@@ -19318,11 +19101,11 @@ spring.sleuth.keys.async.method-name-key
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.async.prefix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 헤더 이름이 태그로 추가되는 경우 접두사.
 
@@ -19330,15 +19113,15 @@ spring.sleuth.keys.async.prefix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.async.thread-name-key
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 실
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 비동기 메소드를 실행 한 스레드의 이름입니다.
 
@@ -19348,11 +19131,11 @@ spring.sleuth.keys.async.thread-name-key
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.headers
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 태그가 있으면 추가해야하는 추가 헤더입니다. 헤더 값이 여러 값인 경우 태그 값은 쉼표로 구분 된 작은 따옴표 목록입니다.
 
@@ -19360,15 +19143,15 @@ spring.sleuth.keys.http.headers
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.host
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.host
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 URL 또는 호스트 헤더의 도메인 부분. 예 : "mybucket.s3.amazonaws.com". IP 주소와 대조적으로 호스트별로 필터링하는 데 사용됩니다.
 
@@ -19376,15 +19159,15 @@ URL 또는 호스트 헤더의 도메인 부분. 예 : "mybucket.s3.amazonaws.co
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.method
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.method
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 HTTP 메소드 또는 동사 (예 : "GET"또는 "POST"). http 경로를 기준으로 필터링하는 데 사용됩니다.
 
@@ -19392,15 +19175,15 @@ HTTP 메소드 또는 동사 (예 : "GET"또는 "POST"). http 경로를 기준�
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.path
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.path
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 쿼리 매개 변수없이 절대 http 경로. 예 : "/ objects / abcd-ff". zipkin v1을 사용하여 http 경로에 대해 필터링하는 데 사용됩니다. zipkin v1에서는 equals 필터 만 지원됩니다. 쿼리 매개 변수를 삭제하면 고유 URI 수가 줄어 듭니다. 예를 들어, 쿼리 라인에 인코딩 된 서명 매개 변수와 상관없이 동일한 리소스를 쿼리 할 수 ​​있습니다. 이렇게하면 HTTP 단일 경로의 카디널리티가 줄어들지 않습니다. 예를 들어 경로를 "/ resource / {resource_id}"와 같은 http URI 템플릿으로 표현하는 것이 일반적입니다. equals 쿼리 만 사용할 수있는 시스템에서는 실제 요청이 "/ resource / abcd-ff"인 경우 http.uri = / resource}을 검색하는 것이 일치하지 않습니다. 기록 참고 사항 : 이것은 흔히 zipkin에서 "http.uri"로 표현되었지만 대부분 경로 일뿐입니다.
 
@@ -19408,15 +19191,15 @@ http.path
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.prefix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 헤더 이름이 태그로 추가되는 경우 접두사.
 
@@ -19424,15 +19207,15 @@ http.
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.request-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.request.size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 비어 있지 않은 HTTP 요청 본문의 크기 (바이트)입니다. 전의. "16384"
 
@@ -19442,15 +19225,15 @@ http.request.size
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.response-size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.response.size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 비어 있지 않은 HTTP 응답 본문의 크기 (바이트)입니다. 전의. "16384"
 
@@ -19460,15 +19243,15 @@ http.response.size
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.status-code
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.status_code
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 2xx 범위가 아닌 HTTP 응답 코드입니다. 전의. "503"오류 상태를 필터링하는 데 사용됩니다. 2xx 범위는 성공 코드가 대기 시간 문제 해결에 덜 흥미 롭기 때문에 기록되지 않습니다. 생략하면 범위 당 최소 20 바이트가 절약됩니다.
 
@@ -19476,15 +19259,15 @@ http.status_code
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.http.url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 http.url
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 가능한 경우 스키마, 호스트 및 쿼리 매개 변수를 포함한 전체 URL입니다. 전의. "https://mybucket.s3.amazonaws.com/objects/abcd-ff?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Algorithm=AWS4-HMAC-SHA256..."{@link #method }를 사용하면 정규화 된 요청 행을 이해할 수 있습니다. 개인 정보가 포함되거나 상당한 기간이 소요될 수 있으므로 선택 사항입니다.
 
@@ -19492,15 +19275,15 @@ http.url
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.hystrix.command-group
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 commandGroup
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 명령 그룹의 이름. Hystrix는 명령 그룹 키를 사용하여보고, 경고, 대시 보드 또는 팀 / 라이브러리 소유권과 같은 명령을 그룹화합니다.
 
@@ -19510,15 +19293,15 @@ commandGroup
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.hystrix.command-key
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 commandKey
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 명령 키의 이름. 주어진 명령의 이름을 설명합니다. 모니터링, 회로 차단기, 메트릭 게시, 캐싱 및 기타 용도로 {@link com.netflix.hystrix.HystrixCommand}를 나타내는 키입니다.
 
@@ -19528,11 +19311,11 @@ commandKey
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.hystrix.prefix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 헤더 이름이 태그로 추가되는 경우 접두사.
 
@@ -19540,15 +19323,15 @@ spring.sleuth.keys.hystrix.prefix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.hystrix.thread-pool-key
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 threadPoolKey
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 스레드 풀 키의 이름입니다. 스레드 풀 키는 모니터링, 메트릭 게시, 캐싱 및 기타 용도를위한 com.netflix.hystrix.HystrixThreadPool을 나타냅니다. com.netflix.hystrix.HystrixCommand}는, com.netflix.hystrix.HystrixThreadPoolKey}에 의해 취득 된 단일의 com.netflix.hystrix.HystrixThreadPool와 관련 지을 수있어 디폴트로 설정됩니다. 에 의해 작성된 com.netflix.hystrix.HystrixCommandGroupKey를 사용해 작성된 것을 돌려줍니다.
 
@@ -19558,11 +19341,11 @@ threadPoolKey
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.message.headers
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 태그가 있으면 추가해야하는 추가 헤더입니다. 헤더 치가 String가 아닌 경우, toString () Methods를 사용해 String에 변환됩니다.
 
@@ -19570,15 +19353,15 @@ spring.sleuth.keys.message.headers
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.message.payload.size
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 메시지 / 페이로드 크기
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 가능한 경우 페이로드의 크기 추정입니다.
 
@@ -19586,15 +19369,15 @@ spring.sleuth.keys.message.payload.size
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.message.payload.type
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 메시지 / 페이로드 유형
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 페이로드 유형입니다.
 
@@ -19602,15 +19385,15 @@ spring.sleuth.keys.message.payload.type
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.keys.message.prefix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 메시지/
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 헤더 이름이 태그로 추가되는 경우 접두사.
 
@@ -19618,11 +19401,11 @@ spring.sleuth.keys.message.prefix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.metric.span.accepted-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 counter.span.accepted
 
@@ -19630,11 +19413,11 @@ counter.span.accepted
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.metric.span.dropped-name
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 Counter.span.dropped
 
@@ -19642,15 +19425,15 @@ Counter.span.dropped
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 spring.sleuth.sampler.percentage
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 0.1
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 샘플링해야하는 요청의 백분율. 예 : 1.0 - 100 % 요청을 샘플링해야합니다. 정밀도는 전체 수만입니다 (즉, 추적의 0.1 %는 지원되지 않습니다).
 
@@ -19658,11 +19441,11 @@ spring.sleuth.sampler.percentage
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.add-proxy-headers
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -19670,11 +19453,11 @@ zuul.add-proxy-headers
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.host.max-per-route-connections
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 20
 
@@ -19682,11 +19465,11 @@ zuul.host.max-per-route-connections
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.host.max-total-connections
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 200
 
@@ -19694,11 +19477,11 @@ zuul.host.max-total-connections
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.ignore-local-service
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -19706,7 +19489,7 @@ zuul.ignore-local-service
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.ignored-headers
 
@@ -19714,7 +19497,7 @@ zuul.ignored-headers
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.ignored-patterns
 
@@ -19722,7 +19505,7 @@ zuul.ignored-patterns
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.ignored-services
 
@@ -19730,7 +19513,7 @@ zuul.ignored-services
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.prefix
 
@@ -19738,11 +19521,11 @@ zuul.prefix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.remove-semicolon-content
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -19750,7 +19533,7 @@ zuul.remove-semicolon-content
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.retryable
 
@@ -19758,7 +19541,7 @@ zuul.retryable
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.routes
 
@@ -19766,7 +19549,7 @@ zuul.routes
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.security_headers
 
@@ -19774,13 +19557,13 @@ zuul.security_headers
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.servlet-path
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 / zuul
 
@@ -19790,11 +19573,11 @@ zuul.servlet-path
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.strip-prefix
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
@@ -19802,11 +19585,11 @@ zuul.strip-prefix
 
 
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 zuul.trace-request-body
 
-<td class="tableblock halign-left valign-top">
+<td>
 
 참된
 
