@@ -360,14 +360,14 @@ Spring Cloud 애플리케이션은 메인 애플리케이션의 상위 컨텍스
 bootstrap.yml
 
 
-```
+    
 spring:
     application:
         name : foo
     cloud:
         config :
             uri : $ {SPRING_CONFIG_URI : http : // localhost : 8888}
-```
+    
 
 
 
@@ -538,7 +538,7 @@ spring:
 
 
 
-```org.springframework.cloud.bootstrap.BootstrapConfiguration = sample.custom.CustomPropertySourceLocator```
+    org.springframework.cloud.bootstrap.BootstrapConfiguration = sample.custom.CustomPropertySourceLocator    
 
 
 
@@ -963,7 +963,7 @@ application.yml
 
 
 
-```봄: 구름: inetutils : ignoredInterfaces : - 도커 0 - 베스. *```
+    봄: 구름: inetutils : ignoredInterfaces : - 도커 0 - 베스. *    
 
 
 
@@ -981,7 +981,7 @@ application.yml
 
 
 
-```봄: 구름: inetutils : preferredNetworks : - 192.168 - 10.0```
+    봄: 구름: inetutils : preferredNetworks : - 192.168 - 10.0    
 
 
 
@@ -999,7 +999,7 @@ application.yml
 
 
 
-```봄: 구름: inetutils : useOnlySiteLocalInterfaces : true```
+    봄: 구름: inetutils : useOnlySiteLocalInterfaces : true    
 
 
 
@@ -1035,7 +1035,7 @@ Spring Cloud Config는 분산 시스템에서 외부화 된 구성을위한 서�
 
 
 
-```$ cd spring-cloud-config-server $ ../mvnw spring-boot : run```
+    $ cd spring-cloud-config-server $ ../mvnw spring-boot : run    
 
 
 
@@ -1051,7 +1051,7 @@ Spring Cloud Config는 분산 시스템에서 외부화 된 구성을위한 서�
 
 
 
-```$ curl localhost : 8888 / foo / development { "name": "development", "label": "master", "propertySources": [ { "name": "https://github.com/scratches/config-repo/foo-development.properties", "source": { "bar": "spam"}} { "name": "https://github.com/scratches/config-repo/foo.properties", "source": { "foo": "bar"}} ]}```
+    $ curl localhost : 8888 / foo / development { "name": "development", "label": "master", "propertySources": [ { "name": "https://github.com/scratches/config-repo/foo-development.properties", "source": { "bar": "spam"}} { "name": "https://github.com/scratches/config-repo/foo.properties", "source": { "foo": "bar"}} ]}    
 
 
 
@@ -1073,7 +1073,7 @@ HTTP 서비스에는 다음과 같은 형식의 자원이 있습니다.
 
 
 
-```/ {application} / {profile} [/ {label}] /{application}-{profile}.yml /{label}/{application}-{profile}.yml /{application}-{profile}.properties /{label}/application}-{profile}.properties```
+    / {application} / {profile} [/ {label}] /{application}-{profile}.yml /{label}/{application}-{profile}.yml /{application}-{profile}.properties /{label}/application}-{profile}.properties    
 
 
 
@@ -1178,10 +1178,10 @@ pom.xml
 
 
 
-```@SpringBootApplication @RestController public class Application {
+    @SpringBootApplication @RestController public class Application {
  @RequestMapping ( "/") public String home () { return "Hello World!"; }
  공공 정적 무효 메인 (문자열 [] args) { SpringApplication.run (Application.class, args); }
- }```
+ }    
 
 
 
@@ -1197,7 +1197,7 @@ pom.xml
 
 
 
-```spring.cloud.config.uri : http://myconfigserver.com```
+    spring.cloud.config.uri : http://myconfigserver.com    
 
 
 
@@ -1213,7 +1213,7 @@ pom.xml
 
 
 
-```$ curl localhost : 8080 / env { "프로필": [], "configService : https : //github.com/spring-cloud-samples/config-repo/bar.properties": { "foo": "bar"}, "servletContextInitParams": {}, "systemProperties": {...}, ... }```
+    $ curl localhost : 8080 / env { "프로필": [], "configService : https : //github.com/spring-cloud-samples/config-repo/bar.properties": { "foo": "bar"}, "servletContextInitParams": {}, "systemProperties": {...}, ... }    
 
 
 
@@ -1354,7 +1354,7 @@ Windows에서 드라이브 접두사가 절대적이면 파일 URL에 여분의 
 
 
 
-```$ cd $ HOME $ mkdir config-repo $ cd config-repo $ git init. $ echo info.foo : bar> application.properties $ git add -A. $ git commit -m "application.properties 추가"```
+    $ cd $ HOME $ mkdir config-repo $ cd config-repo $ git init. $ echo info.foo : bar> application.properties $ git add -A. $ git commit -m "application.properties 추가"    
 
 
 
@@ -2119,7 +2119,7 @@ application.properties
 
 
 
-```spring.datasource.username : dbuser spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ```
+    spring.datasource.username : dbuser spring.datasource.password : {암호} FKSAJDFGYOS8F7GLHAKERGFHLSAJ    
 
 
 
@@ -2141,7 +2141,7 @@ application.properties
 
 
 
-```$ curl localhost : 8888 / encrypt -d mysecret 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda```
+    $ curl localhost : 8888 / encrypt -d mysecret 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda    
 
 
 
@@ -2157,7 +2157,7 @@ application.properties
 
 
 
-```$ curl localhost : 8888 / decrypt -d 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda 나의 비밀```
+    $ curl localhost : 8888 / decrypt -d 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda 나의 비밀    
 
 
 
@@ -2229,7 +2229,7 @@ application.properties
 
 
 
-```$ spring encrypt mysecret --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda 나의 비밀```
+    $ spring encrypt mysecret --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda 나의 비밀    
 
 
 
@@ -2245,7 +2245,7 @@ application.properties
 
 
 
-```$ spring encrypt mysecret --key @ $ {HOME} /. ssh / id_rsa.pub AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...```
+    $ spring encrypt mysecret --key @ $ {HOME} /. ssh / id_rsa.pub AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...    
 
 
 
@@ -2313,7 +2313,7 @@ application.properties
 
 
 
-```$ keytool -genkeypair -alias mytestkey -keyalg RSA \ -dname "CN = 웹 서버, OU = 단위, O = 조직, L = 도시, S = 상태, C = 미국" -keypass changeme -keystore server.jks -storepass letmein```
+    $ keytool -genkeypair -alias mytestkey -keyalg RSA \ -dname "CN = 웹 서버, OU = 단위, O = 조직, L = 도시, S = 상태, C = 미국" -keypass changeme -keystore server.jks -storepass letmein    
 
 
 
@@ -2481,7 +2481,7 @@ YAML과 프라퍼티 표현은 `resolvePlaceholders`소스 문서의 자리 표�
 
 
 
-```application.yml nginx.conf```
+    application.yml nginx.conf    
 
 
 
@@ -2497,7 +2497,7 @@ YAML과 프라퍼티 표현은 `resolvePlaceholders`소스 문서의 자리 표�
 
 
 
-```서버 { 80을 듣는다. server_name $ {nginx.server.name}; }```
+    서버 { 80을 듣는다. server_name $ {nginx.server.name}; }    
 
 
 
@@ -2537,7 +2537,7 @@ YAML과 프라퍼티 표현은 `resolvePlaceholders`소스 문서의 자리 표�
 
 
 
-```서버 { 80을 듣는다. server_name example.com; }```
+    서버 { 80을 듣는다. server_name example.com; }    
 
 
 
@@ -2553,7 +2553,7 @@ YAML과 프라퍼티 표현은 `resolvePlaceholders`소스 문서의 자리 표�
 
 
 
-```서버 { 80을 듣는다. server_name develop.com; }```
+    서버 { 80을 듣는다. server_name develop.com; }    
 
 
 
@@ -3014,7 +3014,7 @@ application.yml
 
 
 
-```유레카: 고객: serviceUrl : defaultZone : http : // localhost : 8761 / eureka /```
+    유레카: 고객: serviceUrl : defaultZone : http : // localhost : 8761 / eureka /    
 
 
 
@@ -3096,7 +3096,7 @@ application.yml
 
 
 
-```유레카: 예: statusPageUrlPath : $ {management.context-path} / info healthCheckUrlPath : $ {management.context-path} / 건강```
+    유레카: 예: statusPageUrlPath : $ {management.context-path} / info healthCheckUrlPath : $ {management.context-path} / 건강    
 
 
 
@@ -3132,7 +3132,7 @@ application.yml
 
 
 
-```유레카: 예: statusPageUrl : https : // $ {eureka.hostname} / info healthCheckUrl : https : // $ {eureka.hostname} / 건강 homePageUrl : https : // $ {eureka.hostname} /```
+    유레카: 예: statusPageUrl : https : // $ {eureka.hostname} / info healthCheckUrl : https : // $ {eureka.hostname} / 건강 homePageUrl : https : // $ {eureka.hostname} /    
 
 
 
@@ -3184,7 +3184,7 @@ application.yml
 
 
 
-```유레카: 고객: 건강 체크: enabled : true```
+    유레카: 고객: 건강 체크: enabled : true    
 
 
 
@@ -3280,7 +3280,7 @@ application.yml
 
 
 
-```유레카: 예: instanceId : $ {spring.application.name} : $ {spring.application.instance_id : $ {random.value}}```
+    유레카: 예: instanceId : $ {spring.application.name} : $ {spring.application.instance_id : $ {random.value}}    
 
 
 
@@ -3310,8 +3310,8 @@ application.yml
 
 
 
-```@Autowired 개인 EurekaClient discoveryClient;
- public String serviceUrl () { InstanceInfo 인스턴스 = discoveryClient.getNextServerFromEureka ( "저장", 거짓); return instance.getHomePageUrl (); }```
+    @Autowired 개인 EurekaClient discoveryClient;
+ public String serviceUrl () { InstanceInfo 인스턴스 = discoveryClient.getNextServerFromEureka ( "저장", 거짓); return instance.getHomePageUrl (); }    
 
 
 
@@ -3369,8 +3369,8 @@ application.yml
 
 
 
-```@Autowired 개인용 DiscoveryClient discoveryClient;
- public String serviceUrl () { List <ServiceInstance> list = discoveryClient.getInstances ( "STORES"); if (list! = null && list.size ()> 0) { return list.get (0) .getUri (); } null를 돌려 준다. }```
+    @Autowired 개인용 DiscoveryClient discoveryClient;
+ public String serviceUrl () { List <ServiceInstance> list = discoveryClient.getInstances ( "STORES"); if (list! = null && list.size ()> 0) { return list.get (0) .getUri (); } null를 돌려 준다. }    
 
 
 
@@ -3528,8 +3528,8 @@ application.yml (독립 실행 형 유레카 서버)
 
 
 
-```섬기는 사람: 포트 : 8761
- 유레카: 예: 호스트 이름 : localhost 고객: registerWithEureka : false fetchRegistry : 거짓 serviceUrl : defaultZone : http : // $ {eureka.instance.hostname} : $ {server.port} / eureka /```
+    섬기는 사람: 포트 : 8761
+ 유레카: 예: 호스트 이름 : localhost 고객: registerWithEureka : false fetchRegistry : 거짓 serviceUrl : defaultZone : http : // $ {eureka.instance.hostname} : $ {server.port} / eureka /    
 
 
 
@@ -3559,8 +3559,8 @@ application.yml (두 개의 피어 인식 유레카 서버)
 
 
 
-```--- 봄: 프로필 : peer1 유레카: 예: 호스트 이름 : peer1 고객: serviceUrl : defaultZone : http : // peer2 / eureka /
- --- 봄: 프로필 : peer2 유레카: 예: 호스트 이름 : peer2 고객: serviceUrl : defaultZone : http : // peer1 / eureka /```
+    --- 봄: 프로필 : peer1 유레카: 예: 호스트 이름 : peer1 고객: serviceUrl : defaultZone : http : // peer2 / eureka /
+ --- 봄: 프로필 : peer2 유레카: 예: 호스트 이름 : peer2 고객: serviceUrl : defaultZone : http : // peer1 / eureka /    
 
 
 
@@ -3584,10 +3584,10 @@ application.yml (세 개의 피어 인식 유레카 서버)
 
 
 
-```유레카: 고객: serviceUrl : defaultZone : http : // peer1 / eureka /, http : // peer2 / eureka /, http : // peer3 / eureka /
+    유레카: 고객: serviceUrl : defaultZone : http : // peer1 / eureka /, http : // peer2 / eureka /, http : // peer3 / eureka /
  --- 봄: 프로필 : peer1 유레카: 예: 호스트 이름 : peer1
  --- 봄: 프로필 : peer2 유레카: 예: 호스트 이름 : peer2
- --- 봄: 프로필 : peer3 유레카: 예: 호스트 이름 : peer3```
+ --- 봄: 프로필 : peer3 유레카: 예: 호스트 이름 : peer3    
 
 
 
@@ -3661,12 +3661,12 @@ Netflix는 [회로 차단기 패턴](http://martinfowler.com/bliki/CircuitBreake
 
 
 
-```@SpringBootApplication @EnableCircuitBreaker public class Application {
+    @SpringBootApplication @EnableCircuitBreaker public class Application {
  공공 정적 무효 메인 (문자열 [] args) { 새로운 SpringApplicationBuilder (Application.class) .web (true) .run (args); }
  }
  @구성 요소 공용 클래스 StoreIntegration {
  @HystrixCommand (fallbackMethod = "defaultStores") 공용 객체 getStores (Map <String, Object> 매개 변수) { // 실패 할 수있는 일을하십시오. }
- 공용 객체 defaultStores (Map <String, Object> 매개 변수) { return / * 유용한 정보 * /; } }```
+ 공용 객체 defaultStores (Map <String, Object> 매개 변수) { return / * 유용한 정보 * /; } }    
 
 
 
@@ -3822,7 +3822,7 @@ Hystrix 대시 보드를 실행하려면 Spring Boot 메인 클래스에 주석�
 
 
 
-```터빈: 어 그리 게이터 : clusterConfig : 고객 appConfig : 고객```
+    터빈: 어 그리 게이터 : clusterConfig : 고객 appConfig : 고객    
 
 
 
@@ -3838,7 +3838,7 @@ Hystrix 대시 보드를 실행하려면 Spring Boot 메인 클래스에 주석�
 
 
 
-```터빈: 어 그리 게이터 : clusterConfig : SYSTEM, USER appConfig : 고객, 상점, UI, 관리자 clusterNameExpression : 메타 데이터 [ 'cluster']```
+    터빈: 어 그리 게이터 : clusterConfig : SYSTEM, USER appConfig : 고객, 상점, UI, 관리자 clusterNameExpression : 메타 데이터 [ 'cluster']    
 
 
 
@@ -3860,7 +3860,7 @@ Hystrix 대시 보드를 실행하려면 Spring Boot 메인 클래스에 주석�
 
 
 
-```터빈: appConfig : 고객, 상점 clusterNameExpression : " ''기본값 '"```
+    터빈: appConfig : 고객, 상점 clusterNameExpression : " ''기본값 '"    
 
 
 
@@ -4129,7 +4129,7 @@ application.yml
 
 
 
-```백화점: 리본: listOfServers : example.com, google.com```
+    백화점: 리본: listOfServers : example.com, google.com    
 
 
 
@@ -4153,7 +4153,7 @@ application.yml
 
 
 
-```리본: 유레카: enabled : false```
+    리본: 유레카: enabled : false    
 
 
 
@@ -5362,7 +5362,7 @@ application.yml
 
 
 
-```$ curl -v -H "전송 인코딩 : 청크 분할"\ -F "file=@mylarge.iso"localhost : 9999 / zuul / simple / file```
+    $ curl -v -H "전송 인코딩 : 청크 분할"\ -F "file=@mylarge.iso"localhost : 9999 / zuul / simple / file    
 
 
 
@@ -7631,7 +7631,7 @@ Spring Cloud Stream은 채널을 메시지 브로커에 연결하는 작업을 �
 
 
 
-```spring.cloud.stream.bindings.input.binder = kafka spring.cloud.stream.bindings.output.binder = 토끼```
+    spring.cloud.stream.bindings.input.binder = kafka spring.cloud.stream.bindings.output.binder = 토끼    
 
 
 
@@ -9275,7 +9275,7 @@ Spring Cloud Stream은 개별 Spring Boot 애플리케이션이 메시징 시스
 
 
 
-```spring.cloud.stream.bindings.output.destination = ticktock```
+    spring.cloud.stream.bindings.output.destination = ticktock    
 
 
 
@@ -9291,7 +9291,7 @@ Spring Cloud Stream은 개별 Spring Boot 애플리케이션이 메시징 시스
 
 
 
-```spring.cloud.stream.bindings.input.destination = ticktock```
+    spring.cloud.stream.bindings.input.destination = ticktock    
 
 
 
@@ -9431,7 +9431,7 @@ Kafka 바인더는이 `partitionCount`설정을 힌트로 사용하여 지정된
 
 
 
-```spring.cloud.stream.bindings.input.consumer.partitioned = true spring.cloud.stream.instanceIndex = 3 spring.cloud.stream.instanceCount = 5```
+    spring.cloud.stream.bindings.input.consumer.partitioned = true spring.cloud.stream.instanceIndex = 3 spring.cloud.stream.instanceCount = 5    
 
 
 
@@ -9675,7 +9675,7 @@ Spring Cloud Stream 샘플의 경우 GitHub 의 [spring-cloud-stream-samples](ht
 
 
 
-```./mvnw 클린 패키지```
+    ./mvnw 클린 패키지    
 
 
 
@@ -9718,7 +9718,7 @@ Spring Cloud Stream 샘플의 경우 GitHub 의 [spring-cloud-stream-samples](ht
 
 
 
-```./mvnw 클린 패키지```
+    ./mvnw 클린 패키지    
 
 
 
@@ -9802,7 +9802,7 @@ application.yml
 
 
 
-```봄: rabbitmq : 호스트 : mybroker.com 포트 : 5672 사용자 이름 : 사용자 비밀 번호 : 비밀```
+    봄: rabbitmq : 호스트 : mybroker.com 포트 : 5672 사용자 이름 : 사용자 비밀 번호 : 비밀    
 
 
 
@@ -10893,7 +10893,7 @@ Spring Cloud Sleuth Stream Zipkin 콜렉터를 시작하려면 의존성을 추�
 
 
 
-    ```2016-02-02 15 : 30 : 57.902 정보 [bar, 6bfd228dc00d216b, 6bfd228dc00d216b, false] 23030 --- [nio-8081-exec-3] ... 2016-02-02 15 : 30 : 58.372 오류 [bar, 6bfd228dc00d216b, 6bfd228dc00d216b, false] 23030 --- [nio-8081-exec-3] ... 2016-02-02 15 : 31 : 01.936 정보 [bar, 46ab0d418373cbc9,46ab0d418373cbc9, false] 23030 --- [nio-8081-exec-4] ...```
+        2016-02-02 15 : 30 : 57.902 정보 [bar, 6bfd228dc00d216b, 6bfd228dc00d216b, false] 23030 --- [nio-8081-exec-3] ... 2016-02-02 15 : 30 : 58.372 오류 [bar, 6bfd228dc00d216b, 6bfd228dc00d216b, false] 23030 --- [nio-8081-exec-3] ... 2016-02-02 15 : 31 : 01.936 정보 [bar, 46ab0d418373cbc9,46ab0d418373cbc9, false] 23030 --- [nio-8081-exec-4] ...    
 
 
 
@@ -12585,7 +12585,7 @@ Consul Agent Client는 모든 Spring Cloud Consul 어플리케이션에서 사�
 
 
 
-```./src/main/bash/local_run_consul.sh```
+    ./src/main/bash/local_run_consul.sh    
 
 
 
@@ -12665,7 +12665,7 @@ application.yml
 
 
 
-```봄: 구름: 영사: 호스트 : localhost 포트 : 8500```
+    봄: 구름: 영사: 호스트 : localhost 포트 : 8500    
 
 
 
@@ -12723,7 +12723,7 @@ application.yml
 
 
 
-```봄: 구름: 영사: 발견: healthCheckPath : $ {management.contextPath} / 건강 healthCheckInterval : 15s```
+    봄: 구름: 영사: 발견: healthCheckPath : $ {management.contextPath} / 건강 healthCheckInterval : 15s    
 
 
 
@@ -12745,7 +12745,7 @@ application.yml
 
 
 
-```봄: 구름: 영사: 발견: 태그 : foo = bar, baz```
+    봄: 구름: 영사: 발견: 태그 : foo = bar, baz    
 
 
 
@@ -12775,7 +12775,7 @@ application.yml
 
 
 
-```봄: 구름: 영사: 발견: instanceId : $ {spring.application.name} : $ {spring.application.instance_id : $ {random.value}}```
+    봄: 구름: 영사: 발견: instanceId : $ {spring.application.name} : $ {spring.application.instance_id : $ {random.value}}    
 
 
 
@@ -12811,8 +12811,8 @@ Spring Cloud는 [Feign](https://github.com/spring-cloud/spring-cloud-netflix/blo
 
 
 
-```@Autowired 개인용 DiscoveryClient discoveryClient;
- public String serviceUrl () { List <ServiceInstance> list = discoveryClient.getInstances ( "STORES"); if (list! = null && list.size ()> 0) { return list.get (0) .getUri (); } null를 돌려 준다. }```
+    @Autowired 개인용 DiscoveryClient discoveryClient;
+ public String serviceUrl () { List <ServiceInstance> list = discoveryClient.getInstances ( "STORES"); if (list! = null && list.size ()> 0) { return list.get (0) .getUri (); } null를 돌려 준다. }    
 
 
 
@@ -12840,7 +12840,7 @@ Spring Cloud는 [Feign](https://github.com/spring-cloud/spring-cloud-netflix/blo
 
 
 
-```config / testApp, dev / 구성 / testApp / config / application, dev / config / application /```
+    config / testApp, dev / 구성 / testApp / config / application, dev / config / application /    
 
 
 
@@ -12886,7 +12886,7 @@ bootstrap.yml
 
 
 
-```봄: 구름: 영사: config : enabled : true 접두사 : 구성 defaultContext : apps profileSeparator : '::'```
+    봄: 구름: 영사: config : enabled : true 접두사 : 구성 defaultContext : apps profileSeparator : '::'    
 
 
 
@@ -12928,7 +12928,7 @@ bootstrap.yml
 
 
 
-```봄: 구름: 영사: config : 형식 : YAML```
+    봄: 구름: 영사: config : 형식 : YAML    
 
 
 
@@ -12944,7 +12944,7 @@ YAML은 `data`영사 의 적절한 열쇠에 있어야합니다 . 키 위의 기
 
 
 
-```config / testApp, dev / data config / testApp / data config / application, dev / data config / application / data```
+    config / testApp, dev / data config / testApp / data config / application, dev / data config / application / data    
 
 
 
@@ -12984,7 +12984,7 @@ bootstrap.yml
 
 
 
-```봄: 구름: 영사: config : 형식 : 파일```
+    봄: 구름: 영사: config : 형식 : 파일    
 
 
 
@@ -13000,7 +13000,7 @@ bootstrap.yml
 
 
 
-```.gitignore application.yml bar.properties foo-development.properties foo-production.yml foo.properties master.ref```
+    .gitignore application.yml bar.properties foo-development.properties foo-production.yml foo.properties master.ref    
 
 
 
@@ -13016,7 +13016,7 @@ bootstrap.yml
 
 
 
-```config / foo-development.properties config / foo.properties config / application.yml```
+    config / foo-development.properties config / foo.properties config / application.yml    
 
 
 
@@ -13136,7 +13136,7 @@ pom.xml
 
 
 
-```<의존성> <groupId> org.springframework.cloud </ groupId> <artifactId> spring-cloud-netflix-turbine </ artifactId> </ dependency> <의존성> <groupId> org.springframework.cloud </ groupId> <artifactId> spring-cloud-starter-consul-discovery </ artifactId> </ dependency>```
+    <의존성> <groupId> org.springframework.cloud </ groupId> <artifactId> spring-cloud-netflix-turbine </ artifactId> </ dependency> <의존성> <groupId> org.springframework.cloud </ groupId> <artifactId> spring-cloud-starter-consul-discovery </ artifactId> </ dependency>    
 
 
 
@@ -13154,7 +13154,7 @@ application.yml
 
 
 
-```spring.application.name : 터빈 응용 프로그램 : consulhystrixclient 터빈: 어 그리 게이터 : clusterConfig : $ {응용 프로그램} appConfig : $ {applications}```
+    spring.application.name : 터빈 응용 프로그램 : consulhystrixclient 터빈: 어 그리 게이터 : clusterConfig : $ {응용 프로그램} appConfig : $ {applications}    
 
 
 
@@ -13172,7 +13172,7 @@ Turbine.java
 
 
 
-```@EnableTurbine @EnableDiscoveryClient @SpringBootApplication public class Turbine { 공공 정적 무효 메인 (문자열 [] args) { SpringApplication.run (DemoturbinecommonsApplication.class, args); } }```
+    @EnableTurbine @EnableDiscoveryClient @SpringBootApplication public class Turbine { 공공 정적 무효 메인 (문자열 [] args) { SpringApplication.run (DemoturbinecommonsApplication.class, args); } }    
 
 
 
@@ -13282,7 +13282,7 @@ application.yml
 
 
 
-```봄: 구름: 사육사 : connect-string : localhost : 2181```
+    봄: 구름: 사육사 : connect-string : localhost : 2181    
 
 
 
@@ -13344,8 +13344,8 @@ Spring Cloud는 [Feign](https://github.com/spring-cloud/spring-cloud-netflix/blo
 
 
 
-```@Autowired 개인용 DiscoveryClient discoveryClient;
- public String serviceUrl () { List <ServiceInstance> list = discoveryClient.getInstances ( "STORES"); if (list! = null && list.size ()> 0) { return list.get (0) .getUri (). toString (); } null를 돌려 준다. }```
+    @Autowired 개인용 DiscoveryClient discoveryClient;
+ public String serviceUrl () { List <ServiceInstance> list = discoveryClient.getInstances ( "STORES"); if (list! = null && list.size ()> 0) { return list.get (0) .getUri (). toString (); } null를 돌려 준다. }    
 
 
 
@@ -13413,7 +13413,7 @@ application.yml
 
 
 
-```spring.application.name : yourServiceName spring.cloud.zookeeper : 의존성 : 뉴스 레터: 경로 : / path / where / newsletter / has / registered / in / zookeeper loadBalancerType : ROUND_ROBIN contentTypeTemplate : application / vnd.newsletter. $ version + json 버전 : v1 헤더 : header1 : - value1 header2 : - 값 2 required : false 스텁 : org.springframework : foo : 스텁 메일 링 : 경로 : / path / where / mailing / has / registered / in / zookeeper loadBalancerType : ROUND_ROBIN contentTypeTemplate : application / vnd.mailing. $ version + json 버전 : v1 required : true```
+    spring.application.name : yourServiceName spring.cloud.zookeeper : 의존성 : 뉴스 레터: 경로 : / path / where / newsletter / has / registered / in / zookeeper loadBalancerType : ROUND_ROBIN contentTypeTemplate : application / vnd.newsletter. $ version + json 버전 : v1 헤더 : header1 : - value1 header2 : - 값 2 required : false 스텁 : org.springframework : foo : 스텁 메일 링 : 경로 : / path / where / mailing / has / registered / in / zookeeper loadBalancerType : ROUND_ROBIN contentTypeTemplate : application / vnd.mailing. $ version + json 버전 : v1 required : true    
 
 
 
@@ -13445,7 +13445,7 @@ application.yml
 
 
 
-```@FeignClient ( "뉴스 레터") 공용 인터페이스 NewsletterService { @RequestMapping (method = RequestMethod.GET, value = "/ newsletter") String getNewsletters (); }```
+    @FeignClient ( "뉴스 레터") 공용 인터페이스 NewsletterService { @RequestMapping (method = RequestMethod.GET, value = "/ newsletter") String getNewsletters (); }    
 
 
 
@@ -13525,7 +13525,7 @@ Path는 Zookeeper에서 종속성이 등록되는 경로입니다. 리본이 URL
 
 
 
-```application / vnd.newsletter. $ version + json```
+    application / vnd.newsletter. $ version + json    
 
 
 
@@ -13541,7 +13541,7 @@ Path는 Zookeeper에서 종속성이 등록되는 경로입니다. 리본이 URL
 
 
 
-```v1```
+    v1    
 
 
 
@@ -13557,7 +13557,7 @@ Path는 Zookeeper에서 종속성이 등록되는 경로입니다. 리본이 URL
 
 
 
-```application / vnd.newsletter.v1 + json```
+    application / vnd.newsletter.v1 + json    
 
 
 
@@ -13585,7 +13585,7 @@ Path는 Zookeeper에서 종속성이 등록되는 경로입니다. 리본이 URL
 
 
 
-```헤더 : 수락 : - text / html - application / xhtml + xml 캐시 제어 : - no-cache```
+    헤더 : 수락 : - text / html - application / xhtml + xml 캐시 제어 : - no-cache    
 
 
 
@@ -13759,7 +13759,7 @@ Spring Cloud Zookeeper Dependencies 기능은 Dependency Watcher 메커니즘으
 
 
 
-``` void stateChanged (String dependencyName, DependencyState newState);```
+     void stateChanged (String dependencyName, DependencyState newState);    
 
 
 
@@ -13825,7 +13825,7 @@ Dependency Watcher와 연결된 것은 Presence Checker라는 기능입니다. �
 
 
 
-```config / testApp, dev config / testApp config / application, dev config / application```
+    config / testApp, dev config / testApp config / application, dev config / application    
 
 
 
@@ -13871,7 +13871,7 @@ bootstrap.yml
 
 
 
-```봄: 구름: 사육사 : config : enabled : true 루트 : 구성 defaultContext : apps profileSeparator : '::'```
+    봄: 구름: 사육사 : config : enabled : true 루트 : 구성 defaultContext : apps profileSeparator : '::'    
 
 
 
@@ -13919,7 +13919,7 @@ Spring Boot CLI는 [Spring Cloud](https://github.com/spring-cloud) 에 대한 [S
 
 
 
-```$ 봄 버전 Spring CLI v1.4.1.RELEASE```
+    $ 봄 버전 Spring CLI v1.4.1.RELEASE    
 
 
 
@@ -14001,7 +14001,7 @@ Launcher CLI를 사용하여 Eureka, Config Server 등의 공통 서비스를 �
 
 
 
-```$ 봄 구름 유레카 configserver h2 kafka zipkin```
+    $ 봄 구름 유레카 configserver h2 kafka zipkin    
 
 
 
@@ -14293,7 +14293,7 @@ app.groovy
 
 
 
-```$ spring run app.groovy```
+    $ spring run app.groovy    
 
 
 
@@ -14342,7 +14342,7 @@ Spring Cloud CLI에는 "encrypt"와 "decrypt"명령이있다. 둘 다 필수적�
 
 
 
-```$ spring encrypt mysecret --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda 나의 비밀```
+    $ spring encrypt mysecret --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda $ spring decrypt --key foo 682bc583f4641835fa2db009355293665d2647dade3375c0ee201de2a49f7bda 나의 비밀    
 
 
 
@@ -14358,7 +14358,7 @@ Spring Cloud CLI에는 "encrypt"와 "decrypt"명령이있다. 둘 다 필수적�
 
 
 
-```$ spring encrypt mysecret --key @ $ {HOME} /. ssh / id_rsa.pub AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...```
+    $ spring encrypt mysecret --key @ $ {HOME} /. ssh / id_rsa.pub AQAjPgt3eFZQXwt8tsHAVv / QHiY5sI2dRcR + ...    
 
 
 
@@ -14910,7 +14910,7 @@ app.groovy
 
 
 
-```$ spring jar app.jar app.groovy $ cf push -p app.jar```
+    $ spring jar app.jar app.groovy $ cf push -p app.jar    
 
 
 
